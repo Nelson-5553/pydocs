@@ -1,0 +1,37 @@
+---
+title: Welcome to PyDocs
+description: Get started building your docs site with PyDocs.
+template: splash
+hero:
+  tagline: Congrats on setting up a new PyDocs project!
+  actions:
+    - text: Empezemos
+      link: /introduccion/empezamos
+      icon: right-arrow
+    - text: Read the PyDocs docs
+      link: https://PyDocs.astro.build
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/Starlight/components';
+
+## Bienvenido a PyDocs
+
+<CardGrid stagger>
+	<Card title="¿Qué es PyDocs?" icon="open-book">
+		PyDocs es una documentación moderna y práctica para aprender Python desde cero hasta niveles avanzados, organizada por temas clave.
+	</Card>
+
+	<Card title="Primeros pasos" icon="zap">
+		Comienza en la sección `00_basico`, donde aprenderás variables, tipos de datos, condicionales, ciclos y más.
+	</Card>
+
+	<Card title="Explora las secciones" icon="file-search">
+		Cada carpeta está organizada por temas: estructuras de datos, funciones, POO, estadísticas, proyectos y retos.
+	</Card>
+
+	<Card title="Contribuye o personaliza" icon="pencil">
+		Edita los archivos `.mdx` en `src/content/docs/` para añadir temas, corregir errores o personalizar tu versión.
+	</Card>
+</CardGrid>

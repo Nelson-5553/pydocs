@@ -1,6 +1,8 @@
 ---
-title: ¿Que es Python?
-description: Guía para comenzar
+title: Instalacion
+description: Guía para Instalar
+sidebar:
+  order: 3
 ---
 
 # ¡Bienvenido!
