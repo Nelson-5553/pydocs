@@ -1,36 +1,39 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Welcome to PyDocs
+description: Get started building your docs site with PyDocs.
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Congrats on setting up a new PyDocs project!
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/python.png
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Empezemos
+      link: /introduccion/empezamos
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Read the PyDocs docs
+      link: https://PyDocs.astro.build
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from '@astrojs/Starlight/components';
 
-## Next steps
+## Bienvenido a PyDocs
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="¿Qué es PyDocs?" icon="open-book">
+		PyDocs es una documentación moderna y práctica para aprender Python desde cero hasta niveles avanzados, organizada por temas clave.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+
+	<Card title="Primeros pasos" icon="zap">
+		Comienza en la sección `00_basico`, donde aprenderás variables, tipos de datos, condicionales, ciclos y más.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+
+	<Card title="Explora las secciones" icon="file-search">
+		Cada carpeta está organizada por temas: estructuras de datos, funciones, POO, estadísticas, proyectos y retos.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+
+	<Card title="Contribuye o personaliza" icon="pencil">
+		Edita los archivos `.mdx` en `src/content/docs/` para añadir temas, corregir errores o personalizar tu versión.
 	</Card>
 </CardGrid>
