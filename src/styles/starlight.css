@@ -2,34 +2,54 @@
 
 /* Dark mode colors. */
 :root {
-	--sl-color-accent-low: #131e4f;
-	--sl-color-accent: #3447ff;
-	--sl-color-accent-high: #b3c7ff;
-	--sl-color-white: #ffffff;
-	--sl-color-gray-1: #eceef2;
-	--sl-color-gray-2: #c0c2c7;
-	--sl-color-gray-3: #888b96;
-	--sl-color-gray-4: #545861;
-	--sl-color-gray-5: #353841;
-	--sl-color-gray-6: #24272f;
-	--sl-color-black: #17181c;
+  --sl-color-accent-low: #131e4f;
+  --sl-color-accent: #3447ff;
+  --sl-color-accent-high: #FFD43B;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #eceef2;
+  --sl-color-gray-2: #c0c2c7;
+  --sl-color-gray-3: #888b96;
+  --sl-color-gray-4: #545861;
+  --sl-color-gray-5: #353841;
+  --sl-color-gray-6: #24272f;
+  --sl-color-black: #17181c;
+  
+  /* Custom background variable */
+  --custom-bg-gradient: radial-gradient(
+    ellipse 80% 80% at 50% -20%,
+    rgba(193, 196, 33, 0.3),
+    #1d2238
+  );
 }
+
 /* Light mode colors. */
 :root[data-theme='light'] {
-	--sl-color-accent-low: #c7d6ff;
-	--sl-color-accent: #364bff;
-	--sl-color-accent-high: #0126e0;
-	--sl-color-white: #17181c;
-	--sl-color-gray-1: #24272f;
-	--sl-color-gray-2: #353841;
-	--sl-color-gray-3: #545861;
-	--sl-color-gray-4: #888b96;
-	--sl-color-gray-5: #c0c2c7;
-	--sl-color-gray-6: #eceef2;
-	--sl-color-gray-7: #f5f6f8;
-	--sl-color-black: #ffffff;
-     --sl-color-bg: linear-gradient(135deg, #ffffff 0%, #FFD43B 50%, #306998 100%);
+  --sl-color-accent-low: #c7d6ff;
+  --sl-color-accent: #306998;
+  --sl-color-accent-high: #0126e0;
+  --sl-color-white: #17181c;
+  --sl-color-gray-1: #24272f;
+  --sl-color-gray-2: #353841;
+  --sl-color-gray-3: #545861;
+  --sl-color-gray-4: #888b96;
+  --sl-color-gray-5: #c0c2c7;
+  --sl-color-gray-6: #eceef2;
+  --sl-color-gray-7: #ffffff;
+  --sl-color-black: #ffffff;
+  
+  
+  /* Custom background variable for light mode */
+  --custom-bg-gradient: radial-gradient(
+    ellipse 80% 80% at 50% -20%,
+    rgba(3, 142, 255, 0.3),
+    #f0eeee
+  );
+}
+
+/* Apply the gradient to the body or a specific container */
+.pagefind-body[lang="es"] {
+  background: var(--custom-bg-gradient);
+  background-color: transparent;
 }
 
 
-/* También puedes sobrescribir otros estilos aquí */

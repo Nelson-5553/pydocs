@@ -20,9 +20,14 @@ export default defineConfig({
 			customCss: [
                 // Ruta relativa a tu archivo CSS personalizado
         './src/styles/starlight.css',
-      ],
-			title: 'PyDocs',
-			favicon: '/src/assets/python.png',
+      		],
+			  title: '',
+			  logo: {
+		  // Aquí puedes colocar directamente la imagen (opcional si usas slot)
+			  src: '@assets/pydocs.png',
+			  alt: 'Logo de la documentación'
+				},
+			favicon: 'src/assets/python.png',
 			// Establece el inglés como el idioma predeterminado para este sitio.
 			defaultLocale: 'es',
 			locales: {
