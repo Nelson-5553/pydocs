@@ -55,6 +55,10 @@ export default defineConfig({
 					label: 'Excepciones',
 					autogenerate: { directory: 'ErrorHandling' },
 				},
+				{
+					label: 'Progrmacion Orientada a Objetos',
+					autogenerate: { directory: 'POO' },
+				},
 			],
 		}),
 	],
