@@ -35,6 +35,10 @@ export default defineConfig({
 					label: 'Estructuras de Control',
 					autogenerate: { directory: 'ControlStructures' },
 				},
+				{
+					label: 'Funciones Nativas',
+					autogenerate: { directory: 'NativeFunctions' },
+				},
 			],
 		}),
 	],
