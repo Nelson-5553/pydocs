@@ -59,6 +59,10 @@ export default defineConfig({
 					label: 'Progrmacion Orientada a Objetos',
 					autogenerate: { directory: 'POO' },
 				},
+				{
+					label: 'Manejo de Archivos',
+					autogenerate: { directory: 'FileManagement' },
+				},
 			],
 		}),
 	],
