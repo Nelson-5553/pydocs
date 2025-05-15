@@ -39,6 +39,10 @@ export default defineConfig({
 					label: 'Funciones Nativas',
 					autogenerate: { directory: 'NativeFunctions' },
 				},
+				{
+					label: 'Funciones',
+					autogenerate: { directory: 'Funtions' },
+				},
 			],
 		}),
 	],
