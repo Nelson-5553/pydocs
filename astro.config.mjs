@@ -4,6 +4,17 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+
+	vite: {
+    resolve: {
+      alias: {
+        '@docs': '/content/docs',
+        '@es': '/content/docs/es',
+        '@assets': '/src/assets'
+      }
+    }
+  },
+  
 	integrations: [
 		starlight({
 			title: 'PyDocs',
