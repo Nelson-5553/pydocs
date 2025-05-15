@@ -26,6 +26,10 @@ export default defineConfig({
 					label: 'Introducción',
 					autogenerate: { directory: 'Introduccion' },
 				},
+				{
+					label: 'Sintaxis Básica',
+					autogenerate: { directory: 'SyntaxBasic' },
+				},
 			],
 		}),
 	],
