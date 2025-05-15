@@ -67,6 +67,10 @@ export default defineConfig({
 					label: 'Manejo de Librerías Estándar',
 					autogenerate: { directory: 'StandardLibraries' },
 				},
+				{
+					label: 'Entornos Virtuales y Gestión de Paquetes',
+					autogenerate: { directory: 'VenvPackages' },
+				},
 			],
 		}),
 	],

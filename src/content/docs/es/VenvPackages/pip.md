@@ -1,7 +1,7 @@
 ---
-title: pip y requirements.txt
+title: Pip y requirements.txt
 description: Guía para pip y requirements.txt
 sidebar:
-  order: 1
+  order: 2
 ---
 Esta documentación te guiará para empezar rápidamente.
