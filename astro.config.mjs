@@ -30,6 +30,11 @@ export default defineConfig({
 					label: 'Sintaxis Básica',
 					autogenerate: { directory: 'SyntaxBasic' },
 				},
+				
+				{
+					label: 'Estructuras de Control',
+					autogenerate: { directory: 'ControlStructures' },
+				},
 			],
 		}),
 	],
