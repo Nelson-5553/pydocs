@@ -51,6 +51,10 @@ export default defineConfig({
 					label: 'Módulos y Paquetes',
 					autogenerate: { directory: 'ModulesPackages' },
 				},
+				{
+					label: 'Excepciones',
+					autogenerate: { directory: 'ErrorHandling' },
+				},
 			],
 		}),
 	],
