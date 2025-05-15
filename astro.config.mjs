@@ -63,6 +63,10 @@ export default defineConfig({
 					label: 'Manejo de Archivos',
 					autogenerate: { directory: 'FileManagement' },
 				},
+				{
+					label: 'Manejo de Librerías Estándar',
+					autogenerate: { directory: 'StandardLibraries' },
+				},
 			],
 		}),
 	],
