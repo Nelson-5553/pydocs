@@ -18,6 +18,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'PyDocs',
+			favicon: '/src/assets/python.png',
 			// Establece el inglés como el idioma predeterminado para este sitio.
 			defaultLocale: 'es',
 			locales: {
