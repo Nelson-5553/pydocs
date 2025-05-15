@@ -47,6 +47,10 @@ export default defineConfig({
 					label: 'Estructuras de Datos',
 					autogenerate: { directory: 'DataStructure' },
 				},
+				{
+					label: 'Módulos y Paquetes',
+					autogenerate: { directory: 'ModulesPackages' },
+				},
 			],
 		}),
 	],
