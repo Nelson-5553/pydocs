@@ -17,6 +17,10 @@ export default defineConfig({
   
 	integrations: [
 		starlight({
+			customCss: [
+                // Ruta relativa a tu archivo CSS personalizado
+        './src/styles/starlight.css',
+      ],
 			title: 'PyDocs',
 			favicon: '/src/assets/python.png',
 			// Establece el inglés como el idioma predeterminado para este sitio.
