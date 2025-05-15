@@ -36,20 +36,40 @@
   --sl-color-gray-6: #eceef2;
   --sl-color-gray-7: #ffffff;
   --sl-color-black: #ffffff;
-  
-  
+    
   /* Custom background variable for light mode */
   --custom-bg-gradient: radial-gradient(
     ellipse 80% 80% at 50% -20%,
     rgba(3, 142, 255, 0.3),
     #f0eeee
   );
+
+   --sl-blur-amount: blur(10px);
 }
 
-/* Apply the gradient to the body or a specific container */
-.pagefind-body[lang="es"] {
+/* SOLUCIÓN ESPECÍFICA PARA TU ESTRUCTURA STARLIGHT */
+
+/* Alternativa usando la clase hero que parece estar solo en la página principal */
+body:has(.hero.astro-jbf5ktt5),
+body:has([class*="hero"]) {
   background: var(--custom-bg-gradient);
   background-color: transparent;
 }
 
+body:has(.hero) header {
+  background: rgba(36, 39, 47, 0.02); /* casi totalmente transparente */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: none; /* elimina el borde inferior */
+}
+
+
+
+/* Para las demás páginas, no aplicar el fondo con gradiente */
+body:not(.starlight-home):not(.homepage) {
+  /* Definir un fondo alternativo para páginas internas si lo deseas */
+}
+html.astro-bgw2111 body {
+  background: initial !important; /* Resetea cualquier background */
+}
 
