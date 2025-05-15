@@ -43,6 +43,10 @@ export default defineConfig({
 					label: 'Funciones',
 					autogenerate: { directory: 'Funtions' },
 				},
+				{
+					label: 'Estructuras de Datos',
+					autogenerate: { directory: 'DataStructure' },
+				},
 			],
 		}),
 	],
