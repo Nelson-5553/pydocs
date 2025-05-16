@@ -66,10 +66,24 @@ body:has(.hero) header {
 
 
 /* Para las demás páginas, no aplicar el fondo con gradiente */
-body:not(.starlight-home):not(.homepage) {
+/* body:not(.starlight-home):not(.homepage) { */
   /* Definir un fondo alternativo para páginas internas si lo deseas */
-}
+/* } */
 html.astro-bgw2111 body {
   background: initial !important; /* Resetea cualquier background */
 }
 
+
+ .tip {
+    background-color: rgba(48, 105, 152, 0.1);
+    border-left: 4px solid #306998;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  /* Estilos para modo oscuro */
+  :root[data-theme="dark"] .tip {
+    background-color: rgba(255, 212, 59, 0.1);
+    border-left: 4px solid #FFD43B;
+  }

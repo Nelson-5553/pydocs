@@ -1,0 +1,116 @@
+---
+// src/components/PyTable.astro
+// Componente de tabla con estilos de Python
+// Props:
+// - headers: Array de strings para los encabezados de la tabla
+// - rows: Array de arrays para las filas de la tabla
+// - caption: (Opcional) Título de la tabla
+
+interface Props {
+  headers: string[];
+  rows: any[][];
+}
+
+const { headers, rows } = Astro.props;
+---
+
+<div class="py-table-container">
+  <table class="py-table">
+    
+    <thead>
+      <tr>
+        {headers.map((header) => <th>{header}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr>
+          {row.map((cell) => <td>{cell}</td>)}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+
+  .py-table-container {
+    width: 100%; /* Contenedor ocupa todo el ancho */
+    overflow-x: auto;
+    margin: 1.5rem 0;
+     border: 2px dashed red;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+
+  .py-table {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: left;
+    table-layout: fixed; /* Distribuye columnas proporcionalmente */
+  }
+
+  /* Forzamos que todas las celdas se distribuyan de forma pareja */
+  .py-table th,
+  .py-table td {
+    width: auto;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .py-table thead {
+    background-color: #306998; /* Azul de Python */
+  }
+
+  .py-table th {
+    font-weight: 500;
+  }
+
+  /* Filas alternas y hover */
+  .py-table tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  .py-table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Modo oscuro */
+  :root[data-theme="dark"] .py-table thead {
+    background-color: #FFD43B; /* Amarillo de Python */
+  }
+
+  :root[data-theme="dark"] .py-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  :root[data-theme="dark"] .py-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  :root[data-theme="dark"] .py-table {
+    color: #eee;
+  }
+
+  :root[data-theme="dark"] .py-table-container {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Responsive: ajustamos tamaños en móviles */
+  @media (max-width: 640px) {
+    .py-table thead {
+      font-size: 0.9rem;
+    }
+
+    .py-table td,
+    .py-table th {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+    }
+  }
+</style>
