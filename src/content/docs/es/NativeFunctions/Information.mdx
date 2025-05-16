@@ -1,0 +1,63 @@
+---
+title: Funciones de informacion
+description: Guía para Funciones de informacion
+sidebar:
+  order: 3
+---
+import PyTable from '../../../../components/PyTable.astro';
+
+# Funciones básicas de Python
+
+Python ofrece una variedad de funciones integradas que facilitan las tareas de programación cotidianas. Estas funciones están disponibles sin necesidad de importar módulos adicionales.
+
+## Tabla de funciones comunes
+
+A continuación se presenta una tabla con algunas de las funciones más utilizadas en Python:
+
+<PyTable 
+  headers={["Función", "Descripción", "Ejemplo"]}
+  rows={[
+    ["print()", "Muestra texto en la consola", "print('Hola mundo')"],
+    ["len()", "Devuelve la longitud de un objeto", "len('Python') # 6"],
+    ["range()", "Genera una secuencia de números", "for i in range(3): print(i)"],
+    ["input()", "Lee entrada del usuario", "name = input('Tu nombre: ')"],
+    ["type()", "Devuelve el tipo de un objeto", "type(42) # <class 'int'>"],
+    ["int()", "Convierte a entero", "int('42') # 42"],
+    ["str()", "Convierte a cadena de texto", "str(42) # '42'"],
+    ["list()", "Convierte a lista", "list('Python') # ['P','y','t','h','o','n']"]
+  ]}
+/>
+
+## Uso de las funciones
+
+Las funciones integradas son parte del núcleo de Python y pueden ser llamadas directamente sin necesidad de importar módulos o bibliotecas adicionales.
+
+```python
+# Ejemplo de uso de varias funciones básicas
+nombre = input("¿Cómo te llamas? ")
+print(f"Hola, {nombre}!")
+
+mi_lista = list(range(1, 6))
+print(f"Lista generada: {mi_lista}")
+print(f"Longitud de la lista: {len(mi_lista)}")
+```
+
+<div class="tip">
+  <strong>Consejo:</strong> Para obtener ayuda sobre cualquier función integrada, usa la función <code>help()</code>.
+  Por ejemplo: <code>help(print)</code> mostrará la documentación de la función print.
+</div>
+
+## Otras funciones útiles
+
+Python tiene muchas más funciones integradas que pueden ser útiles en diferentes contextos:
+
+<PyTable 
+  headers={["Función", "Descripción", "Ejemplo"]}
+  rows={[
+    ["max()", "Encuentra el valor máximo", "max(5, 10, 15) # 15"],
+    ["min()", "Encuentra el valor mínimo", "min([5, 10, 15]) # 5"],
+    ["sum()", "Suma todos los elementos", "sum([1, 2, 3, 4]) # 10"],
+    ["round()", "Redondea un número", "round(3.14159, 2) # 3.14"]
+  ]}
+/>
+
