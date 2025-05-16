@@ -5,6 +5,8 @@ sidebar:
   order: 2
 ---
 
+import PyTable from "@components/PyTable.astro"
+
 Un operador es un símbolo o palabra clave que le dice a Python que realice una operación específica sobre uno o más valores (también llamados operandos). Los operadores permiten realizar tareas como sumar números, comparar valores, asignar resultados a variables o evaluar condiciones lógicas.
 
 ## Tipos de opéradores
@@ -44,6 +46,14 @@ Estos operadores permiten comparar dos valores. El resultado de una comparación
 
 se usan para almacenar un valor dentro de una variable. El operador más común es el signo igual (=), que simplemente asigna un valor.
 
+<PyTable
+  headers={["Operador", "Descripción", "Ejemplo", "Equivalente a"]}
+  rows={[
+    ["=", "Asignación", "`x = 5`", "Asigna el valor `5` a `x`"],
+    ["+=", "Suma y asignación", "`x += 3`", "`x = x + 3`"],
+    // ...
+  ]}
+/>
 
 ### Operadores Lógicos 
 

@@ -10,7 +10,8 @@ export default defineConfig({
       alias: {
         '@docs': '/content/docs',
         '@es': '/content/docs/es',
-        '@assets': '/src/assets'
+        '@assets': '/src/assets',
+        '@components': '/src/components',
       }
     }
   },
