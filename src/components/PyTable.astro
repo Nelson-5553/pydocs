@@ -3,113 +3,102 @@
 interface Props {
   headers: string[];
   rows: any[][];
-  caption?: string;
 }
 
-const { headers, rows, caption } = Astro.props;
+const { headers, rows} = Astro.props;
 ---
 
-<div class="py-table-container">
-  <table class="py-table">
-    {caption && <caption class="py-table-caption">{caption}</caption>}
-    <thead>
+
+<table class="py-table">
+
+  <thead>
+    <tr>
+      {headers.map((header, idx) => (
+        <th class={idx === 0 ? "text-center" : "text-left"}>{header}</th>
+      ))}
+    </tr>
+  </thead>
+  <tbody>
+    {rows.map((row) => (
       <tr>
-        {headers.map((header, idx) => (
-          <th class={idx === 0 ? 'text-center' : 'text-left'}>{header}</th>
+        {row.map((cell, idx) => (
+          <td class={idx === 0 ? "text-center" : "text-left"}>{cell}</td>
         ))}
       </tr>
-    </thead>
-    <tbody>
-      {rows.map((row) => (
-        <tr>
-          {row.map((cell, idx) => (
-            <td class={idx === 0 ? 'text-center' : 'text-left'}>{cell}</td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
+    ))}
+  </tbody>
+</table>
+
+
+
 
 <style>
-.py-table-container {
-  overflow-x: auto;
-  margin-bottom: 2rem;
-}
-
-.py-table {
-  width: 100%;
-  min-width: 800px;
-  border-collapse: collapse;
-  border: none;
-  table-layout: fixed;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-.py-table caption {
-  caption-side: top;
-  font-weight: bold;
-  padding: 0.75rem;
-  text-align: left;
-  font-size: 1rem;
-  color: #333;
-}
-
-.py-table th,
-.py-table td {
-  padding: 0.75rem 1rem;
-  word-wrap: break-word;
-  white-space: normal;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* Encabezado */
-.py-table thead {
-  background-color: #207bc5;
-  color: #fff;
-}
-
-/* Alternancia y hover */
-.py-table tbody tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.03);
-}
-
-.py-table tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* Modo oscuro */
-:root[data-theme="dark"] .py-table thead {
-  background-color: #a08522;
-}
-
-:root[data-theme="dark"] .py-table tbody tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-:root[data-theme="dark"] .py-table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-:root[data-theme="dark"] .py-table {
-  color: #eee;
-}
-
-:root[data-theme="dark"] .py-table-container {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive */
-@media (max-width: 640px) {
-  .py-table caption {
-    font-size: 0.95rem;
-    padding: 0.5rem;
+  .py-table {
+    width: 100%;
+    font-family: 'Inter', 'Helvetica', sans-serif;
+    border-collapse: collapse;
+    table-layout: fixed;
+    overflow-x: auto;
   }
 
-  .py-table td,
-  .py-table th {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.9rem;
+  .py-table th, .py-table td {
+    padding: 5px 10px;
+    font-size: 0.88rem;
+    width: 20.33%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
+
+  .py-table th.text-center, .py-table td.text-center {
+    text-align: center;
+    
+  }
+
+  .py-table th.text-left, .py-table td.text-left {
+    text-align: left;
+    
+  }
+
+  .py-table tbody td{
+  vertical-align: middle;  /* alineación vertical */
+  text-align: center;/
 }
+
+
+
+  /* 🌞 Modo claro */
+  :root:not([data-theme="dark"]) .py-table {
+    color: black;
+    border-color: rgb(203, 203, 203);
+    background-color: white;
+  }
+
+  :root:not([data-theme="dark"]) .py-table th {
+    background: #306998d3;
+    color: white;
+  }
+
+  :root:not([data-theme="dark"]) .py-table th, 
+  :root:not([data-theme="dark"]) .py-table td {
+    border-color: rgb(203, 203, 203);
+  }
+
+
+  /* 🌙 Modo oscuro (usando data-theme="dark") */
+  :root[data-theme="dark"] .py-table {
+    color: #eee;
+    border-color: #444;
+    background-color: #1e1e1e00;
+  }
+
+  :root[data-theme="dark"] .py-table th {
+    background-color: #ffd53be1; /* Amarillo de Python */
+    color: black;
+  }
+
+  :root[data-theme="dark"] .py-table td, 
+  :root[data-theme="dark"] .py-table th {
+    border-color: #444444;
+  }
+
 </style>
