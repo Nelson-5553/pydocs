@@ -1,0 +1,49 @@
+---
+title: Comentarios
+description: Guía para Comentarios
+sidebar:
+  order: 2
+---
+
+import { Code } from "@astrojs/Starlight/components"
+import { Aside } from "@astrojs/Starlight/components"
+
+En Python, los comentarios son elementos fundamentales para escribir código claro, comprensible y mantenible. Aunque no afectan directamente la ejecución del programa, tienen un papel crucial en la comunicación entre programadores (incluyéndote a ti en el futuro) y en la documentación del propio código.
+
+Un comentario es una línea o fragmento de texto incluido dentro del código fuente que el intérprete de Python ignora completamente durante la ejecución. Es decir, no se traduce en instrucciones ejecutables ni consume recursos al momento de correr el programa.
+
+## Comentarios de una linea
+
+Se escriben anteponiendo el símbolo # a cualquier texto. Todo lo que aparece después de este símbolo en la línea es ignorado por el intérprete:
+
+<Code 
+code="# Esto es un comentario que explica la siguiente línea
+      print('Hola PyDocs')  # Imprimimos Nombre 
+     " 
+      
+lang="py" 
+title="Coments.py" 
+mark="highlights" />
+
+## Cadenas de documentación
+
+Aunque no son técnicamente "comentarios", puedes usar **docstrings** (cadenas entre triple comilla) como documentación interna. Estas se colocan dentro de funciones, clases o módulos y se usan para describir su propósito:
+
+<Code 
+code="def saludar():
+    '''
+    Esta función imprime un saludo tres veces.
+    '''
+    print('Hola PyDocs')
+    print('Hola PyDocs')
+    print('Hola PyDocs')
+   "
+lang="py" 
+title="Docstring.py" 
+mark="highlights"
+frame='auto' />
+
+
+<Aside type="caution">
+Evita usar cadenas entre triple comilla como si fueran comentarios multilínea fuera de una función o clase, ya que Python **las almacena en memoria como objetos de texto**, a diferencia de los comentarios reales con `#` que son completamente ignorados por el intérprete.
+</Aside>
