@@ -38,11 +38,13 @@
   --sl-color-black: #ffffff;
     
   /* Custom background variable for light mode */
-  --custom-bg-gradient: radial-gradient(
-    ellipse 80% 80% at 50% -20%,
-    rgba(3, 142, 255, 0.3),
-    #f0eeee
-  );
+--custom-bg-gradient: radial-gradient(
+  ellipse 60% 100% at 100% 50%,
+  rgba(3, 142, 255, 0.3),
+  #f0eeee
+);
+
+
 
    --sl-blur-amount: blur(10px);
 }
