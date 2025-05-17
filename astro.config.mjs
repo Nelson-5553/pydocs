@@ -6,28 +6,30 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 
 	vite: {
-    resolve: {
-      alias: {
-        '@docs': '/content/docs',
-        '@es': '/content/docs/es',
-        '@assets': '/src/assets',
-        '@components': '/src/components',
-      }
-    }
-  },
-  
+		resolve: {
+			alias: {
+				'@docs': '/content/docs',
+				'@es': '/content/docs/es',
+				'@assets': '/src/assets',
+				'@components': '/src/components',
+			}
+		}
+	},
+	redirects: {
+				'/': '/es', // Redirección a español como idioma por defecto
+			},
 	integrations: [
 		starlight({
 			customCss: [
-                // Ruta relativa a tu archivo CSS personalizado
-        './src/styles/starlight.css',
-      		],
-			  title: '',
-			  logo: {
-		  // Aquí puedes colocar directamente la imagen (opcional si usas slot)
-			  src: '@assets/pydocs.png',
-			  alt: 'Logo de la documentación'
-				},
+				// Ruta relativa a tu archivo CSS personalizado
+				'./src/styles/starlight.css',
+			],
+			title: '',
+			logo: {
+				// Aquí puedes colocar directamente la imagen (opcional si usas slot)
+				src: '@assets/pydocs.png',
+				alt: 'Logo de la documentación'
+			},
 			favicon: 'src/assets/python.png',
 			// Establece el inglés como el idioma predeterminado para este sitio.
 			defaultLocale: 'es',
@@ -41,7 +43,7 @@ export default defineConfig({
 					label: 'Español',
 				},
 			},
-
+			
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
@@ -52,7 +54,7 @@ export default defineConfig({
 					label: 'Sintaxis Básica',
 					autogenerate: { directory: 'SyntaxBasic' },
 				},
-				
+
 				{
 					label: 'Estructuras de Control',
 					autogenerate: { directory: 'ControlStructures' },
