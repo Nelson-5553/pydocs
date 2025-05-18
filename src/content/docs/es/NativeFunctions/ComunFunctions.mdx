@@ -1,0 +1,25 @@
+---
+title: Funciones Comunes
+description: Guía para Funciones de Utilidad
+sidebar:
+  order: 4
+---
+
+import PyTable from '@components/PyTable.astro';
+
+<PyTable 
+  headers={["Función", "Descripción"]}
+  rows={[
+    ["len()	", "	Devuelve el número de elementos en una secuencia u objeto iterable."],
+    ["sum()", "Retorna la suma de todos los elementos numéricos de una secuencia."],
+    ["max()", "Devuelve el valor máximo de una secuencia."],
+    ["min()", "Devuelve el valor mínimo."],
+    ["sorted()", "Devuelve una nueva lista ordenada."],
+    ["abs()", "Retorna el valor absoluto de un número.."],
+    ["round()", "Redondea un número decimal al entero más cercano (o a cierta precisión).."],
+    ["pow()", "Eleva un número a una potencia (equivale a **)."],
+    ["divmod()", "Retorna una tupla con el cociente y el resto de una división."],
+    ["enumerate()", "Devuelve un objeto enumerado (índice y valor) sobre un iterable."],
+  
+  ]}
+/>
