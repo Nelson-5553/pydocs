@@ -60,12 +60,12 @@ export default defineConfig({
 					autogenerate: { directory: 'ControlStructures' },
 				},
 				{
-					label: 'Funciones Nativas',
-					autogenerate: { directory: 'NativeFunctions' },
-				},
-				{
 					label: 'Funciones',
 					autogenerate: { directory: 'Funtions' },
+				},
+				{
+					label: 'Funciones Nativas',
+					autogenerate: { directory: 'NativeFunctions' },
 				},
 				{
 					label: 'Estructuras de Datos',
