@@ -1,0 +1,25 @@
+---
+title: Metodos de Cadena
+description: Guía para Metodos de Cadena
+sidebar:
+  order: 5
+---
+import PyTable from '@components/PyTable.astro';
+
+<PyTable 
+  headers={["Función", "Descripción"]}
+  rows={[
+    [".lower()", "Convierte todos los caracteres a minúsculas."],
+    [".upper()", "Convierte todos los caracteres a mayúsculas."],
+    [".capitalize()", "Convierte el primer carácter en mayúscula y los demás en minúscula."],
+    [".title()", "Convierte la primera letra de cada palabra en mayúscula."],
+    [".strip()", "Elimina espacios en blanco al inicio y final de una cadena."],
+    [".replace()", "Reemplaza una subcadena por otra."],
+    [".split()", "Divide la cadena en una lista según un separador."],
+    [".join()", "Une elementos de una secuencia utilizando la cadena como separador."],
+    [".find()", "	Devuelve la posición de la primera ocurrencia de una subcadena, o -1 si no existe."],
+    [".startswith()", "Devuelve True si la cadena comienza con una subcadena dada."],
+    [".endswith()", "Devuelve True si la cadena termina con una subcadena dada."],
+  
+  ]}
+/>
