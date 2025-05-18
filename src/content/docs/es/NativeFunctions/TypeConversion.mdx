@@ -6,6 +6,7 @@ sidebar:
 ---
 
 import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
 
 En Python, los tipos de datos se utilizan para clasificar un tipo específico de datos, determinar los valores que puede asignar al tipo y las operaciones que puede realizar en el mismo. Cuando realice tareas de programación, a veces, deberá aplicar conversiones de valores entre tipos para manipular los valores de forma diferente. Por ejemplo, es posible que debamos concatenar valores numéricos con cadenas o representar posiciones decimales en números que se iniciaron como valores enteros.
 
@@ -32,7 +33,7 @@ lang="py"
 title="Int.py" 
 mark="highlights"
 frame='auto' />
-
+Resultado: 
 <Code 
 code="
 43 
@@ -55,7 +56,7 @@ lang="py"
 title="Int.py" 
 mark="highlights"
 frame='auto' />
-
+Resultado: 
 <Code 
 code="
 3.14
@@ -78,7 +79,7 @@ lang="py"
 title="Str.py" 
 mark="highlights"
 frame='auto' />
-
+Resultado: 
 <Code 
 code="
 100
@@ -101,7 +102,7 @@ lang="py"
 title="Bool.py" 
 mark="highlights"
 frame='auto' />
-
+Resultado: 
 <Code 
 code="
 True
@@ -124,7 +125,7 @@ lang="py"
 title="List.py" 
 mark="highlights"
 frame='auto' />
-
+Resultado: 
 <Code 
 code="
 ['h', 'o', 'l', 'a']
@@ -147,7 +148,7 @@ lang="py"
 title="Tuple.py" 
 mark="highlights"
 frame='auto' />
-
+Resultado: 
 <Code 
 code="
 ('a', 'b', 'c')
@@ -171,7 +172,7 @@ lang="py"
 title="Set.py" 
 mark="highlights"
 frame='auto' />
-
+Resultado: 
 <Code 
 code="
 {1, 2, 3}
@@ -194,7 +195,7 @@ lang="py"
 title="Dict.py" 
 mark="highlights"
 frame='auto' />
-
+Resultado: 
 <Code 
 code="
 {'a': 1, 
@@ -204,3 +205,7 @@ lang="bash"
 title="Dict.py" 
 mark="highlights"
 frame='terminal' />
+
+<Aside type='note'>
+  Convierte a diccionario requiere una estructura compatible, como una lista de tuplas 
+</Aside>

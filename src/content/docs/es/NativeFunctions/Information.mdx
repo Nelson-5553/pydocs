@@ -1,63 +1,138 @@
 ---
-title: Funciones de informacion
+title: Información sobre objetos
 description: Guía para Funciones de informacion
 sidebar:
   order: 3
 ---
-import PyTable from '../../../../components/PyTable.astro';
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+import PyTable from '@components/PyTable.astro';
 
-# Funciones básicas de Python
-
-Python ofrece una variedad de funciones integradas que facilitan las tareas de programación cotidianas. Estas funciones están disponibles sin necesidad de importar módulos adicionales.
-
-## Tabla de funciones comunes
-
-A continuación se presenta una tabla con algunas de las funciones más utilizadas en Python:
-
+Estas funciones están diseñadas para inspeccionar y comprender los objetos en tiempo de ejecución. Son especialmente útiles durante el desarrollo, depuración y documentación del código. Permiten conocer el tipo de un objeto, su ubicación en memoria, o acceder a su ayuda integrada. Usarlas facilita el desarrollo más seguro y mantenible, especialmente en entornos dinámicos.
 <PyTable 
-  headers={["Función", "Descripción", "Ejemplo"]}
+  headers={["Función", "Descripción"]}
   rows={[
-    ["print()", "Muestra texto en la consola", "print('Hola mundo')"],
-    ["len()", "Devuelve la longitud de un objeto", "len('Python') # 6"],
-    ["range()", "Genera una secuencia de números", "for i in range(3): print(i)"],
-    ["input()", "Lee entrada del usuario", "name = input('Tu nombre: ')"],
-    ["type()", "Devuelve el tipo de un objeto", "type(42) # <class 'int'>"],
-    ["int()", "Convierte a entero", "int('42') # 42"],
-    ["str()", "Convierte a cadena de texto", "str(42) # '42'"],
-    ["list()", "Convierte a lista", "list('Python') # ['P','y','t','h','o','n']"]
+    ["type()", "Devuelve el tipo del objeto especificado."],
+    ["id()", "Retorna la dirección o identificador único del objeto en memoria."],
+    ["help()", "Muestra la documentación integrada (docstring) de funciones, objetos, módulos, etc."],
+    ["dir()", "	Lista los atributos y métodos disponibles para un objeto."],
   ]}
 />
+A continuacion te explicare con mas detalle el funcionamiento de estas funciones:
 
-## Uso de las funciones
+### <code>type()</code>
 
-Las funciones integradas son parte del núcleo de Python y pueden ser llamadas directamente sin necesidad de importar módulos o bibliotecas adicionales.
+ Uso típico: Para verificar si una variable es del tipo esperado antes de realizar operaciones con ella.
 
-```python
-# Ejemplo de uso de varias funciones básicas
-nombre = input("¿Cómo te llamas? ")
-print(f"Hola, {nombre}!")
+<Code 
+code="
+x = 42
+print(type(x))
+"
+lang="py" 
+title="type.py" 
+mark="highlights"
+frame='auto' />
+Resultado: 
+<Code 
+code="
+<class 'int'>
+"
+lang="bash" 
+title="type.py" 
+mark="highlights"
+frame='terminal' />
 
-mi_lista = list(range(1, 6))
-print(f"Lista generada: {mi_lista}")
-print(f"Longitud de la lista: {len(mi_lista)}")
-```
+### <code>id()</code>
 
-<div class="tip">
-  <strong>Consejo:</strong> Para obtener ayuda sobre cualquier función integrada, usa la función <code>help()</code>.
-  Por ejemplo: <code>help(print)</code> mostrará la documentación de la función print.
-</div>
+Uso típico: Para comprobar si dos variables apuntan al mismo objeto en memoria.
 
-## Otras funciones útiles
+<Code 
+code="
+a = 10
+b = a
+print(id(a)) 
+print(id(b))  # Mismo ID que a, ya que ambos apuntan al mismo objeto
+"
+lang="py" 
+title="id.py" 
+mark="highlights"
+frame='auto' />
+Resultado: 
+<Code 
+code="
+140710837832368 (valor de ejemplo)
+"
+lang="bash" 
+title="id.py" 
+mark="highlights"
+frame='terminal' />
 
-Python tiene muchas más funciones integradas que pueden ser útiles en diferentes contextos:
+### <code>dir()</code>
 
-<PyTable 
-  headers={["Función", "Descripción", "Ejemplo"]}
-  rows={[
-    ["max()", "Encuentra el valor máximo", "max(5, 10, 15) # 15"],
-    ["min()", "Encuentra el valor mínimo", "min([5, 10, 15]) # 5"],
-    ["sum()", "Suma todos los elementos", "sum([1, 2, 3, 4]) # 10"],
-    ["round()", "Redondea un número", "round(3.14159, 2) # 3.14"]
-  ]}
-/>
+ Esto mostrará todos los métodos disponibles para los objetos de tipo cadena (str), como <code>.upper()</code>, <code>.lower()</code>, <code>.split()</code>, etc.
+<Code 
+code="
+print(dir(str))
+"
+lang="py" 
+title="dir.py" 
+mark="highlights"
+frame='auto' />
+Resultado: 
+<Code 
+code="
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__',
+ '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+ '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__',
+ '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__',
+ '__ne__', '__new__', '__reduce__', '__repr__', '__rmod__', '__rmul__',
+ '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
+ 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith',
+ 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isascii',
+ 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric',
+ 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower',
+ 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition',
+ 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase',
+ 'title', 'translate', 'upper', 'zfill']
 
+"
+lang="bash" 
+title="dir.py" 
+mark="highlights"
+frame='terminal' />
+
+<Aside type='note'>
+
+Sin argumentos:
+
+    ```python
+      print(dir())
+    ```
+Muestra todas las variables y funciones definidas en el entorno actual.
+</Aside>
+
+### <code>help()</code>
+
+Uso típico: Durante la exploración o aprendizaje de una función o método. Muy útil en entornos interactivos como la terminal o Jupyter Notebook.
+
+<Code 
+code="
+help(str.upper)
+"
+lang="py" 
+title="help.py" 
+mark="highlights"
+frame='auto' />
+Resultado: 
+<Code 
+code="
+Help on method_descriptor:
+
+upper(self, /)
+    Return a copy of the string converted to uppercase.
+"
+lang="bash" 
+title="help.py" 
+mark="highlights"
+frame='terminal' />
