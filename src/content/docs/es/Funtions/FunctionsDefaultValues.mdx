@@ -1,0 +1,84 @@
+---
+title: Funciones con valores por defecto
+description: Guía para  Funciones con valores por defecto
+sidebar:
+  order: 3
+---
+
+import { Code } from "@astrojs/starlight/components"
+
+Las funciones con valores por defecto, o argumentos predeterminados, son un mecanismo que permite a una función recibir parámetros con valores predeterminados si no se proporciona un argumento al llamarla. Esto facilita la escritura de funciones más flexibles y versátiles. 
+
+## Sintaxis
+En la definición de la función, se asigna un valor a cada parámetro que puede tener un valor predeterminado. 
+
+## Llamada
+Al llamar a la función, se pueden omitir los argumentos correspondientes a los parámetros con valores predeterminados, y la función utilizará estos valores en su lugar. 
+
+## Implementación
+
+En esta sección exploraremos cómo construir funciones en Python de manera flexible y reutilizable. Veremos distintas formas de definir y usar parámetros para adaptarnos a diferentes necesidades, como los valores por defecto o los argumentos opcionales.
+
+### Parametro opcional
+
+Podemos hacer que un parámetro sea opcional, lo cual ayuda a flexibilizar el uso de la función para distintos escenarios.
+
+<Code 
+code="
+def saludo(nombre, apellido=None):
+&nbsp;&nbsp;&nbsp;&nbsp;if apellido:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f'Hola, {nombre} {apellido}')
+&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f'Hola, {nombre}')
+
+nombre = 'Py'
+apellido = 'Docs'
+saludo(nombre)    
+saludo(nombre, apellido)
+"
+lang="py" 
+title="saludar.py" 
+mark="highlights"
+frame='auto' />
+
+Resultado: 
+
+<Code 
+code="
+Hola, Py
+Hola, PyDocs
+"
+title="saludar.py" 
+mark="highlights"
+frame='terminal' />
+
+### Parametro por defecto
+
+Si el usuario no proporciona el segundo argumento (exponente), la función asume por defecto que se desea elevar al cuadrado (exponente = 2). Esto permite usar la función de forma más flexible, sin necesidad de siempre escribir ambos argumentos.
+
+<Code
+code="
+def potencia(base, exponente=2):
+print(f'{base} elevado a {exponente} es {base ** exponente}')
+
+potencia(5) # Usa el valor por defecto 2
+potencia(5, 3) # Usa el valor proporcionado
+"
+lang="py"
+title="potencia.py"
+mark="highlights"
+frame="auto"
+/>
+
+Resultado:
+
+<Code code=" 5 elevado a 2 es 25 5 elevado a 3 es 125 " title="potencia.py" mark="highlights" frame="terminal" />
+
+## Beneficios
+
+- **Flexibilidad**: Permite llamar a la función de diferentes maneras, según la necesidad. 
+
+- **Simplificación**: Evita la necesidad de pasar argumentos innecesarios en todos los casos. 
+
+- **Mayor legibilidad**: Facilita la comprensión del código al mostrar explícitamente los valores predeterminados. 
+
