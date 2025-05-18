@@ -4,60 +4,70 @@ description: Guía para Definición y uso
 sidebar:
   order: 1
 ---
-import PyTable from '../../../../components/PyTable.astro';
+import PyTable from '@components/PyTable.astro';
+import { Code } from "@astrojs/starlight/components"
 
-# Funciones básicas de Python
+En Python, una función es un bloque de código reutilizable que realiza una tarea específica. Se define usando la palabra clave def, seguido del nombre de la función, parámetros (opcionales) y el bloque de código a ejecutar. Las funciones pueden recibir datos de entrada (argumentos) y devolver datos de salida (valores). 
 
-Python ofrece una variedad de funciones integradas que facilitan las tareas de programación cotidianas. Estas funciones están disponibles sin necesidad de importar módulos adicionales.
+## ¿Por qué usar funciones?
+- Organización del código: Las funciones dividen el código en bloques más pequeños y manejables, haciéndolo más legible y fácil de entender. 
 
-## Tabla de funciones comunes
+- Reutilización: Permiten reutilizar el mismo código en diferentes partes del programa sin tener que reescribirlo. 
 
-A continuación se presenta una tabla con algunas de las funciones más utilizadas en Python:
+- Modularidad: Facilita la creación de programas complejos al permitir la construcción de bloques de código independientes que se pueden combinar. 
 
-<PyTable 
-  headers={["Función", "Descripción", "Ejemplo"]}
-  rows={[
-    ["print()", "Muestra texto en la consola", "print('Hola mundo')"],
-    ["len()", "Devuelve la longitud de un objeto", "len('Python') # 6"],
-    ["range()", "Genera una secuencia de números", "for i in range(3): print(i)"],
-    ["input()", "Lee entrada del usuario", "name = input('Tu nombre: ')"],
-    ["type()", "Devuelve el tipo de un objeto", "type(42) # <class 'int'>"],
-    ["int()", "Convierte a entero", "int('42') # 42"],
-    ["str()", "Convierte a cadena de texto", "str(42) # '42'"],
-    ["list()", "Convierte a lista", "list('Python') # ['P','y','t','h','o','n']"]
-  ]}
-/>
+- Facilita la depuración: Las funciones ayudan a aislar problemas y a encontrar errores de forma más eficiente. 
 
-## Uso de las funciones
+## Definir funciones
 
-Las funciones integradas son parte del núcleo de Python y pueden ser llamadas directamente sin necesidad de importar módulos o bibliotecas adicionales.
+Para definir una función en Python, se utiliza la siguiente sintaxis:
 
-```python
-# Ejemplo de uso de varias funciones básicas
-nombre = input("¿Cómo te llamas? ")
-print(f"Hola, {nombre}!")
+<Code 
+code="
+def nombre_de_la_funcion(argumentos_opcionales):
+&nbsp;&nbsp;&nbsp;&nbsp;# Bloque de código a ejecutar
+&nbsp;&nbsp;&nbsp;&nbsp;# ...
+&nbsp;&nbsp;&nbsp;&nbsp;return valor_de_retorno (opcional)
 
-mi_lista = list(range(1, 6))
-print(f"Lista generada: {mi_lista}")
-print(f"Longitud de la lista: {len(mi_lista)}")
-```
+"
+lang="py" 
+title="funcion.py" 
+mark="highlights"
+frame='auto' />
 
-<div class="tip">
-  <strong>Consejo:</strong> Para obtener ayuda sobre cualquier función integrada, usa la función <code>help()</code>.
-  Por ejemplo: <code>help(print)</code> mostrará la documentación de la función print.
-</div>
 
-## Otras funciones útiles
 
-Python tiene muchas más funciones integradas que pueden ser útiles en diferentes contextos:
+- <code>def</code> : Palabra clave que indica que se está definiendo una función.
 
-<PyTable 
-  headers={["Función", "Descripción", "Ejemplo"]}
-  rows={[
-    ["max()", "Encuentra el valor máximo", "max(5, 10, 15) # 15"],
-    ["min()", "Encuentra el valor mínimo", "min([5, 10, 15]) # 5"],
-    ["sum()", "Suma todos los elementos", "sum([1, 2, 3, 4]) # 10"],
-    ["round()", "Redondea un número", "round(3.14159, 2) # 3.14"]
-  ]}
-/>
+- <code>nombre_de_la_funcion</code> : Nombre que se le da a la función para poder llamarla posteriormente.
+
+- <code>argumentos_opcionales</code> : Parámetros que la función recibe como entrada. Pueden ser cero, uno o varios.
+
+- <code>#Bloque de código a ejecutar</code> : El código que se ejecutará cuando se llame la función. <code>return</code>: Opcional. La instrucción <code>return</code> permite a la función devolver un valor a la parte del programa que la llamó. Si no se incluye <code>return</code>, la función devuelve None.
+
+## Ejemplo
+
+<Code 
+code="
+def saludo():
+&nbsp;&nbsp;&nbsp;&nbsp;# Bloque de código a ejecutar
+&nbsp;&nbsp;&nbsp;&nbsp;saludar = 'Hola PyDocs' 
+&nbsp;&nbsp;&nbsp;&nbsp;return saludar 
+
+# Lla mar funcion
+saludo()
+"
+lang="py" 
+title="saludo.py" 
+mark="highlights"
+frame='auto' />
+
+Resultado: 
+<Code 
+code="
+Hola PyDocs
+"
+title="saludo.py" 
+mark="highlights"
+frame='terminal' />
 
