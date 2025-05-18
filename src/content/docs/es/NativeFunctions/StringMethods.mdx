@@ -5,6 +5,7 @@ sidebar:
   order: 5
 ---
 import PyTable from '@components/PyTable.astro';
+import { Code } from "@astrojs/starlight/components"
 
 Los métodos de cadenas (str) permiten manipular y analizar textos de manera eficiente. Son esenciales en tareas como el procesamiento de archivos, entradas de usuario, generación de reportes, y en general, cualquier sistema que trabaje con datos textuales. Gracias a su simplicidad y expresividad, estos métodos son una herramienta clave en la limpieza, transformación y búsqueda de información textual.
 
@@ -25,3 +26,27 @@ Los métodos de cadenas (str) permiten manipular y analizar textos de manera efi
   
   ]}
 />
+
+A continuacion te explicare con mas detalle el funcionamiento de estas funciones:
+
+### <code>.lower()</code>
+
+Uso típico: Convertir una cadena a minúsculas.
+
+<Code 
+code="
+texto = 'Hola Mundo'
+print(texto.lower())
+"
+lang="py" 
+title="lower.py" 
+mark="highlights"
+frame='auto' />
+Resultado: 
+<Code 
+code="
+hola mundo
+"
+title="lower.py" 
+mark="highlights"
+frame='terminal' />
