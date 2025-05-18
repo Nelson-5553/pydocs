@@ -1,0 +1,23 @@
+---
+title: Funciones Funcionales
+description: Guía para Funciones Funcionales
+sidebar:
+  order: 6
+---
+import PyTable from '@components/PyTable.astro';
+
+Estas funciones permiten aplicar operaciones de forma declarativa y funcional sobre colecciones de datos, como listas o tuplas. Son especialmente útiles cuando se requiere aplicar una función a muchos elementos (map), filtrar según condiciones (filter), combinar datos (zip) o generar secuencias numéricas (range). Su uso favorece un estilo de programación más limpio, compacto y expresivo.
+
+<PyTable 
+  headers={["Función", "Descripción"]}
+  rows={[
+    ["map()", "Aplica una función a cada elemento de un iterable y devuelve un nuevo iterable."],
+    ["filter()", "Filtra los elementos de un iterable según una condición dada."],
+    ["zip()", "Une varios iterables en pares ordenados, como tuplas."],
+    ["range()", "Genera una secuencia de números, generalmente usada en bucles."],
+    ["all()", "Retorna True si todos los elementos de un iterable son verdaderos."],
+    ["any()", "Retorna True si al menos un elemento es verdadero."],
+
+  
+  ]}
+/>
