@@ -1,0 +1,73 @@
+---
+title: Tuplas
+description: Guía para Tuplas
+sidebar:
+  order: 2
+---
+
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+
+En Python, una tupla es una colección ordenada e inmutable de elementos. Las tuplas se representan entre paréntesis y separados por comas. Son útiles para almacenar datos que no deben cambiar después de su creación. 
+
+Las tuplas son:
+
+- **inmutabilidad**: Una vez creada una tupla, no se pueden agregar, eliminar o modificar elementos. 
+
+- **Ordenadas**: Los elementos en una tupla tienen un orden específico, y se puede acceder a ellos mediante su índice. 
+
+- **Heterogénea**: Las tuplas pueden contener elementos de diferentes tipos de datos (enteros, cadenas, booleanos, etc.). 
+
+## Crear una tupla
+
+Hagamos una tupla de frutas
+
+<Code 
+code="
+# Lista de frutas
+frutas = ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
+print(frutas)
+"
+lang="py" 
+title="tupla.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+## Indexacion
+
+Para acceder un elemento en particular de la tupla acabo una de Indexacion de la siguiente forma
+
+<Code 
+code="
+# Lista de frutas
+frutas = ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
+print(frutas[1])
+"
+lang="py" 
+title="tupla.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+banana
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+<Aside type="note">
+En Python, el primer índice **siempre es 0**. Esto se debe a que, en muchos lenguajes de programación, la numeración de los elementos en una lista o arreglo comienza desde el cero, no desde el uno.
+</Aside>
