@@ -1,0 +1,48 @@
+---
+---
+<style>
+  .desarrollo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+    border: 2px dashed var(--sl-color-accent-high);
+    border-radius: 12px;
+    background: var(--custom-bg-gradient);
+    color: var(--sl-color-accent);
+    font-family: system-ui, sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, color 0.3s ease;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  .desarrollo-container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #000; /* por defecto negro */
+  }
+
+  :root[data-theme='dark'] .desarrollo-container h2 {
+    color: #fff;
+  }
+
+  .desarrollo-container p {
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<div class="desarrollo-container">
+  <h2>🚧 Contenido en desarrollo</h2>
+  <p>Estamos trabajando en esta sección para traerte algo genial. ¡Gracias por tu paciencia!</p>
+</div>
