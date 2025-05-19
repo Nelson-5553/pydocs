@@ -1,0 +1,229 @@
+---
+title: Conjuntos
+description: Guía para Conjuntos
+sidebar:
+  order: 4
+---
+
+import PyTable from "@components/PyTable.astro"
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+
+En Python, un conjunto (set) es una estructura de datos que almacena una colección desordenada de elementos únicos. Los elementos de un conjunto deben ser inmutables y hashables, y no pueden repetirse. Los conjuntos son útiles para realizar operaciones matemáticas sobre conjuntos, como unión, intersección y diferencia, y para eliminar duplicados de una lista. 
+
+## Crear un conjunto
+
+Hagamos varios conjuntos de frutas
+
+<Code 
+code="
+# Lista de frutas
+conjunto1 = {'manzana', 'banana', 'pera'}
+conjunto2 = {'pera', 'uva', 'mango'}
+print(conjunto1)
+print(conjunto2)
+"
+lang="py" 
+title="set.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+{'manzana', 'banana', 'pera'}
+{'pera', 'uva', 'mango'}
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+## Añadir elementos
+
+Para eliminar un elemento a una lista debes usar la funcion <code>.add()</code>
+<Code 
+code="
+# Lista de frutas
+conjunto1 = {'manzana', 'banana', 'pera'}
+conjunto2 = {'pera', 'uva', 'mango'}
+
+# Añadir elementos a un conjunto
+
+conjunto1.add('fresa') 
+conjunto2.add('guayaba') 
+
+print(conjunto1)
+print(conjunto2)
+"
+lang="py" 
+title="set.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+{'manzana', 'banana', 'pera', 'fresa'}
+{'pera', 'uva', 'mango', 'guayaba'}
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+## Eliminar un elemento
+
+Para eliminar un elemento a una lista debes usar la funcion <code>.remove()</code>
+<Code 
+code="
+# Lista de frutas
+conjunto1 = {'manzana', 'banana', 'pera'}
+conjunto2 = {'pera', 'uva', 'mango'}
+
+# Añadir elementos a un conjunto
+
+conjunto1.remove('pera') 
+conjunto2.remove('mango') 
+
+print(conjunto1)
+print(conjunto2)
+"
+lang="py" 
+title="set.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+{'manzana', 'banana'}
+{'pera', 'uva'}
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+<Aside type="note">
+
+Puedes utilizar <code>discard()</code> para no generar error si no existe
+
+</Aside>
+
+
+## Uniones de conjuntos
+
+Puedes unir los elementos de un conjunto usando la funcion <code>.union()</code>
+
+<Code 
+code="
+# Lista de frutas
+conjunto1 = {'manzana', 'banana', 'pera'}
+conjunto2 = {'pera', 'uva', 'mango'}
+
+# Añadir elementos a un conjunto
+
+uniones = conjunto1.union(conjunto2) 
+
+print(uniones)
+
+"
+lang="py" 
+title="set.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+{'manzana', 'banana','pera', 'uva', 'mango'}
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+
+## Interseccion de conjuntos
+
+Puedes extraer los elementos que se repiten entre los conjuntos usando la funcion <code>.intersection()</code>
+
+<Code 
+code="
+# Lista de frutas
+conjunto1 = {'manzana', 'banana', 'pera'}
+conjunto2 = {'pera', 'uva', 'mango'}
+
+# Añadir elementos a un conjunto
+
+interseccion = conjunto1.intersection(conjunto2) 
+
+print(interseccion)
+
+"
+lang="py" 
+title="set.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+{'pera'}
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+## Diferencias de conjuntos
+
+Puedes obtener los elementos que están en un conjunto pero no en otro utilizando la función <code>.difference()</code>.
+Esto es útil para identificar qué valores son exclusivos de un conjunto.
+
+<Code 
+code="
+# Lista de frutas
+conjunto1 = {'manzana', 'banana', 'pera'}
+conjunto2 = {'pera', 'uva', 'mango'}
+
+# Añadir elementos a un conjunto
+
+diferencia = conjunto1.difference(conjunto2) 
+
+print(diferencia)
+
+"
+lang="py" 
+title="set.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+{'manzana', 'banana'}
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+## Funciones de conjuntos
+
+<PyTable 
+  headers={["Función", "Descripción"]}
+  rows={[
+    ["copy()", "Crea una copia del conjunto. "],
+    ["clear()", "Elimina todos los elementos del conjunto."],
+    ["isdisjoint()", "Verifica si dos conjuntos son disjuntos (no tienen elementos en común)."],
+    ["issuperset()", "Verifica si un conjunto es un subconjunto de otro. "],
+    ["symmetric_difference()", "Devuelve la diferencia simétrica entre dos conjuntos. "],
+    ["update()", "Modifica el conjunto original agregando los elementos de otro conjunto."],
+    ["intersection_update()", "Modifica el conjunto original para que contenga solo los elementos en común con otro conjunto. "],
+    ["difference_update()", "Modifica el conjunto original para que contenga solo los elementos que no están en otro conjunto. "],
+    ["symmetric_difference_update()", "Modifica el conjunto original para que contenga solo los elementos que no están en ambos conjuntos. "],
+    // más filas...
+  ]}
+/>
