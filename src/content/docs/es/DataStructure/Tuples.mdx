@@ -45,7 +45,7 @@ frame='terminal' />
 
 ## Indexacion
 
-Para acceder un elemento en particular de la tupla acabo una de Indexacion de la siguiente forma
+Para acceder un elemento en particular de la tupla se lleva acabo una indexacion de la siguiente forma:
 
 <Code 
 code="
@@ -67,3 +67,48 @@ banana
 title="terminal" 
 mark="highlights"
 frame='terminal' />
+
+## Segmentacion
+
+En Python, slicing (o segmentación) en una tupla es una técnica para obtener una sub-tupla extrayendo un rango de elementos, sin modificar la tupla original.
+
+```python
+tupla[inicio:fin:paso]
+
+```
+- **inicio**: índice desde donde se comienza (incluido).
+
+- **fin**: índice donde se termina (no incluido).
+
+- **paso**: (opcional) intervalo entre elementos.
+
+<Code 
+code="
+# Lista de frutas
+frutas = ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
+
+print(frutas[1:4])     # ('banana', 'naranja', 'pera')
+print(frutas[:3])      # ('manzana', 'banana', 'naranja')
+print(frutas[::2])     # ('manzana', 'naranja', 'uva')
+print(frutas[::-1])    # ('mango', 'uva', 'pera', 'naranja', 'banana', 'manzana')
+"
+lang="py" 
+title="tupla.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+('banana', 'naranja', 'pera')
+('manzana', 'banana', 'naranja')
+('manzana', 'naranja', 'uva')
+('mango', 'uva', 'pera', 'naranja', 'banana', 'manzana') 
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+
+
