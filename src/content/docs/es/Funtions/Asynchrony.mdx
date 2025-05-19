@@ -1,0 +1,85 @@
+---
+title: Asincronia
+description: Guía para Asincronia
+sidebar:
+  order: 5
+---
+
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+import PyTable from "@components/Pytable.astro"
+
+La asincronía en Python es un modelo de programación que permite ejecutar tareas de manera concurrente, sin bloquear el flujo principal del programa mientras espera que se completen operaciones lentas como leer archivos, acceder a bases de datos o hacer peticiones de red.
+
+## ¿Por qué usar asincronía?
+
+Cuando ejecutas código de forma secuencial (sincrónica), si una función tarda mucho (por ejemplo, en recibir datos de internet), el resto del programa se detiene hasta que termine. Con la asincronía, puedes decirle a Python:
+
+## ¿Cómo se implementa?
+
+Python introduce la asincronía usando dos palabras clave:
+
+- <code>asyncio</code> : importas asyncio para acceder a funciones de asincronía
+
+- <code>async</code> : para definir una función asincrónica
+
+- <code>await</code> : para esperar el resultado de una operación asincrónica
+
+
+<Code 
+code="
+import asyncio
+
+async def saludar():
+    print('Hola')
+    await asyncio.sleep(1) # Espera un segundo
+    print('Mundo')
+
+# Ejecutar la función asincrónica
+asyncio.run(saludar())
+"
+lang="py" 
+title="saludo.py" 
+mark="highlights"
+frame='auto' />
+
+Salida: 
+<Code 
+code="
+Hola
+(espera 1 segundo)
+Mundo
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+<Aside type="tip">
+
+La Asincronia es una herramienta que debes usar cuando:
+
+- Llamadas a APIs o servicios web
+
+- Leer o escribir archivos grandes
+
+- Aplicaciones web (como con FastAPI o aiohttp)
+
+- Bots o apps que manejan muchas conexiones al mismo tiempo
+
+</Aside>
+
+## Funciones comunes en asyncio
+
+<PyTable 
+  headers={["Función", "Descripción"]}
+  rows={[
+    ["asyncio.run()", "Ejecuta una corutina principal desde código síncrono."],
+    ["asyncio.sleep()", "Pausa una corutina sin bloquear el hilo principal."],
+    ["asyncio.create_task()", "	Inicia una tarea asincrónica en segundo plano, sin esperar su resultado."],
+    ["asyncio.wait()", "	Similar a gather(), pero con más control sobre el tiempo de espera y errores."],
+    ["asyncio.as_completed()", "Ejecuta tareas y permite manejar los resultados a medida que se completan."],
+    ["asyncio.TimeoutError", "Excepción para manejar límites de tiempo."],
+    ["asyncio.gather()", "Ejecuta varias funciones asincrónicas al mismo tiempo (concurrentemente) y espera a que todas terminen."],
+    // más filas...
+  ]}
+/>
