@@ -1,0 +1,51 @@
+---
+title: Introducción
+description: Guía para Archivos en python
+sidebar:
+  order: 1
+---
+
+import { Code } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+Python proporciona herramientas simples y potentes para trabajar con archivos. Las operaciones más comunes incluyen abrir, leer, escribir y cerrar archivos, y se realizan principalmente con las funciones `open()` y `with`.
+
+## `open()`
+
+<Code 
+code="
+open(ruta_archivo, modo)
+" 
+lang="py" 
+title="open.py" 
+mark="highlights" 
+frame="auto" />
+
+- ruta_archivo: la ubicación del archivo (relativa o absoluta).
+
+- modo: el modo de apertura (por ejemplo, `'r'` para leer, `'w'` para escribir).
+
+
+## `with`
+
+Se recomienda usar open() junto con la declaración with, lo que garantiza que el archivo se cierre automáticamente al finalizar el bloque, incluso si ocurre un error:
+
+## `open()`
+
+<Code 
+code="
+with open('archivo.txt', 'r') as file:
+&nbsp;&nbsp;&nbsp;&nbsp;contenido = file.read()
+" 
+lang="py" 
+title="open.py" 
+mark="highlights" 
+frame="auto" />
+
+- `with` abre el archivo y lo asigna a la variable `file`.
+
+- Al salir del bloque `with`, el archivo se cierra automáticamente.
+
+<Aside type="note">
+Este enfoque es más limpio, seguro y evita errores como archivos que permanecen abiertos.
+</Aside>
