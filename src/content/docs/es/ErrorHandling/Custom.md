@@ -1,5 +1,5 @@
 ---
-title: Excepciones
+title: Excepciones personalizadas
 description: Guía para Excepciones
 sidebar:
   order: 3

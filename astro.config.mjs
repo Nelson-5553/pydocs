@@ -76,7 +76,7 @@ export default defineConfig({
 					autogenerate: { directory: 'FileManagement' },
 				},
 				{
-					label: 'Excepciones',
+					label: 'Manejo de Errores',
 					autogenerate: { directory: 'ErrorHandling' },
 				},
 				{
