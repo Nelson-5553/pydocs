@@ -44,7 +44,7 @@ export default defineConfig({
 				},
 			},
 			
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Nelson-5553' }],
 			sidebar: [
 				{
 					label: 'Introducción',
