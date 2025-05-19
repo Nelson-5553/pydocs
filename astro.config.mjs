@@ -54,6 +54,10 @@ export default defineConfig({
 					label: 'Sintaxis Básica',
 					autogenerate: { directory: 'SyntaxBasic' },
 				},
+				{
+					label: 'Estructuras de Datos',
+					autogenerate: { directory: 'DataStructure' },
+				},
 
 				{
 					label: 'Estructuras de Control',
@@ -68,24 +72,20 @@ export default defineConfig({
 					autogenerate: { directory: 'NativeFunctions' },
 				},
 				{
-					label: 'Estructuras de Datos',
-					autogenerate: { directory: 'DataStructure' },
-				},
-				{
-					label: 'Módulos y Paquetes',
-					autogenerate: { directory: 'ModulesPackages' },
+					label: 'Manejo de Archivos',
+					autogenerate: { directory: 'FileManagement' },
 				},
 				{
 					label: 'Excepciones',
 					autogenerate: { directory: 'ErrorHandling' },
 				},
 				{
-					label: 'Progrmacion Orientada a Objetos',
+					label: 'Programacion Orientada a Objetos',
 					autogenerate: { directory: 'POO' },
 				},
 				{
-					label: 'Manejo de Archivos',
-					autogenerate: { directory: 'FileManagement' },
+					label: 'Módulos y Paquetes',
+					autogenerate: { directory: 'ModulesPackages' },
 				},
 				{
 					label: 'Manejo de Librerías Estándar',
