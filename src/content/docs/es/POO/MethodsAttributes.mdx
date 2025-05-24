@@ -4,6 +4,125 @@ description: Guía para Métodos y atributos
 sidebar:
   order: 2
 ---
-import Aviso from '@components/Aviso.astro';
 
-<Aviso />
+import { Code } from "@astrojs/starlight/components"
+
+Ahora que ya sabes qué es una clase y cómo crear objetos, es momento de profundizar en dos conceptos clave: **atributos** y **métodos**. Estos son los componentes fundamentales que le dan funcionalidad y características a tus objetos.
+
+---
+
+## ¿Qué son los atributos?
+
+Los **atributos** son variables que almacenan información sobre el estado de un objeto. Cada objeto puede tener valores diferentes para sus atributos.
+
+<Code
+code="
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+p1 = Persona('Ana', 30)
+print(p1.nombre)  # Ana
+print(p1.edad)    # 30
+"
+lang="py"
+title="Atributos de instancia"
+frame="auto"
+/>
+
+En este ejemplo, `nombre` y `edad` son atributos de cada objeto `Persona`.
+
+---
+
+## ¿Qué son los métodos?
+
+Los **métodos** son funciones definidas dentro de una clase que describen los comportamientos de los objetos. Siempre reciben al menos un parámetro: `self`, que representa al propio objeto.
+
+<Code
+code="
+class Persona:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def saludar(self):
+        print(f'Hola, soy {self.nombre}!')
+
+p1 = Persona('Ana')
+p1.saludar()  # Hola, soy Ana!
+"
+lang="py"
+title="Método de instancia"
+frame="auto"
+/>
+
+---
+
+## Tipos de atributos
+
+- **Atributos de instancia:** Son propios de cada objeto (como `self.nombre`).
+- **Atributos de clase:** Son compartidos por todas las instancias de la clase.
+
+<Code
+code="
+class Mascota:
+    especie = 'Perro'  # Atributo de clase
+
+    def __init__(self, nombre):
+        self.nombre = nombre  # Atributo de instancia
+
+m1 = Mascota('Rex')
+m2 = Mascota('Luna')
+print(m1.especie)  # Perro
+print(m2.especie)  # Perro
+"
+lang="py"
+title="Atributos de clase e instancia"
+frame="auto"
+/>
+
+---
+
+## Tipos de métodos
+
+- **Métodos de instancia:** Usan `self` y operan sobre el objeto.
+- **Métodos de clase:** Usan `@classmethod` y reciben `cls` como primer parámetro.
+- **Métodos estáticos:** Usan `@staticmethod` y no reciben ni `self` ni `cls`.
+
+<Code
+code="
+class Calculadora:
+    @staticmethod
+    def sumar(a, b):
+        return a + b
+
+    @classmethod
+    def descripcion(cls):
+        return 'Calculadora simple'
+
+print(Calculadora.sumar(3, 4))         # 7
+print(Calculadora.descripcion())        # Calculadora simple
+"
+lang="py"
+title="Métodos estáticos y de clase"
+frame="auto"
+/>
+
+---
+
+## Buenas prácticas
+
+- Usa nombres descriptivos para atributos y métodos.
+- Los atributos privados (solo para uso interno) se nombran con un guion bajo: `_atributo`.
+- Documenta tus métodos usando docstrings.
+
+---
+
+## Resumen
+
+- **Atributos**: almacenan información del objeto.
+- **Métodos**: definen comportamientos del objeto.
+- Existen atributos y métodos de instancia, de clase y estáticos.
+- Dominar estos conceptos te permite crear clases más útiles y flexibles.
+
+¿Listo para seguir? ¡Intenta crear una clase con atributos y métodos propios!
