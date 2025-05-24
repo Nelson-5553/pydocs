@@ -4,6 +4,91 @@ description:  Encapsulamiento y polimorfismo
 sidebar:
   order: 4
 ---
-import Aviso from '@components/Aviso.astro';
+import { Code } from "@astrojs/starlight/components"
 
-<Aviso />
+En esta sección aprenderás dos conceptos clave de la programación orientada a objetos: **encapsulamiento** y **polimorfismo**. Ambos te ayudan a escribir código más seguro, flexible y reutilizable.
+
+---
+
+## Encapsulamiento
+
+El **encapsulamiento** consiste en ocultar los detalles internos de un objeto y exponer solo lo necesario. Así, se protege el estado interno del objeto y se controla cómo se accede o modifica.
+
+### ¿Cómo se implementa en Python?
+
+- Los atributos y métodos “privados” se nombran con un guion bajo (`_atributo` o `__atributo`).
+- Se usan métodos llamados **getters** y **setters** para acceder o modificar atributos si es necesario.
+
+<Code
+code="
+class CuentaBancaria:
+    def __init__(self, saldo):
+        self.__saldo = saldo  # atributo privado
+
+    def depositar(self, cantidad):
+        if cantidad > 0:
+            self.__saldo += cantidad
+
+    def obtener_saldo(self):
+        return self.__saldo
+
+cuenta = CuentaBancaria(100)
+cuenta.depositar(50)
+print(cuenta.obtener_saldo())  # 150
+"
+lang="py"
+title="Encapsulamiento con atributos privados"
+frame="auto"
+/>
+
+En este ejemplo, el saldo solo puede modificarse mediante los métodos definidos, no directamente desde fuera de la clase.
+
+---
+
+## Polimorfismo
+
+El **polimorfismo** permite que diferentes clases compartan el mismo método (nombre), pero cada una tenga su propia implementación. Así, puedes usar objetos de distintas clases de manera intercambiable si cumplen con la misma interfaz.
+
+### Ejemplo de polimorfismo
+
+<Code
+code="
+class Animal:
+    def hablar(self):
+        print('Hace un sonido')
+
+class Perro(Animal):
+    def hablar(self):
+        print('¡Guau!')
+
+class Gato(Animal):
+    def hablar(self):
+        print('¡Miau!')
+
+animales = [Perro(), Gato()]
+
+for animal in animales:
+    animal.hablar()
+"
+lang="py"
+title="Polimorfismo en acción"
+frame="auto"
+/>
+
+**Salida:**
+```
+¡Guau!
+¡Miau!
+```
+
+Cada objeto responde de manera diferente al mismo método `hablar`, dependiendo de su clase.
+
+---
+
+## Resumen
+
+- **Encapsulamiento:** protege los datos internos y controla el acceso a ellos.
+- **Polimorfismo:** permite usar diferentes objetos de manera uniforme si comparten métodos con el mismo nombre.
+- Ambos conceptos hacen tu código más seguro, flexible y fácil de mantener.
+
+¿Listo para practicar? Intenta crear una clase con atributos privados y otra jerarquía de clases que usen polimorfismo.
