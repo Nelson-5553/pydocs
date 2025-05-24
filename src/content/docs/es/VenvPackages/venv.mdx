@@ -6,4 +6,87 @@ sidebar:
 ---
 import Aviso from '@components/Aviso.astro';
 
-<Aviso />
+# Entornos virtuales (venv) en Python
+
+Un **entorno virtual** es una herramienta que te permite crear un espacio aislado para tus proyectos de Python. Así, puedes instalar dependencias específicas para cada proyecto sin afectar el resto de tu sistema o tus otros proyectos.
+
+---
+
+## ¿Por qué usar entornos virtuales?
+
+- **Aislamiento:** Cada proyecto puede tener sus propias versiones de paquetes, evitando conflictos.
+- **Organización:** Mantén tus dependencias separadas y tu sistema limpio.
+- **Reproducibilidad:** Facilita compartir tu proyecto con otros, asegurando que todos usen las mismas versiones de librerías.
+
+---
+
+## ¿Cómo crear un entorno virtual?
+
+1. Abre una terminal en la carpeta de tu proyecto.
+2. Ejecuta el siguiente comando:
+
+    ```bash
+    python -m venv venv
+    ```
+
+    Esto creará una carpeta llamada `venv` con todo lo necesario para tu entorno virtual.
+
+---
+
+## ¿Cómo activar el entorno virtual?
+
+- **En Windows:**
+
+    ```bash
+    .\venv\Scripts\activate
+    ```
+
+- **En macOS/Linux:**
+
+    ```bash
+    source venv/bin/activate
+    ```
+
+    Cuando el entorno está activo, verás el nombre del entorno al inicio de la línea de comandos.
+
+---
+
+## ¿Cómo instalar paquetes en el entorno?
+
+Con el entorno activado, usa `pip` para instalar paquetes solo en ese entorno:
+
+```bash
+pip install nombre_paquete
+```
+
+---
+
+## ¿Cómo desactivar el entorno virtual?
+
+Cuando termines de trabajar, puedes salir del entorno con:
+
+```bash
+deactivate
+```
+
+---
+
+## Buenas prácticas
+
+- Usa un entorno virtual para cada proyecto.
+- Añade la carpeta `venv` a tu archivo `.gitignore` si usas control de versiones.
+- Guarda tus dependencias en un archivo `requirements.txt` con:
+
+    ```bash
+    pip freeze > requirements.txt
+    ```
+
+---
+
+## Resumen
+
+- Los entornos virtuales te ayudan a mantener tus proyectos organizados y libres de conflictos de dependencias.
+- Son fáciles de crear, activar y usar.
+- Son una herramienta esencial para cualquier desarrollador Python moderno.
+
+¿Listo para probar? Crea y activa tu primer entorno virtual en tu próximo proyecto.
