@@ -5,6 +5,7 @@
 PyDocs is a modern, open-source documentation site for learning Python from scratch to advanced topics.  
 It is built with [Astro](https://astro.build/) and [Starlight](https://starlight.astro.build/), and organized by key themes for easy navigation and contribution.
 
+![PyDocs](https://nelson-5553.vercel.app/img/Projectos/pydocs.png)
 ---
 
 ## 📚 Features
