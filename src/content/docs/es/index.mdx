@@ -1,6 +1,6 @@
 ---
 
-title: Bienvenido a PyDocs
+title: PyDocs
 description: Comienza a construir tu sitio de documentación con PyDocs.
 template: splash
 hero:
@@ -18,6 +18,9 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import Colaborators from '@components/Colaborators.astro';
+import Stats from '@components/Stats.astro';
+
 
 ## Bienvenido a PyDocs
 
@@ -38,4 +41,10 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
         PyDocs es de código abierto. Puedes contribuir, sugerir mejoras o personalizar la documentación para tus propios proyectos.
     </Card>
 </CardGrid>
+
+
+## Colaboradores
+
+<Colaborators/>
+<Stats/>
 

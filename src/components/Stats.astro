@@ -1,0 +1,85 @@
+---
+import { Card } from '@astrojs/starlight/components';
+---
+
+<style>
+  .stats-flex {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .stat-box {
+    flex: 1 1 0;
+    min-width: 120px;
+    max-width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100px;
+    background: var(--stat-bg, #fff);
+    border-radius: 12px;
+    transition: background 0.3s;
+  }
+  .stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    color: var(--stat-accent, #306998);
+    transition: color 0.3s;
+  }
+  .stat-label {
+    color: #666;
+    min-height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stat-link {
+    color: var(--stat-accent, #306998);
+    text-decoration: underline;
+    font-size: 0.97em;
+    display: block;
+    margin-top: 0.3em;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  /* Modo oscuro */
+  :root[data-theme="dark"] .stat-box {
+    background: #23232300;
+  }
+  :root[data-theme="dark"] .stat-number,
+  :root[data-theme="dark"] .stat-link {
+    color: #FFD43B;
+  }
+  /* Ajuste para alinear el primer elemento */
+  .stat-box.first {
+    margin-top: 1.1em;
+  }
+</style>
+
+<div style="margin-top: 2.5rem; max-width: full; margin-left: auto; margin-right: auto;">
+  <Card title="">
+    <div class="stats-flex">
+      <div class="stat-box first">
+        <div class="stat-number">2+</div>
+        <div class="stat-label">Colaboradores</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">100+</div>
+        <div class="stat-label">Commits</div>
+      </div>
+      <div class="stat-box" style="min-width:140px;max-width:180px;">
+        <div class="stat-number" style="font-size:1.1rem;">Open Source</div>
+        <div class="stat-label">
+          <a href="https://github.com/Nelson-5553/pydocs" target="_blank" class="stat-link">
+            ¡Colabora en GitHub!
+          </a>
+        </div>
+      </div>
+    </div>
+  </Card>
+</div>
