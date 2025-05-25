@@ -43,41 +43,41 @@ export default defineConfig({
 					label: 'Español',
 				},
 			},
-			
+
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Nelson-5553' }],
 			sidebar: [
 				{
 					label: 'Introducción',
-					autogenerate: { directory: 'Introduccion' },
+					autogenerate: { directory: 'introduction' },
 				},
 				{
 					label: 'Sintaxis Básica',
-					autogenerate: { directory: 'SyntaxBasic' },
+					autogenerate: { directory: 'syntax-basic' },
 				},
 				{
 					label: 'Estructuras de Datos',
-					autogenerate: { directory: 'DataStructure' },
+					autogenerate: { directory: 'data-structure' },
 				},
 
 				{
 					label: 'Estructuras de Control',
-					autogenerate: { directory: 'ControlStructures' },
+					autogenerate: { directory: 'control-structures' },
 				},
 				{
 					label: 'Funciones',
-					autogenerate: { directory: 'Funtions' },
+					autogenerate: { directory: 'functions' },
 				},
 				{
 					label: 'Funciones Nativas',
-					autogenerate: { directory: 'NativeFunctions' },
+					autogenerate: { directory: 'native-functions' },
 				},
 				{
 					label: 'Manejo de Archivos',
-					autogenerate: { directory: 'FileManagement' },
+					autogenerate: { directory: 'file-management' },
 				},
 				{
 					label: 'Manejo de Errores',
-					autogenerate: { directory: 'ErrorHandling' },
+					autogenerate: { directory: 'error-handling' },
 				},
 				{
 					label: 'Programacion Orientada a Objetos',
@@ -85,7 +85,7 @@ export default defineConfig({
 				},
 				{
 					label: 'Módulos y Paquetes',
-					autogenerate: { directory: 'ModulesPackages' },
+					autogenerate: { directory: 'modules-packages' },
 				},
 				// {
 				// 	label: 'Manejo de Librerías Estándar',
@@ -93,7 +93,7 @@ export default defineConfig({
 				// },
 				{
 					label: 'Entornos Virtuales y Gestión de Paquetes',
-					autogenerate: { directory: 'VenvPackages' },
+					autogenerate: { directory: 'venv-packages' },
 				},
 			],
 		}),

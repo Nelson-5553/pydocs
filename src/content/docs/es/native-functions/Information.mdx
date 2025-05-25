@@ -9,7 +9,7 @@ import { Aside } from "@astrojs/starlight/components"
 import PyTable from '@components/PyTable.astro';
 
 Estas funciones están diseñadas para inspeccionar y comprender los objetos en tiempo de ejecución. Son especialmente útiles durante el desarrollo, depuración y documentación del código. Permiten conocer el tipo de un objeto, su ubicación en memoria, o acceder a su ayuda integrada. Usarlas facilita el desarrollo más seguro y mantenible, especialmente en entornos dinámicos.
-<PyTable 
+<PyTable
   headers={["Función", "Descripción"]}
   rows={[
     ["type()", "Devuelve el tipo del objeto especificado."],
@@ -24,22 +24,22 @@ A continuacion te explicare con mas detalle el funcionamiento de estas funciones
 
  Uso típico: Para verificar si una variable es del tipo esperado antes de realizar operaciones con ella.
 
-<Code 
+<Code
 code="
 x = 42
 print(type(x))
 "
-lang="py" 
-title="type.py" 
+lang="py"
+title="type.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
+Salida:
+<Code
 code="
 <class 'int'>
 "
 
-title="type.py" 
+title="type.py"
 mark="highlights"
 frame='terminal' />
 
@@ -47,40 +47,40 @@ frame='terminal' />
 
 Uso típico: Para comprobar si dos variables apuntan al mismo objeto en memoria.
 
-<Code 
+<Code
 code="
 a = 10
 b = a
-print(id(a)) 
+print(id(a))
 print(id(b))  # Mismo ID que a, ya que ambos apuntan al mismo objeto
 "
-lang="py" 
-title="id.py" 
+lang="py"
+title="id.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
+Salida:
+<Code
 code="
 140710837832368 (valor de ejemplo)
 "
 
-title="id.py" 
+title="id.py"
 mark="highlights"
 frame='terminal' />
 
 ### `dir()`
 
  Esto mostrará todos los métodos disponibles para los objetos de tipo cadena (str), como `.upper()`, `.lower()`, `.split()`, etc.
-<Code 
+<Code
 code="
 print(dir(str))
 "
-lang="py" 
-title="dir.py" 
+lang="py"
+title="dir.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
+Salida:
+<Code
 code="
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__',
  '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
@@ -98,7 +98,7 @@ code="
 
 "
 
-title="dir.py" 
+title="dir.py"
 mark="highlights"
 frame='terminal' />
 
@@ -116,16 +116,16 @@ Muestra todas las variables y funciones definidas en el entorno actual.
 
 Uso típico: Durante la exploración o aprendizaje de una función o método. Muy útil en entornos interactivos como la terminal o Jupyter Notebook.
 
-<Code 
+<Code
 code="
 help(str.upper)
 "
-lang="py" 
-title="help.py" 
+lang="py"
+title="help.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
+Salida:
+<Code
 code="
 Help on method_descriptor:
 
@@ -133,6 +133,6 @@ upper(self, /)
     Return a copy of the string converted to uppercase.
 "
 
-title="help.py" 
+title="help.py"
 mark="highlights"
 frame='terminal' />

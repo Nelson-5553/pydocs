@@ -1,0 +1,119 @@
+---
+title: Instalacion
+description: Guía para Instalar
+sidebar:
+  order: 3
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+
+Python es un lenguaje de programación compatible con diversos sistemas operativos, incluyendo Linux, macOS e incluso Windows. Esta versatilidad lo convierte en una opción ideal para desarrolladores en distintas plataformas.
+
+A continuación, te mostraremos cómo es el proceso de instalación de Python en cada uno de estos sistemas operativos.
+
+## Windows
+<Steps>
+
+1. Ir al sitio oficial: https://www.python.org/downloads
+    <br/>
+    ![Imagen](https://ics.uci.edu/~pattis/common/handouts/pythoneclipsejava/images/python/pythondownloadpage.jpg)
+
+2. Descargar el instalador para Windows `(elige la versión recomendada).`
+
+3. Ejecutar el instalador:
+
+    - Marca “Add Python to PATH” antes de hacer clic en Install Now.
+    - Luego haz clic en Install Now.
+    <br/>
+
+4. Esperar a que termine la instalación y cierra el instalador.
+
+5. Verificar desde CMD o PowerShell:
+
+   ```bash
+   python --version
+    ```
+
+6. Instalacion Completada
+
+
+  
+</Steps>
+
+## MacOs
+
+<Steps>
+
+1. Abrir la Terminal (desde Spotlight: Cmd + Barra espaciadora, luego escribe Terminal).
+
+2. Instalar Python:
+
+   ```bash
+   brew install python
+    ```
+
+3. Verificar versión:
+
+   ```bash
+   python3 --version
+    ```
+
+4. Usar pip para instalar paquetes(Opcional):
+
+   ```bash
+   pip3 install nombre-del-paquete
+
+    ```
+5. Instalacion Completada
+
+  
+</Steps>
+
+<Aside type="note">
+Esta documentación asume que ya tienes instalado Homebrew en tu sistema.  
+Si aún no lo tienes, puedes seguir las instrucciones oficiales aquí: [https://brew.sh](https://brew.sh)
+</Aside>
+
+
+## Linux
+
+
+<Steps>
+
+1. Abrir la terminal (Ctrl + Alt + T).
+
+2. Actualizar el sistema:
+
+   ```bash
+   sudo apt update && sudo apt upgrade
+    ```
+
+3. Instalar dependencias necesarias:
+
+   ```bash
+   sudo apt install software-properties-common -y
+    ```
+
+4. Instalar Python (por ejemplo, 3.11):.
+
+   ```bash
+   sudo apt install python3.11 -y
+
+    ```
+
+5. Verificar instalación:
+
+   ```bash
+   python3.11 --version
+    ```
+
+6. Instalacion Completada
+
+  
+</Steps>
+
+<Aside type="note">
+Las versiones de Linux basadas en Debian, Fedora o Arch ya traen por defecto Python 3 instalado.
+</Aside>
