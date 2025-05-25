@@ -24,7 +24,7 @@ export default defineConfig({
 				// Ruta relativa a tu archivo CSS personalizado
 				'./src/styles/starlight.css',
 			],
-			title: '',
+			title: 'PyDocs',
 			logo: {
 				// Aquí puedes colocar directamente la imagen (opcional si usas slot)
 				src: '@assets/pydocs.png',
@@ -87,10 +87,10 @@ export default defineConfig({
 					label: 'Módulos y Paquetes',
 					autogenerate: { directory: 'ModulesPackages' },
 				},
-				{
-					label: 'Manejo de Librerías Estándar',
-					autogenerate: { directory: 'StandardLibraries' },
-				},
+				// {
+				// 	label: 'Manejo de Librerías Estándar',
+				// 	autogenerate: { directory: 'StandardLibraries' },
+				// },
 				{
 					label: 'Entornos Virtuales y Gestión de Paquetes',
 					autogenerate: { directory: 'VenvPackages' },
