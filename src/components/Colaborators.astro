@@ -44,11 +44,11 @@ const contributors = await response.json();
 </style>
 
 <CardGrid>
-  {contributors.filter((contributor: { login: string, html_url: string }) => contributor.login !== 'astrobot-houston').map((contributors: { login: string, html_url: string  }) => (
+  {contributors.filter((contributor: { login: string, html_url: string, avatar_url: string }) => contributor.login !== 'astrobot-houston').map((contributors: { login: string, html_url: string, avatar_url: string }) => (
   
   <Card title={contributors.login}>
     <div class="colab-flex">
-      <img src={`https://github.com/${contributors.login}.png`} alt="Nelson-5553" class="colab-img" />
+      <img src={contributors.avatar_url} alt="Nelson-5553" class="colab-img" />
       <div class="colab-info">
         <div>Core Developer, Documentation</div>
         <a href={contributors.html_url} target="_blank" class="colab-link">Ver perfil en GitHub</a>
