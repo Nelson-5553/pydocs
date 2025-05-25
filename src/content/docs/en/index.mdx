@@ -1,39 +1,46 @@
 ---
 title: Welcome to PyDocs
-description: Get started building your docs site with PyDocs.
+description: Start building your documentation site with PyDocs.
 template: splash
 hero:
-  tagline: Congrats on setting up a new PyDocs project!
+  tagline: A modern and complete guide to Python documentation.
   image:
     file: "@assets/python.png"
   actions:
-    - text: Empezemos
-      link: /introduccion/empezamos
+    - text: Get Started
+      link: /en/introduccion/empezamos
       icon: right-arrow
     - text: Read the PyDocs docs
-      link: https://PyDocs.astro.build
+      link: https://Starlight.astro.build
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import Colaborators from '@components/Colaborators.astro';
+import Stats from '@components/Stats.astro';
 
-## Bienvenido a PyDocs
+## Welcome to PyDocs
 
 <CardGrid stagger>
-	<Card title="¿Qué es PyDocs?" icon="open-book">
-		PyDocs es una documentación moderna y práctica para aprender Python desde cero hasta niveles avanzados, organizada por temas clave.
-	</Card>
+    <Card title="What is PyDocs?" icon="seti:python">
+        PyDocs is a modern and practical documentation to learn Python from scratch to advanced levels, organized by key topics.
+    </Card>
 
-	<Card title="Primeros pasos" icon="zap">
-		Comienza en la sección `00_basico`, donde aprenderás variables, tipos de datos, condicionales, ciclos y más.
-	</Card>
+    <Card title="Learn step by step" icon="open-book">
+        Explore learning paths from the basics to advanced concepts, with clear examples and practical exercises in each section.
+    </Card>
 
-	<Card title="Explora las secciones" icon="file-search">
-		Cada carpeta está organizada por temas: estructuras de datos, funciones, POO, estadísticas, proyectos y retos.
-	</Card>
+    <Card title="Find what you need fast" icon="seti:code-search">
+        Use the search bar or navigate through the sidebar to quickly access any Python topic or function.
+    </Card>
 
-	<Card title="Contribuye o personaliza" icon="pencil">
-		Edita los archivos `.mdx` en `src/content/docs/` para añadir temas, corregir errores o personalizar tu versión.
-	</Card>
+    <Card title="Contribute and improve" icon="github">
+        PyDocs is open source. You can contribute, suggest improvements, or customize the documentation for your own projects.
+    </Card>
 </CardGrid>
+
+## Contributors
+
+<Colaborators/>
+<Stats/>
