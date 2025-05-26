@@ -18,9 +18,9 @@ Los **atributos** son variables que almacenan información sobre el estado de un
 <Code
 code="
 class Persona:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, nombre, edad):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nombre = nombre
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.edad = edad
 
 p1 = Persona('Ana', 30)
 print(p1.nombre)  # Ana
@@ -42,11 +42,11 @@ Los **métodos** son funciones definidas dentro de una clase que describen los c
 <Code
 code="
 class Persona:
-    def __init__(self, nombre):
-        self.nombre = nombre
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, nombre):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nombre = nombre
 
-    def saludar(self):
-        print(f'Hola, soy {self.nombre}!')
+&nbsp;&nbsp;&nbsp;&nbsp;def saludar(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f'Hola, soy {self.nombre}!')
 
 p1 = Persona('Ana')
 p1.saludar()  # Hola, soy Ana!
@@ -66,10 +66,10 @@ frame="auto"
 <Code
 code="
 class Mascota:
-    especie = 'Perro'  # Atributo de clase
+&nbsp;&nbsp;&nbsp;&nbsp;especie = 'Perro'  # Atributo de clase
 
-    def __init__(self, nombre):
-        self.nombre = nombre  # Atributo de instancia
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, nombre):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nombre = nombre  # Atributo de instancia
 
 m1 = Mascota('Rex')
 m2 = Mascota('Luna')
@@ -92,13 +92,13 @@ frame="auto"
 <Code
 code="
 class Calculadora:
-    @staticmethod
-    def sumar(a, b):
-        return a + b
+&nbsp;&nbsp;&nbsp;&nbsp;@staticmethod
+&nbsp;&nbsp;&nbsp;&nbsp;def sumar(a, b):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a + b
 
-    @classmethod
-    def descripcion(cls):
-        return 'Calculadora simple'
+&nbsp;&nbsp;&nbsp;&nbsp;@classmethod
+&nbsp;&nbsp;&nbsp;&nbsp;def descripcion(cls):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 'Calculadora simple'
 
 print(Calculadora.sumar(3, 4))         # 7
 print(Calculadora.descripcion())        # Calculadora simple
