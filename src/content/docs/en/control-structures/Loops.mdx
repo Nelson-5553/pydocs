@@ -1,6 +1,6 @@
 ---
-title: Bucles
-description: Guía para  BUcles
+title: Loops
+description: Loops Guide
 sidebar:
   order: 2
 ---
@@ -8,20 +8,20 @@ sidebar:
 import { Code } from "@astrojs/starlight/components"
 import { Aside } from "@astrojs/starlight/components"
 
-Esta documentación te guiará para empezar rápidamente.En Python, los bucles son estructuras que permiten ejecutar un bloque de código repetidamente hasta que se cumpla una condición. Hay dos tipos principales de bucles: for y while. El bucle for itera sobre una secuencia (como una lista, tupla, o cadena), mientras que el bucle while ejecuta un código mientras una condición es verdadera
+This documentation will guide you to get started quickly. In Python, loops are structures that allow you to execute a block of code repeatedly until a condition is met. There are two main types of loops: for and while. The for loop iterates over a sequence (like a list, tuple, or string), while the while loop executes code while a condition is true.
 
 ## `for`
 
-El bucle for es ideal para iterar sobre los elementos de una secuencia (lista, tupla, cadena, etc.).
+The for loop is ideal for iterating over the elements of a sequence (list, tuple, string, etc.).
 
 <Code 
 code="
-    frutas = ['manzana', 'banana', 'cereza']
-    for fruta in frutas:
-&nbsp;&nbsp;&nbsp;&nbsp;print(fruta)
+    fruits = ['apple', 'banana', 'cherry']
+    for fruit in fruits:
+&nbsp;&nbsp;&nbsp;&nbsp;print(fruit)
 
-    # Este código imprimirá cada fruta de la lista. 
-" 
+    # This code will print each fruit from the list. 
+"
        
 lang="py" 
 title="Bucle.py" 
@@ -29,16 +29,16 @@ mark="highlights" />
 
 ## `while`
 
-El bucle while ejecuta un bloque de código mientras una condición es verdadera.
+The while loop executes a block of code while a condition is true.
 
 <Code 
 code="
-contador = 0
-while contador < 10:
-&nbsp;&nbsp;&nbsp;&nbsp;print(contador)
-&nbsp;&nbsp;&nbsp;&nbsp;contador += 1
+counter = 0
+while counter < 10:
+&nbsp;&nbsp;&nbsp;&nbsp;print(counter)
+&nbsp;&nbsp;&nbsp;&nbsp;counter += 1
 
-# Imprimirá los números de 0 a 9. 
+# Will print numbers from 0 to 9.
 " 
        
 lang="py" 
@@ -46,10 +46,10 @@ title="Bucle.py"
 mark="highlights" />
 
 <Aside type="caution">
-En bucles `while`, es crucial asegurarse de que la condición pueda volverse falsa eventualmente para evitar bucles infinitos.
+In `while` loops, it's crucial to ensure that the condition can eventually become false to avoid infinite loops.
 </Aside>
 
-## Diferencias clave
+## Key Differences
 
-- `for` : Mejor para iterar sobre elementos de una secuencia cuando se conoce de antemano el número de iteraciones.
-- `while` : Mejor para ejecutar un bloque de código mientras una condición sea verdadera, cuando el número de iteraciones no se conoce de antemano. 
+- `for` : Better for iterating over elements of a sequence when the number of iterations is known in advance.
+- `while` : Better for executing a block of code while a condition is true, when the number of iterations is not known in advance.

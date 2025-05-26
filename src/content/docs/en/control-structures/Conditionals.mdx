@@ -1,57 +1,57 @@
 ---
-title: Condiciones
-description: Guía para Condiciones
+title: Conditions
+description: Guide for conditionals
 sidebar:
   order: 1
 ---
 
 import { Code } from "@astrojs/starlight/components"
 
-En Python, los condicionales son instrucciones que permiten ejecutar bloques de código de forma selectiva, dependiendo de si se cumplen ciertas condiciones. Estos bloques de código se pueden ejecutar si la condición es verdadera, o se pueden omitir si la condición es falsa. 
+In Python, conditionals are instructions that let you execute code blocks in a selective form, depending if certain conditions are passed. These code blocks can be executed if the condition is true, or omitted if the condition is false.
 
-## ¿Cómo funcionan?
+## How they work?
 
 #### `if:`
-Esta instrucción evalúa una condición. Si la condición es verdadera, se ejecuta el bloque de código que sigue a la instrucción if. 
+this instruction evaluates a condition. If that condition is true, the code block that follows the if statement is executed. 
 
 #### `else:`
 
-Esta instrucción se ejecuta si la condición de la instrucción if es falsa. 
+This instruction is executed if the condition of an if statement is false. 
 
 #### `elif (else if):`
 
-Permite evaluar múltiples condiciones en secuencia. Si la condición de if es falsa, se evalúa la condición de elif. Si la condición de elif es verdadera, se ejecuta el bloque de código correspondiente. 
+It lets you evaluate multiple conditions in sequence. If the if statement is false, it evaluates the second condition of elif. If the condition of elif is true, the corresponding code block executes.
 
 <Code 
-code="edad = 25
-if edad >= 18:
-&nbsp;&nbsp;&nbsp;&nbsp;print('Eres mayor de edad')
+code="age = 25
+if age >= 18:
+&nbsp;&nbsp;&nbsp;&nbsp;print('You are an adult')
 else:
-&nbsp;&nbsp;&nbsp;&nbsp;print('Eres menor de edad')
+&nbsp;&nbsp;&nbsp;&nbsp;print('You are a minor')
 
-# Si la edad es menor que 18, se imprimirá 'Eres menor de edad'." 
+# If the age is less than 18, it will print 'You are a minor'." 
        
 lang="py" 
 title="Conditions.py" 
 mark="highlights" />
 
-## Manejo de Operadores logicos
+## Handling Logical Operators
 
-Como vimos en la sección de [Operadores](/es/syntaxbasic/operators/) los Operadores logicos sirven para combinar múltiples condiciones y obtener un resultado booleano, Ya sea `True` o `False`.
+As we saw in the [Operators](/en/syntax-basic/operators/) section, logical operators are used to combine multiple conditions and get a boolean result, either `True` or `False`.
 
 #### `and`
 
 <Code 
-code="edad = 25
-tiene_identificacion = True
+code="age = 25
+has_identification = True
 
-if edad >= 18 and tiene_identificacion:
-&nbsp;&nbsp;&nbsp;&nbsp;print('Puedes ingresar')
+if age >= 18 and has_identification:
+&nbsp;&nbsp;&nbsp;&nbsp;print('You can enter')
 else:
-&nbsp;&nbsp;&nbsp;&nbsp;print('No puedes ingresar')
+&nbsp;&nbsp;&nbsp;&nbsp;print('You cannot enter')
 
-# Ambas condiciones deben cumplirse. Si edad es mayor o igual a 18 **y** tiene identificación, 
-# se imprime 'Puedes ingresar'." 
+# Both conditions must be met. If age is greater than or equal to 18 **and** has identification, 
+# it prints 'You can enter'." 
        
 lang="py" 
 title="Conditions.py" 
@@ -60,15 +60,15 @@ mark="highlights" />
 #### `or`
 
 <Code 
-code="es_estudiante = False
-es_profesor = True
+code="is_student = False
+is_teacher = True
 
-if es_estudiante or es_profesor:
-&nbsp;&nbsp;&nbsp;&nbsp;print('Tienes acceso al campus')
+if is_student or is_teacher:
+&nbsp;&nbsp;&nbsp;&nbsp;print('You have access to campus')
 else:
- &nbsp;&nbsp;&nbsp;&nbsp;print('Acceso denegado')
+ &nbsp;&nbsp;&nbsp;&nbsp;print('Access denied')
 
-# Basta con que una de las condiciones sea verdadera para que se imprima 'Tienes acceso al campus'."
+# It's enough for one of the conditions to be true for it to print 'You have access to campus'."
 
        
 lang="py" 
@@ -78,37 +78,37 @@ mark="highlights" />
 #### `not`
 
 <Code 
-code="tiene_multas = False
+code="has_fines = False
 
-if not tiene_multas:
-&nbsp;&nbsp;&nbsp;&nbsp;print('Puedes renovar tu licencia')
+if not has_fines:
+&nbsp;&nbsp;&nbsp;&nbsp;print('You can renew your license')
 else:
-&nbsp;&nbsp;&nbsp;&nbsp;print('Debes pagar las multas primero')
+&nbsp;&nbsp;&nbsp;&nbsp;print('You must pay the fines first')
 
-# 'not' invierte el valor. Si no tiene multas, se imprime 'Puedes renovar tu licencia'."
+# 'not' inverts the value. If there are no fines, it prints 'You can renew your license'."
 
        
 lang="py" 
 title="Conditions.py" 
 mark="highlights" />
 
-## Condiciones anidadas
+## Nested Conditions
 
-En Python, las condicionales anidadas son sentencias if dentro de otras sentencias if, elif o else. Esto permite evaluar varias condiciones de forma jerárquica, creando un flujo de ejecución más complejo basado en la combinación de condiciones. 
+In Python, nested conditionals are if statements inside other if, elif or else statements. This allows evaluating several conditions hierarchically, creating a more complex execution flow based on the combination of conditions.
 
 <Code 
-code="es_miembro = False
+code="is_member = False
 age = 15
 
-if es_miembro:
+if is_member:
 &nbsp;&nbsp;&nbsp;&nbsp;if age >= 15:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Tienes acceso ya que eres miembro y mayor de 15')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('You have access since you are a member and over 15')
 &nbsp;&nbsp;&nbsp;&nbsp;else:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Tienes acceso pero es menor de 15')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('You have access but are under 15')
 else:
-&nbsp;&nbsp;&nbsp;&nbsp;print('No eres mienbro')
+&nbsp;&nbsp;&nbsp;&nbsp;print('You are not a member')
     
-# En este caso: no es miembro por lo tanto no tiene acceso, a pesar de que cumpla la condicion de tener 15 años.
+# In this case: not a member therefore no access, despite meeting the condition of being 15 years old.
 "
 lang="py" 
 title="Conditions.py" 
