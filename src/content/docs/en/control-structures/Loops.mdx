@@ -1,0 +1,55 @@
+---
+title: Bucles
+description: Guía para  BUcles
+sidebar:
+  order: 2
+---
+
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+
+Esta documentación te guiará para empezar rápidamente.En Python, los bucles son estructuras que permiten ejecutar un bloque de código repetidamente hasta que se cumpla una condición. Hay dos tipos principales de bucles: for y while. El bucle for itera sobre una secuencia (como una lista, tupla, o cadena), mientras que el bucle while ejecuta un código mientras una condición es verdadera
+
+## `for`
+
+El bucle for es ideal para iterar sobre los elementos de una secuencia (lista, tupla, cadena, etc.).
+
+<Code 
+code="
+    frutas = ['manzana', 'banana', 'cereza']
+    for fruta in frutas:
+&nbsp;&nbsp;&nbsp;&nbsp;print(fruta)
+
+    # Este código imprimirá cada fruta de la lista. 
+" 
+       
+lang="py" 
+title="Bucle.py" 
+mark="highlights" />
+
+## `while`
+
+El bucle while ejecuta un bloque de código mientras una condición es verdadera.
+
+<Code 
+code="
+contador = 0
+while contador < 10:
+&nbsp;&nbsp;&nbsp;&nbsp;print(contador)
+&nbsp;&nbsp;&nbsp;&nbsp;contador += 1
+
+# Imprimirá los números de 0 a 9. 
+" 
+       
+lang="py" 
+title="Bucle.py" 
+mark="highlights" />
+
+<Aside type="caution">
+En bucles `while`, es crucial asegurarse de que la condición pueda volverse falsa eventualmente para evitar bucles infinitos.
+</Aside>
+
+## Diferencias clave
+
+- `for` : Mejor para iterar sobre elementos de una secuencia cuando se conoce de antemano el número de iteraciones.
+- `while` : Mejor para ejecutar un bloque de código mientras una condición sea verdadera, cuando el número de iteraciones no se conoce de antemano. 

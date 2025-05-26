@@ -1,0 +1,94 @@
+---
+title: Lectura y escritura de archivos json 
+description: Uso de with para manejo seguro
+sidebar:
+  order: 4
+---
+
+import { Code } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+import { FileTree } from '@astrojs/starlight/components';
+
+Los archivos JSON (JavaScript Object Notation) se utilizan para almacenar y transportar datos estructurados. A diferencia de los TXT o CSV, pueden representar objetos, listas anidadas y jerarquías más complejas. Python ofrece el módulo json para su manejo.
+
+Tenemos la siguiente estructura de nuestro proyecto:
+
+<FileTree>
+
+- src
+  - leer_json.py
+  - escribir_json.py
+  - rescribir_json.py
+- docs
+  - products.json
+
+
+</FileTree>
+
+## Leer un archivo JSON
+
+Abre el archivo products.json en modo lectura ("r"), carga su contenido como una lista de diccionarios y luego imprime el nombre y precio de cada producto.
+
+<Code 
+code="
+import json
+
+with open('./document/products.json', mode='r') as file:
+&nbsp;&nbsp;&nbsp;&nbsp;products = json.load(file)
+
+&nbsp;&nbsp;&nbsp;&nbsp;for product in products:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f'El producto {product['name']} con precio de {product['price']}')" 
+lang="py" 
+title="leer_csv.py" 
+mark="highlights" 
+frame="auto" />
+
+## Añadir un elemento al archivo JSON
+
+Carga los productos desde el archivo, añade un nuevo producto al final de la lista y guarda todo nuevamente, sobrescribiendo el archivo original.
+
+<Code 
+code="
+import json
+
+# Nuevo producto a agregar
+new_product = {'name': 'Teclado', 'price': 19.99}
+
+# Leer productos actuales
+with open('./document/products.json', 'r') as file:
+    products = json.load(file)
+
+# Agregar el nuevo producto
+products.append(new_product)
+
+# Guardar la lista actualizada
+with open('./document/products.json', 'w') as file:
+    json.dump(products, file, indent=2)" 
+lang="py" 
+title="leer_csv.py" 
+mark="highlights" 
+frame="auto" />
+
+## Sobrescribir un archivo JSON
+
+Sobrescribe por completo el archivo products.json con una nueva lista de productos. Usa el modo "w" para reemplazar todo el contenido anterior.
+
+<Code 
+code="
+import json
+
+# Lista nueva de productos
+products = [
+    {'name': 'Mouse', 'price': 9.99},
+    {'name': 'Monitor', 'price': 129.99}
+]
+
+# Guardar nueva lista en el archivo
+with open('./document/products.json', 'w') as file:
+    json.dump(products, file, indent=2)
+" 
+lang="py" 
+title="leer_csv.py" 
+mark="highlights" 
+frame="auto" />
+

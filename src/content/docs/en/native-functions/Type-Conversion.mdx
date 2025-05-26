@@ -1,0 +1,203 @@
+---
+title: Conversion de Tipos
+description: Guía para Conversion de Tipos
+sidebar:
+  order: 2
+---
+
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+
+En Python, los tipos de datos se utilizan para clasificar un tipo específico de datos, determinar los valores que puede asignar al tipo y las operaciones que puede realizar en el mismo. Cuando realice tareas de programación, a veces, deberá aplicar conversiones de valores entre tipos para manipular los valores de forma diferente. Por ejemplo, es posible que debamos concatenar valores numéricos con cadenas o representar posiciones decimales en números que se iniciaron como valores enteros.
+
+Los tipos son:
+
+- `int()`
+- `float()`
+- `str()`
+- `bool()`
+- `list()`
+- `tuple()`
+- `set()`
+- `dict()`
+
+### `int()`
+
+Convierte un valor numérico o una cadena que representa un número entero al tipo de dato int. Si el valor es un número decimal, lo redondea hacia abajo (elimina los decimales). Si no es numérico, lanza un error.
+
+<Code 
+code="
+print(int(43.54)) # Convierte el decimal a entero, quitando los decimales
+"
+lang="py" 
+title="Int.py" 
+mark="highlights"
+frame='auto' />
+Salida: 
+<Code 
+code="
+43 
+"
+title="Int.py" 
+mark="highlights"
+frame='terminal' />
+
+
+### `float()`
+
+Convierte un número entero o una cadena que representa un número en un número decimal (float), útil cuando se necesita trabajar con valores fraccionarios.
+<Code 
+code="
+print(float('3.14'))
+print(float(10))
+"
+lang="py" 
+title="Int.py" 
+mark="highlights"
+frame='auto' />
+Salida: 
+<Code 
+code="
+3.14
+10.0
+"
+title="float.py" 
+mark="highlights"
+frame='terminal' />
+
+### `str()`
+
+Convierte cualquier tipo de dato (entero, decimal, booleano, listas, etc.) a una cadena (str). Es útil para mostrar mensajes o concatenar con otros textos.
+<Code 
+code="
+print(str(100))
+print(str(True))
+"
+lang="py" 
+title="Str.py" 
+mark="highlights"
+frame='auto' />
+Salida: 
+<Code 
+code="
+100
+True
+"
+title="Str.py" 
+mark="highlights"
+frame='terminal' />
+
+### `bool()`
+Convierte un valor a True o False según si es "vacío" o no. Valores como 0, "" (cadena vacía), [] (lista vacía), None y False se consideran False. Todo lo demás es True.
+<Code 
+code="
+print(bool(1))
+print(bool(0))
+print(bool('Hola'))
+"
+lang="py" 
+title="Bool.py" 
+mark="highlights"
+frame='auto' />
+Salida: 
+<Code 
+code="
+True
+False
+True
+"
+title="Bool.py" 
+mark="highlights"
+frame='terminal' />
+
+### `list()`
+Convierte objetos iterables (como cadenas, tuplas, conjuntos) en una lista.
+<Code 
+code="
+print(list('hola') )
+print(list((1, 2, 3)))
+"
+lang="py" 
+title="List.py" 
+mark="highlights"
+frame='auto' />
+Salida: 
+<Code 
+code="
+['h', 'o', 'l', 'a']
+[1, 2, 3]
+"
+title="List.py" 
+mark="highlights"
+frame='terminal' />
+### `tuple()`
+
+Convierte un objeto iterable en una tupla. Similar a list(), pero el resultado es inmutable (no se puede modificar).
+
+<Code 
+code="
+print(tuple('abc'))
+print(tuple([1, 2, 3]))
+"
+lang="py" 
+title="Tuple.py" 
+mark="highlights"
+frame='auto' />
+Salida: 
+<Code 
+code="
+('a', 'b', 'c')
+(1, 2, 3)
+"
+title="Tuple.py" 
+mark="highlights"
+frame='terminal' />
+
+### `set()`
+
+Convierte un objeto iterable en una tupla. Similar a list(), pero el resultado es inmutable (no se puede modificar).
+
+<Code 
+code="
+print(set([1, 2, 2, 3]))
+print(set('hello') )
+"
+lang="py" 
+title="Set.py" 
+mark="highlights"
+frame='auto' />
+Salida: 
+<Code 
+code="
+{1, 2, 3}
+{'h', 'e', 'l', 'o'}
+"
+title="Set.py" 
+mark="highlights"
+frame='terminal' />
+
+### `dict()`
+
+Convierte un objeto iterable en una tupla. Similar a list(), pero el resultado es inmutable (no se puede modificar).
+
+<Code 
+code="
+print(dict([('a', 1), ('b', 2)]))
+"
+lang="py" 
+title="Dict.py" 
+mark="highlights"
+frame='auto' />
+Salida: 
+<Code 
+code="
+{'a': 1, 
+&nbsp;'b': 2}
+"
+title="Dict.py" 
+mark="highlights"
+frame='terminal' />
+
+<Aside type='note'>
+  Convierte a diccionario requiere una estructura compatible, como una lista de tuplas 
+</Aside>

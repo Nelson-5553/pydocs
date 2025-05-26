@@ -1,0 +1,138 @@
+---
+title: Información sobre objetos
+description: Guía para Funciones de informacion
+sidebar:
+  order: 3
+---
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+import PyTable from '@components/PyTable.astro';
+
+Estas funciones están diseñadas para inspeccionar y comprender los objetos en tiempo de ejecución. Son especialmente útiles durante el desarrollo, depuración y documentación del código. Permiten conocer el tipo de un objeto, su ubicación en memoria, o acceder a su ayuda integrada. Usarlas facilita el desarrollo más seguro y mantenible, especialmente en entornos dinámicos.
+<PyTable
+  headers={["Función", "Descripción"]}
+  rows={[
+    ["type()", "Devuelve el tipo del objeto especificado."],
+    ["id()", "Retorna la dirección o identificador único del objeto en memoria."],
+    ["help()", "Muestra la documentación integrada (docstring) de funciones, objetos, módulos, etc."],
+    ["dir()", "	Lista los atributos y métodos disponibles para un objeto."],
+  ]}
+/>
+A continuacion te explicare con mas detalle el funcionamiento de estas funciones:
+
+### `type()`
+
+ Uso típico: Para verificar si una variable es del tipo esperado antes de realizar operaciones con ella.
+
+<Code
+code="
+x = 42
+print(type(x))
+"
+lang="py"
+title="type.py"
+mark="highlights"
+frame='auto' />
+Salida:
+<Code
+code="
+<class 'int'>
+"
+
+title="type.py"
+mark="highlights"
+frame='terminal' />
+
+### `id()`
+
+Uso típico: Para comprobar si dos variables apuntan al mismo objeto en memoria.
+
+<Code
+code="
+a = 10
+b = a
+print(id(a))
+print(id(b))  # Mismo ID que a, ya que ambos apuntan al mismo objeto
+"
+lang="py"
+title="id.py"
+mark="highlights"
+frame='auto' />
+Salida:
+<Code
+code="
+140710837832368 (valor de ejemplo)
+"
+
+title="id.py"
+mark="highlights"
+frame='terminal' />
+
+### `dir()`
+
+ Esto mostrará todos los métodos disponibles para los objetos de tipo cadena (str), como `.upper()`, `.lower()`, `.split()`, etc.
+<Code
+code="
+print(dir(str))
+"
+lang="py"
+title="dir.py"
+mark="highlights"
+frame='auto' />
+Salida:
+<Code
+code="
+['__add__', '__class__', '__contains__', '__delattr__', '__dir__',
+ '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+ '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__',
+ '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__',
+ '__ne__', '__new__', '__reduce__', '__repr__', '__rmod__', '__rmul__',
+ '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
+ 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith',
+ 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isascii',
+ 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric',
+ 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower',
+ 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition',
+ 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase',
+ 'title', 'translate', 'upper', 'zfill']
+
+"
+
+title="dir.py"
+mark="highlights"
+frame='terminal' />
+
+<Aside type='note'>
+
+Sin argumentos:
+
+    ```python
+      print(dir())
+    ```
+Muestra todas las variables y funciones definidas en el entorno actual.
+</Aside>
+
+### `help()`
+
+Uso típico: Durante la exploración o aprendizaje de una función o método. Muy útil en entornos interactivos como la terminal o Jupyter Notebook.
+
+<Code
+code="
+help(str.upper)
+"
+lang="py"
+title="help.py"
+mark="highlights"
+frame='auto' />
+Salida:
+<Code
+code="
+Help on method_descriptor:
+
+upper(self, /)
+    Return a copy of the string converted to uppercase.
+"
+
+title="help.py"
+mark="highlights"
+frame='terminal' />

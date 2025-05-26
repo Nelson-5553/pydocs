@@ -1,0 +1,115 @@
+---
+title: Condiciones
+description: Guía para Condiciones
+sidebar:
+  order: 1
+---
+
+import { Code } from "@astrojs/starlight/components"
+
+En Python, los condicionales son instrucciones que permiten ejecutar bloques de código de forma selectiva, dependiendo de si se cumplen ciertas condiciones. Estos bloques de código se pueden ejecutar si la condición es verdadera, o se pueden omitir si la condición es falsa. 
+
+## ¿Cómo funcionan?
+
+#### `if:`
+Esta instrucción evalúa una condición. Si la condición es verdadera, se ejecuta el bloque de código que sigue a la instrucción if. 
+
+#### `else:`
+
+Esta instrucción se ejecuta si la condición de la instrucción if es falsa. 
+
+#### `elif (else if):`
+
+Permite evaluar múltiples condiciones en secuencia. Si la condición de if es falsa, se evalúa la condición de elif. Si la condición de elif es verdadera, se ejecuta el bloque de código correspondiente. 
+
+<Code 
+code="edad = 25
+if edad >= 18:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Eres mayor de edad')
+else:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Eres menor de edad')
+
+# Si la edad es menor que 18, se imprimirá 'Eres menor de edad'." 
+       
+lang="py" 
+title="Conditions.py" 
+mark="highlights" />
+
+## Manejo de Operadores logicos
+
+Como vimos en la sección de [Operadores](/es/syntaxbasic/operators/) los Operadores logicos sirven para combinar múltiples condiciones y obtener un resultado booleano, Ya sea `True` o `False`.
+
+#### `and`
+
+<Code 
+code="edad = 25
+tiene_identificacion = True
+
+if edad >= 18 and tiene_identificacion:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Puedes ingresar')
+else:
+&nbsp;&nbsp;&nbsp;&nbsp;print('No puedes ingresar')
+
+# Ambas condiciones deben cumplirse. Si edad es mayor o igual a 18 **y** tiene identificación, 
+# se imprime 'Puedes ingresar'." 
+       
+lang="py" 
+title="Conditions.py" 
+mark="highlights" />
+
+#### `or`
+
+<Code 
+code="es_estudiante = False
+es_profesor = True
+
+if es_estudiante or es_profesor:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Tienes acceso al campus')
+else:
+ &nbsp;&nbsp;&nbsp;&nbsp;print('Acceso denegado')
+
+# Basta con que una de las condiciones sea verdadera para que se imprima 'Tienes acceso al campus'."
+
+       
+lang="py" 
+title="Conditions.py" 
+mark="highlights" />
+
+#### `not`
+
+<Code 
+code="tiene_multas = False
+
+if not tiene_multas:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Puedes renovar tu licencia')
+else:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Debes pagar las multas primero')
+
+# 'not' invierte el valor. Si no tiene multas, se imprime 'Puedes renovar tu licencia'."
+
+       
+lang="py" 
+title="Conditions.py" 
+mark="highlights" />
+
+## Condiciones anidadas
+
+En Python, las condicionales anidadas son sentencias if dentro de otras sentencias if, elif o else. Esto permite evaluar varias condiciones de forma jerárquica, creando un flujo de ejecución más complejo basado en la combinación de condiciones. 
+
+<Code 
+code="es_miembro = False
+age = 15
+
+if es_miembro:
+&nbsp;&nbsp;&nbsp;&nbsp;if age >= 15:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Tienes acceso ya que eres miembro y mayor de 15')
+&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Tienes acceso pero es menor de 15')
+else:
+&nbsp;&nbsp;&nbsp;&nbsp;print('No eres mienbro')
+    
+# En este caso: no es miembro por lo tanto no tiene acceso, a pesar de que cumpla la condicion de tener 15 años.
+"
+lang="py" 
+title="Conditions.py" 
+mark="highlights" />

@@ -1,0 +1,154 @@
+---
+title: Listas
+description: Guía para Listas
+sidebar:
+  order: 1
+---
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+
+En Python, una lista es una estructura de datos flexible que permite almacenar una colección ordenada de elementos de cualquier tipo. Son mutables, lo que significa que se pueden modificar después de su creación. Se definen entre corchetes [] y sus elementos se separan por comas. 
+
+## Crear una lista
+
+Hagamos una lista de frutas
+
+<Code 
+code="
+# Lista de frutas
+frutas = ['manzana', 'banana', 'naranja', 'pera', 'uva', 'mango']
+print(frutas)
+"
+lang="py" 
+title="list.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+['manzana', 'banana', 'naranja', 'pera', 'uva', 'mango']
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+## Indexacion
+
+Supongamos que solo queremos un elemento en particular de la lista de frutas, teniendo esto en cuenta debes saber que cada elemento en una lista tiene un indice con el cual podemos ubicar cada elemento de una lista y para ello debemos llevar acabo el concepto de Indexacion de la siguiente forma
+
+<Code 
+code="
+# Lista de frutas
+frutas = ['manzana', 'banana', 'naranja', 'pera', 'uva', 'mango']
+print(frutas[1])
+"
+lang="py" 
+title="list.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+banana
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+
+<Aside type="note">
+En Python, el primer índice **siempre es 0**. Esto significa que el primer elemento de una tupla o lista se accede con `[0]`, no con `[1]`.
+</Aside>
+
+
+## Modificar un elemento
+
+Atravez de la indexacion podemos modificar un elemento de la lista en particular
+
+<Code 
+code="
+# Lista de frutas
+frutas = ['manzana', 'banana', 'naranja', 'pera', 'uva', 'mango']
+
+# Asignamos un nuevo elemento al elemento que se encuentra en la posicion 1
+frutas[1] = 'fresa'  
+print(frutas)
+"
+lang="py" 
+title="list.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+['manzana', 'fresa', 'naranja', 'pera', 'uva', 'mango']
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+## Añadir elementos
+
+Para añadir un elemento a una lista debes usar la funcion `.append()`
+
+<Code 
+code="
+# Lista de frutas
+frutas = ['manzana', 'banana', 'naranja', 'pera', 'uva', 'mango']
+
+# Nuevo elemento añadido al final de la lista
+frutas.append('fresa')
+print(frutas)
+"
+lang="py" 
+title="list.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+['manzana', 'banana', 'naranja', 'pera', 'uva', 'mango', 'fresa']
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+## Eliminar un elemento
+
+Para eliminar un elemento a una lista debes usar la funcion `.remove()`
+
+<Code 
+code="
+# Lista de frutas
+frutas = ['manzana', 'banana', 'naranja', 'pera', 'uva', 'mango']
+
+# Remover elemento seleccionado
+frutas.remove('mango')
+print(frutas)
+"
+lang="py" 
+title="list.py" 
+mark="highlights"
+frame='auto' />
+
+Salida:
+
+<Code 
+code="
+['manzana', 'banana', 'naranja', 'pera', 'uva']
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+<Aside type="tip" title='Reto'>
+Porque no intentas ver que hacen las funciones de `.pop()` y `.insert()`
+</Aside>
