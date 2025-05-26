@@ -11,6 +11,7 @@ const contributors = await response.json();
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    
   }
   .colab-img {
     border-radius: 50%;
@@ -20,8 +21,10 @@ const contributors = await response.json();
   }
   .colab-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }
   .colab-link {
     color: #306998;
@@ -35,6 +38,16 @@ const contributors = await response.json();
     text-decoration: underline;
     font-size: 0.95em;
   }
+  .colab-badge {
+    display: inline-block;
+    background: #306998;
+    color: #fff;
+    border-radius: 12px;
+    padding: 0.2em 0.8em;
+    font-size: 0.85em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
   :root[data-theme="dark"] .colab-img {
     border-color: #FFD43B;
   }
@@ -42,22 +55,47 @@ const contributors = await response.json();
   :root[data-theme="dark"] .colab-link {
     color: #FFD43B;
   }
+  :root[data-theme="dark"] .colab-badge {
+    background: #FFD43B;
+    color: #22223b;
+  }
 </style>
 
 <CardGrid>
   {
-  contributors.filter((contributor: Colaborator ) => contributor.login !== 'astrobot-houston').map((contributors: Colaborator) => (
-  <Card title={contributors.login}>
-    <div class="colab-flex">
-      <img src={contributors.avatar_url} alt="Nelson-5553" class="colab-img" />
-      <div class="colab-info">
-        <div>{(
-          contributors.login === "Nelson-5553" ? "Core Developer, Documentation" : contributors.login === "serg1l" ? "Deveoloper, Translator" : "Developer"
-        )}</div>
-        <a href={contributors.html_url} target="_blank" class="colab-link">GitHub</a>
-      </div>
-    </div>
-  </Card>
-))
-}
+    contributors
+      .filter((contributor: Colaborator) => contributor.login !== 'astrobot-houston')
+      .map((contributors: Colaborator) => (
+        <Card title={contributors.login}>
+          <div class="colab-flex">
+            <img src={contributors.avatar_url} alt={contributors.login} class="colab-img" />
+            <div>
+              <div class="colab-role">
+                Contributions:
+              </div>
+              <div class="colab-info">
+                {contributors.login === "Nelson-5553" && (
+                  <>
+                    <span class="colab-badge">Core Developer</span>
+                    <span class="colab-badge">Documentation</span>
+                  </>
+                )}
+                {contributors.login === "serg1l" && (
+                  <>
+                    <span class="colab-badge">Developer</span>
+                    <span class="colab-badge">Translator</span>
+                  </>
+                )}
+                {contributors.login !== "Nelson-5553" && contributors.login !== "serg1l" && (
+                  <span class="colab-badge">Developer</span>
+                )}
+              </div>
+              <div style="margin-top: 0.5em;">
+                <a href={contributors.html_url} target="_blank" class="colab-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </Card>
+      ))
+  }
 </CardGrid>
