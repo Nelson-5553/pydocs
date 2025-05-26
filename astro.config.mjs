@@ -17,9 +17,9 @@ export default defineConfig({
             }
         }
     },
-    // redirects: {
-    //             '/': '/es', // Redirección a español como idioma por defecto
-    //         },
+    redirects: {
+                '/': '/es', // Redirección a español como idioma por defecto
+            },
 	site: 'https://www.pydocs.site',
     integrations: [starlight({
         customCss: [
