@@ -22,15 +22,15 @@ El **encapsulamiento** consiste en ocultar los detalles internos de un objeto y 
 <Code
 code="
 class CuentaBancaria:
-    def __init__(self, saldo):
-        self.__saldo = saldo  # atributo privado
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, saldo):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__saldo = saldo  # atributo privado
 
-    def depositar(self, cantidad):
-        if cantidad > 0:
-            self.__saldo += cantidad
+&nbsp;&nbsp;&nbsp;&nbsp;def depositar(self, cantidad):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if cantidad > 0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__saldo += cantidad
 
-    def obtener_saldo(self):
-        return self.__saldo
+&nbsp;&nbsp;&nbsp;&nbsp;def obtener_saldo(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.__saldo
 
 cuenta = CuentaBancaria(100)
 cuenta.depositar(50)
@@ -54,21 +54,21 @@ El **polimorfismo** permite que diferentes clases compartan el mismo método (no
 <Code
 code="
 class Animal:
-    def hablar(self):
-        print('Hace un sonido')
+&nbsp;&nbsp;&nbsp;&nbsp;def hablar(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Hace un sonido')
 
 class Perro(Animal):
-    def hablar(self):
-        print('¡Guau!')
+&nbsp;&nbsp;&nbsp;&nbsp;def hablar(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('¡Guau!')
 
 class Gato(Animal):
-    def hablar(self):
-        print('¡Miau!')
+&nbsp;&nbsp;&nbsp;&nbsp;def hablar(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('¡Miau!')
 
 animales = [Perro(), Gato()]
 
 for animal in animales:
-    animal.hablar()
+&nbsp;&nbsp;&nbsp;&nbsp;animal.hablar()
 "
 lang="py"
 title="Polimorfismo en acción"
