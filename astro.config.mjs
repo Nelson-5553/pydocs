@@ -46,7 +46,7 @@ export default defineConfig({
             },
         },
 
-        social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Nelson-5553' }],
+        social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Nelson-5553/pydocs' }],
         sidebar: [
             {
                 label: 'Introducción',
