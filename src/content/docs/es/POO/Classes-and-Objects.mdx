@@ -18,7 +18,7 @@ Una **clase** es una plantilla o molde que se utiliza para crear objetos (instan
 <Code 
 code="
 class Producto:
-    pass
+&nbsp;&nbsp;&nbsp;&nbsp;pass
 "
 lang="py" 
 title="Definición de clase" 
@@ -36,9 +36,9 @@ El método especial `__init__` es el **constructor** de la clase. Se ejecuta aut
 <Code 
 code="
 class Producto:
-    def __init__(self, nombre, precio):
-        self.nombre = nombre
-        self.precio = precio
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, nombre, precio):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nombre = nombre
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.precio = precio
 "
 lang="py" 
 title="Constructor (__init__)" 
@@ -56,8 +56,8 @@ Cuando creas un nuevo producto con `Producto("Zapato", 50)`, el método `__init_
 <Code 
 code="
 class Producto:
-    def mostrar_info(self):
-        print(self.nombre, self.precio)
+&nbsp;&nbsp;&nbsp;&nbsp;def mostrar_info(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(self.nombre, self.precio)
 "
 lang="py" 
 title="Uso de self" 
@@ -75,12 +75,12 @@ Veamos un ejemplo completo de cómo definir una clase, crear un objeto y usar su
 <Code
 code="
 class Producto:
-    def __init__(self, nombre, precio):
-        self.nombre = nombre
-        self.precio = precio
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, nombre, precio):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nombre = nombre
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.precio = precio
 
-    def mostrar_info(self):
-        print(f'Producto: {self.nombre} | Precio: ${self.precio}')
+&nbsp;&nbsp;&nbsp;&nbsp;def mostrar_info(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f'Producto: {self.nombre} | Precio: ${self.precio}')
 
 # Crear un objeto
 p1 = Producto('Camiseta', 25.99)
