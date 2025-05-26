@@ -32,7 +32,7 @@ export default defineConfig({
             src: '@assets/pydocs.png',
             alt: 'Logo de la documentación'
         },
-        favicon: 'src/assets/python.png',
+        favicon: '/favicon.ico',
         // Establece el inglés como el idioma predeterminado para este sitio.
         defaultLocale: 'es',
         locales: {
