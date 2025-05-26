@@ -114,3 +114,10 @@ html.astro-bgw2111 body {
 ========================= */
 
 /* Agrega aquí cualquier otro estilo global o utilidades */
+
+h1#_top.astro-jbfsktt5 {
+  background: linear-gradient(90deg, #4B8BBE 29%, #FFD43B 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
