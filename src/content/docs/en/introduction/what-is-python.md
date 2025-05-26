@@ -1,67 +1,66 @@
 ---
-title: ¿Que es Python?
-description: Guía para comenzar
+title: What's python?
+description: A guide for getting started
 sidebar:
   order: 1
 ---
 
-Python es un lenguaje de programación ampliamente utilizado en las aplicaciones web, el desarrollo de software, la ciencia de datos y el machine learning (ML). Los desarrolladores utilizan Python porque es eficiente y fácil de aprender, además de que se puede ejecutar en muchas plataformas diferentes. El software Python se puede descargar gratis, se integra bien a todos los tipos de sistemas y aumenta la velocidad del desarrollo.
+Python is a programming language that is widely used in web applications, software development, data science, and machine learning (ML). Developers use Python because it's efficient and easy to learn, and it can be run on many different platforms. Python software can be downloaded for free, integrates well with all types of systems, and increases development speed.
 
-## Historia de Python
+## History of Python
 
-Python fue creado a principios de los años 90 por Guido van Rossum en el Stichting Mathematisch Centrum (CWI, véase https://www.cwi.nl) de los Países Bajos como sucesor de un lenguaje llamado ABC. Guido sigue siendo el principal autor de Python, aunque incluye muchas contribuciones de otras personas.
+Python was created in the early 1990s by Guido van Rossum at the Stichting Mathematisch Centrum (CWI, see https://www.cwi.nl) in the Netherlands as a successor to the ABC language. Guido continues to be the principal author of Python.
 
-En 1995, Guido continuó su trabajo sobre Python en la Corporation for National Research Initiatives (CNRI, véase https://www.cnri.reston.va.us) en Reston, Virginia, donde publicó varias versiones del software.
+In 1995, Guido continued his work on Python at the Corporation for National Research Initiatives (CNRI, see https://www.cnri.reston.va.us) in Reston, Virginia, where several versions of the software were released.
 
-En mayo de 2000, Guido y el equipo central de desarrollo de Python se trasladaron a BeOpen.com para formar el equipo BeOpen PythonLabs. En octubre del mismo año, el equipo de PythonLabs se trasladó a Digital Creations, que se convirtió en Zope Corporation. En 2001, se formó la Python Software Foundation (PSF, ver https://www.python.org/psf/), una organización sin ánimo de lucro creada específicamente para poseer la Propiedad Intelectual relacionada con Python. Zope Corporation fue miembro patrocinador de la PSF.
+In May 2000, Guido and the Python development team moved to BeOpen.com to form the BeOpen PythonLabs. In October of the same year, the PythonLabs team moved to Digital Creations, which became Zope Corporation. In 2001, the Python Software Foundation (PSF, see https://www.python.org/psf/) was formed, a non-profit organization specifically created to own the intellectual property related to Python. Zope Corporation was a sponsor of the PSF.
 
-## Características principales de Python
+## Key Features of Python
 
-Python ha sido diseñado para ser simple, potente y versátil. A continuación se detallan algunas de sus características clave que lo han convertido en uno de los lenguajes más populares del mundo:
-
----
-
-### Tipado dinámico
-
-Python es un lenguaje de tipado dinámico, lo que significa que no necesitas declarar el tipo de una variable al momento de crearla. El tipo se determina automáticamente en tiempo de ejecución.
-
-Esto permite escribir código más conciso y flexible, aunque también requiere cuidado para evitar errores de tipo.
+Python has been designed to be simple, powerful, and versatile. Here are some of its key features that have made it one of the most popular programming languages in the world:
 
 ---
 
-### Sintaxis clara y concisa
+### Dynamic Typing
 
-Uno de los mayores atractivos de Python es su sintaxis legible, que se asemeja al lenguaje humano. Esto facilita tanto el aprendizaje como el mantenimiento del código.
+Python is a dynamically typed language, which means you don't need to declare the type of a variable when you create it. The type is determined automatically at runtime.
+
+This lets you write code more efficiently and flexibly, without having to worry about type declarations.
+
+---
+
+### Clear and concise Syntax
+
+One of the major advantages of Python is its clear and concise syntax, which resembles human language. This makes it easier to learn and maintain code.
 
 - No se usan llaves para delimitar bloques, sino indentación.
 - La lectura del código es más fluida, lo que promueve buenas prácticas de desarrollo.
 
 ---
 
-### Soporte multiparadigma
+### Multi-paradigm support
 
-Python no obliga a un único estilo de programación. Ofrece soporte para varios paradigmas, lo que permite a los desarrolladores elegir el enfoque que mejor se adapte a su proyecto:
+Python does not mandate a single programming style. It offers support for multiple paradigms, allowing developers to choose the approach that best suits their project:
 
-- **Programación orientada a objetos (POO):** Permite definir clases, objetos, herencia y encapsulación.
-- **Programación funcional:** Incluye funciones de orden superior, funciones anónimas y herramientas como `map`, `filter`, y `reduce`.
-- **Estilo imperativo o procedural:** También puedes escribir código de forma secuencial, como en los scripts tradicionales.
+- **Object-oriented programming (OOP):** Allows you to define classes, objects, inheritance and encapsulation.
+- **Functional programming:** Includes higher-order functions, anonymous functions and tools such as `map`, `filter`, and `reduce`.
+- **Imperative or procedural style:** You can also write code sequentially, as in traditional scripting.
 
-Esta flexibilidad permite utilizar Python en múltiples escenarios, desde pequeños scripts hasta grandes aplicaciones empresariales o científicas.
+This flexibility allows Python to be used in multiple scenarios, from small scripts to large enterprise or scientific applications.
 
+## Python Philosophy (Python Zen)
 
-## Filosofía de Python (Zen de Python)
+Python is not only a programming language, but it also embodies a design philosophy that profoundly influences how code is written and understood.
 
-Python no solo es un lenguaje de programación, sino que también incorpora una filosofía de diseño que influye profundamente en cómo se escribe y se entiende el código.
+This philosophy is encapsulated in the **Zen of Python**, a set of principles created by Tim Peters that guide the development and style of the language.
 
-Esta filosofía está resumida en el **Zen de Python**, un conjunto de principios creado por Tim Peters que guían el desarrollo y el estilo del lenguaje.
+Some of its key ideas include:
 
-Algunas de sus ideas clave incluyen:
+- Simple is better than complex.
+- Explicit is better than implicit.
+- Readability counts.
+- Errors should never pass silently.
+- There is one - and preferably only one - obvious way to do it.
 
-- Lo simple es mejor que lo complejo.
-- Lo explícito es mejor que lo implícito.
-- La legibilidad cuenta.
-- Los errores nunca deberían pasar silenciosamente.
-- Hay una —y preferiblemente solo una— manera obvia de hacerlo.
-
-Estos principios fomentan un código limpio, legible y mantenible, y son parte fundamental del espíritu de la comunidad Python.
- Puedes leer el Zen completo aquí: [PEP 20 - The Zen of Python](https://peps.python.org/pep-0020/)
+These principles encourage clean, readable and maintainable code, and are a fundamental part of the Python community spirit.
+ You can read the full Zen here: [PEP 20 - The Zen of Python](https://peps.python.org/pep-0020/)
