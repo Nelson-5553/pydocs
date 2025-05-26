@@ -1,0 +1,106 @@
+---
+title: Compresión de listas
+description: Guía para Compresión de listas
+sidebar:
+  order: 5
+---
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+
+# Compresión de listas en Python
+
+La **compresión de listas** (*list comprehension*) es una forma concisa y elegante de crear listas a partir de otras secuencias (listas, tuplas, rangos, etc.) aplicando transformaciones o filtros en una sola línea de código.
+
+---
+
+## ¿Por qué usar compresión de listas?
+
+- Permite escribir código más limpio y legible.
+- Es más eficiente que usar bucles tradicionales para crear listas.
+- Facilita aplicar condiciones y transformaciones a los elementos.
+
+---
+
+## Sintaxis básica
+
+La sintaxis general es:
+
+```python
+[nueva_expresion for elemento in secuencia if condicion]
+```
+
+- `nueva_expresion`: lo que quieres agregar a la nueva lista.
+- `elemento`: cada valor de la secuencia original.
+- `secuencia`: la colección de datos a recorrer.
+- `condicion` (opcional): filtro para incluir solo ciertos elementos.
+
+---
+
+## Ejemplo simple
+
+Supón que quieres obtener una lista con los cuadrados de los números del 1 al 5:
+
+<Code
+code="
+cuadrados = [x**2 for x in range(1, 6)]
+print(cuadrados)
+"
+lang="py"
+title="Cuadrados del 1 al 5"
+frame="auto"
+/>
+
+**Salida:**
+```
+[1, 4, 9, 16, 25]
+```
+
+---
+
+## Ejemplo con condición (filtro)
+
+Ahora, solo queremos los cuadrados de los números pares:
+
+<Code
+code="
+cuadrados_pares = [x**2 for x in range(1, 6) if x % 2 == 0]
+print(cuadrados_pares)
+"
+lang="py"
+title="Cuadrados de números pares"
+frame="auto"
+/>
+
+**Salida:**
+```
+[4, 16]
+```
+
+---
+
+## Comparación con bucles tradicionales
+
+El siguiente código hace lo mismo, pero usando un bucle `for`:
+
+<Code
+code="
+cuadrados = []
+for x in range(1, 6):
+    cuadrados.append(x**2)
+"
+lang="py"
+title="Bucle tradicional"
+frame="auto"
+/>
+
+Como puedes ver, la compresión de listas es más compacta y fácil de leer.
+
+---
+
+## Resumen
+
+- La compresión de listas te permite crear listas nuevas de forma concisa y eficiente.
+- Puedes transformar y filtrar elementos en una sola línea.
+- Es una herramienta poderosa para trabajar con colecciones en Python.
+
+¿Te animas a practicar? Intenta crear una lista con los números impares del 1 al 20 usando compresión de listas.

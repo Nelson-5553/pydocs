@@ -1,0 +1,95 @@
+---
+title: Creación de tus propios módulos
+description: Guía para Creación de tus propios módulos
+sidebar:
+  order: 2
+---
+
+import { Code } from "@astrojs/starlight/components"
+
+Crear tus propios **módulos** en Python es una excelente forma de organizar, reutilizar y compartir tu código. Un módulo es simplemente un archivo `.py` que contiene funciones, clases o variables que puedes importar y usar en otros programas.
+
+---
+
+## ¿Por qué crear módulos?
+
+- **Organización:** Divide tu proyecto en archivos más pequeños y manejables.
+- **Reutilización:** Usa el mismo código en diferentes programas sin copiar y pegar.
+- **Mantenimiento:** Facilita actualizar y corregir errores en un solo lugar.
+
+---
+
+## ¿Cómo crear un módulo?
+
+1. **Crea un archivo `.py`**  
+   Por ejemplo, crea un archivo llamado `saludos.py` con el siguiente contenido:
+
+<Code
+code="
+def saludar(nombre):
+    print(f'¡Hola, {nombre}!')
+"
+lang="py"
+title="saludos.py"
+frame="auto"
+/>
+
+2. **Importa tu módulo en otro archivo**  
+   Ahora, en tu archivo principal, puedes importar y usar la función:
+
+<Code
+code="
+import saludos
+
+saludos.saludar('Ana')
+"
+lang="py"
+title="Uso de un módulo propio"
+frame="auto"
+/>
+
+**Salida:**
+```
+¡Hola, Ana!
+```
+
+---
+
+## Importar funciones específicas
+
+También puedes importar solo lo que necesitas de tu módulo:
+
+<Code
+code="
+from saludos import saludar
+
+saludar('Carlos')
+"
+lang="py"
+title="Importar función específica"
+frame="auto"
+/>
+
+---
+
+## ¿Dónde deben estar los módulos?
+
+Para que Python encuentre tu módulo, debe estar en el mismo directorio que tu archivo principal o en una carpeta incluida en el *PYTHONPATH*.
+
+---
+
+## Buenas prácticas
+
+- Usa nombres descriptivos para tus módulos y funciones.
+- Evita espacios y caracteres especiales en los nombres de archivos.
+- Mantén cada módulo enfocado en una sola tarea o tema.
+
+---
+
+## Resumen
+
+- Crear módulos te ayuda a organizar y reutilizar tu código.
+- Solo necesitas un archivo `.py` para empezar.
+- Importa tus módulos y funciones según lo necesites en tus proyectos.
+
+¿Listo para practicar? Crea un módulo con tus propias funciones y pruébalo en un programa nuevo.
