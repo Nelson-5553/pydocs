@@ -1,6 +1,6 @@
 ---
-title: Conjuntos
-description: Guía para Conjuntos
+title: Sets
+description: Guide for Sets
 sidebar:
   order: 4
 ---
@@ -9,221 +9,221 @@ import PyTable from "@components/PyTable.astro"
 import { Code } from "@astrojs/starlight/components"
 import { Aside } from "@astrojs/starlight/components"
 
-En Python, un conjunto (set) es una estructura de datos que almacena una colección desordenada de elementos únicos. Los elementos de un conjunto deben ser inmutables y hashables, y no pueden repetirse. Los conjuntos son útiles para realizar operaciones matemáticas sobre conjuntos, como unión, intersección y diferencia, y para eliminar duplicados de una lista. 
+In python, a set is a data structure that stores an unordered collection of unique elements. The elements of a set must be immutable and hashable, and cannot be repeated. Sets are useful for performing mathematical operations on sets, such as union, intersection and difference, and for removing duplicates from a list.
 
-## Crear un conjunto
+## Creating a set
 
-Hagamos varios conjuntos de frutas
+Let's create some sets of fruits
 
-<Code 
+<Code
 code="
-# Lista de frutas
-conjunto1 = {'manzana', 'banana', 'pera'}
-conjunto2 = {'pera', 'uva', 'mango'}
-print(conjunto1)
-print(conjunto2)
+# List of fruits
+set1 = {'apple', 'banana', 'pear'}
+set2 = {'pear', 'grape', 'mango'}
+print(set1)
+print(set2)
 "
-lang="py" 
-title="set.py" 
+lang="py"
+title="set.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'manzana', 'banana', 'pera'}
-{'pera', 'uva', 'mango'}
+{'apple', 'banana', 'pear'}
+{'pear', 'grape', 'mango'}
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
-## Añadir elementos
+## Adding elements
 
-Para eliminar un elemento a una lista debes usar la funcion `.add()`
-<Code 
+To add an element to a set, you can use the `.add()` method.
+<Code
 code="
-# Lista de frutas
-conjunto1 = {'manzana', 'banana', 'pera'}
-conjunto2 = {'pera', 'uva', 'mango'}
+# List of fruits
+set1 = {'apple', 'banana', 'pear'}
+set2 = {'pear', 'grape', 'mango'}
 
-# Añadir elementos a un conjunto
+# Add elements to a set
 
-conjunto1.add('fresa') 
-conjunto2.add('guayaba') 
+set1.add('strawberry')
+set2.add('guava')
 
-print(conjunto1)
-print(conjunto2)
+print(set1)
+print(set2)
 "
-lang="py" 
-title="set.py" 
+lang="py"
+title="set.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'manzana', 'banana', 'pera', 'fresa'}
-{'pera', 'uva', 'mango', 'guayaba'}
+{'apple', 'banana', 'pear', 'strawberry'}
+{'pear', 'grape', 'mango', 'guava'}
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
-## Eliminar un elemento
+## Deleting an element
 
-Para eliminar un elemento a una lista debes usar la funcion `.remove()`
-<Code 
+To delete an element from a set, you can use the `.remove()` method.
+<Code
 code="
-# Lista de frutas
-conjunto1 = {'manzana', 'banana', 'pera'}
-conjunto2 = {'pera', 'uva', 'mango'}
+# List of fruits
+set1 = {'apple', 'banana', 'pear'}
+set2 = {'pear', 'grape', 'mango'}
 
-# Añadir elementos a un conjunto
+# Delete elements from a set
 
-conjunto1.remove('pera') 
-conjunto2.remove('mango') 
+set1.remove('pear')
+set2.remove('mango')
 
-print(conjunto1)
-print(conjunto2)
+print(set1)
+print(set2)
 "
-lang="py" 
-title="set.py" 
+lang="py"
+title="set.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'manzana', 'banana'}
-{'pera', 'uva'}
+{'apple', 'banana'}
+{'pear', 'grape'}
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
 <Aside type="note">
 
-Puedes utilizar `discard()` para no generar error si no existe
+You can use `discard()` to not generate error if it doesn't exist
 
 </Aside>
 
 
-## Uniones de conjuntos
+## Set Unions
 
-Puedes unir los elementos de un conjunto usando la funcion `.union()`
+You can join the elements of a set using the `.union()` function
 
-<Code 
+<Code
 code="
-# Lista de frutas
-conjunto1 = {'manzana', 'banana', 'pera'}
-conjunto2 = {'pera', 'uva', 'mango'}
+# List of fruits
+set1 = {'apple', 'banana', 'pear'}
+set2 = {'pear', 'grape', 'mango'}
 
-# Añadir elementos a un conjunto
+# Adding elements to a set
 
-uniones = conjunto1.union(conjunto2) 
+unions = set1.union(set2)
 
-print(uniones)
+print(unions)
 
 "
-lang="py" 
-title="set.py" 
+lang="py"
+title="set.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'manzana', 'banana','pera', 'uva', 'mango'}
+{'apple', 'banana', 'pear', 'grape', 'mango'}
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
 
-## Interseccion de conjuntos
+## Set Intersections
 
-Puedes extraer los elementos que se repiten entre los conjuntos usando la funcion `.intersection()`
+You can extract the elements that are repeated between sets using the `.intersection()` function
 
-<Code 
+<Code
 code="
-# Lista de frutas
-conjunto1 = {'manzana', 'banana', 'pera'}
-conjunto2 = {'pera', 'uva', 'mango'}
+# List of fruits
+set1 = {'apple', 'banana', 'pear'}
+set2 = {'pear', 'grape', 'mango'}
 
-# Añadir elementos a un conjunto
+# Adding elements to a set
 
-interseccion = conjunto1.intersection(conjunto2) 
+intersection = set1.intersection(set2)
 
-print(interseccion)
+print(intersection)
 
 "
-lang="py" 
-title="set.py" 
+lang="py"
+title="set.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'pera'}
+{'pear'}
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
-## Diferencias de conjuntos
+## Set differences
 
-Puedes obtener los elementos que están en un conjunto pero no en otro utilizando la función `.difference()`.
-Esto es útil para identificar qué valores son exclusivos de un conjunto.
+You can obtain the elements that are in one set but not in another using the `.difference()` function.
+This is useful for identifying which values are exclusive to a set.
 
-<Code 
+<Code
 code="
-# Lista de frutas
-conjunto1 = {'manzana', 'banana', 'pera'}
-conjunto2 = {'pera', 'uva', 'mango'}
+# List of fruits
+set1 = {'apple', 'banana', 'pear'}
+set2 = {'pear', 'grape', 'mango'}
 
-# Añadir elementos a un conjunto
+# Adding elements to a set
 
-diferencia = conjunto1.difference(conjunto2) 
+difference = set1.difference(set2)
 
-print(diferencia)
+print(difference)
 
 "
-lang="py" 
-title="set.py" 
+lang="py"
+title="set.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'manzana', 'banana'}
+{'apple', 'banana'}
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
-## Funciones de conjuntos
+## Set Functions
 
-<PyTable 
-  headers={["Función", "Descripción"]}
+<PyTable
+  headers={["Function", "Description"]}
   rows={[
-    ["copy()", "Crea una copia del conjunto. "],
-    ["clear()", "Elimina todos los elementos del conjunto."],
-    ["isdisjoint()", "Verifica si dos conjuntos son disjuntos (no tienen elementos en común)."],
-    ["issuperset()", "Verifica si un conjunto es un subconjunto de otro. "],
-    ["symmetric_difference()", "Devuelve la diferencia simétrica entre dos conjuntos. "],
-    ["update()", "Modifica el conjunto original agregando los elementos de otro conjunto."],
-    ["intersection_update()", "Modifica el conjunto original para que contenga solo los elementos en común con otro conjunto. "],
-    ["difference_update()", "Modifica el conjunto original para que contenga solo los elementos que no están en otro conjunto. "],
-    ["symmetric_difference_update()", "Modifica el conjunto original para que contenga solo los elementos que no están en ambos conjuntos. "],
-    // más filas...
+    ["copy()", "Creates a copy of the set. "],
+    ["clear()", "Removes all elements from the set."],
+    ["isdisjoint()", "Checks if two sets are disjoint (have no common elements)."],
+    ["issuperset()", "Checks if a set is a subset of another. "],
+    ["symmetric_difference()", "Returns the symmetric difference between two sets. "],
+    ["update()", "Modifies the original set by adding elements from another set."],
+    ["intersection_update()", "Modifies the original set to contain only elements in common with another set. "],
+    ["difference_update()", "Modifies the original set to contain only elements that are not in another set. "],
+    ["symmetric_difference_update()", "Modifies the original set to contain only elements that are not in both sets. "],
+    // more rows...
   ]}
 />

@@ -1,210 +1,210 @@
 ---
-title: Diccionarios
-description: Guía para Diccionarios
+title: Dictionaries
+description: Guide for dictionaries
 sidebar:
   order: 3
 ---
 
 import { Code } from "@astrojs/starlight/components"
 
-En Python, los diccionarios son estructuras de datos que almacenan pares clave-valor. Las claves deben ser únicas e inmutables (como cadenas, números o tuplas), mientras que los valores pueden ser de cualquier tipo. Los diccionarios se usan para almacenar y recuperar información de manera eficiente, donde una clave sirve para identificar el valor asociado. 
+In Python, dictionaries are data structures that store key-value pairs. Keys must be unique and immutable (such as strings, numbers, or tuples), while values can be of any type. Dictionaries are used to store and retrieve information efficiently, where a key serves to identify the associated value.
 
 
-## Creación de un diccionario
+## Creation of a dictionary
 
-Se define un diccionario con pares clave: valor encerrados entre llaves `{}`.
+A dictionary is defined with key:value pairs enclosed in curly braces `{}`.
 
 
-<Code 
+<Code
 code="
-# Definición de un diccionario
+# Definition of a dictionary
 persona = {
-    'nombre': 'Ana',
-    'edad': 28,
-    'ciudad': 'Bogotá'
+    'name': 'Ana',
+    'age': 28,
+    'city': 'Bogotá'
 }
 
-# Mostrar diccionario completo
+# Show complete dictionary
 print(persona)
 "
 lang="py"
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="auto" />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'nombre': 'Ana', 'edad': 29, 'ciudad': 'Bogotá'}
+{'name': 'Ana', 'age': 29, 'city': 'Bogotá'}
 "
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="terminal" />
 
-## Indexacion
+## Indexing
 
-Permite acceder a un valor del diccionario usando su clave como índice.
+Allows accessing a value from a dictionary using its key as an index.
 
-<Code 
+<Code
 code="
-# Definición de un diccionario
+# Definition of a dictionary
 persona = {
-    'nombre': 'Ana',
-    'edad': 28,
-    'ciudad': 'Bogotá'
+    'name': 'Ana',
+    'age': 28,
+    'city': 'Bogotá'
 }
 
-# Acceso a valores
-print(persona['nombre'])   # Ana
-print(persona['edad'])     # 28
+# Access values
+print(persona['name'])   # Ana
+print(persona['age'])     # 28
 "
 lang="py"
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="auto" />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
 Ana
 28
 "
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="terminal" />
 
-## Acceso a valores
+## Accessing values
 
-Se imprime el diccionario para ver todos los pares clave:valor actuales.
+Print the dictionary to see all current key:value pairs.
 
-<Code 
+<Code
 code="
-# Definición de un diccionario
+# Definition of a dictionary
 persona = {
-    'nombre': 'Ana',
-    'edad': 28,
-    'ciudad': 'Bogotá'
+    'name': 'Ana',
+    'age': 28,
+    'city': 'Bogotá'
 }
 
-# Mostrar diccionario completo
+# Show complete dictionary
 print(persona)
 "
 lang="py"
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="auto" />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'nombre': 'Ana', 'edad': 28, 'profesion': 'Ingeniera'}
+{'name': 'Ana', 'age': 28, 'city': 'Bogotá'}
 "
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="terminal" />
 
-## Agregar un par clave:valor
+## Adding a key:value pair
 
-Puedes añadir nuevos datos asignando un valor a una nueva clave.
+You can add new data by assigning a value to a new key.
 
-<Code 
+<Code
 code="
-# Definición de un diccionario
+# Definition of a dictionary
 persona = {
-    'nombre': 'Ana',
-    'edad': 28,
-    'ciudad': 'Bogotá'
+    'name': 'Ana',
+    'age': 28,
+    'city': 'Bogotá'
 }
 
-# Agregar un nuevo par clave:valor
-persona['profesion'] = 'Ingeniera'
+# Add a new key:value pair
+persona['profession'] = 'Engineer'
 
 
-# Mostrar diccionario completo
+# Show complete dictionary
 print(persona)
 "
 lang="py"
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="auto" />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'nombre': 'Ana', 'edad': 28, 'ciudad': 'Bogotá', 'profesion': 'Ingeniera'}
+{'name': 'Ana', 'age': 28, 'city': 'Bogotá', 'profession': 'Engineer'}
 "
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="terminal" />
 
-## Modificar un valor existente
+## Modifying an existing value
 
-Se puede actualizar el valor de una clave ya existente asignándole un nuevo valor.
+You can update the value of an existing key by assigning a new value.
 
-<Code 
+<Code
 code="
-# Definición de un diccionario
+# Definition of a dictionary
 persona = {
-    'nombre': 'Ana',
-    'edad': 28,
-    'ciudad': 'Bogotá'
+    'name': 'Ana',
+    'age': 28,
+    'city': 'Bogotá'
 }
 
-# Modificar un valor existente
-persona['edad'] = 29
+# Modify an existing value
+persona['age'] = 29
 
-# Mostrar diccionario completo
+# Show complete dictionary
 print(persona)
 "
 lang="py"
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="auto" />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'nombre': 'Ana', 'edad': 29, 'profesion': 'Ingeniera'}
+{'name': 'Ana', 'age': 29, 'city': 'Bogotá'}
 "
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="terminal" />
 
-## Eliminar una clave
+## Deleting a key
 
-Usa `del` para borrar una clave junto con su valor del diccionario.
+Use `del` to delete a key along with its value from the dictionary.
 
-<Code 
+<Code
 code="
-# Definición de un diccionario
+# Definition of a dictionary
 persona = {
-    'nombre': 'Ana',
-    'edad': 28,
-    'ciudad': 'Bogotá'
+    'name': 'Ana',
+    'age': 28,
+    'city': 'Bogotá'
 }
 
-# Eliminar una clave
-del persona['ciudad']
+# Delete a key
+del persona['city']
 
-# Mostrar diccionario completo
+# Show complete dictionary
 print(persona)
 "
 lang="py"
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="auto" />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
-{'nombre': 'Ana', 'edad': 29}
+{'name': 'Ana', 'age': 29}
 "
-title="diccionario.py"
+title="dictionary.py"
 mark="highlights"
 frame="terminal" />

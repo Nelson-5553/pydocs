@@ -1,6 +1,6 @@
 ---
-title: Tuplas
-description: Guía para Tuplas
+title: Tuples
+description: Tuples Guide
 sidebar:
   order: 2
 ---
@@ -8,50 +8,50 @@ sidebar:
 import { Code } from "@astrojs/starlight/components"
 import { Aside } from "@astrojs/starlight/components"
 
-En Python, una tupla es una colección ordenada e inmutable de elementos. Las tuplas se representan entre paréntesis y separados por comas. Son útiles para almacenar datos que no deben cambiar después de su creación. 
+In Python, a tuple is an ordered and immutable collection of elements. Tuples are represented between parentheses and separated by commas. They are useful for storing data that should not change after creation.
 
-Las tuplas son:
+Tuples are:
 
-- **inmutabilidad**: Una vez creada una tupla, no se pueden agregar, eliminar o modificar elementos. 
+- **Immutable**: Once a tuple is created, you cannot add, remove, or modify elements.
 
-- **Ordenadas**: Los elementos en una tupla tienen un orden específico, y se puede acceder a ellos mediante su índice. 
+- **Ordered**: Elements in a tuple have a specific order, and they can be accessed through their index.
 
-- **Heterogénea**: Las tuplas pueden contener elementos de diferentes tipos de datos (enteros, cadenas, booleanos, etc.). 
+- **Heterogeneous**: Tuples can contain elements of different data types (integers, strings, booleans, etc.).
 
-## Crear una tupla
+## Creating a tuple
 
-Hagamos una tupla de frutas
+Let's make a tuple of fruits
 
 <Code 
 code="
-# Lista de frutas
-frutas = ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
-print(frutas)
+# List of fruits
+fruits = ('apple', 'banana', 'orange', 'pear', 'grape', 'mango')
+print(fruits)
 "
 lang="py" 
 title="tupla.py" 
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
 <Code 
 code="
-('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
+('apple', 'banana', 'orange', 'pear', 'grape', 'mango')
 "
 title="terminal" 
 mark="highlights"
 frame='terminal' />
 
-## Indexacion
+## Indexing
 
-Para acceder un elemento en particular de la tupla se lleva acabo una indexacion de la siguiente forma:
+To access a particular element of the tuple, indexing is carried out as follows:
 
 <Code 
 code="
-# Lista de frutas
-frutas = ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
-print(frutas[1])
+# List of fruits
+fruits = ('apple', 'banana', 'orange', 'pear', 'grape', 'mango')
+print(fruits[1])
 "
 lang="py" 
 title="tupla.py" 
@@ -68,43 +68,43 @@ title="terminal"
 mark="highlights"
 frame='terminal' />
 
-## Segmentacion
+## Slicing
 
-En Python, slicing (o segmentación) en una tupla es una técnica para obtener una sub-tupla extrayendo un rango de elementos, sin modificar la tupla original.
+In Python, slicing (or segmentation) in a tuple is a technique to obtain a sub-tuple by extracting a range of elements, without modifying the original tuple.
 
 ```python
-tupla[inicio:fin:paso]
+tuple[start:end:step]
 
 ```
-- **inicio**: índice desde donde se comienza (incluido).
+- **start**: index from where to begin (included).
 
-- **fin**: índice donde se termina (no incluido).
+- **end**: index where to finish (not included).
 
-- **paso**: (opcional) intervalo entre elementos.
+- **step**: (optional) interval between elements.
 
 <Code 
 code="
-# Lista de frutas
-frutas = ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
+# List of fruits
+fruits = ('apple', 'banana', 'orange', 'pear', 'grape', 'mango')
 
-print(frutas[1:4])     # ('banana', 'naranja', 'pera')
-print(frutas[:3])      # ('manzana', 'banana', 'naranja')
-print(frutas[::2])     # ('manzana', 'naranja', 'uva')
-print(frutas[::-1])    # ('mango', 'uva', 'pera', 'naranja', 'banana', 'manzana')
+print(fruits[1:4])     # ('banana', 'orange', 'pear')
+print(fruits[:3])      # ('apple', 'banana', 'orange')
+print(fruits[::2])     # ('apple', 'orange', 'grape')
+print(fruits[::-1])    # ('mango', 'grape', 'pear', 'orange', 'banana', 'apple')
 "
 lang="py" 
 title="tupla.py" 
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
 <Code 
 code="
-('banana', 'naranja', 'pera')
-('manzana', 'banana', 'naranja')
-('manzana', 'naranja', 'uva')
-('mango', 'uva', 'pera', 'naranja', 'banana', 'manzana') 
+('banana', 'orange', 'pear')
+('apple', 'banana', 'orange')
+('apple', 'orange', 'grape')
+('mango', 'grape', 'pear', 'orange', 'banana', 'apple') 
 "
 title="terminal" 
 mark="highlights"
