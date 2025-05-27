@@ -8,58 +8,58 @@ sidebar:
 import PyTable from "@components/PyTable.astro"
 import { Code } from "@astrojs/starlight/components"
 
-En Python, el manejo de errores se realiza mediante bloques try, except, y opcionalmente finally. Esto permite controlar el flujo del programa cuando ocurre una excepción (error) y evitar que el programa se detenga abruptamente.
+In python, error handling is done using try, except, and optionally finally blocks. This allows controlling the flow of the program when an exception (error) occurs and prevents the program from abruptly stopping.
 
-## Captura de una excepcion
+## Catching Exceptions
 
-Este ejemplo muestra cómo manejar un error específico, en este caso una división por cero, usando try y except. Si ocurre un error dentro del bloque try, el bloque except se ejecuta para manejarlo de forma segura sin detener el programa.
+This examples show how to handle a specific error, in this case a division by zero, using try and except. If an error occurs within the try block, the except block executes to handle it safely without stopping the program.
 
-<Code 
+<Code
 code={`
 try:
     resultado = 10 / 0
 except ZeroDivisionError:
-    print("Error: No se puede dividir entre cero.")
+    print("Error: you can't divide by zero.")
 `}
-lang="py" 
-title="division_error.py" 
-frame="auto" 
+lang="py"
+title="division_error.py"
+frame="auto"
 />
 
 
-## Captura de multiples excepciones
+## Catching Multiple Exceptions
 
-Este ejemplo captura más de un tipo de excepción. Intenta convertir una cadena no numérica a entero, lo cual lanza un ValueError. Además, se prevé un TypeError por si se produce un error de tipo diferente. Esto permite manejar varios posibles errores de manera separada y clara.
+This example catches more than one type of exception. It tries to convert a non-numeric string to an integer, which raises a ValueError. Additionally, it anticipates a TypeError if a different type of error occurs. This allows handling multiple possible errors separately and clearly.
 
-<Code 
+<Code
 code={`
 try:
     numero = int("abc")
 except ValueError:
-    print("Error: No se puede convertir texto a número.")
+    print("Error: can't convert text to number.")
 except TypeError:
-    print("Error: Tipo de dato no válido.")
+    print("Error: Invalid data type.")
 `}
-lang="py" 
-title="multiples_excepciones.py" 
-frame="auto" 
+lang="py"
+title="multiples_excepciones.py"
+frame="auto"
 />
 
-## Uso de finally 
+## Using finally
 
-El bloque finally siempre se ejecuta sin importar si ocurrió una excepción o no. En este caso, se intenta abrir un archivo que no existe. Si ocurre un FileNotFoundError, se maneja, y luego el bloque finally se ejecuta para indicar que se finalizó el intento, lo cual es útil para liberar recursos o registrar acciones.
+The finally block always executes regardless of whether an exception occurred or not. In this case, an attempt is made to open a non-existent file. If a FileNotFoundError occurs, it is handled, and then the finally block executes to indicate that the attempt has finished, which is useful for releasing resources or logging actions.
 
-<Code 
+<Code
 code={`
 try:
-    archivo = open("inexistente.txt", "r")
-    contenido = archivo.read()
+    file = open("non-existent.txt", "r")
+    contenido = file.read()
 except FileNotFoundError:
-    print("Error: El archivo no existe.")
+    print("Error: file not found.")
 finally:
-    print("Finalizando intento de lectura.")
+    print("Finishing reading attempt.")
 `}
-lang="py" 
-title="finally_bloque.py" 
-frame="auto" 
+lang="py"
+title="finally_bloque.py"
+frame="auto"
 />
