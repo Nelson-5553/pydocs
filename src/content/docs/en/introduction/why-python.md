@@ -1,24 +1,24 @@
 ---
-title: ¿Por qué Python?
-description: Ventajas de aprender Python
+title: Why python?
+description: advantages of learning python
 sidebar:
   order: 2
 ---
 
-Python es uno de los lenguajes de programación más populares y versátiles en la actualidad. A continuación, te presentamos algunas razones clave para aprender y usar Python:
+Python is one of the most popular and versatile programming languages in the world. Here are some key reasons to learn and use Python:
 
-- **Sintaxis sencilla y legible:** Python tiene una sintaxis clara y parecida al inglés, lo que facilita la lectura y escritura del código. Esto permite a los desarrolladores ser más productivos y escribir programas en menos líneas que en otros lenguajes.
+- **Simple and readable syntax:** Python has a clear syntax similar to English, making it easy to read and write code. This allows developers to be more productive and write programs in fewer lines than in other languages.
 
-- **Gran biblioteca estándar:** Python incluye una amplia colección de módulos y herramientas listas para usar, lo que evita tener que programar todo desde cero. Puedes encontrar soluciones para tareas como manejo de archivos, redes, matemáticas, desarrollo web y mucho más.
+- **Large standard library:** Python includes a vast collection of modules and tools ready to use, avoiding the need to program everything from scratch. You can find solutions for tasks such as file handling, networking, mathematics, web development, and much more.
 
-- **Multiplataforma:** Python funciona en diferentes sistemas operativos como Windows, macOS, Linux y Unix. Puedes escribir tu código una vez y ejecutarlo en cualquier plataforma sin cambios importantes.
+- **Multiplatform:** Python works on different operating systems such as Windows, macOS, Linux and Unix. You can write your code once and run it on any platform without significant changes.
 
-- **Integración con otros lenguajes:** Python se puede combinar fácilmente con otros lenguajes como Java, C y C++, lo que lo hace ideal para proyectos que requieren alto rendimiento o integración con sistemas existentes.
+- **Integration with other languages:** Python can easily be combined with other languages such as Java, C and C++, making it ideal for projects that require high performance or integration with existing systems.
 
-- **Comunidad activa y soporte:** Millones de desarrolladores en todo el mundo usan Python. Si tienes dudas o problemas, puedes encontrar ayuda rápidamente en foros, comunidades y redes sociales.
+- **Active community and support:** Millions of developers around the world use Python. If you have questions or problems, you can quickly find help in forums, communities and social networks.
 
-- **Recursos de aprendizaje:** Existen numerosos recursos gratuitos y de calidad en Internet, como tutoriales, videos, documentación oficial y cursos, para aprender Python desde cero o perfeccionar tus habilidades.
+- **Learning resources:** There are numerous free and high-quality resources on the Internet, such as tutorials, videos, official documentation and courses, to learn Python from scratch or improve your skills.
 
-En resumen, Python es una excelente opción tanto para principiantes como para profesionales, gracias a su facilidad de uso, potencia y comunidad.
+In summary, Python is an excellent option for both beginners and professionals, thanks to its ease of use, power and community.
 
-¿Listo para comenzar tu viaje con Python?
+Ready to start your journey with Python?

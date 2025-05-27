@@ -1,128 +1,128 @@
 ---
-title: Métodos y atributos
-description: Guía para Métodos y atributos
+title: Methods and Attributes
+description: Guide to Methods and Attributes
 sidebar:
   order: 2
 ---
 
 import { Code } from "@astrojs/starlight/components"
 
-Ahora que ya sabes qué es una clase y cómo crear objetos, es momento de profundizar en dos conceptos clave: **atributos** y **métodos**. Estos son los componentes fundamentales que le dan funcionalidad y características a tus objetos.
+Now that you know what a class is and how to create objects, it's time to delve into two key concepts: **attributes** and **methods**. These are the fundamental components that give functionality and characteristics to your objects.
 
 ---
 
-## ¿Qué son los atributos?
+## What are Attributes?
 
-Los **atributos** son variables que almacenan información sobre el estado de un objeto. Cada objeto puede tener valores diferentes para sus atributos.
+**Attributes** are variables that store information about the state of an object. Each object can have different values for its attributes.
 
 <Code
 code="
-class Persona:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-p1 = Persona('Ana', 30)
-print(p1.nombre)  # Ana
-print(p1.edad)    # 30
+p1 = Person('Ana', 30)
+print(p1.name)  # Ana
+print(p1.age)    # 30
 "
 lang="py"
-title="Atributos de instancia"
+title="Instance Attributes"
 frame="auto"
 />
 
-En este ejemplo, `nombre` y `edad` son atributos de cada objeto `Persona`.
+In this example, `name` and `age` are attributes of each `Person` object.
 
 ---
 
-## ¿Qué son los métodos?
+## What are Methods?
 
-Los **métodos** son funciones definidas dentro de una clase que describen los comportamientos de los objetos. Siempre reciben al menos un parámetro: `self`, que representa al propio objeto.
-
-<Code
-code="
-class Persona:
-    def __init__(self, nombre):
-        self.nombre = nombre
-
-    def saludar(self):
-        print(f'Hola, soy {self.nombre}!')
-
-p1 = Persona('Ana')
-p1.saludar()  # Hola, soy Ana!
-"
-lang="py"
-title="Método de instancia"
-frame="auto"
-/>
-
----
-
-## Tipos de atributos
-
-- **Atributos de instancia:** Son propios de cada objeto (como `self.nombre`).
-- **Atributos de clase:** Son compartidos por todas las instancias de la clase.
+**Methods** are functions defined within a class that describe the behaviors of objects. They always receive at least one parameter: `self`, which represents the object itself.
 
 <Code
 code="
-class Mascota:
-    especie = 'Perro'  # Atributo de clase
+class Person:
+    def __init__(self, name):
+        self.name = name
 
-    def __init__(self, nombre):
-        self.nombre = nombre  # Atributo de instancia
+    def greet(self):
+        print(f'Hello, I am {self.name}!')
 
-m1 = Mascota('Rex')
-m2 = Mascota('Luna')
-print(m1.especie)  # Perro
-print(m2.especie)  # Perro
+p1 = Person('Ana')
+p1.greet()  # Hello, I am Ana!
 "
 lang="py"
-title="Atributos de clase e instancia"
+title="Instance Method"
 frame="auto"
 />
 
 ---
 
-## Tipos de métodos
+## Types of Attributes
 
-- **Métodos de instancia:** Usan `self` y operan sobre el objeto.
-- **Métodos de clase:** Usan `@classmethod` y reciben `cls` como primer parámetro.
-- **Métodos estáticos:** Usan `@staticmethod` y no reciben ni `self` ni `cls`.
+- **Instance attributes:** Are unique to each object (like `self.name`).
+- **Class attributes:** Are shared by all instances of the class.
 
 <Code
 code="
-class Calculadora:
+class Pet:
+    species = 'Dog'  # Class attribute
+
+    def __init__(self, name):
+        self.name = name  # Instance attribute
+
+m1 = Pet('Rex')
+m2 = Pet('Luna')
+print(m1.species)  # Dog
+print(m2.species)  # Dog
+"
+lang="py"
+title="Class and Instance Attributes"
+frame="auto"
+/>
+
+---
+
+## Types of Methods
+
+- **Instance methods:** Use `self` and operate on the object.
+- **Class methods:** Use `@classmethod` and receive `cls` as the first parameter.
+- **Static methods:** Use `@staticmethod` and receive neither `self` nor `cls`.
+
+<Code
+code="
+class Calculator:
     @staticmethod
-    def sumar(a, b):
+    def add(a, b):
         return a + b
 
     @classmethod
-    def descripcion(cls):
-        return 'Calculadora simple'
+    def description(cls):
+        return 'Simple calculator'
 
-print(Calculadora.sumar(3, 4))         # 7
-print(Calculadora.descripcion())        # Calculadora simple
+print(Calculator.add(3, 4))         # 7
+print(Calculator.description())        # Simple calculator
 "
 lang="py"
-title="Métodos estáticos y de clase"
+title="Static and Class Methods"
 frame="auto"
 />
 
 ---
 
-## Buenas prácticas
+## Best Practices
 
-- Usa nombres descriptivos para atributos y métodos.
-- Los atributos privados (solo para uso interno) se nombran con un guion bajo: `_atributo`.
-- Documenta tus métodos usando docstrings.
+- Use descriptive names for attributes and methods.
+- Private attributes (for internal use only) are named with an underscore: `_attribute`.
+- Document your methods using docstrings.
 
 ---
 
-## Resumen
+## Summary
 
-- **Atributos**: almacenan información del objeto.
-- **Métodos**: definen comportamientos del objeto.
-- Existen atributos y métodos de instancia, de clase y estáticos.
-- Dominar estos conceptos te permite crear clases más útiles y flexibles.
+- **Attributes**: store object information.
+- **Methods**: define object behaviors.
+- There are instance, class, and static attributes and methods.
+- Mastering these concepts allows you to create more useful and flexible classes.
 
-¿Listo para seguir? ¡Intenta crear una clase con atributos y métodos propios!
+Ready to continue? Try creating a class with your own attributes and methods!

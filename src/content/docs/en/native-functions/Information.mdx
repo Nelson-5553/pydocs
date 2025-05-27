@@ -1,6 +1,6 @@
 ---
-title: Información sobre objetos
-description: Guía para Funciones de informacion
+title: Information about Objects
+description: Guide for Information Functions
 sidebar:
   order: 3
 ---
@@ -8,36 +8,36 @@ import { Code } from "@astrojs/starlight/components"
 import { Aside } from "@astrojs/starlight/components"
 import PyTable from '@components/PyTable.astro';
 
-Estas funciones están diseñadas para inspeccionar y comprender los objetos en tiempo de ejecución. Son especialmente útiles durante el desarrollo, depuración y documentación del código. Permiten conocer el tipo de un objeto, su ubicación en memoria, o acceder a su ayuda integrada. Usarlas facilita el desarrollo más seguro y mantenible, especialmente en entornos dinámicos.
+These functions are designed to inspect and understand objects at runtime. They are especially useful during code development, debugging, and documentation. They allow you to know the type of an object, its location in memory, or access its built-in help. Using them facilitates safer and more maintainable development, especially in dynamic environments.
 <PyTable
-  headers={["Función", "Descripción"]}
+  headers={["Function", "Description"]}
   rows={[
-    ["type()", "Devuelve el tipo del objeto especificado."],
-    ["id()", "Retorna la dirección o identificador único del objeto en memoria."],
-    ["help()", "Muestra la documentación integrada (docstring) de funciones, objetos, módulos, etc."],
-    ["dir()", "	Lista los atributos y métodos disponibles para un objeto."],
+    ["type()", "Returns the type of the specified object."],
+    ["id()", "Returns the address or unique identifier of the object in memory."],
+    ["help()", "Shows the built-in documentation (docstring) of functions, objects, modules, etc."],
+    ["dir()", "Lists the attributes and methods available for an object."],
   ]}
 />
-A continuacion te explicare con mas detalle el funcionamiento de estas funciones:
+Below I will explain in more detail how these functions work:
 
 ### `type()`
 
- Uso típico: Para verificar si una variable es del tipo esperado antes de realizar operaciones con ella.
+ Typical use: To verify if a variable is of the expected type before performing operations with it.
 
 <Code
-code="
+code={`
 x = 42
 print(type(x))
-"
+`}
 lang="py"
 title="type.py"
 mark="highlights"
 frame='auto' />
-Salida:
+Output:
 <Code
-code="
+code={`
 <class 'int'>
-"
+`}
 
 title="type.py"
 mark="highlights"
@@ -45,24 +45,24 @@ frame='terminal' />
 
 ### `id()`
 
-Uso típico: Para comprobar si dos variables apuntan al mismo objeto en memoria.
+Typical use: To check if two variables point to the same object in memory.
 
 <Code
-code="
+code={`
 a = 10
 b = a
 print(id(a))
-print(id(b))  # Mismo ID que a, ya que ambos apuntan al mismo objeto
-"
+print(id(b))  # Same ID as a, since both point to the same object
+`}
 lang="py"
 title="id.py"
 mark="highlights"
 frame='auto' />
-Salida:
+Output:
 <Code
-code="
-140710837832368 (valor de ejemplo)
-"
+code={`
+140710837832368 (example value)
+`}
 
 title="id.py"
 mark="highlights"
@@ -70,18 +70,18 @@ frame='terminal' />
 
 ### `dir()`
 
- Esto mostrará todos los métodos disponibles para los objetos de tipo cadena (str), como `.upper()`, `.lower()`, `.split()`, etc.
+ This will show all the available methods for string (str) objects, such as `.upper()`, `.lower()`, `.split()`, etc.
 <Code
-code="
+code={`
 print(dir(str))
-"
+`}
 lang="py"
 title="dir.py"
 mark="highlights"
 frame='auto' />
-Salida:
+Output:
 <Code
-code="
+code={`
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__',
  '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
  '__getitem__', '__getnewargs__', '__gt__', '__hash__', '__init__',
@@ -96,7 +96,7 @@ code="
  'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase',
  'title', 'translate', 'upper', 'zfill']
 
-"
+`}
 
 title="dir.py"
 mark="highlights"
@@ -104,34 +104,34 @@ frame='terminal' />
 
 <Aside type='note'>
 
-Sin argumentos:
+Without arguments:
 
     ```python
       print(dir())
     ```
-Muestra todas las variables y funciones definidas en el entorno actual.
+Shows all variables and functions defined in the current environment.
 </Aside>
 
 ### `help()`
 
-Uso típico: Durante la exploración o aprendizaje de una función o método. Muy útil en entornos interactivos como la terminal o Jupyter Notebook.
+Typical use: During the exploration or learning of a function or method. Very useful in interactive environments such as the terminal or Jupyter Notebook.
 
 <Code
-code="
+code={`
 help(str.upper)
-"
+`}
 lang="py"
 title="help.py"
 mark="highlights"
 frame='auto' />
-Salida:
+Output:
 <Code
-code="
+code={`
 Help on method_descriptor:
 
 upper(self, /)
     Return a copy of the string converted to uppercase.
-"
+`}
 
 title="help.py"
 mark="highlights"

@@ -1,6 +1,6 @@
 ---
 title: Variables
-description: Guía para Variables
+description: Variables Guide
 sidebar:
   order: 3
 ---
@@ -9,131 +9,131 @@ import PyTable from "../../../../components/PyTable.astro"
 import { Code } from '@astrojs/starlight/components';
 
 
-Una variable es un contenedor que almacena datos dentro de un programa. Cada variable tiene un nombre y un tipo de dato asociado, lo que permite al programa acceder a la información almacenada y manipularla según sea necesario.
+A variable is a container that stores data within a program. Each variable has a name and an associated data type, which allows the program to access the stored information and manipulate it as needed.
 
-A diferencia de otros lenguajes de programación, Python asigna automáticamente el tipo de dato según el valor que se le asigne a la variable. Es decir, el lenguaje interpreta el tipo de manera dinámica, lo que hace que no sea obligatorio declarar el tipo de variable al momento de crearla.
+Unlike other programming languages, Python automatically assigns the data type based on the value assigned to the variable. That is, the language interprets the type dynamically, which means it's not mandatory to declare the variable type when creating it.
 
-Sin embargo, si se desea, es posible especificar manualmente el tipo utilizando anotaciones de tipo, lo cual puede mejorar la legibilidad del código y facilitar su depuración, especialmente en proyectos grandes.
+However, if desired, it's possible to manually specify the type using type annotations, which can improve code readability and facilitate debugging, especially in large projects.
 
-## Tipos de variables 
+## Types of variables 
 
-En Python existen diferentes tipos de variables (tipos de datos), similares a los que se encuentran en otros lenguajes de programación. Algunos de los más comunes son:
+In Python there are different types of variables (data types), similar to those found in other programming languages. Some of the most common are:
 
-### Enteros
+### Integers
 
-Representa números enteros, positivos o negativos, sin parte decimal. Se usan comúnmente para contar, hacer cálculos o representar valores numéricos discretos.
+Represents whole numbers, positive or negative, without decimal parts. They are commonly used for counting, calculations, or representing discrete numerical values.
 
 
 <Code 
-code="numero = 12 # Esta variable contiene un entero
+code="number = 12 # This variable contains an integer
 
-      numero1 = 0 # Esta variable contiene un entero
+      number1 = 0 # This variable contains an integer
 
-      numero2 = -4 # Esta variable contiene un entero  " 
+      number2 = -4 # This variable contains an integer  "
        
 lang="py" 
 title="Int.py" 
 mark="highlights" />
 
-### Flotantes
+### Floats
 
-Almacenan números reales con parte decimal. Son útiles para representar cantidades más precisas, como medidas, porcentajes o resultados de operaciones con división
+Store real numbers with decimal parts. They are useful for representing more precise quantities, such as measurements, percentages, or results from division operations.
 
 <Code 
-code="numero = 0.0 # Esta variable contiene un flotante
+code="number = 0.0 # This variable contains a float
 
-      numero1 = -1.5 # Esta variable contiene un flotante
+      number1 = -1.5 # This variable contains a float
 
-      numero2 = 3.14 # Esta variable contiene un flotante  " 
+      number2 = 3.14 # This variable contains a float  "
        
 lang="py" 
 title="Float.py" 
 mark="highlights" />
 
-### Cadenas de texto
+### Strings
 
-Se utilizan para guardar texto. Una cadena puede contener letras, números y símbolos. Se encierra entre comillas simples `'` o dobles `"`
+Used to store text. A string can contain letters, numbers, and symbols. It's enclosed in single `'` or double `"` quotes.
 
 <Code 
-code="cadena = 'Hola Mundo' # Esta variable contiene un cadena
+code="string = 'Hello World' # This variable contains a string
 
-      cadena1 = '123' # Esta variable contiene un cadena
+      string1 = '123' # This variable contains a string
 
-      cadena2 = '$%&&/' # Esta variable contiene un cadena" 
+      string2 = '$%&&/' # This variable contains a string"
 lang="py" 
 title="Str.py" 
 mark="highlights" />
 
-### Booleanos
+### Booleans
 
-Este tipo de dato solo puede tener dos valores: `True` (verdadero) o `False` (falso). Se usa para representar estados lógicos y realizar condiciones.
+This data type can only have two values: `True` or `False`. It's used to represent logical states and perform conditions.
 
 <Code 
-code="valor1 = True # Esta variable contiene un booleano
+code="value1 = True # This variable contains a boolean
 
-      valor2 = False # Esta variable contiene un booleano" 
+      value2 = False # This variable contains a boolean"
 lang="py" 
 title="Bool.py" 
 mark="highlights" />
 
-### Listas
+### Lists
 
-Una lista es una colección ordenada de elementos, que puede contener diferentes tipos de datos (enteros, cadenas, etc.). Las listas son modificables, es decir, puedes cambiar su contenido después de crearlas.
+A list is an ordered collection of elements, which can contain different data types (integers, strings, etc.). Lists are modifiable, meaning you can change their content after creating them.
 
 <Code 
-code="cadenas = ['manzana', 'banana', 'pera'] # contiene una lista de palabras
+code="strings = ['apple', 'banana', 'pear'] # contains a list of words
 
-      numeros = [1, 2, 3] # contiene una lista de numeros
+      numbers = [1, 2, 3] # contains a list of numbers
       
-      mixtas =  [1, 2.3, 'banana', False,[1,2,3]] # contiene una lista de diferentes tipos de valores " 
+      mixed =  [1, 2.3, 'banana', False,[1,2,3]] # contains a list of different types of values "
 lang="py" 
 title="List.py" 
 mark="highlights" />
 
-### Tuplas
+### Tuples
 
-Similar a una lista, pero no se puede modificar su contenido una vez creada. Son útiles para representar colecciones de datos que no deben cambiar, como coordenadas o configuraciones.
+Similar to a list, but you cannot modify its content once created. They are useful for representing data collections that should not change, such as coordinates or configurations.
 <Code 
-code="cadenas = ('rojo', 'verde', 'azul') # contiene una tupla de palabras
+code="strings = ('red', 'green', 'blue') # contains a tuple of words
 
-      numeros = (1, 2, 3) # contiene una tupla de numeros"
+      numbers = (1, 2, 3) # contains a tuple of numbers"
 lang="py" 
 title="Tuples.py" 
 mark="highlights" />
 
-### Diccionarios
+### Dictionaries
 
-Estructuras que almacenan datos en pares `clave: valor`. Permiten acceder rápidamente a la información usando la clave. Son muy útiles para representar objetos con propiedades.
+Structures that store data in `key: value` pairs. They allow quick access to information using the key. They are very useful for representing objects with properties.
 <Code 
-code="# contiene un diccionario
-      dict = {'nombre': 'Ana', 'edad': 25}
+code="# contains a dictionary
+      dict = {'name': 'Ana', 'age': 25}
        
-      # contiene un diccionario
-      dict1 = {'ciudad': 'Bogotá', 'pais': 'Colombia'}"
+      # contains a dictionary
+      dict1 = {'city': 'Bogotá', 'country': 'Colombia'}"
 lang="py" 
 title="Ditc.py" 
 mark="highlights" />
 
-### Conjuntos
+### Sets
 
-Una colección no ordenada de elementos únicos (sin duplicados). Se usan para operaciones matemáticas como uniones, intersecciones o para eliminar valores repetidos de una lista.
+An unordered collection of unique elements (without duplicates). They are used for mathematical operations like unions, intersections, or to remove repeated values from a list.
 
 <Code 
-code="# contiene un conjunto
+code="# contains a set
       set = {'python', 'java', 'c++'}
        
-      # contiene un conjunto
-      set1 = {'ciudad': 'Bogotá', 'pais': 'Colombia'}"
+      # contains a set
+      set1 = {'city', 'country', 'language'}"
 lang="py" 
 title="Set.py" 
 mark="highlights" />
 
-## Asignación Múltiple
+## Multiple Assignment
 
-Python permite asignar múltiples variables en una sola línea (Algo que otros lenguajes no permiten), lo que hace tu código más limpio y compacto. Esta técnica es especialmente útil cuando quieres inicializar varias variables al mismo tiempo.
+Python allows assigning multiple variables in a single line (something that other languages don't allow), which makes your code cleaner and more compact. This technique is especially useful when you want to initialize several variables at the same time.
 
 <Code 
-code="# Asignando tres variables a la vez
+code="# Assigning three variables at once
 a, b, c = 1, 2, 3
 
 print(a)  # 1
@@ -144,14 +144,14 @@ lang="py"
 title="example.py" 
 mark="highlights" />
 
-## Reasignacion
+## Reassignment
 
-En Python, las variables pueden cambiar de tipo durante la ejecución del programa. Esto se debe a que Python es un lenguaje de tipado dinámico, lo que significa que no es necesario declarar el tipo de la variable de antemano, y este puede cambiar según el valor que se le asigne.
+In Python, variables can change type during program execution. This is because Python is a dynamically typed language, which means it's not necessary to declare the variable type beforehand, and it can change according to the value assigned to it.
 <Code 
 code="
-x = 10 # Valor inicial de X
+x = 10 # Initial value of X
 
-x = 'Ahora soy texto'# Nuevo Valor asignado de X
+x = 'Now I am text'# New value assigned to X
 
 "
 lang="py" 

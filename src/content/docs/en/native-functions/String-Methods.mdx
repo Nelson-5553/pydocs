@@ -1,250 +1,272 @@
 ---
-title: Metodos de Cadena
-description: Guía para Metodos de Cadena
+title: String Methods
+description: Guide to String Methods
 sidebar:
   order: 5
 ---
 import PyTable from '@components/PyTable.astro';
 import { Code } from "@astrojs/starlight/components"
 
-Los métodos de cadenas (str) permiten manipular y analizar textos de manera eficiente. Son esenciales en tareas como el procesamiento de archivos, entradas de usuario, generación de reportes, y en general, cualquier sistema que trabaje con datos textuales. Gracias a su simplicidad y expresividad, estos métodos son una herramienta clave en la limpieza, transformación y búsqueda de información textual.
+String (str) methods allow you to manipulate and analyze text efficiently. They are essential in tasks such as file processing, user input, report generation, and in general, any system that works with textual data. Thanks to their simplicity and expressiveness, these methods are a key tool in cleaning, transforming, and searching for textual information.
 
-<PyTable 
-  headers={["Función", "Descripción"]}
+<PyTable
+  headers={["Function", "Description"]}
   rows={[
-    [".lower()", "Convierte todos los caracteres a minúsculas."],
-    [".upper()", "Convierte todos los caracteres a mayúsculas."],
-    [".capitalize()", "Convierte el primer carácter en mayúscula y los demás en minúscula."],
-    [".title()", "Convierte la primera letra de cada palabra en mayúscula."],
-    [".strip()", "Elimina espacios en blanco al inicio y final de una cadena."],
-    [".replace()", "Reemplaza una subcadena por otra."],
-    [".split()", "Divide la cadena en una lista según un separador."],
-    [".join()", "Une elementos de una secuencia utilizando la cadena como separador."],
-    [".find()", "	Devuelve la posición de la primera ocurrencia de una subcadena, o -1 si no existe."],
-    [".startswith()", "Devuelve True si la cadena comienza con una subcadena dada."],
-    [".endswith()", "Devuelve True si la cadena termina con una subcadena dada."],
-  
+    [".lower()", "Converts all characters to lowercase."],
+    [".upper()", "Converts all characters to uppercase."],
+    [".capitalize()", "Converts the first character to uppercase and the rest to lowercase."],
+    [".title()", "Converts the first letter of each word to uppercase."],
+    [".strip()", "Removes whitespace at the beginning and end of a string."],
+    [".replace()", "Replaces one substring with another."],
+    [".split()", "Divides the string into a list according to a separator."],
+    [".join()", "Joins elements of a sequence using the string as a separator."],
+    [".find()", "Returns the position of the first occurrence of a substring, or -1 if it does not exist."],
+    [".startswith()", "Returns True if the string starts with a given substring."],
+    [".endswith()", "Returns True if the string ends with a given substring."],
+
   ]}
 />
 
-A continuacion te explicare con mas detalle el funcionamiento de estas funciones:
+Below I will explain in more detail how these functions work:
 
 ### `.lower()`
 
-Uso típico: Convertir una cadena a minúsculas.
+Typical use: Convert a string to lowercase.
 
-<Code 
-code="
-texto = 'Hola Mundo'
-print(texto.lower())
-"
-lang="py" 
-title="lower.py" 
+<Code
+code={`
+text = 'Hello World'
+print(text.lower())
+`}
+lang="py"
+title="lower.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-hola mundo
-"
-title="lower.py" 
+Output:
+<Code
+code={`
+hello world
+`}
+title="lower.py"
 mark="highlights"
 frame='terminal' />
 
 ### `.upper()`
 
-Uso típico: Convertir una cadena a mayúsculas.
+Typical use: Convert a string to uppercase.
 
-<Code 
-code="
-texto = 'Hola Mundo'
-print(texto.upper())
-"
-lang="py" 
-title="upper.py" 
+<Code
+code={`
+text = 'Hello World'
+print(text.upper())
+`}
+lang="py"
+title="upper.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-HOLA MUNDO
-"
-title="upper.py" 
+Output:
+<Code
+code={`
+HELLO WORLD
+`}
+title="upper.py"
 mark="highlights"
 frame='terminal' />
 
 ### `.capitalize()`
 
-Uso típico: Poner en mayúscula solo la primera letra y el resto en minúscula.
+Typical use: Capitalize only the first letter and lowercase the rest.
 
-<Code 
-code="
-texto = 'hola MUNDO'
-print(texto.capitalize())
-"
-lang="py" 
-title="capitalize.py" 
+<Code
+code={`
+text = 'hello WORLD'
+print(text.capitalize())
+`}
+lang="py"
+title="capitalize.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-Hola mundo
-"
-title="capitalize.py" 
+Output:
+<Code
+code={`
+Hello world
+`}
+title="capitalize.py"
 mark="highlights"
 frame='terminal' />
 
 ### `.title()`
 
-Uso típico: Convertir la primera letra de cada palabra en mayúscula.
+Typical use: Convert the first letter of each word to uppercase.
 
-<Code 
-code="
-texto = 'hola mundo desde PyDocs'
-print(texto.title())
-"
-lang="py" 
-title="title.py" 
+<Code
+code={`
+text = 'hello world from PyDocs'
+print(text.title())
+`}
+lang="py"
+title="title.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-Hola Mundo Desde Pydocs
-"
-title="title.py" 
+Output:
+<Code
+code={`
+Hello World From Pydocs
+`}
+title="title.py"
 mark="highlights"
 frame='terminal' />
 
 ### `.strip()`
 
-Uso típico: Eliminar espacios en blanco al inicio y al final.
+Typical use: Remove whitespace at the beginning and end.
 
-<Code 
-code="
-texto = '   hola mundo   '
-print(texto.strip())
-"
-lang="py" 
-title="strip.py" 
+<Code
+code={`
+text = '   hello world   '
+print(text.strip())
+`}
+lang="py"
+title="strip.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-hola mundo
-"
-title="strip.py" 
+Output:
+<Code
+code={`
+hello world
+`}
+title="strip.py"
 mark="highlights"
 frame='terminal' />
 
 ### `.replace()`
 
-Uso típico: Reemplazar una subcadena por otra.
+Typical use: Replace one substring with another.
 
-<Code 
-code="
-texto = 'Me gusta Python'
-print(texto.replace('Python', 'JavaScript'))
-"
-lang="py" 
-title="replace.py" 
+<Code
+code={`
+text = 'I like Python'
+print(text.replace('Python', 'JavaScript'))
+`}
+lang="py"
+title="replace.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-Me gusta JavaScript
-"
-title="replace.py" 
+Output:
+<Code
+code={`
+I like JavaScript
+`}
+title="replace.py"
 mark="highlights"
 frame='terminal' />
 
 ### `.split()`
 
-Uso típico: Dividir una cadena en una lista.
+Typical use: Split a string into a list.
 
-<Code 
-code="
-texto = 'rojo,verde,azul'
-print(texto.split(','))
-"
-lang="py" 
-title="split.py" 
+<Code
+code={`
+text = 'red,green,blue'
+print(text.split(','))
+`}
+lang="py"
+title="split.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-['rojo', 'verde', 'azul']
-"
-title="split.py" 
+Output:
+<Code
+code={`
+['red', 'green', 'blue']
+`}
+title="split.py"
 mark="highlights"
 frame='terminal' />
 
 ### `.join()`
 
-Uso típico: Unir elementos de una lista con un separador.
+Typical use: Join elements of a list with a separator.
 
-<Code 
-code="
-colores = ['rojo', 'verde', 'azul']
-print(', '.join(colores))
-"
-lang="py" 
-title="join.py" 
+<Code
+code={`
+colors = ['red', 'green', 'blue']
+print(', '.join(colors))
+`}
+lang="py"
+title="join.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-rojo, verde, azul
-"
-title="join.py" 
+Output:
+<Code
+code={`
+red, green, blue
+`}
+title="join.py"
 mark="highlights"
 frame='terminal' />
 
 ### `.find()`
 
-Uso típico: Encontrar la posición de una subcadena.
+Typical use: Find the position of a substring.
 
-<Code 
-code="
-texto = 'buscar en esta frase'
-print(texto.find('esta'))
-"
-lang="py" 
-title="find.py" 
+<Code
+code={`
+text = 'search in this phrase'
+print(text.find('this'))
+`}
+lang="py"
+title="find.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 10
-"
-title="find.py" 
+`}
+title="find.py"
 mark="highlights"
 frame='terminal' />
 
 ### `.startswith()`
 
-Uso típico: Verificar si la cadena comienza con una subcadena.
+Typical use: Verify if the string starts with a substring.
 
-<Code 
-code="
-archivo = 'imagen.png'
-print(archivo.endswith('.png')
-"
-lang="py" 
-title="endswith.py" 
+<Code
+code={`
+file = 'image.png'
+print(file.startswith('image'))
+`}
+lang="py"
+title="startswith.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 True
-"
-title="endswith.py" 
+`}
+title="startswith.py"
+mark="highlights"
+frame='terminal' />
+
+### `.endswith()`
+
+Typical use: Verify if the string ends with a substring.
+
+<Code
+code={`
+file = 'image.png'
+print(file.endswith('.png'))
+`}
+lang="py"
+title="endswith.py"
+mark="highlights"
+frame='auto' />
+Output:
+<Code
+code={`
+True
+`}
+title="endswith.py"
 mark="highlights"
 frame='terminal' />

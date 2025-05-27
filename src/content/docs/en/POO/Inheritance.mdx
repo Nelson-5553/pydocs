@@ -1,123 +1,123 @@
 ---
-title: Herencia
-description: Guía para Herencia
+title: Inheritance
+description: Guide to Inheritance
 sidebar:
   order: 3
 ---
 
 import { Code } from "@astrojs/starlight/components"
 
-La **herencia** es un pilar fundamental de la programación orientada a objetos. Permite crear nuevas clases basadas en clases existentes, reutilizando y extendiendo su funcionalidad. Así, puedes modelar relaciones del tipo “es un” (por ejemplo, un `Perro` es un `Animal`).
+**Inheritance** is a fundamental pillar of object-oriented programming. It allows you to create new classes based on existing classes, reusing and extending their functionality. This way, you can model "is a" relationships (for example, a `Dog` is an `Animal`).
 
 ---
 
-## ¿Por qué usar herencia?
+## Why use inheritance?
 
-- **Reutilización de código:** Evita repetir atributos y métodos comunes.
-- **Organización:** Permite estructurar jerarquías lógicas entre clases.
-- **Extensión:** Puedes agregar o modificar comportamientos en las subclases.
+- **Code reuse:** Avoid repeating common attributes and methods.
+- **Organization:** Allows structuring logical hierarchies between classes.
+- **Extension:** You can add or modify behaviors in subclasses.
 
 ---
 
-## Sintaxis básica
+## Basic syntax
 
-Para crear una clase que hereda de otra, simplemente indica la clase base entre paréntesis:
+To create a class that inherits from another, simply indicate the base class in parentheses:
 
 ```python
-class ClaseBase:
-    # atributos y métodos
+class BaseClass:
+    # attributes and methods
 
-class SubClase(ClaseBase):
-    # nuevos atributos y métodos
+class SubClass(BaseClass):
+    # new attributes and methods
 ```
 
 ---
 
-## Ejemplo simple
+## Simple example
 
-Supongamos que tienes una clase `Animal` y quieres crear una clase `Perro` que herede de ella:
+Suppose you have an `Animal` class and you want to create a `Dog` class that inherits from it:
 
 <Code
 code="
 class Animal:
-    def __init__(self, nombre):
-        self.nombre = nombre
+    def __init__(self, name):
+        self.name = name
 
-    def hablar(self):
-        print('Hace un sonido')
+    def speak(self):
+        print('Makes a sound')
 
-class Perro(Animal):
-    def hablar(self):
-        print(f'{self.nombre} dice: ¡Guau!')
+class Dog(Animal):
+    def speak(self):
+        print(f'{self.name} says: Woof!')
 
-mi_perro = Perro('Rex')
-mi_perro.hablar()  # Rex dice: ¡Guau!
+my_dog = Dog('Rex')
+my_dog.speak()  # Rex says: Woof!
 "
 lang="py"
-title="Herencia básica"
+title="Basic inheritance"
 frame="auto"
 />
 
-En este ejemplo, `Perro` hereda el atributo `nombre` y el método `hablar` de `Animal`, pero lo redefine para personalizar el comportamiento.
+In this example, `Dog` inherits the `name` attribute and the `speak` method from `Animal`, but redefines it to customize the behavior.
 
 ---
 
-## Uso de `super()`
+## Using `super()`
 
-Puedes llamar métodos de la clase base usando `super()`. Esto es útil para extender la funcionalidad sin reemplazarla completamente.
+You can call methods of the base class using `super()`. This is useful for extending functionality without completely replacing it.
 
 <Code
 code="
 class Animal:
-    def __init__(self, nombre):
-        self.nombre = nombre
+    def __init__(self, name):
+        self.name = name
 
-    def describir(self):
-        print(f'Soy un animal llamado {self.nombre}')
+    def describe(self):
+        print(f'I am an animal called {self.name}')
 
-class Gato(Animal):
-    def describir(self):
-        super().describir()
-        print('Y soy un gato.')
+class Cat(Animal):
+    def describe(self):
+        super().describe()
+        print('And I am a cat.')
 
-g = Gato('Michi')
-g.describir()
+g = Cat('Michi')
+g.describe()
 "
 lang="py"
-title="Uso de super()"
+title="Using super()"
 frame="auto"
 />
 
-**Salida:**
+**Output:**
 ```
-Soy un animal llamado Michi
-Y soy un gato.
+I am an animal called Michi
+And I am a cat.
 ```
 
 ---
 
-## Herencia múltiple
+## Multiple inheritance
 
-En Python, una clase puede heredar de varias clases a la vez:
+In Python, a class can inherit from multiple classes at the same time:
 
 ```python
-class ClaseA:
+class ClassA:
     pass
 
-class ClaseB:
+class ClassB:
     pass
 
-class SubClase(ClaseA, ClaseB):
+class SubClass(ClassA, ClassB):
     pass
 ```
 
 ---
 
-## Resumen
+## Summary
 
-- La **herencia** permite crear clases que reutilizan y extienden otras.
-- Usa `super()` para acceder a métodos de la clase base.
-- Puedes redefinir métodos para personalizar el comportamiento en las subclases.
-- Python permite herencia múltiple.
+- **Inheritance** allows you to create classes that reuse and extend others.
+- Use `super()` to access methods of the base class.
+- You can redefine methods to customize the behavior in subclasses.
+- Python allows multiple inheritance.
 
-¿Listo para practicar? Intenta crear una clase base `Vehiculo` y una subclase `Coche` que agregue un método propio.
+Ready to practice? Try creating a base class `Vehicle` and a subclass `Car` that adds its own method.

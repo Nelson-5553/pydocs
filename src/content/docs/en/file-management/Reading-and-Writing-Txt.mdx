@@ -1,6 +1,6 @@
 ---
-title: Lectura y escritura de archivos txt
-description: Guía para Lectura y escritura de archivos
+title: Reading and writing TXT files
+description: Guide for Reading and writing TXT files
 sidebar:
   order: 2
 ---
@@ -9,69 +9,69 @@ import { FileTree } from '@astrojs/starlight/components';
 import { Code } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
 
-Archivos de texto plano que contienen solo caracteres legibles, como notas, listas o líneas separadas. No tienen estructura de datos compleja. Son ideales para guardar información simple como logs, registros o texto sin formato.
+Plain text files contain only readable characters, such as notes, lists, or separated lines. They do not have a complex data structure. They are ideal for saving simple information such as logs, records, or unformatted text.
 
-Tenemos la siguiente estructura de nuestro proyecto:
+We have the following structure of our project:
 
 <FileTree>
 
 - src
-  - leer_txt.py
-  - escribir_txt.py
-  - rescribir_txt.py
+  - read_txt.py
+  - write_txt.py
+  - rewrite_txt.py
 - docs
-  - cuento.txt
+  - story.txt
 
 
 </FileTree>
 
-## Leer un archivo TXT
+## Read a TXT file
 
-Para leer archivos de texto plano, Python ofrece una sintaxis clara y segura mediante la instrucción `with`, que garantiza el cierre adecuado del archivo una vez finalizada su lectura.
+To read plain text files, Python offers a clear and safe syntax through the `with` statement, which guarantees the proper closing of the file once its reading is finished.
 
-El siguiente ejemplo abre un archivo llamado cuento.txt, lo recorre línea por línea e imprime su contenido eliminando los saltos de línea al final de cada línea:
+The following example opens a file called story.txt, goes through it line by line and prints its content, eliminating the line breaks at the end of each line:
 
 <Code 
 code="
-with open('./docs/cuento.txt', 'r') as file:
-&nbsp;&nbsp;&nbsp;&nbsp;for line in file:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(line.strip())
+with open('./docs/story.txt', 'r') as file:
+    for line in file:
+        print(line.strip())
 " 
 lang="py" 
-title="leer_txt.py" 
+title="read_txt.py" 
 mark="highlights" 
 frame="auto" />
 
-## Añadir contenido
+## Add content
 
-Cuando se desea agregar texto al final de un archivo sin sobrescribir su contenido existente, se utiliza el modo 'a' (append). Si el archivo no existe, se crea automáticamente.
+When you want to add text to the end of a file without overwriting its existing content, use the 'a' (append) mode. If the file does not exist, it is created automatically.
 
 <Code 
 code="
-# Añadir texto
-with open('./document/cuento.txt', 'a') as file:
-&nbsp;&nbsp;&nbsp;&nbsp;file.write('\n\nBy: ChatGPT Nelson')
+# Add text
+with open('./document/story.txt', 'a') as file:
+    file.write('\n\nBy: ChatGPT Nelson')
 " 
 lang="py" 
-title="escribir_txt.py" 
+title="write_txt.py" 
 mark="highlights" 
 frame="auto" />
 
-## Sobrescribir contenido
+## Overwrite content
 
-Si se necesita reemplazar completamente el contenido de un archivo, se usa el modo 'w' (write). Este modo crea el archivo si no existe, o lo borra y escribe desde cero si ya existe.
+If you need to completely replace the content of a file, use the 'w' (write) mode. This mode creates the file if it does not exist, or deletes it and writes from scratch if it already exists.
 
 <Code 
 code="
-# Reescribir texto
-with open('./document/cuento1.txt', 'w') as file:
+# Rewrite text
+with open('./document/story1.txt', 'w') as file:
     file.write('\n\nBy: PyDocs')
 " 
 lang="py" 
-title="escribir_txt.py" 
+title="write_txt.py" 
 mark="highlights" 
 frame="auto" />
 
 <Aside type="danger">
-**Cuidado con el modo `'w'`**: Si el archivo ya existe, será borrado y reemplazado por uno nuevo con el mismo nombre. Asegúrate de no perder contenido importante.
+**Be careful with the `w` mode**: If the file already exists, it will be deleted and replaced by a new one with the same name. Make sure you don't lose important content.
 </Aside>

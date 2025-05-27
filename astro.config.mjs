@@ -49,43 +49,73 @@ export default defineConfig({
         social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Nelson-5553/pydocs' }],
         sidebar: [
             {
+              translations: {
+                en: "Introduction",
+              },
                 label: 'Introducción',
                 autogenerate: { directory: 'introduction' },
             },
             {
+              translations: {
+                en: "Basic Syntax",
+              },
                 label: 'Sintaxis Básica',
                 autogenerate: { directory: 'syntax-basic' },
             },
             {
+                translations: {
+                  en: "Data Stuctures"
+                },
                 label: 'Estructuras de Datos',
                 autogenerate: { directory: 'data-structure' },
             },
 
             {
+              translations: {
+                en: "Control Structures"
+              },
                 label: 'Estructuras de Control',
                 autogenerate: { directory: 'control-structures' },
             },
             {
+              translations: {
+                en: "Functions"
+              },
                 label: 'Funciones',
                 autogenerate: { directory: 'functions' },
             },
             {
+              translations: {
+                en: "Native Functions"
+              },
                 label: 'Funciones Nativas',
                 autogenerate: { directory: 'native-functions' },
             },
             {
+              translations: {
+                en: "File Management"
+              },
                 label: 'Manejo de Archivos',
                 autogenerate: { directory: 'file-management' },
             },
             {
+              translations: {
+                en: "Error Handling"
+              },
                 label: 'Manejo de Errores',
                 autogenerate: { directory: 'error-handling' },
             },
             {
+              translations: {
+                en: "Object-Oriented Programming"
+              },
                 label: 'Programacion Orientada a Objetos',
                 autogenerate: { directory: 'POO' },
             },
             {
+              translations: {
+                en: "Modules and Packages"
+              },
                 label: 'Módulos y Paquetes',
                 autogenerate: { directory: 'modules-packages' },
             },
@@ -94,10 +124,13 @@ export default defineConfig({
             // 	autogenerate: { directory: 'StandardLibraries' },
             // },
             {
+              translations: {
+                en: "Virtual Environments and Package Management"
+              },
                 label: 'Entornos Virtuales y Gestión de Paquetes',
                 autogenerate: { directory: 'venv-packages' },
             },
         ],
-		}), 
+		}),
 		sitemap()],
 });

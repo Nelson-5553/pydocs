@@ -1,35 +1,35 @@
 ---
-title: Pip y requirements.txt
-description: Guía para pip y requirements.txt
+title: Pip and requirements.txt
+description: Guide to pip and requirements.txt
 sidebar:
   order: 1
 ---
 
-# pip y requirements.txt en Python
+# pip and requirements.txt in Python
 
-`pip` es la herramienta oficial para instalar y gestionar paquetes en Python. Junto con el archivo `requirements.txt`, te permite controlar fácilmente las dependencias de tus proyectos y compartirlas con otros.
+`pip` is the official tool for installing and managing packages in Python. Together with the `requirements.txt` file, it allows you to easily control your project dependencies and share them with others.
 
 ---
 
-## ¿Qué es pip?
+## What is pip?
 
-- **pip** es el gestor de paquetes de Python.
-- Permite instalar, actualizar y desinstalar librerías de manera sencilla desde la terminal.
+- **pip** is the package manager for Python.
+- It allows you to easily install, update, and uninstall libraries from the terminal.
 
-### Ejemplo de uso básico
+### Basic usage example
 
 ```bash
-pip install nombre_paquete
+pip install package_name
 ```
 
 ---
 
-## ¿Qué es requirements.txt?
+## What is requirements.txt?
 
-- Es un archivo de texto donde se listan todas las dependencias (paquetes y versiones) necesarias para tu proyecto.
-- Facilita la instalación de todas las librerías de una sola vez, ideal para compartir proyectos o trabajar en equipo.
+- It is a text file where all the dependencies (packages and versions) necessary for your project are listed.
+- It facilitates the installation of all the libraries at once, ideal for sharing projects or working in a team.
 
-### Ejemplo de requirements.txt
+### Example of requirements.txt
 
 ```
 requests==2.31.0
@@ -39,21 +39,21 @@ flask
 
 ---
 
-## ¿Cómo crear requirements.txt?
+## How to create requirements.txt?
 
-Con tu entorno virtual activado y todos los paquetes instalados, ejecuta:
+With your virtual environment activated and all packages installed, run:
 
 ```bash
 pip freeze > requirements.txt
 ```
 
-Esto generará un archivo con todas las dependencias actuales.
+This will generate a file with all current dependencies.
 
 ---
 
-## ¿Cómo instalar dependencias desde requirements.txt?
+## How to install dependencies from requirements.txt?
 
-Para instalar todas las dependencias listadas en el archivo:
+To install all the dependencies listed in the file:
 
 ```bash
 pip install -r requirements.txt
@@ -61,18 +61,18 @@ pip install -r requirements.txt
 
 ---
 
-## Buenas prácticas
+## Best practices
 
-- Usa un entorno virtual para cada proyecto.
-- Actualiza el archivo `requirements.txt` cada vez que agregues o elimines paquetes.
-- Incluye `requirements.txt` en tu repositorio para facilitar la colaboración.
+- Use a virtual environment for each project.
+- Update the `requirements.txt` file each time you add or remove packages.
+- Include `requirements.txt` in your repository to facilitate collaboration.
 
 ---
 
-## Resumen
+## Summary
 
-- `pip` te permite instalar y gestionar paquetes fácilmente.
-- `requirements.txt` ayuda a compartir y reproducir el entorno de tu proyecto.
-- Son herramientas esenciales para cualquier desarrollador Python moderno.
+- `pip` allows you to install and manage packages easily.
+- `requirements.txt` helps to share and reproduce your project environment.
+- They are essential tools for any modern Python developer.
 
-¿Listo para gestionar tus dependencias como un profesional? ¡Prueba crear y usar un archivo `requirements.txt` en tu próximo proyecto!
+Ready to manage your dependencies like a pro? Try creating and using a `requirements.txt` file in your next project!

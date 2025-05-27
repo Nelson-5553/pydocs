@@ -1,166 +1,166 @@
 ---
-title: Funciones Funcionales
-description: Guía para Funciones Funcionales
+title: Functional Functions
+description: Guide to Functional Functions
 sidebar:
   order: 6
 ---
 import PyTable from '@components/PyTable.astro';
 import { Code } from "@astrojs/starlight/components"
 
-Estas funciones permiten aplicar operaciones de forma declarativa y funcional sobre colecciones de datos, como listas o tuplas. Son especialmente útiles cuando se requiere aplicar una función a muchos elementos (map), filtrar según condiciones (filter), combinar datos (zip) o generar secuencias numéricas (range). Su uso favorece un estilo de programación más limpio, compacto y expresivo.
+These functions allow you to apply operations in a declarative and functional way on data collections, such as lists or tuples. They are especially useful when you need to apply a function to many elements (map), filter according to conditions (filter), combine data (zip), or generate numeric sequences (range). Their use favors a cleaner, more compact, and expressive programming style.
 
-<PyTable 
-  headers={["Función", "Descripción"]}
+<PyTable
+  headers={["Function", "Description"]}
   rows={[
-    ["map()", "Aplica una función a cada elemento de un iterable y devuelve un nuevo iterable."],
-    ["filter()", "Filtra los elementos de un iterable según una condición dada."],
-    ["zip()", "Une varios iterables en pares ordenados, como tuplas."],
-    ["range()", "Genera una secuencia de números, generalmente usada en bucles."],
-    ["all()", "Retorna True si todos los elementos de un iterable son verdaderos."],
-    ["any()", "Retorna True si al menos un elemento es verdadero."],
+    ["map()", "Applies a function to each element of an iterable and returns a new iterable."],
+    ["filter()", "Filters the elements of an iterable according to a given condition."],
+    ["zip()", "Joins several iterables into ordered pairs, such as tuples."],
+    ["range()", "Generates a sequence of numbers, generally used in loops."],
+    ["all()", "Returns True if all elements of an iterable are true."],
+    ["any()", "Returns True if at least one element is true."],
 
-  
+
   ]}
 />
-A continuacion te explicare con mas detalle el funcionamiento de estas funciones:
+Below I will explain in more detail how these functions work:
 
 ### `map()`
 
-Uso típico: Aplicar una función a cada elemento de un iterable y devolver un nuevo iterable.
-<Code 
-code="
-numeros = [1, 2, 3, 4]
-al_cuadrado = map(lambda x: x ** 2, numeros)
-print(list(al_cuadrado))
-"
-lang="py" 
-title="map.py" 
+Typical use: Apply a function to each element of an iterable and return a new iterable.
+<Code
+code={`
+numbers = [1, 2, 3, 4]
+squared = map(lambda x: x ** 2, numbers)
+print(list(squared))
+`}
+lang="py"
+title="map.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 [1, 4, 9, 16]
-"
+`}
 
-title="map.py" 
+title="map.py"
 mark="highlights"
 frame='terminal' />
 
 ### `filter()`
 
-Uso típico: Filtrar los elementos de un iterable que cumplan una condición.
+Typical use: Filter the elements of an iterable that meet a condition.
 
-<Code 
-code="
-numeros = [10, 15, 20, 25]
-mayores_que_15 = filter(lambda x: x > 15, numeros)
-print(list(mayores_que_15))
-"
-lang="py" 
-title="filter.py" 
+<Code
+code={`
+numbers = [10, 15, 20, 25]
+greater_than_15 = filter(lambda x: x > 15, numbers)
+print(list(greater_than_15))
+`}
+lang="py"
+title="filter.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 [20, 25]
-"
+`}
 
-title="filter.py" 
+title="filter.py"
 mark="highlights"
 frame='terminal' />
 
 ### `zip()`
 
-Uso típico: Combinar varios iterables en pares ordenados (tuplas).
-<Code 
-code="
-nombres  = ['Ana', 'Luis', 'Sofía']
-edades   = [28, 34, 25]
-parejas  = zip(nombres, edades)
-print(list(parejas))
-"
-lang="py" 
-title="zip.py" 
+Typical use: Combine multiple iterables into ordered pairs (tuples).
+<Code
+code={`
+names = ['Ana', 'Luis', 'Sofía']
+ages = [28, 34, 25]
+pairs = zip(names, ages)
+print(list(pairs))
+`}
+lang="py"
+title="zip.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 [('Ana', 28), ('Luis', 34), ('Sofía', 25)]
-"
+`}
 
-title="zip.py" 
+title="zip.py"
 mark="highlights"
 frame='terminal' />
 
 
 ### `range()`
 
-Uso típico: Generar una secuencia numérica, comúnmente usada en bucles.
+Typical use: Generate a numeric sequence, commonly used in loops.
 
-<Code 
-code="
-for numero in range(0, 10, 2):  # De 0 a 8 en pasos de 2
-&nbsp;&nbsp;&nbsp;&nbsp;print(numero, end'')
-"
-lang="py" 
-title="range.py" 
+<Code
+code={`
+for number in range(0, 10, 2):  # From 0 to 8 in steps of 2
+    print(number, end='')
+`}
+lang="py"
+title="range.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-[('Ana', 28), ('Luis', 34), ('Sofía', 25)]
-"
+Output:
+<Code
+code={`
+02468
+`}
 
-title="range.py" 
+title="range.py"
 mark="highlights"
 frame='terminal' />
 
 ### `all()`
 
-Uso típico: Verificar si todos los elementos de un iterable son verdaderos.
+Typical use: Check if all elements of an iterable are true.
 
-<Code 
-code="
-valores = [True, 1, 5 > 2]
-print(all(valores))
-"
-lang="py" 
-title="all.py" 
+<Code
+code={`
+values = [True, 1, 5 > 2]
+print(all(values))
+`}
+lang="py"
+title="all.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 True
-"
+`}
 
-title="all.py" 
+title="all.py"
 mark="highlights"
 frame='terminal' />
 
 ### `any()`
 
-Uso típico: Verificar si al menos uno de los elementos de un iterable es verdadero.
+Typical use: Check if at least one of the elements of an iterable is true.
 
-<Code 
-code="
-valores = [0, '', None, 7]
-print(any(valores))
-"
-lang="py" 
-title="any.py" 
+<Code
+code={`
+values = [0, '', None, 7]
+print(any(values))
+`}
+lang="py"
+title="any.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 True
-"
+`}
 
-title="any.py" 
+title="any.py"
 mark="highlights"
 frame='terminal' />

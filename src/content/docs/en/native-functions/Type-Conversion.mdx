@@ -1,6 +1,6 @@
 ---
-title: Conversion de Tipos
-description: Guía para Conversion de Tipos
+title: Type Conversion
+description: Guide to Type Conversion
 sidebar:
   order: 2
 ---
@@ -8,9 +8,9 @@ sidebar:
 import { Code } from "@astrojs/starlight/components"
 import { Aside } from "@astrojs/starlight/components"
 
-En Python, los tipos de datos se utilizan para clasificar un tipo específico de datos, determinar los valores que puede asignar al tipo y las operaciones que puede realizar en el mismo. Cuando realice tareas de programación, a veces, deberá aplicar conversiones de valores entre tipos para manipular los valores de forma diferente. Por ejemplo, es posible que debamos concatenar valores numéricos con cadenas o representar posiciones decimales en números que se iniciaron como valores enteros.
+In Python, data types are used to classify a specific type of data, determine the values ​​you can assign to the type, and the operations you can perform on it. When performing programming tasks, sometimes you will need to apply value conversions between types to manipulate the values ​​differently. For example, we may need to concatenate numeric values ​​with strings or represent decimal places in numbers that started as integer values.
 
-Los tipos son:
+The types are:
 
 - `int()`
 - `float()`
@@ -23,181 +23,181 @@ Los tipos son:
 
 ### `int()`
 
-Convierte un valor numérico o una cadena que representa un número entero al tipo de dato int. Si el valor es un número decimal, lo redondea hacia abajo (elimina los decimales). Si no es numérico, lanza un error.
+Converts a numeric value ​​or a string that represents an integer to the int data type. If the value ​​is a decimal number, it rounds it down (removes the decimal places). If it is not numeric, it throws an error.
 
-<Code 
-code="
-print(int(43.54)) # Convierte el decimal a entero, quitando los decimales
-"
-lang="py" 
-title="Int.py" 
+<Code
+code={`
+print(int(43.54)) # Converts the decimal to integer, removing the decimal places
+`}
+lang="py"
+title="Int.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-43 
-"
-title="Int.py" 
+Output:
+<Code
+code={`
+43
+`}
+title="Int.py"
 mark="highlights"
 frame='terminal' />
 
 
 ### `float()`
 
-Convierte un número entero o una cadena que representa un número en un número decimal (float), útil cuando se necesita trabajar con valores fraccionarios.
-<Code 
-code="
+Converts an integer or a string that represents a number to a decimal number (float), useful when you need to work with fractional values.
+<Code
+code={`
 print(float('3.14'))
 print(float(10))
-"
-lang="py" 
-title="Int.py" 
+`}
+lang="py"
+title="Int.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 3.14
 10.0
-"
-title="float.py" 
+`}
+title="float.py"
 mark="highlights"
 frame='terminal' />
 
 ### `str()`
 
-Convierte cualquier tipo de dato (entero, decimal, booleano, listas, etc.) a una cadena (str). Es útil para mostrar mensajes o concatenar con otros textos.
-<Code 
-code="
+Converts any data type (integer, decimal, boolean, lists, etc.) to a string (str). It is useful for displaying messages or concatenating with other texts.
+<Code
+code={`
 print(str(100))
 print(str(True))
-"
-lang="py" 
-title="Str.py" 
+`}
+lang="py"
+title="Str.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 100
 True
-"
-title="Str.py" 
+`}
+title="Str.py"
 mark="highlights"
 frame='terminal' />
 
 ### `bool()`
-Convierte un valor a True o False según si es "vacío" o no. Valores como 0, "" (cadena vacía), [] (lista vacía), None y False se consideran False. Todo lo demás es True.
-<Code 
-code="
+Converts a value ​​to True or False depending on whether it is "empty" or not. Values ​​such as 0, "" (empty string), [] (empty list), None and False are considered False. Everything else is True.
+<Code
+code={`
 print(bool(1))
 print(bool(0))
-print(bool('Hola'))
-"
-lang="py" 
-title="Bool.py" 
+print(bool('Hello'))
+`}
+lang="py"
+title="Bool.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 True
 False
 True
-"
-title="Bool.py" 
+`}
+title="Bool.py"
 mark="highlights"
 frame='terminal' />
 
 ### `list()`
-Convierte objetos iterables (como cadenas, tuplas, conjuntos) en una lista.
-<Code 
-code="
-print(list('hola') )
+Converts iterable objects (such as strings, tuples, sets) into a list.
+<Code
+code={`
+print(list('hello') )
 print(list((1, 2, 3)))
-"
-lang="py" 
-title="List.py" 
+`}
+lang="py"
+title="List.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
-['h', 'o', 'l', 'a']
+Output:
+<Code
+code={`
+['h', 'e', 'l', 'l', 'o']
 [1, 2, 3]
-"
-title="List.py" 
+`}
+title="List.py"
 mark="highlights"
 frame='terminal' />
 ### `tuple()`
 
-Convierte un objeto iterable en una tupla. Similar a list(), pero el resultado es inmutable (no se puede modificar).
+Converts an iterable object into a tuple. Similar to list(), but the result is immutable (cannot be modified).
 
-<Code 
-code="
+<Code
+code={`
 print(tuple('abc'))
 print(tuple([1, 2, 3]))
-"
-lang="py" 
-title="Tuple.py" 
+`}
+lang="py"
+title="Tuple.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 ('a', 'b', 'c')
 (1, 2, 3)
-"
-title="Tuple.py" 
+`}
+title="Tuple.py"
 mark="highlights"
 frame='terminal' />
 
 ### `set()`
 
-Convierte un objeto iterable en una tupla. Similar a list(), pero el resultado es inmutable (no se puede modificar).
+Converts an iterable object into a tuple. Similar to list(), but the result is immutable (cannot be modified).
 
-<Code 
-code="
+<Code
+code={`
 print(set([1, 2, 2, 3]))
 print(set('hello') )
-"
-lang="py" 
-title="Set.py" 
+`}
+lang="py"
+title="Set.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 {1, 2, 3}
 {'h', 'e', 'l', 'o'}
-"
-title="Set.py" 
+`}
+title="Set.py"
 mark="highlights"
 frame='terminal' />
 
 ### `dict()`
 
-Convierte un objeto iterable en una tupla. Similar a list(), pero el resultado es inmutable (no se puede modificar).
+Converts an iterable object into a tuple. Similar to list(), but the result is immutable (cannot be modified).
 
-<Code 
-code="
+<Code
+code={`
 print(dict([('a', 1), ('b', 2)]))
-"
-lang="py" 
-title="Dict.py" 
+`}
+lang="py"
+title="Dict.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 {'a': 1, 
-&nbsp;'b': 2}
-"
-title="Dict.py" 
+ 'b': 2}
+`}
+title="Dict.py"
 mark="highlights"
 frame='terminal' />
 
 <Aside type='note'>
-  Convierte a diccionario requiere una estructura compatible, como una lista de tuplas 
+  Converts to dictionary requires a compatible structure, such as a list of tuples 
 </Aside>

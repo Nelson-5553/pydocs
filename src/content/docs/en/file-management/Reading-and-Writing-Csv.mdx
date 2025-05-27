@@ -1,6 +1,6 @@
 ---
-title: Lectura y escritura de archivos csv
-description: Guía para Archivos de texto y binarios
+title: Reading and writing of CSV files
+description: Guide for Text and Binary Files
 sidebar:
   order: 3
 ---
@@ -9,27 +9,27 @@ import { Aside } from '@astrojs/starlight/components';
 import { FileTree } from '@astrojs/starlight/components';
 
 
-Los archivos CSV (Comma Separated Values) son archivos de texto que almacenan datos tabulares en formato plano. Cada línea representa una fila de datos y cada valor está separado por comas (u otro delimitador como ;). Son ampliamente usados para exportar datos desde hojas de cálculo o bases de datos.
+CSV files (Comma Separated Values) are plain text files that store tabular data. Each line represents a row of data and each value is separated by commas (or another delimiter like ;). They are widely used for exporting data from spreadsheets or databases.
 
-Tenemos la siguiente estructura de nuestro proyecto:
+We have the following project structure:
 
 <FileTree>
 
 - src
-  - leer_csv.py
-  - escribir_csv.py
-  - rescribir_csv.py
+  - read_csv.py
+  - write_csv.py
+  - rewrite_csv.py
 - docs
   - products.csv
 
 
 </FileTree>
 
-## Leer un archivo CSV
+## Reading a CSV File
 
-Para leer archivos CSV, Python proporciona el módulo incorporado csv. Este módulo permite recorrer filas, acceder a columnas por índice o nombre y manejar distintos delimitadores.
+To read CSV files, Python provides the built-in csv module. This module allows you to iterate over rows, access columns by index or name, and handle different delimiters.
 
-<Code 
+<Code
 code="
 import csv
 
@@ -37,62 +37,62 @@ with open ('./docs/products.csv', 'r') as file:
 &nbsp;&nbsp;&nbsp;&nbsp;csv_reader = csv.DictReader(file)
 &nbsp;&nbsp;&nbsp;&nbsp;for row in csv_reader:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(row)
-" 
-lang="py" 
-title="leer_csv.py" 
-mark="highlights" 
+"
+lang="py"
+title="read_csv.py"
+mark="highlights"
 frame="auto" />
 
-## Añadir datos a archivo CSV
+## Writing to a CSV File
 
-Este script abre un archivo CSV existente y agrega una nueva fila con los datos de un producto.
-Utiliza el modo 'a' para añadir al final sin borrar el contenido anterior.
+This script opens an existing CSV file and adds a new row with product data.
+Uses the 'a' mode to append at the end without deleting the previous content.
 
-<Code 
+<Code
 code="
 import csv
 
-# Datos a añadir
-nuevo_producto = {'name': 'Teclado', 'price': '45'}
+# Data to add
+new_product = {'name': 'Keyboard', 'price': '45'}
 
-# Añade una nueva fila al final del archivo
-with open('./document/products.csv', 'a', newline='') as file:
+# Add a new row at the end of the file
+with open('./docs/products.csv', 'a', newline='') as file:
     fieldnames = ['name', 'price']
     writer = csv.DictWriter(file, fieldnames=fieldnames)
 
-    # Escribe una nueva línea
-    writer.writerow(nuevo_producto)" 
-lang="py" 
-title="escribir_csv.py" 
-mark="highlights" 
+    # Write a new line
+    writer.writerow(new_product)"
+lang="py"
+title="write_csv.py"
+mark="highlights"
 frame="auto" />
 
 
-## Sobrescribir un archivo CSV
+## Overwrite a CSV file
 
-Este script reemplaza completamente el contenido del archivo CSV con una nueva lista de productos.
-Utiliza el modo 'w' para sobrescribir el archivo desde cero, incluyendo el encabezado.
+This script overwrites a CSV file with a new list of products.
+Utilizes the 'w' mode to start from scratch, including the header.
 
-<Code 
+<Code
 code="
 import csv
 
-# Lista de productos para sobrescribir el archivo completo
-productos = [
+# List of products to overwrite the file completely
+products = [
     {'name': 'Monitor', 'price': '200'},
-    {'name': 'Auriculares','price': '80'}
+    {'name': 'Headphones','price': '80'}
 ]
 
-# Sobrescribe el archivo completo con nuevos datos
-with open('./document/products.csv', 'w', newline='') as file:
+# Overwrite the file with new data
+with open('./docs/products.csv', 'w', newline='') as file:
 &nbsp;&nbsp;&nbsp;&nbsp;fieldnames = ['name', 'price']
 &nbsp;&nbsp;&nbsp;&nbsp;writer = csv.DictWriter(file, fieldnames=fieldnames)
 
-    # Escribe encabezado y luego los datos
+    # Write header and then data
     writer.writeheader()
-    writer.writerows(productos)
-" 
-lang="py" 
-title="rescribir_csv.py" 
-mark="highlights" 
+    writer.writerows(products)
+"
+lang="py"
+title="overwrite_csv.py"
+mark="highlights"
 frame="auto" />

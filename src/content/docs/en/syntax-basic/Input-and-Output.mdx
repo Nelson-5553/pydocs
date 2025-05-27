@@ -1,6 +1,6 @@
 ---
-title: Entradas y Salida
-description: Guía para Entradas y Salida
+title: Input and Output
+description: Input and Output Guide
 sidebar:
   order: 1
 ---
@@ -9,48 +9,48 @@ import { Aside } from "@astrojs/starlight/components"
 import { Code } from "@astrojs/starlight/components"
 
 
-Cuando escribes un programa, no todo debe quedar dentro del código. A veces necesitas mostrar información al usuario (salida), y otras veces pedirle datos (entrada).En Python, esto se hace principalmente con dos funciones muy sencillas:
+When you write a program, not everything should stay within the code. Sometimes you need to show information to the user (output), and other times ask for data (input). In Python, this is mainly done with two very simple functions:
 
-- `print()` para mostrar mensajes o resultados.
+- `print()` to display messages or results.
 
-- `input()` para recibir datos del usuario.
+- `input()` to receive data from the user.
 
-Con estas dos funciones puedes empezar a construir programas interactivos.
+With these two functions you can start building interactive programs.
 
 ## Print()
 
-La función `print()` en Python se usa para mostrar información en la consola. Permite imprimir texto, números, variables, y más, utilizando una sintaxis sencilla.
+The `print()` function in Python is used to display information in the console. It allows you to print text, numbers, variables, and more, using simple syntax.
 
 <Code 
-code="print('Bienvenido a PyDocs') # Respuesta en consola  print('Bienvenido a PyDocs')" 
+code="print('Welcome to PyDocs') # Response in console  print('Welcome to PyDocs')"
        
 lang="py" 
 title="print.py" 
 mark="highlights" />
 
-<Aside type="tip" title="Reto">
+<Aside type="tip" title="Challenge">
 
-¿Por que no intentas Imprimir Hola Mundo!?
+Why don't you try printing Hello World!?
 
 ```python
-  print("Hola Mundo!")
+  print("Hello World!")
 ```
 </Aside>
 
 ## Input()
 
-La función `input()` en Python solicita al usuario que introduzca un valor. Luego, lee lo que el usuario introduce y lo devuelve como una cadena 
+The `input()` function in Python asks the user to enter a value. Then, it reads what the user enters and returns it as a string.
 
 <Code 
-code="nombre = input('¿Cuál es tu nombre? ')
-          print('Hola, ' + nombre + '!')" 
+code="name = input('What is your name? ')
+          print('Hello, ' + name + '!')"
        
 lang="py" 
 title="print.py" 
 mark="highlights" />
 
-<Aside type="tip" title="Reto">
+<Aside type="tip" title="Challenge">
 
-¿Intenta ejecutar esto en tu Equipo a ver que te muestra?
+Try running this on your computer to see what it shows you?
 
 </Aside>

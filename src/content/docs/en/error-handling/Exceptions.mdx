@@ -1,6 +1,6 @@
 ---
-title: Excepciones
-description: Guía para Excepciones
+title: Exceptions
+description: Guide for Exceptions
 sidebar:
   order: 1
 ---
@@ -8,52 +8,51 @@ sidebar:
 import PyTable from "@components/PyTable.astro"
 import { Code } from "@astrojs/starlight/components"
 
-En Python, las excepciones son eventos que interrumpen el flujo normal del programa durante su ejecución. Son errores que se producen en tiempo de ejecución, a diferencia de los errores de sintaxis que se detectan antes de la ejecución. Las excepciones se pueden manejar mediante el bloque try-except, que permite al programa continuar su ejecución incluso si ocurre un error. 
+In python, exceptions are events that interrupt the normal flow of the program during its execution. They are errors that occur at runtime, unlike syntax errors that are detected before execution. Exceptions can be handled using the try-except block, which allows the program to continue its execution even if an error occurs.
 
-a continuacion te muestro algunas de las excepciones mas comune que te puedes encontrar:
+Below are some of the most common exceptions you may encounter:
 
-<PyTable 
-  headers={["Excepción", "Descripción"]}
+<PyTable
+  headers={["Exception", "Description"]}
   rows={[
-    ["SyntaxError", "Ocurre cuando hay un error de sintaxis en el código."],
-    ["IndentationError", "La indentación del código es incorrecta."],
-    ["NameError", "Se intenta usar una variable que no ha sido definida."],
-    ["TypeError", "Se realiza una operación entre tipos de datos incompatibles."],
-    ["ValueError", "Un valor tiene el tipo correcto pero es inapropiado para la operación."],
-    ["IndexError", "Índice fuera del rango válido en una secuencia como lista o tupla."],
-    ["KeyError", "Se intenta acceder a una clave inexistente en un diccionario."],
-    ["AttributeError", "Se intenta acceder a un atributo que no existe en el objeto."],
-    ["ZeroDivisionError", "Ocurre al dividir un número entre cero."],
-    ["ImportError", "No se puede importar un módulo o una parte del mismo."],
-    ["ModuleNotFoundError", "No se encuentra el módulo que se intenta importar."],
-    ["FileNotFoundError", "El archivo especificado no existe."],
-    ["IOError", "Error general de entrada/salida al trabajar con archivos."],
-    ["RuntimeError", "Error detectado en tiempo de ejecución."],
-    ["StopIteration", "Se ha agotado un iterador."],
-    ["OverflowError", "Resultado numérico demasiado grande para ser representado."],
-    ["MemoryError", "No hay suficiente memoria para realizar una operación."],
-    ["AssertionError", "La condición de una afirmación con assert ha fallado."],
-    ["PermissionError", "No se tienen los permisos necesarios para acceder al recurso."]
+    ["SyntaxError", "Occurs when there is a syntax error in the code."],
+    ["IndentationError", "The code indentation is incorrect."],
+    ["NameError", "An attempt is made to use a variable that has not been defined."],
+    ["TypeError", "An operation is performed between incompatible data types."],
+    ["ValueError", "A value has the correct type but is inappropriate for the operation."],
+    ["IndexError", "Index outside the valid range in a sequence as a list or tuple."],
+    ["KeyError", "An attempt is made to access a non-existent key in a dictionary."],
+    ["AttributeError", "An attempt is made to access an attribute that does not exist in the object."],
+    ["ZeroDivisionError", "Occurs when dividing a number by zero."],
+    ["ImportError", "It is not possible to import a module or part of a module."],
+    ["ModuleNotFoundError", "The module you are trying to import is not found."],
+    ["FileNotFoundError", "The specified file does not exist."],
+    ["IOError", "General input/output error when working with files."],
+    ["RuntimeError", "Error detected at runtime."],
+    ["StopIteration", "An iterator has been exhausted."],
+    ["OverflowError", "Numerical result too large to be represented."],
+    ["MemoryError", "Not enough memory to perform an operation."],
+    ["AssertionError", "The condition of an assertion with assert has failed."],
+    ["PermissionError", "You do not have the necessary permissions to access the resource."]
   ]}
 />
 
-Estas excepciones no son todas las que maneja el lenguaje pero te enseñare  un script capaz ce enseñarte todos las que hay disponibles.
+These exceptions are not all the ones that the language handles, but I will show you a script that can teach you all the available ones.
 
-
-<Code 
+<Code
 code="
 
 import builtins
 
-# Filtra todos los objetos integrados que son subclases de BaseException
-excepciones = [e for e in dir(builtins) if isinstance(getattr(builtins, e), type) and issubclass(getattr(builtins, e), BaseException)]
+# Filters out all built-in objects that are subclasses of BaseException
+exceptions = [e for e in dir(builtins) if isinstance(getattr(builtins, e), type) and issubclass(getattr(builtins, e), BaseException)]
 
-# Muestra la lista completa
-for exc in excepciones:
+# Displays the complete list
+for exc in exceptions:
     print(exc)
 
 "
-lang="py" 
-title="map.py" 
+lang="py"
+title="map.py"
 mark="highlights"
 frame='auto' />
