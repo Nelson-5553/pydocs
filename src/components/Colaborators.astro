@@ -21,10 +21,12 @@ const contributors = await response.json();
   }
   .colab-info {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-wrap: wrap;         /* Permite que los badges bajen a otra línea */
+    gap: 0.5rem 0.7rem;      /* Espaciado entre badges */
+    justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    margin-bottom: 0.5em;
+    max-width: 220px;        /* Limita el ancho para que hagan wrap antes */
   }
   .colab-link {
     color: #306998;
@@ -59,6 +61,22 @@ const contributors = await response.json();
     background: #FFD43B;
     color: #22223b;
   }
+
+  @media (max-width: 600px) {
+    .colab-flex {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .colab-info {
+      max-width: 100%;
+      justify-content: flex-start;
+    }
+    .colab-img {
+      width: 90px;
+      height: 90px;
+    }
+  }
 </style>
 
 <CardGrid>
@@ -76,7 +94,7 @@ const contributors = await response.json();
               <div class="colab-info">
                 {contributors.login === "Nelson-5553" && (
                   <>
-                    <span class="colab-badge">Core Developer</span>
+                    <span class="colab-badge">Developer</span>
                     <span class="colab-badge">Documentation</span>
                   </>
                 )}
