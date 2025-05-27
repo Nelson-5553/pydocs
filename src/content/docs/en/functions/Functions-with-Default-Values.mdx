@@ -1,87 +1,84 @@
 ---
-title: Funciones con valores por defecto
-description: Guía para  Funciones con valores por defecto
+title: Functions with Default Values
+description: Guide to Functions with Default Values
 sidebar:
   order: 3
 ---
 
 import { Code } from "@astrojs/starlight/components"
 
-Las funciones con valores por defecto, o argumentos predeterminados, son un mecanismo que permite a una función recibir parámetros con valores predeterminados si no se proporciona un argumento al llamarla. Esto facilita la escritura de funciones más flexibles y versátiles. 
+Functions with default values, or default arguments, are a mechanism that allows a function to receive parameters with default values if an argument is not provided when calling it. This makes it easier to write more flexible and versatile functions.
 
-## Sintaxis
-En la definición de la función, se asigna un valor a cada parámetro que puede tener un valor predeterminado. 
+## Syntax
+In the function definition, a value is assigned to each parameter that can have a default value.
 
-## Llamada
-Al llamar a la función, se pueden omitir los argumentos correspondientes a los parámetros con valores predeterminados, y la función utilizará estos valores en su lugar. 
+## Call
+When calling the function, the arguments corresponding to the parameters with default values can be omitted, and the function will use these values instead.
 
-## Implementación
+## Implementation
 
-En esta sección exploraremos cómo construir funciones en Python de manera flexible y reutilizable. Veremos distintas formas de definir y usar parámetros para adaptarnos a diferentes necesidades, como los valores por defecto o los argumentos opcionales.
+In this section, we will explore how to construct functions in Python in a flexible and reusable way. We will see different ways to define and use parameters to adapt to different needs, such as default values or optional arguments.
 
-### Parametro opcional
+### Optional Parameter
 
-Podemos hacer que un parámetro sea opcional, lo cual ayuda a flexibilizar el uso de la función para distintos escenarios.
+We can make a parameter optional, which helps to make the use of the function more flexible for different scenarios.
 
-<Code 
-code="
-def saludo(nombre, apellido=None):
-> if apellido:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f'Hola, {nombre} {apellido}')
-&nbsp;&nbsp;&nbsp;&nbsp;else:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f'Hola, {nombre}')
+<Code
+code={`
+def greet(name, surname=None):
+  if surname:
+    print(f'Hello, {name} {surname}')
+  else:
+    print(f'Hello, {name}')
 
-nombre = 'Py'
-apellido = 'Docs'
-saludo(nombre)    
-saludo(nombre, apellido)
-"
-lang="py" 
-title="saludar.py" 
+name = 'Py'
+surname = 'Docs'
+greet(name)
+greet(name, surname)
+`}
+lang="py"
+title="greet.py"
 mark="highlights"
 frame='auto'
 preserveIndent="false" />
 
-Salida: 
+Output:
 
-<Code 
-code="
-Hola, Py
-Hola, PyDocs
-"
-title="saludar.py" 
+<Code
+code={`
+Hello, Py
+Hello, PyDocs
+`}
+title="greet.py"
 mark="highlights"
 frame='terminal' />
 
-### Parametro por defecto
+### Default Parameter
 
-Si el usuario no proporciona el segundo argumento (exponente), la función asume por defecto que se desea elevar al cuadrado (exponente = 2). Esto permite usar la función de forma más flexible, sin necesidad de siempre escribir ambos argumentos.
+If the user does not provide the second argument (exponent), the function defaults to squaring (exponent = 2). This allows the function to be used more flexibly, without always having to write both arguments.
 
 <Code
-code="
-def potencia(base, exponente=2):
-print(f'{base} elevado a {exponente} es {base ** exponente}')
+code={`
+def power(base, exponent=2):
+  print(f'{base} raised to {exponent} is {base ** exponent}')
 
-potencia(5) # Usa el valor por defecto 2
-potencia(5, 3) # Usa el valor proporcionado
-"
+power(5) # Uses the default value 2
+power(5, 3) # Uses the provided value
+`}
 lang="py"
-title="potencia.py"
+title="power.py"
 mark="highlights"
 frame="auto"
 />
 
-Salida:
+Output:
 
-<Code code=" 5 elevado a 2 es 25 5 elevado a 3 es 125 " title="potencia.py" mark="highlights" frame="terminal" />
+<Code code={`5 raised to 2 is 25 5 raised to 3 is 125`} title="power.py" mark="highlights" frame="terminal" />
 
-## Beneficios
+## Benefits
 
-- **Flexibilidad**: Permite llamar a la función de diferentes maneras, según la necesidad. 
+- **Flexibility**: Allows you to call the function in different ways, depending on the need.
 
-- **Simplificación**: Evita la necesidad de pasar argumentos innecesarios en todos los casos. 
+- **Simplification**: Avoids the need to pass unnecessary arguments in all cases.
 
-- **Mayor legibilidad**: Facilita la comprensión del código al mostrar explícitamente los valores predeterminados. 
-
-
-
+- **Increased readability**: Facilitates code comprehension by explicitly showing the default values.

@@ -1,69 +1,69 @@
 ---
 title: Venv
-description: Guía para Venv
+description: Guide to Venv
 sidebar:
   order: 2
 ---
 import Aviso from '@components/Aviso.astro';
 
-# Entornos virtuales (venv) en Python
+# Virtual Environments (venv) in Python
 
-Un **entorno virtual** es una herramienta que te permite crear un espacio aislado para tus proyectos de Python. Así, puedes instalar dependencias específicas para cada proyecto sin afectar el resto de tu sistema o tus otros proyectos.
-
----
-
-## ¿Por qué usar entornos virtuales?
-
-- **Aislamiento:** Cada proyecto puede tener sus propias versiones de paquetes, evitando conflictos.
-- **Organización:** Mantén tus dependencias separadas y tu sistema limpio.
-- **Reproducibilidad:** Facilita compartir tu proyecto con otros, asegurando que todos usen las mismas versiones de librerías.
+A **virtual environment** is a tool that allows you to create an isolated space for your Python projects. This way, you can install specific dependencies for each project without affecting the rest of your system or your other projects.
 
 ---
 
-## ¿Cómo crear un entorno virtual?
+## Why use virtual environments?
 
-1. Abre una terminal en la carpeta de tu proyecto.
-2. Ejecuta el siguiente comando:
+- **Isolation:** Each project can have its own package versions, avoiding conflicts.
+- **Organization:** Keep your dependencies separate and your system clean.
+- **Reproducibility:** Makes it easier to share your project with others, ensuring that everyone uses the same library versions.
+
+---
+
+## How to create a virtual environment?
+
+1. Open a terminal in your project folder.
+2. Run the following command:
 
     ```bash
     python -m venv venv
     ```
 
-    Esto creará una carpeta llamada `venv` con todo lo necesario para tu entorno virtual.
+    This will create a folder named `venv` with everything you need for your virtual environment.
 
 ---
 
-## ¿Cómo activar el entorno virtual?
+## How to activate the virtual environment?
 
-- **En Windows:**
+- **On Windows:**
 
     ```bash
     .\venv\Scripts\activate
     ```
 
-- **En macOS/Linux:**
+- **On macOS/Linux:**
 
     ```bash
     source venv/bin/activate
     ```
 
-    Cuando el entorno está activo, verás el nombre del entorno al inicio de la línea de comandos.
+    When the environment is active, you will see the environment name at the beginning of the command line.
 
 ---
 
-## ¿Cómo instalar paquetes en el entorno?
+## How to install packages in the environment?
 
-Con el entorno activado, usa `pip` para instalar paquetes solo en ese entorno:
+With the environment activated, use `pip` to install packages only in that environment:
 
 ```bash
-pip install nombre_paquete
+pip install package_name
 ```
 
 ---
 
-## ¿Cómo desactivar el entorno virtual?
+## How to deactivate the virtual environment?
 
-Cuando termines de trabajar, puedes salir del entorno con:
+When you are finished working, you can exit the environment with:
 
 ```bash
 deactivate
@@ -71,11 +71,11 @@ deactivate
 
 ---
 
-## Buenas prácticas
+## Best practices
 
-- Usa un entorno virtual para cada proyecto.
-- Añade la carpeta `venv` a tu archivo `.gitignore` si usas control de versiones.
-- Guarda tus dependencias en un archivo `requirements.txt` con:
+- Use a virtual environment for each project.
+- Add the `venv` folder to your `.gitignore` file if you use version control.
+- Save your dependencies in a `requirements.txt` file with:
 
     ```bash
     pip freeze > requirements.txt
@@ -83,10 +83,10 @@ deactivate
 
 ---
 
-## Resumen
+## Summary
 
-- Los entornos virtuales te ayudan a mantener tus proyectos organizados y libres de conflictos de dependencias.
-- Son fáciles de crear, activar y usar.
-- Son una herramienta esencial para cualquier desarrollador Python moderno.
+- Virtual environments help you keep your projects organized and free from dependency conflicts.
+- They are easy to create, activate, and use.
+- They are an essential tool for any modern Python developer.
 
-¿Listo para probar? Crea y activa tu primer entorno virtual en tu próximo proyecto.
+Ready to test? Create and activate your first virtual environment in your next project.

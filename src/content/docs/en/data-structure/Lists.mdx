@@ -13,24 +13,24 @@ In Python, a list is a flexible data structure that allows you to store an order
 
 Let's make a list of fruits
 
-<Code 
+<Code
 code="
 # List of fruits
-banana
+fruits = ['apple', 'banana', 'orange', 'pear', 'grape', 'mango']
 print(fruits)
 "
-lang="py" 
-title="list.py" 
+lang="py"
+title="list.py"
 mark="highlights"
 frame='auto' />
 
 Output:
 
-<Code 
+<Code
 code="
 ['apple', 'banana', 'orange', 'pear', 'grape', 'mango']
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
@@ -38,24 +38,24 @@ frame='terminal' />
 
 Suppose we only want a particular element from the fruits list. With this in mind, you should know that each element in a list has an index with which we can locate each element of a list, and for this we must carry out the concept of Indexing as follows
 
-<Code 
+<Code
 code="
 # List of fruits
 fruits = ['apple', 'banana', 'orange', 'pear', 'grape', 'mango']
 print(fruits[1])
 "
-lang="py" 
-title="list.py" 
+lang="py"
+title="list.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
 banana
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
@@ -69,27 +69,27 @@ In Python, the first index **is always 0**. This means that the first element of
 
 Through indexing we can modify a particular element of the list
 
-<Code 
+<Code
 code="
 # List of fruits
 fruits = ['apple', 'banana', 'orange', 'pear', 'grape', 'mango']
 
 # We assign a new element to the element at position 1
-fruits[1] = 'strawberry'  
+fruits[1] = 'strawberry'
 print(fruits)
 "
-lang="py" 
-title="list.py" 
+lang="py"
+title="list.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
 ['apple', 'strawberry', 'orange', 'pear', 'grape', 'mango']
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
@@ -97,7 +97,7 @@ frame='terminal' />
 
 To add an element to a list you must use the `.append()` function
 
-<Code 
+<Code
 code="
 # List of fruits
 fruits = ['apple', 'banana', 'orange', 'pear', 'grape', 'mango']
@@ -106,18 +106,18 @@ fruits = ['apple', 'banana', 'orange', 'pear', 'grape', 'mango']
 fruits.append('strawberry')
 print(fruits)
 "
-lang="py" 
-title="list.py" 
+lang="py"
+title="list.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
 ['apple', 'banana', 'orange', 'pear', 'grape', 'mango', 'strawberry']
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 
@@ -125,7 +125,7 @@ frame='terminal' />
 
 To remove an element from a list you must use the `.remove()` function
 
-<Code 
+<Code
 code="
 # List of fruits
 fruits = ['apple', 'banana', 'orange', 'pear', 'grape', 'mango']
@@ -134,18 +134,18 @@ fruits = ['apple', 'banana', 'orange', 'pear', 'grape', 'mango']
 fruits.remove('mango')
 print(fruits)
 "
-lang="py" 
-title="list.py" 
+lang="py"
+title="list.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code 
+<Code
 code="
 ['apple', 'banana', 'orange', 'pear', 'grape']
 "
-title="terminal" 
+title="terminal"
 mark="highlights"
 frame='terminal' />
 

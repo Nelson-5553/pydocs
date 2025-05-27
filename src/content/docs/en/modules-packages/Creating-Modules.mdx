@@ -1,95 +1,95 @@
 ---
-title: Creación de tus propios módulos
-description: Guía para Creación de tus propios módulos
+title: Creating Your Own Modules
+description: Guide to Creating Your Own Modules
 sidebar:
   order: 2
 ---
 
 import { Code } from "@astrojs/starlight/components"
 
-Crear tus propios **módulos** en Python es una excelente forma de organizar, reutilizar y compartir tu código. Un módulo es simplemente un archivo `.py` que contiene funciones, clases o variables que puedes importar y usar en otros programas.
+Creating your own **modules** in Python is an excellent way to organize, reuse, and share your code. A module is simply a `.py` file that contains functions, classes, or variables that you can import and use in other programs.
 
 ---
 
-## ¿Por qué crear módulos?
+## Why Create Modules?
 
-- **Organización:** Divide tu proyecto en archivos más pequeños y manejables.
-- **Reutilización:** Usa el mismo código en diferentes programas sin copiar y pegar.
-- **Mantenimiento:** Facilita actualizar y corregir errores en un solo lugar.
+- **Organization:** Divides your project into smaller, more manageable files.
+- **Reuse:** Uses the same code in different programs without copying and pasting.
+- **Maintenance:** Makes it easier to update and fix errors in one place.
 
 ---
 
-## ¿Cómo crear un módulo?
+## How to Create a Module?
 
-1. **Crea un archivo `.py`**  
-   Por ejemplo, crea un archivo llamado `saludos.py` con el siguiente contenido:
+1. **Create a `.py` file**
+   For example, create a file called `greetings.py` with the following content:
 
 <Code
-code="
-def saludar(nombre):
-    print(f'¡Hola, {nombre}!')
-"
+code={`
+def greet(name):
+    print(f'Hello, {name}!')
+`}
 lang="py"
-title="saludos.py"
+title="greetings.py"
 frame="auto"
 />
 
-2. **Importa tu módulo en otro archivo**  
-   Ahora, en tu archivo principal, puedes importar y usar la función:
+2. **Import your module into another file**
+   Now, in your main file, you can import and use the function:
 
 <Code
-code="
-import saludos
+code={`
+import greetings
 
-saludos.saludar('Ana')
-"
+greetings.greet('Ana')
+`}
 lang="py"
-title="Uso de un módulo propio"
+title="Using a Custom Module"
 frame="auto"
 />
 
-**Salida:**
+**Output:**
 ```
-¡Hola, Ana!
+Hello, Ana!
 ```
 
 ---
 
-## Importar funciones específicas
+## Import Specific Functions
 
-También puedes importar solo lo que necesitas de tu módulo:
+You can also import only what you need from your module:
 
 <Code
-code="
-from saludos import saludar
+code={`
+from greetings import greet
 
-saludar('Carlos')
-"
+greet('Carlos')
+`}
 lang="py"
-title="Importar función específica"
+title="Importing a Specific Function"
 frame="auto"
 />
 
 ---
 
-## ¿Dónde deben estar los módulos?
+## Where Should Modules Be Located?
 
-Para que Python encuentre tu módulo, debe estar en el mismo directorio que tu archivo principal o en una carpeta incluida en el *PYTHONPATH*.
-
----
-
-## Buenas prácticas
-
-- Usa nombres descriptivos para tus módulos y funciones.
-- Evita espacios y caracteres especiales en los nombres de archivos.
-- Mantén cada módulo enfocado en una sola tarea o tema.
+For Python to find your module, it must be in the same directory as your main file or in a folder included in the *PYTHONPATH*.
 
 ---
 
-## Resumen
+## Best Practices
 
-- Crear módulos te ayuda a organizar y reutilizar tu código.
-- Solo necesitas un archivo `.py` para empezar.
-- Importa tus módulos y funciones según lo necesites en tus proyectos.
+- Use descriptive names for your modules and functions.
+- Avoid spaces and special characters in file names.
+- Keep each module focused on a single task or theme.
 
-¿Listo para practicar? Crea un módulo con tus propias funciones y pruébalo en un programa nuevo.
+---
+
+## Summary
+
+- Creating modules helps you organize and reuse your code.
+- You only need a `.py` file to get started.
+- Import your modules and functions as needed in your projects.
+
+Ready to practice? Create a module with your own functions and test it in a new program.

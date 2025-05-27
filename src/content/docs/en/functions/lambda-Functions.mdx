@@ -1,109 +1,109 @@
 ---
-title: Funciones lambda
-description: Guía para Funciones lambda
+title: Lambda Functions
+description: Guide to Lambda Functions
 sidebar:
   order: 4
 ---
 
 import { Code } from "@astrojs/starlight/components"
 
-En Python, una función lambda es una función anónima (sin nombre) definida en una sola línea usando la palabra clave `lambda`. Son útiles para operaciones cortas, como transformar datos o filtrar elementos, especialmente al usar funciones de orden superior como `map()`, `filter()` y `sorted()`. 
+In Python, a lambda function is an anonymous (unnamed) function defined in a single line using the `lambda` keyword. They are useful for short operations, such as transforming data or filtering elements, especially when using higher-order functions like `map()`, `filter()`, and `sorted()`.
 
-## Características de las funciones lambda:
+## Characteristics of lambda functions:
 
-- **Anónimas**: No tienen nombre definido. 
+- **Anonymous**: They have no defined name.
 
-- **Sintaxis simple**: Se definen con `lambda` seguido de argumentos, `:` y una expresión. 
+- **Simple syntax**: They are defined with `lambda` followed by arguments, `:` and an expression.
 
-- **Una sola expresión**: Solo pueden contener una única expresión para el resultado. 
+- **Single expression**: They can only contain a single expression for the result.
 
-- **Uso con funciones de orden superior:** Son comunes con `map()`, `filter()` y `sorted()`. 
+- **Use with higher-order functions:** They are common with `map()`, `filter()` and `sorted()`.
 
-## Implementacion
+## Implementation
 
-Cuadrado de un número.
+Square of a number.
 
-<Code 
-code="
-cuadrado = lambda x: x**2
-print(cuadrado(5))
-"
-lang="py" 
-title="cuadrado.py" 
+<Code
+code={`
+square = lambda x: x**2
+print(square(5))
+`}
+lang="py"
+title="square.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code code="25" title="cuadrado.py" mark="highlights" frame="terminal" />
+<Code code={`25`} title="square.py" mark="highlights" frame="terminal" />
 
-Función para verificar si un número es par:
+Function to check if a number is even:
 
-<Code 
-code="
-es_par = lambda x: x % 2 == 0
-print(es_par(4)) 
-print(es_par(7))  
-"
-lang="py" 
-title="par.py" 
+<Code
+code={`
+is_even = lambda x: x % 2 == 0
+print(is_even(4))
+print(is_even(7))
+`}
+lang="py"
+title="even.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code code="
+<Code code={`
 True
-False" 
-title="par.py" mark="highlights" frame="terminal" />
+False`}
+title="even.py" mark="highlights" frame="terminal" />
 
-### Uso con map().
+### Use with map().
 
-<Code 
-code="
-numeros = [1, 2, 3, 4, 5]
-cuadrados = list(map(lambda x: x**2, numeros))
-print(cuadrados)
-"
-lang="py" 
-title="lanbda.py" 
+<Code
+code={`
+numbers = [1, 2, 3, 4, 5]
+squares = list(map(lambda x: x**2, numbers))
+print(squares)
+`}
+lang="py"
+title="lambda.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code code="[1, 4, 9, 16, 25]" title="lanbda.py" mark="highlights" frame="terminal" />
+<Code code={`[1, 4, 9, 16, 25]`} title="lambda.py" mark="highlights" frame="terminal" />
 
-### Uso con filter().
+### Use with filter().
 
-<Code 
-code="
-numeros = [1, 2, 3, 4, 5, 6]
-pares = list(filter(lambda x: x % 2 == 0, numeros))
-print(pares) 
-"
-lang="py" 
-title="lanbda.py" 
+<Code
+code={`
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)
+`}
+lang="py"
+title="lambda.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code code="[2, 4, 6]" title="lanbda.py" mark="highlights" frame="terminal" />
+<Code code={`[2, 4, 6]`} title="lambda.py" mark="highlights" frame="terminal" />
 
-### Uso con sorted().
+### Use with sorted().
 
-<Code 
-code="
-    palabras = ['banana', 'pera', 'manzana', 'uva']
-    palabras_ordenadas = sorted(palabras, key=lambda x: len(x))
-    print(palabras_ordenadas)
-"
-lang="py" 
-title="lanbda.py" 
+<Code
+code={`
+words = ['banana', 'pear', 'apple', 'grape']
+sorted_words = sorted(words, key=lambda x: len(x))
+print(sorted_words)
+`}
+lang="py"
+title="lambda.py"
 mark="highlights"
 frame='auto' />
 
-Salida:
+Output:
 
-<Code code="['uva', 'pera', 'manzana', 'banana']" title="lanbda.py" mark="highlights" frame="terminal" />
+<Code code={`['grape', 'pear', 'apple', 'banana']`} title="lambda.py" mark="highlights" frame="terminal" />

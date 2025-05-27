@@ -1,94 +1,94 @@
 ---
-title:  Encapsulamiento y polimorfismo
-description:  Encapsulamiento y polimorfismo
+title: Encapsulation and Polymorphism
+description: Encapsulation and Polymorphism
 sidebar:
   order: 4
 ---
 import { Code } from "@astrojs/starlight/components"
 
-En esta sección aprenderás dos conceptos clave de la programación orientada a objetos: **encapsulamiento** y **polimorfismo**. Ambos te ayudan a escribir código más seguro, flexible y reutilizable.
+In this section, you will learn two key concepts of object-oriented programming: **encapsulation** and **polymorphism**. Both help you write safer, more flexible, and reusable code.
 
 ---
 
-## Encapsulamiento
+## Encapsulation
 
-El **encapsulamiento** consiste en ocultar los detalles internos de un objeto y exponer solo lo necesario. Así, se protege el estado interno del objeto y se controla cómo se accede o modifica.
+**Encapsulation** consists of hiding the internal details of an object and exposing only what is necessary. This protects the object's internal state and controls how it is accessed or modified.
 
-### ¿Cómo se implementa en Python?
+### How is it implemented in Python?
 
-- Los atributos y métodos “privados” se nombran con un guion bajo (`_atributo` o `__atributo`).
-- Se usan métodos llamados **getters** y **setters** para acceder o modificar atributos si es necesario.
+- "Private" attributes and methods are named with an underscore (`_attribute` or `__attribute`).
+- Methods called **getters** and **setters** are used to access or modify attributes if necessary.
 
 <Code
 code="
-class CuentaBancaria:
-    def __init__(self, saldo):
-        self.__saldo = saldo  # atributo privado
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # private attribute
 
-    def depositar(self, cantidad):
-        if cantidad > 0:
-            self.__saldo += cantidad
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
 
-    def obtener_saldo(self):
-        return self.__saldo
+    def get_balance(self):
+        return self.__balance
 
-cuenta = CuentaBancaria(100)
-cuenta.depositar(50)
-print(cuenta.obtener_saldo())  # 150
+account = BankAccount(100)
+account.deposit(50)
+print(account.get_balance())  # 150
 "
 lang="py"
-title="Encapsulamiento con atributos privados"
+title="Encapsulation with private attributes"
 frame="auto"
 />
 
-En este ejemplo, el saldo solo puede modificarse mediante los métodos definidos, no directamente desde fuera de la clase.
+In this example, the balance can only be modified by the defined methods, not directly from outside the class.
 
 ---
 
-## Polimorfismo
+## Polymorphism
 
-El **polimorfismo** permite que diferentes clases compartan el mismo método (nombre), pero cada una tenga su propia implementación. Así, puedes usar objetos de distintas clases de manera intercambiable si cumplen con la misma interfaz.
+**Polymorphism** allows different classes to share the same method (name), but each has its own implementation. Thus, you can use objects of different classes interchangeably if they comply with the same interface.
 
-### Ejemplo de polimorfismo
+### Polymorphism Example
 
 <Code
 code="
 class Animal:
-    def hablar(self):
-        print('Hace un sonido')
+    def speak(self):
+        print('Makes a sound')
 
-class Perro(Animal):
-    def hablar(self):
-        print('¡Guau!')
+class Dog(Animal):
+    def speak(self):
+        print('Woof!')
 
-class Gato(Animal):
-    def hablar(self):
-        print('¡Miau!')
+class Cat(Animal):
+    def speak(self):
+        print('Meow!')
 
-animales = [Perro(), Gato()]
+animals = [Dog(), Cat()]
 
-for animal in animales:
-    animal.hablar()
+for animal in animals:
+    animal.speak()
 "
 lang="py"
-title="Polimorfismo en acción"
+title="Polymorphism in action"
 frame="auto"
 />
 
-**Salida:**
+**Output:**
 ```
-¡Guau!
-¡Miau!
+Woof!
+Meow!
 ```
 
-Cada objeto responde de manera diferente al mismo método `hablar`, dependiendo de su clase.
+Each object responds differently to the same `speak` method, depending on its class.
 
 ---
 
-## Resumen
+## Summary
 
-- **Encapsulamiento:** protege los datos internos y controla el acceso a ellos.
-- **Polimorfismo:** permite usar diferentes objetos de manera uniforme si comparten métodos con el mismo nombre.
-- Ambos conceptos hacen tu código más seguro, flexible y fácil de mantener.
+- **Encapsulation:** protects internal data and controls access to it.
+- **Polymorphism:** allows the use of different objects uniformly if they share methods with the same name.
+- Both concepts make your code safer, more flexible, and easier to maintain.
 
-¿Listo para practicar? Intenta crear una clase con atributos privados y otra jerarquía de clases que usen polimorfismo.
+Ready to practice? Try creating a class with private attributes and another class hierarchy that uses polymorphism.

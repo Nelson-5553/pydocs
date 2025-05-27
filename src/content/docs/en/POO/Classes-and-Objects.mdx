@@ -1,110 +1,110 @@
 ---
-title: Clases y objetos
-description: Guía para Clases y objetos
+title: Classes and Objects
+description: Guide to Classes and Objects
 sidebar:
   order: 1
 ---
 
 import { Code } from "@astrojs/starlight/components"
 
-Python es un lenguaje con soporte a progrmacion orientado a objetos. Esto significa que puedes modelar elementos del mundo real como **objetos** que tienen **propiedades** (atributos) y **comportamientos** (métodos), utilizando **clases** como molde para crearlos.
+Python is a language with support for object-oriented programming. This means you can model real-world elements as **objects** that have **properties** (attributes) and **behaviors** (methods), using **classes** as a blueprint to create them.
 
 ---
 
-## ¿Qué es una clase?
+## What is a Class?
 
-Una **clase** es una plantilla o molde que se utiliza para crear objetos (instancias). Agrupa datos y funciones que operan sobre esos datos.
+A **class** is a template or blueprint used to create objects (instances). It groups data and functions that operate on that data.
 
 <Code 
 code="
-class Producto:
+class Product:
     pass
 "
 lang="py" 
-title="Definición de clase" 
+title="Class Definition" 
 mark="highlights"
 frame='auto' />
 
-En este ejemplo, `Producto` es el nombre de la clase. Por ahora, no tiene atributos ni métodos.
+In this example, `Product` is the name of the class. For now, it has no attributes or methods.
 
 ---
 
-## El método `__init__`
+## The `__init__` Method
 
-El método especial `__init__` es el **constructor** de la clase. Se ejecuta automáticamente cuando creas una nueva instancia (objeto) y sirve para inicializar los atributos del objeto.
+The special method `__init__` is the **constructor** of the class. It is automatically executed when you create a new instance (object) and is used to initialize the object's attributes.
 
 <Code 
 code="
-class Producto:
-    def __init__(self, nombre, precio):
-        self.nombre = nombre
-        self.precio = precio
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
 "
 lang="py" 
 title="Constructor (__init__)" 
 mark="highlights"
 frame='auto' />
 
-Cuando creas un nuevo producto con `Producto("Zapato", 50)`, el método `__init__` asigna `"Zapato"` a `self.nombre` y `50` a `self.precio`.
+When you create a new product with `Product("Shoe", 50)`, the `__init__` method assigns `"Shoe"` to `self.name` and `50` to `self.price`.
 
 ---
 
-## El parámetro `self`
+## The `self` Parameter
 
-`self` es una referencia al propio objeto. Se utiliza dentro de los métodos de la clase para acceder o modificar los atributos y para llamar a otros métodos del mismo objeto. **Siempre** debe ser el primer parámetro de cualquier método de instancia, aunque no lo pasas explícitamente al llamar al método.
+`self` is a reference to the object itself. It is used within the class's methods to access or modify the attributes and to call other methods of the same object. It **must** always be the first parameter of any instance method, although you do not pass it explicitly when calling the method.
 
 <Code 
 code="
-class Producto:
-    def mostrar_info(self):
-        print(self.nombre, self.precio)
+class Product:
+    def display_info(self):
+        print(self.name, self.price)
 "
 lang="py" 
-title="Uso de self" 
+title="Usage of self" 
 mark="highlights"
 frame='auto' />
 
-Cuando llamas a `p.mostrar_info()`, Python pasa automáticamente el objeto `p` como argumento para `self`.
+When you call `p.display_info()`, Python automatically passes the object `p` as an argument for `self`.
 
 ---
 
-## Ejemplo completo
+## Complete Example
 
-Veamos un ejemplo completo de cómo definir una clase, crear un objeto y usar sus métodos:
+Let's see a complete example of how to define a class, create an object, and use its methods:
 
 <Code
 code="
-class Producto:
-    def __init__(self, nombre, precio):
-        self.nombre = nombre
-        self.precio = precio
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
 
-    def mostrar_info(self):
-        print(f'Producto: {self.nombre} | Precio: ${self.precio}')
+    def display_info(self):
+        print(f'Product: {self.name} | Price: ${self.price}')
 
-# Crear un objeto
-p1 = Producto('Camiseta', 25.99)
+# Create an object
+p1 = Product('Shirt', 25.99)
 
-# Usar el método
-p1.mostrar_info()
+# Use the method
+p1.display_info()
 "
 lang="py"
-title="Ejemplo de clase Producto"
+title="Product Class Example"
 frame="auto"
 />
 
-**Salida:**
+**Output:**
 ```
-Producto: Camiseta | Precio: $25.99
+Product: Shirt | Price: $25.99
 ```
 
 ---
 
-## Resumen
+## Summary
 
-- Una **clase** es un molde para crear objetos.
-- El método `__init__` inicializa los atributos del objeto.
-- El parámetro `self` permite acceder a los atributos y métodos del propio objeto.
-- Puedes crear múltiples objetos a partir de una misma clase, cada uno con sus propios valores.
+- A **class** is a blueprint for creating objects.
+- The `__init__` method initializes the object's attributes.
+- The `self` parameter allows access to the object's attributes and methods.
+- You can create multiple objects from the same class, each with its own values.
 
-¿Listo para crear tus propias clases y objetos? ¡Practica modificando los ejemplos!
+Ready to create your own classes and objects? Practice modifying the examples!

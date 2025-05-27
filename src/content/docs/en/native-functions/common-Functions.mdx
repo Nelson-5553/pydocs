@@ -1,6 +1,6 @@
 ---
-title: Funciones Comunes
-description: Guía para Funciones de Utilidad
+title: Common Functions
+description: Guide to Common Functions
 sidebar:
   order: 4
 ---
@@ -8,245 +8,244 @@ sidebar:
 import PyTable from '@components/PyTable.astro';
 import { Code } from "@astrojs/starlight/components"
 
-Python ofrece un conjunto de funciones integradas que realizan operaciones frecuentes como conteo, agregación, ordenamiento y cálculo de valores mínimos o máximos. Estas funciones son ampliamente utilizadas en la programación diaria por su simplicidad y eficiencia, y forman parte del núcleo del lenguaje, por lo que no requieren importación adicional.
+Python offers a set of built-in functions that perform frequent operations such as counting, aggregation, sorting, and calculating minimum or maximum values. These functions are widely used in daily programming due to their simplicity and efficiency, and are part of the core of the language, so they do not require additional import.
 
-<PyTable 
-  headers={["Función", "Descripción"]}
+<PyTable
+  headers={["Function", "Description"]}
   rows={[
-    ["len()	", "	Devuelve el número de elementos en una secuencia u objeto iterable."],
-    ["sum()", "Retorna la suma de todos los elementos numéricos de una secuencia."],
-    ["max()", "Devuelve el valor máximo de una secuencia."],
-    ["min()", "Devuelve el valor mínimo."],
-    ["sorted()", "Devuelve una nueva lista ordenada."],
-    ["abs()", "Retorna el valor absoluto de un número.."],
-    ["round()", "Redondea un número decimal al entero más cercano (o a cierta precisión).."],
-    ["pow()", "Eleva un número a una potencia (equivale a **)."],
-    ["divmod()", "Retorna una tupla con el cociente y el resto de una división."],
-    ["enumerate()", "Devuelve un objeto enumerado (índice y valor) sobre un iterable."],
-  
+    ["len()\t", "Returns the number of items in a sequence or iterable object."],
+    ["sum()", "Returns the sum of all numeric elements of a sequence."],
+    ["max()", "Returns the maximum value of a sequence."],
+    ["min()", "Returns the minimum value."],
+    ["sorted()", "Returns a new sorted list."],
+    ["abs()", "Returns the absolute value of a number."],
+    ["round()", "Rounds a decimal number to the nearest integer (or to a certain precision)."],
+    ["pow()", "Raises a number to a power (equivalent to **)."],
+    ["divmod()", "Returns a tuple with the quotient and remainder of a division."],
+    ["enumerate()", "Returns an enumerated object (index and value) over an iterable."],
+
   ]}
 />
 
-
-A continuacion te explicare con mas detalle el funcionamiento de estas funciones:
+Below I will explain in more detail how these functions work:
 
 ### `len()`
 
- Uso típico: 	Para contar el número de elementos en una secuencia o colección.
+ Typical use: To count the number of elements in a sequence or collection.
 
-<Code 
-code="
-nombres = ['Ana', 'Luis', 'Pedro']
-print(len(nombres))
-"
-lang="py" 
-title="len.py" 
+<Code
+code={`
+names = ['Ana', 'Luis', 'Pedro']
+print(len(names))
+`}
+lang="py"
+title="len.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 3
-"
-title="type.py" 
+`}
+title="type.py"
 mark="highlights"
 frame='terminal' />
 
 ### `sum()`
 
-Uso típico: Para calcular la suma total de los elementos numéricos de una secuencia.
+Typical use: To calculate the total sum of the numeric elements of a sequence.
 
-<Code 
-code="
-numeros = [10, 20, 30]
-print(sum(numeros))
-"
-lang="py" 
-title="sum.py" 
+<Code
+code={`
+numbers = [10, 20, 30]
+print(sum(numbers))
+`}
+lang="py"
+title="sum.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 60
-"
-title="sum.py" 
+`}
+title="sum.py"
 mark="highlights"
 frame='terminal' />
 
 ### `max()`
 
-Uso típico: Para obtener el valor más alto de una secuencia.
+Typical use: To get the highest value of a sequence.
 
-<Code 
-code="
-edades = [15, 42, 37, 29]
-print(max(edades))
-"
-lang="py" 
-title="max.py" 
+<Code
+code={`
+ages = [15, 42, 37, 29]
+print(max(ages))
+`}
+lang="py"
+title="max.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 42
-"
-title="max.py" 
+`}
+title="max.py"
 mark="highlights"
 frame='terminal' />
 ### `min()`
 
-Uso típico: Para obtener el valor más bajo de una secuencia.
+Typical use: To get the lowest value of a sequence.
 
-<Code 
-code="
-temperaturas = [23, 18, 30, 21]
-print(min(temperaturas))
-"
-lang="py" 
-title="min.py" 
+<Code
+code={`
+temperatures = [23, 18, 30, 21]
+print(min(temperatures))
+`}
+lang="py"
+title="min.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 18
-"
-title="min.py" 
+`}
+title="min.py"
 mark="highlights"
 frame='terminal' />
 
 ### `sorted()`
 
-Uso típico: Para ordenar los elementos de una secuencia y devolver una nueva lista ordenada.
+Typical use: To sort the elements of a sequence and return a new sorted list.
 
-<Code 
-code="
-letras = ['d', 'a', 'c', 'b']
-print(sorted(letras))
-"
-lang="py" 
-title="sorted.py" 
+<Code
+code={`
+letters = ['d', 'a', 'c', 'b']
+print(sorted(letters))
+`}
+lang="py"
+title="sorted.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 ['a', 'b', 'c', 'd']
-"
-title="sorted.py" 
+`}
+title="sorted.py"
 mark="highlights"
 frame='terminal' />
 
 ### `abs()`
 
-Uso típico: Para obtener el valor absoluto de un número.
+Typical use: To get the absolute value of a number.
 
-<Code 
-code="
-numero = -15
-print(abs(numero))
-"
-lang="py" 
-title="abs.py" 
+<Code
+code={`
+number = -15
+print(abs(number))
+`}
+lang="py"
+title="abs.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 15
-"
-title="abs.py" 
+`}
+title="abs.py"
 mark="highlights"
 frame='terminal' />
 
 ### `round()`
 
-Uso típico: Para redondear un número decimal al entero más cercano.
+Typical use: To round a decimal number to the nearest integer.
 
-<Code 
-code="
+<Code
+code={`
 pi = 3.14159
 print(round(pi, 2))
-"
-lang="py" 
-title="round.py" 
+`}
+lang="py"
+title="round.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 3.14
-"
-title="round.py" 
+`}
+title="round.py"
 mark="highlights"
 frame='terminal' />
 
 ### `pow()`
 
-Uso típico: Para elevar un número base a una potencia.
+Typical use: To raise a base number to a power.
 
-<Code 
-code="
+<Code
+code={`
 print(pow(2, 3))  # 2^3
-"
-lang="py" 
-title="pow.py" 
+`}
+lang="py"
+title="pow.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 8
-"
-title="pow.py" 
+`}
+title="pow.py"
 mark="highlights"
 frame='terminal' />
 
 ### `divmod()`
 
-Uso típico: Para obtener el cociente y el resto de una división.
+Typical use: To get the quotient and remainder of a division.
 
-<Code 
-code="
+<Code
+code={`
 resultado = divmod(10, 3)
 print(resultado)
-"
-lang="py" 
-title="divmod.py" 
+`}
+lang="py"
+title="divmod.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 (3, 1)
-"
-title="divmod.py" 
+`}
+title="divmod.py"
 mark="highlights"
 frame='terminal' />
 
 ### `enumerate()`
 
-Uso típico: Uso típico: Para iterar sobre una secuencia obteniendo índice y valor.
+Typical use: Typical use: To iterate over a sequence obtaining index and value.
 
-<Code 
-code="
-frutas = ['manzana', 'banana', 'cereza']
-for indice, valor in enumerate(frutas):
-&nbsp;&nbsp;&nbsp;&nbsp;print(indice, valor)
-"
-lang="py" 
-title="enumerate.py" 
+<Code
+code={`
+fruits = ['apple', 'banana', 'cherry']
+for index, value in enumerate(fruits):
+    print(index, value)
+`}
+lang="py"
+title="enumerate.py"
 mark="highlights"
 frame='auto' />
-Salida: 
-<Code 
-code="
+Output:
+<Code
+code={`
 0 manzana
 1 banana
 2 cereza
-"
-title="enumerate.py" 
+`}
+title="enumerate.py"
 mark="highlights"
 frame='terminal' />

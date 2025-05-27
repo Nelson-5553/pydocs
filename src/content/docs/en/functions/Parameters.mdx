@@ -1,6 +1,6 @@
 ---
-title: Parametros y retorno
-description: Guía para Parametros y retorno
+title: Parameters and Return
+description: Guide to Parameters and Return
 sidebar:
   order: 2
 ---
@@ -8,68 +8,68 @@ sidebar:
 import { Code } from "@astrojs/starlight/components"
 
 
-En Python, parámetros y retorno son conceptos clave para definir funciones. Los parámetros son las variables que recibe una función, permitiendo que la función opere con datos externos, mientras que el retorno especifica el valor que la función devuelve después de su ejecución. 
+In Python, parameters and return are key concepts for defining functions. Parameters are the variables that a function receives, allowing the function to operate with external data, while the return specifies the value that the function returns after its execution.
 
-## Parámetros:
+## Parameters:
 
-- **Definición**: Son variables que se listan dentro de los paréntesis de la definición de una función.
+- **Definition**: They are variables that are listed within the parentheses of a function definition.
 
-- **Uso**: Permiten a la función recibir datos o información desde fuera de ella.
+- **Usage**: Allow the function to receive data or information from outside of it.
 
-<Code 
-code="
-def saludar(nombre):
-&nbsp;&nbsp;&nbsp;&nbsp;print(f'Hola, {nombre}!')
+<Code
+code={`
+def greet(name):
+    print(f'Hello, {name}!')
 
-# Llamar funcion
-nombre = 'PyDocs'
-saludar(nombre)
-"
-lang="py" 
-title="funcion.py" 
+# Call function
+name = 'PyDocs'
+greet(name)
+`}
+lang="py"
+title="function.py"
 mark="highlights"
 frame='auto' />
 
-Salida: 
+Output:
 
-<Code 
-code="
-Hola, PyDocs
-"
-title="saludar.py" 
+<Code
+code={`
+Hello, PyDocs
+`}
+title="greet.py"
 mark="highlights"
 frame='terminal' />
 
-En este ejemplo, nombre es el parámetro de la función saludar.
+In this example, name is the parameter of the greet function.
 
-## Retorno:
+## Return:
 
-- **Definición**: La palabra clave return permite devolver un valor desde la función.
+- **Definition**: The keyword return allows you to return a value from the function.
 
-- **Uso**: El valor que sigue a return se devuelve al lugar donde se llamó a la función. 
+- **Usage**: The value that follows return is returned to the place where the function was called.
 
-<Code 
-code="
-  def sumar(a, b):
-&nbsp;&nbsp;&nbsp;&nbsp;resultado = a + b
-&nbsp;&nbsp;&nbsp;&nbsp;return resultado
+<Code
+code={`
+def add(a, b):
+    result = a + b
+    return result
 
-# Ejemplo de uso
-suma = sumar(3, 5)
-print('La suma es:', suma)
+# Usage example
+sum_result = add(3, 5)
+print('The sum is:', sum_result)
 
-"
-lang="py" 
-title="suma.py" 
+`}
+lang="py"
+title="sum.py"
 mark="highlights"
 frame='auto' />
 
-Salida: 
+Output:
 
-<Code 
-code="
-La suma es: 8
-"
-title="suma.py" 
+<Code
+code={`
+The sum is: 8
+`}
+title="sum.py"
 mark="highlights"
 frame='terminal' />

@@ -1,6 +1,6 @@
 ---
-title: Introducción
-description: Guía para Archivos en python
+title: Introduction
+description: Guide for files in python
 sidebar:
   order: 1
 ---
@@ -9,64 +9,63 @@ import { Code } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
 import PyTable from '@components/PyTable.astro';
 
-Python proporciona herramientas simples y potentes para trabajar con archivos. Las operaciones más comunes incluyen abrir, leer, escribir y cerrar archivos, y se realizan principalmente con las funciones `open()` y `with`.
+Python provides simple and powerful tools for working with files. Common operations include opening, reading, writing, and closing files, and are primarily performed using the `open()` and `with` functions.
 
 ## `open()`
 
-<Code 
+<Code
 code="
-open(ruta_archivo, modo)
-" 
-lang="py" 
-title="open.py" 
-mark="highlights" 
+open(file_route, mode)
+"
+lang="py"
+title="open.py"
+mark="highlights"
 frame="auto" />
 
-- ruta_archivo: la ubicación del archivo (relativa o absoluta).
+- file_route: the file's location (relative or absolute).
 
-- modo: el modo de apertura 
+- mode: the operation mode
 
-#### Modos de apertura
+#### Opening modes
 
-
-<PyTable 
-  headers={["Modo", "Descripción"]}
+<PyTable
+  headers={["Mode", "Description"]}
   rows={[
-    ["r", "	Abre el archivo en modo lectura. Lanza un error si el archivo no existe."],
-    ["w", "Abre el archivo en modo escritura. Crea el archivo si no existe o lo sobrescribe."],
-    ["a", "Abre el archivo en modo adición. Crea el archivo si no existe y escribe al final."],
-    ["r+", "Abre el archivo en modo lectura y escritura. No lo trunca."],
-    ["w+", "Abre el archivo en modo lectura y escritura, pero sobrescribe el contenido."],
-    ["a+", "Abre el archivo para lectura y adición. El puntero de escritura está al final."],
-    ["rb", "Igual que 'r' pero en modo binario."],
-    ["wb", "Igual que 'w' pero en modo binario."],
-    ["ab", "Igual que 'a' pero en modo binario."],
-    ["r+b", "Lectura y escritura en modo binario."],
-    ["w+b", "Lectura y escritura, truncando el archivo, en modo binario."],
-    ["a+b", "Lectura y adición en modo binario."],
-  
+    ["r", "	Opens the file in read mode. Raises an error if the file does not exist."],
+    ["w", "Opens the file in write mode. Creates the file if it does not exist or overwrites it."],
+    ["a", "Opens the file in append mode. Creates the file if it does not exist and writes at the end."],
+    ["r+", "Opens the file in read and write mode. Does not truncate."],
+    ["w+", "Opens the file in read and write mode, but overwrites the content."],
+    ["a+", "Opens the file for reading and appending. The write pointer is at the end."],
+    ["rb", "Same as 'r' but in binary mode."],
+    ["wb", "Same as 'w' but in binary mode."],
+    ["ab", "Same as 'a' but in binary mode."],
+    ["r+b", "Reading and writing in binary mode."],
+    ["w+b", "Reading and writing, truncating the file, in binary mode."],
+    ["a+b", "Reading and appending in binary mode."],
+
   ]}
 />
 
 
 ## `with`
 
-Se recomienda usar open() junto con la declaración with, lo que garantiza que el archivo se cierre automáticamente al finalizar el bloque, incluso si ocurre un error:
+It is recommended to use `open()` together with the `with` statement, which ensures that the file is closed automatically at the end of the block, even if an error occurs:
 
-<Code 
+<Code
 code="
-with open('archivo.txt', 'r') as file:
+with open('file.txt', 'r') as file:
 &nbsp;&nbsp;&nbsp;&nbsp;contenido = file.read()
-" 
-lang="py" 
-title="with.py" 
-mark="highlights" 
+"
+lang="py"
+title="with.py"
+mark="highlights"
 frame="auto" />
 
-- `with` abre el archivo y lo asigna a la variable `file`.
+- `with` opens the file and assigns it to the variable `file`.
 
-- Al salir del bloque `with`, el archivo se cierra automáticamente.
+- When exiting the `with` block, the file is closed automatically.
 
 <Aside type="note">
-Este enfoque es más limpio, seguro y evita errores como archivos que permanecen abiertos.
+This approach is cleaner, safer, and avoids errors such as files that remain open.
 </Aside>

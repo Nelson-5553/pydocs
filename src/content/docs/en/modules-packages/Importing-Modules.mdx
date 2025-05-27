@@ -1,105 +1,105 @@
 ---
-title: Importación de módulos
-description: Guía para Importación de módulos
+title: Importing Modules
+description: Guide to Importing Modules
 sidebar:
   order: 1
 ---
 import { Code } from "@astrojs/starlight/components"
 
-En Python, los **módulos** te permiten organizar y reutilizar tu código. Un módulo es simplemente un archivo `.py` que contiene funciones, clases o variables que puedes usar en otros programas. Importar módulos es una práctica fundamental para escribir código limpio, mantenible y escalable.
+In Python, **modules** allow you to organize and reuse your code. A module is simply a `.py` file that contains functions, classes, or variables that you can use in other programs. Importing modules is a fundamental practice for writing clean, maintainable, and scalable code.
 
 ---
 
-## ¿Por qué importar módulos?
+## Why Import Modules?
 
-- **Reutilización:** Usa funciones y clases ya escritas, evitando repetir código.
-- **Organización:** Divide tu proyecto en archivos más pequeños y manejables.
-- **Acceso a herramientas:** Aprovecha la enorme biblioteca estándar de Python y paquetes externos.
+- **Reuse:** Use already written functions and classes, avoiding repeated code.
+- **Organization:** Divide your project into smaller, more manageable files.
+- **Access to tools:** Take advantage of Python's vast standard library and external packages.
 
 ---
 
-## Importar módulos estándar
+## Importing Standard Modules
 
-Python incluye una gran cantidad de módulos listos para usar. Por ejemplo, para trabajar con fechas puedes importar el módulo `datetime`:
+Python includes a large number of ready-to-use modules. For example, to work with dates you can import the `datetime` module:
 
 <Code
-code="
+code={`
 import datetime
 
-hoy = datetime.date.today()
-print('La fecha de hoy es:', hoy)
-"
+today = datetime.date.today()
+print('Today\'s date is:', today)
+`}
 lang="py"
-title="Importar un módulo estándar"
+title="Importing a Standard Module"
 frame="auto"
 />
 
 ---
 
-## Importar funciones o clases específicas
+## Importing Specific Functions or Classes
 
-Puedes importar solo lo que necesitas de un módulo:
+You can import only what you need from a module:
 
 <Code
-code="
+code={`
 from math import sqrt
 
 print(sqrt(16))  # 4.0
-"
+`}
 lang="py"
-title="Importar una función específica"
+title="Importing a Specific Function"
 frame="auto"
 />
 
 ---
 
-## Renombrar módulos al importar
+## Renaming Modules Upon Import
 
-A veces se usa un alias para acortar el nombre del módulo:
+Sometimes an alias is used to shorten the module name:
 
 <Code
-code="
+code={`
 import numpy as np
 
-arreglo = np.array([1, 2, 3])
-print(arreglo)
-"
+array = np.array([1, 2, 3])
+print(array)
+`}
 lang="py"
-title="Importar con alias"
+title="Importing with Alias"
 frame="auto"
 />
 
 ---
 
-## Importar tus propios módulos
+## Importing Your Own Modules
 
-Si tienes un archivo llamado `utilidades.py` en tu proyecto, puedes importarlo así:
+If you have a file named `utilities.py` in your project, you can import it like this:
 
 <Code
-code="
-import utilidades
+code={`
+import utilities
 
-utilidades.mi_funcion()
-"
+utilities.my_function()
+`}
 lang="py"
-title="Importar un módulo propio"
+title="Importing a Custom Module"
 frame="auto"
 />
 
 ---
 
-## Buenas prácticas
+## Best Practices
 
-- Importa solo lo que necesitas.
-- Usa alias (`as`) para nombres largos o comunes.
-- Mantén tus importaciones al inicio del archivo.
+- Import only what you need.
+- Use aliases (`as`) for long or common names.
+- Keep your imports at the beginning of the file.
 
 ---
 
-## Resumen
+## Summary
 
-- Los módulos te ayudan a organizar y reutilizar código en Python.
-- Puedes importar módulos estándar, externos o propios.
-- Usa las diferentes formas de importación según tus necesidades.
+- Modules help you organize and reuse code in Python.
+- You can import standard, external, or custom modules.
+- Use the different forms of import according to your needs.
 
-¿Listo para probar? Intenta importar el módulo `random` y genera un número aleatorio.
+Ready to test? Try importing the `random` module and generate a random number.

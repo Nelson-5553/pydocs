@@ -1,6 +1,6 @@
 ---
-title: Operadores
-description: Guía para Operadores
+title: Operators
+description: Operators Guide
 sidebar:
   order: 4
 ---
@@ -9,26 +9,26 @@ import PyTable from "@components/PyTable.astro"
 import { Code } from "@astrojs/starlight/components"
 import { Aside } from "@astrojs/starlight/components"
 
-Un operador es un símbolo o palabra clave que le dice a Python que realice una operación específica sobre uno o más valores (también llamados operandos). Los operadores permiten realizar tareas como sumar números, comparar valores, asignar resultados a variables o evaluar condiciones lógicas.
+An operator is a symbol or keyword that tells Python to perform a specific operation on one or more values (also called operands). Operators allow you to perform tasks like adding numbers, comparing values, assigning results to variables, or evaluating logical conditions.
 
-## Tipos de opéradores
+## Types of operators
 
-En python al igual que en otros lenguajes existen una variedad de tipos de operadores los cuales les enseñaremos a continuacion
+In Python, just like in other languages, there are a variety of operator types which we will teach you below.
 
-### Operadores Aritméticos
+### Arithmetic Operators
 
-Son los operadores más básicos y se utilizan para realizar operaciones matemáticas como suma, resta, multiplicación o división. Python los usa para trabajar con números de manera directa.
+These are the most basic operators and are used to perform mathematical operations like addition, subtraction, multiplication, or division. Python uses them to work with numbers directly.
 
 <PyTable 
-  headers={["Operador", "Descripción"]}
+  headers={["Operator", "Description"]}
   rows={[
-    ["+", "Suma"],
-    ["-", "Resta"],
-    ["*", "Multiplicación"],
-    ["/", "División (resultado flotante)"],
-    ["//", "División entera "],
-    ["%", "Módulo (residuo) "],
-    ["**", "Potencia"],
+    ["+", "Addition"],
+    ["-", "Subtraction"],
+    ["*", "Multiplication"],
+    ["/", "Division (float result)"],
+    ["//", "Integer division"],
+    ["%", "Modulo (remainder)"],
+    ["**", "Power"],
     // más filas...
   ]}
 />
@@ -39,72 +39,72 @@ Son los operadores más básicos y se utilizan para realizar operaciones matemá
 code="x = 12 
       y = 24
       
-      print(x + y)   # Resultado: 36
-      print(x - y)   # Resultado: -12
-      print(x * y)   # Resultado: 288
-      print(x / y)   # Resultado: 0.5
-      print(x // y)  # Resultado: 0
-      print(x % y)   # Resultado: 12
-      " 
+      print(x + y)   # Result: 36
+      print(x - y)   # Result: -12
+      print(x * y)   # Result: 288
+      print(x / y)   # Result: 0.5
+      print(x // y)  # Result: 0
+      print(x % y)   # Result: 12
+      "
        
 lang="py" 
 title="Operators.py" 
 mark="highlights" />
 
-<Aside type="tip" title="Reto">
+<Aside type="tip" title="Challenge">
 
 ```python
-# ¿Qué número obtienes al usar x ** y?
-# Pista: es 12 elevado a 24. ¡Muy grande!
+# What number do you get when using x ** y?
+# Hint: it's 12 raised to the 24th power. Very big!
 ```
 </Aside>
 
-### Operadores de Comparación
+### Comparison Operators
 
-Estos operadores permiten comparar dos valores. El resultado de una comparación es siempre un valor booleano: True si la condición se cumple, y False si no.
+These operators allow you to compare two values. The result of a comparison is always a boolean value: True if the condition is met, and False if not.
 
 <PyTable 
-  headers={["Operador", "Descripción"]}
+  headers={["Operator", "Description"]}
   rows={[
-    ["==", "Igual a"],
-    ["!=", "Distinto de "],
-    [">", "Mayor que "],
-    ["<", "Menor que         "],
-    [">=", "Mayor o igual que"],
-    ["<=", "Menor o igual que  "],
+    ["==", "Equal to"],
+    ["!=", "Not equal to"],
+    [">", "Greater than"],
+    ["<", "Less than"],
+    [">=", "Greater than or equal to"],
+    ["<=", "Less than or equal to"],
     // más filas...
   ]}
 />
 
 <Code 
 code="      
-      print(5 == 5)   # Resultado: True
-      print(5 != 3)   # Resultado: True
-      print(7 > 3)   # Resultado: True
-      print(2 < 4)   # Resultado: True
-      print(6 >= 6)  # Resultado: True
-      print(3 <= 5)   # Resultado: True
-      " 
+      print(5 == 5)   # Result: True
+      print(5 != 3)   # Result: True
+      print(7 > 3)   # Result: True
+      print(2 < 4)   # Result: True
+      print(6 >= 6)  # Result: True
+      print(3 <= 5)   # Result: True
+      "
        
 lang="py" 
 title="Operators.py" 
 mark="highlights" />
 
-### Operadores de Asignación
+### Assignment Operators
 
-Los operadores de asignación son símbolos que se utilizan en programación para asignar un valor a una variable. El operador de asignación más común es el signo igual (=), pero también existen operadores de asignación compuestos que combinan una operación con la asignación. 
+Assignment operators are symbols used in programming to assign a value to a variable. The most common assignment operator is the equals sign (=), but there are also compound assignment operators that combine an operation with assignment.
 
 <PyTable 
-  headers={["Operador", "Descripción"]}
+  headers={["Operator", "Description"]}
   rows={[
-    ["=", "Asignación"],
-    ["+=", "Suma y asignación"],
-    ["-=", "Resta y asignación"],
-    ["*=", "Multiplicación y asignación"],
-    ["/=", "División y asignación"],
-    ["%=", "Módulo y asignación "],
-    ["//=", "División entera y asignación"],
-    ["**=", "Potencia y asignación "],
+    ["=", "Assignment"],
+    ["+=", "Addition and assignment"],
+    ["-=", "Subtraction and assignment"],
+    ["*=", "Multiplication and assignment"],
+    ["/=", "Division and assignment"],
+    ["%=", "Modulo and assignment"],
+    ["//=", "Integer division and assignment"],
+    ["**=", "Power and assignment"],
     
     // más filas...
   ]}
@@ -112,7 +112,7 @@ Los operadores de asignación son símbolos que se utilizan en programación par
 
 <Code 
 code="      
-      print(x = 5)   # Asigna el valor 5 a x
+      print(x = 5)   # Assigns the value 5 to x
       print(x += 3)   # x = x + 3
       print(x -= 2)   # x = x - 2
       print(x *= 4)   # x = x * 4
@@ -120,22 +120,22 @@ code="
       print(x %= 3)  # x = x % 3
       print(x //= 2)   # x = x // 2
       print(x **= 3)   # x = x ** 3
-      " 
+      "
        
 lang="py" 
 title="Operators.py" 
 mark="highlights" />
 
-### Operadores Lógicos 
+### Logical Operators
 
-Sirven para combinar múltiples condiciones y obtener un resultado booleano. Son usualemente usados en estructuras de control como los condicionales
+They are used to combine multiple conditions and get a boolean result. They are usually used in control structures like conditionals.
 
 <PyTable 
-  headers={["Operador", "Descripción", "Ejemplo", "Resultado"]}
+  headers={["Operator", "Description", "Example", "Result"]}
   rows={[
-    ["and", "Verdadero si ambas condiciones son verdaderas ", "True and False", "False"],
-    ["or", "Verdadero si al menos una condición es verdadera","True or False","True"],
-    ["not", "Invierte el valor de la condición", "not True","False"],   
+    ["and", "True if both conditions are true", "True and False", "False"],
+    ["or", "True if at least one condition is true","True or False","True"],
+    ["not", "Inverts the value of the condition", "not True","False"],
     // más filas...
   ]}
 />

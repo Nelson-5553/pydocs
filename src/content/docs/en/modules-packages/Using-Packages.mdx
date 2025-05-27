@@ -1,102 +1,102 @@
 ---
-title: Uso de paquetes
-description: Guía para Uso de paquetes
+title: Using Packages
+description: Guide to Using Packages
 sidebar:
   order: 3
 ---
 import { Code } from "@astrojs/starlight/components"
 import { FileTree } from "@astrojs/starlight/components"
 
-# Uso de paquetes en Python
+# Using Packages in Python
 
-En Python, un **paquete** es una forma de organizar y agrupar varios módulos relacionados en una estructura de carpetas. Los paquetes te ayudan a mantener tu código ordenado, escalable y fácil de mantener, especialmente en proyectos grandes.
+In Python, a **package** is a way to organize and group several related modules into a folder structure. Packages help you keep your code organized, scalable, and easy to maintain, especially in large projects.
 
 ---
 
-## ¿Qué es un paquete?
+## What is a Package?
 
-Un paquete es simplemente una carpeta que contiene un archivo especial llamado `__init__.py` (puede estar vacío) y uno o más módulos (`.py`).  
-Esto le indica a Python que esa carpeta debe tratarse como un paquete.
+A package is simply a folder that contains a special file called `__init__.py` (can be empty) and one or more modules (`.py`).
+This tells Python that the folder should be treated as a package.
 
-**Ejemplo de estructura de un paquete:**
+**Example of a package structure:**
 
 <FileTree>
-- mi_paquete/
+- my_package/
   - `__init__.py`
-  - modulo1.py
-  - modulo2.py
+  - module1.py
+  - module2.py
 </FileTree>
 
 ---
 
-## ¿Por qué usar paquetes?
+## Why Use Packages?
 
-- **Organización:** Agrupa módulos relacionados bajo una misma carpeta.
-- **Escalabilidad:** Facilita el crecimiento de tu proyecto sin perder el control.
-- **Reutilización:** Puedes importar solo lo que necesitas de cada paquete.
+- **Organization:** Groups related modules under the same folder.
+- **Scalability:** Makes it easier to grow your project without losing control.
+- **Reuse:** You can import only what you need from each package.
 
 ---
 
-## ¿Cómo crear y usar un paquete?
+## How to Create and Use a Package?
 
-1. **Crea la carpeta del paquete**  
-   Por ejemplo, crea una carpeta llamada `utilidades` y dentro de ella un archivo `__init__.py` (puede estar vacío).
+1. **Create the package folder**
+   For example, create a folder called `utilities` and inside it a file `__init__.py` (can be empty).
 
-2. **Agrega tus módulos**  
-   Por ejemplo, crea un archivo `matematicas.py` dentro de la carpeta:
+2. **Add your modules**
+   For example, create a file `math.py` inside the folder:
 
 <Code
-code="
-# utilidades/matematicas.py
-def sumar(a, b):
+code={`
+# utilities/math.py
+def add(a, b):
     return a + b
-"
+`}
 lang="py"
-title="Módulo dentro de un paquete"
+title="Module Inside a Package"
 frame="auto"
 />
 
-3. **Importa desde tu paquete**  
-   En tu archivo principal, importa el módulo o función que necesites:
+3. **Import from your package**
+   In your main file, import the module or function you need:
 
 <Code
-code="
-from utilidades import matematicas
+code={`
+from utilities import math
 
-print(matematicas.sumar(3, 4))  # 7
-"
+print(math.add(3, 4))  # 7
+`}
 lang="py"
-title="Importar un módulo de un paquete"
+title="Importing a Module from a Package"
 frame="auto"
 />
 
-También puedes importar funciones específicas:
+You can also import specific functions:
 
 <Code
-code="
-from utilidades.matematicas import sumar
+code={`
+from utilities.math import add
 
-print(sumar(10, 5))  # 15
-"
+print(add(10, 5))  # 15
+`}
 lang="py"
-title="Importar función específica de un paquete"
+title="Importing a Specific Function from a Package"
 frame="auto"
 />
 
 ---
 
-## Buenas prácticas
+## Best Practices
 
-- Usa nombres descriptivos para tus paquetes y módulos.
-- Mantén cada paquete enfocado en un solo tema o funcionalidad.
-- Coloca un archivo `__init__.py` en cada carpeta de paquete (aunque esté vacío).
+- Use descriptive names for your packages and modules.
+- Keep each package focused on a single topic or functionality.
+- Place an `__init__.py` file in each package folder (even if it is empty).
 
 ---
 
-## Resumen
+## Summary
 
-- Los paquetes agrupan módulos relacionados y ayudan a organizar proyectos grandes.
-- Solo necesitas una carpeta con `__init__.py` y tus módulos.
-- Importa módulos o funciones según lo necesites.
+- Packages group related modules and help organize large projects.
+- You only need a folder with `__init__.py` and your modules.
+- Import modules or functions as needed.
 
-¿Listo para practicar? Crea tu propio paquete con varios módulos y pruébalo en un programa.
+Ready to practice? Create your own package with several modules and test it in a program.

@@ -1,6 +1,6 @@
 ---
 title: try, except, finally
-description: Guía para Excepciones try, except, finally
+description: Guide for try, except, finally Exceptions
 sidebar:
   order: 2
 ---
@@ -12,12 +12,12 @@ In python, error handling is done using try, except, and optionally finally bloc
 
 ## Catching Exceptions
 
-This examples show how to handle a specific error, in this case a division by zero, using try and except. If an error occurs within the try block, the except block executes to handle it safely without stopping the program.
+These examples show how to handle a specific error, in this case a division by zero, using try and except. If an error occurs within the try block, the except block executes to handle it safely without stopping the program.
 
 <Code
 code={`
 try:
-    resultado = 10 / 0
+    result = 10 / 0
 except ZeroDivisionError:
     print("Error: you can't divide by zero.")
 `}
@@ -34,14 +34,14 @@ This example catches more than one type of exception. It tries to convert a non-
 <Code
 code={`
 try:
-    numero = int("abc")
+    number = int("abc")
 except ValueError:
     print("Error: can't convert text to number.")
 except TypeError:
     print("Error: Invalid data type.")
 `}
 lang="py"
-title="multiples_excepciones.py"
+title="multiple_exceptions.py"
 frame="auto"
 />
 
@@ -53,13 +53,13 @@ The finally block always executes regardless of whether an exception occurred or
 code={`
 try:
     file = open("non-existent.txt", "r")
-    contenido = file.read()
+    content = file.read()
 except FileNotFoundError:
     print("Error: file not found.")
 finally:
     print("Finishing reading attempt.")
 `}
 lang="py"
-title="finally_bloque.py"
+title="finally_block.py"
 frame="auto"
 />

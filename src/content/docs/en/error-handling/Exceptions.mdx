@@ -10,7 +10,7 @@ import { Code } from "@astrojs/starlight/components"
 
 In python, exceptions are events that interrupt the normal flow of the program during its execution. They are errors that occur at runtime, unlike syntax errors that are detected before execution. Exceptions can be handled using the try-except block, which allows the program to continue its execution even if an error occurs.
 
-a continuacion te muestro algunas de las excepciones mas comune que te puedes encontrar:
+Below are some of the most common exceptions you may encounter:
 
 <PyTable
   headers={["Exception", "Description"]}
@@ -47,7 +47,7 @@ import builtins
 # Filters out all built-in objects that are subclasses of BaseException
 exceptions = [e for e in dir(builtins) if isinstance(getattr(builtins, e), type) and issubclass(getattr(builtins, e), BaseException)]
 
-# Muestra la lista completa
+# Displays the complete list
 for exc in exceptions:
     print(exc)
 
