@@ -17,120 +17,86 @@ export default defineConfig({
             }
         }
     },
-    redirects: {
-                '/': '/es', // Redirección a español como idioma por defecto
-            },
 	site: 'https://www.pydocs.site',
-    integrations: [starlight({
-        customCss: [
-            // Ruta relativa a tu archivo CSS personalizado
-            './src/styles/starlight.css',
-        ],
-        title: 'PyDocs',
-        logo: {
-            // Aquí puedes colocar directamente la imagen (opcional si usas slot)
-            src: '@assets/pydocs.png',
-            alt: 'Logo de la documentación'
-        },
-        favicon: '/favicon.ico',
-        // Establece el inglés como el idioma predeterminado para este sitio.
-        defaultLocale: 'es',
-        locales: {
-            // Documentación en inglés en `src/content/docs/en/`
-            en: {
-                label: 'English',
+    integrations: [
+        starlight({
+            customCss: ['./src/styles/starlight.css'],
+            title: 'PyDocs',
+            logo: {
+                src: '@assets/pydocs.png',
+                alt: 'Logo de la documentación'
             },
-            // Documentación en español en `src/content/docs/es/`
-            es: {
-                label: 'Español',
+            favicon: '/favicon.ico',
+            defaultLocale: 'es',
+            locales: {
+                en: { label: 'English' },
+                es: { label: 'Español' },
             },
-        },
-
-        social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Nelson-5553/pydocs' }],
-        sidebar: [
-            {
-              translations: {
-                en: "Introduction",
-              },
-                label: 'Introducción',
-                autogenerate: { directory: 'introduction' },
-            },
-            {
-              translations: {
-                en: "Basic Syntax",
-              },
-                label: 'Sintaxis Básica',
-                autogenerate: { directory: 'syntax-basic' },
-            },
-            {
-                translations: {
-                  en: "Data Stuctures"
+            social: [
+                {
+                    icon: 'github',
+                    label: 'GitHub',
+                    href: 'https://github.com/Nelson-5553/pydocs'
+                }
+            ],
+            sidebar: [
+                {
+                    label: 'Introducción',
+                    translations: { en: "Introduction" },
+                    autogenerate: { directory: 'introduction' },
                 },
-                label: 'Estructuras de Datos',
-                autogenerate: { directory: 'data-structure' },
-            },
-
-            {
-              translations: {
-                en: "Control Structures"
-              },
-                label: 'Estructuras de Control',
-                autogenerate: { directory: 'control-structures' },
-            },
-            {
-              translations: {
-                en: "Functions"
-              },
-                label: 'Funciones',
-                autogenerate: { directory: 'functions' },
-            },
-            {
-              translations: {
-                en: "Native Functions"
-              },
-                label: 'Funciones Nativas',
-                autogenerate: { directory: 'native-functions' },
-            },
-            {
-              translations: {
-                en: "File Management"
-              },
-                label: 'Manejo de Archivos',
-                autogenerate: { directory: 'file-management' },
-            },
-            {
-              translations: {
-                en: "Error Handling"
-              },
-                label: 'Manejo de Errores',
-                autogenerate: { directory: 'error-handling' },
-            },
-            {
-              translations: {
-                en: "Object-Oriented Programming"
-              },
-                label: 'Programacion Orientada a Objetos',
-                autogenerate: { directory: 'POO' },
-            },
-            {
-              translations: {
-                en: "Modules and Packages"
-              },
-                label: 'Módulos y Paquetes',
-                autogenerate: { directory: 'modules-packages' },
-            },
-            // {
-            // 	label: 'Manejo de Librerías Estándar',
-            // 	autogenerate: { directory: 'StandardLibraries' },
-            // },
-            {
-              translations: {
-                en: "Virtual Environments and Package Management"
-              },
-                label: 'Entornos Virtuales y Gestión de Paquetes',
-                autogenerate: { directory: 'venv-packages' },
-            },
-        ],
-		}),
-		sitemap()],
+                {
+                    label: 'Sintaxis Básica',
+                    translations: { en: "Basic Syntax" },
+                    autogenerate: { directory: 'syntax-basic' },
+                },
+                {
+                    label: 'Estructuras de Datos',
+                    translations: { en: "Data Structures" },
+                    autogenerate: { directory: 'data-structure' },
+                },
+                {
+                    label: 'Estructuras de Control',
+                    translations: { en: "Control Structures" },
+                    autogenerate: { directory: 'control-structures' },
+                },
+                {
+                    label: 'Funciones',
+                    translations: { en: "Functions" },
+                    autogenerate: { directory: 'functions' },
+                },
+                {
+                    label: 'Funciones Nativas',
+                    translations: { en: "Native Functions" },
+                    autogenerate: { directory: 'native-functions' },
+                },
+                {
+                    label: 'Manejo de Archivos',
+                    translations: { en: "File Management" },
+                    autogenerate: { directory: 'file-management' },
+                },
+                {
+                    label: 'Manejo de Errores',
+                    translations: { en: "Error Handling" },
+                    autogenerate: { directory: 'error-handling' },
+                },
+                {
+                    label: 'Programación Orientada a Objetos',
+                    translations: { en: "Object-Oriented Programming" },
+                    autogenerate: { directory: 'POO' },
+                },
+                {
+                    label: 'Módulos y Paquetes',
+                    translations: { en: "Modules and Packages" },
+                    autogenerate: { directory: 'modules-packages' },
+                },
+                {
+                    label: 'Entornos Virtuales y Gestión de Paquetes',
+                    translations: { en: "Virtual Environments and Package Management" },
+                    autogenerate: { directory: 'venv-packages' },
+                },
+            ],
+        }),
+        sitemap()
+    ],
 });
