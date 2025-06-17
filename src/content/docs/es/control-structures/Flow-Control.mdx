@@ -1,10 +1,60 @@
 ---
 title: Control de Flujo
-description: Guía para Control de Flujo
+description: Guía para Control de Flujo en Python
 sidebar:
   order: 3
 ---
 
-import Aviso from '@components/Aviso.astro';
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
 
-<Aviso />
+El control de flujo en Python permite modificar el comportamiento de los bucles y condicionales usando sentencias especiales como `pass`, `continue` y `break`. Estas sentencias ayudan a gestionar cómo y cuándo se ejecutan ciertas partes del código.
+
+## `pass`
+
+La sentencia `pass` se utiliza como un marcador de posición. No realiza ninguna acción, pero permite que el código sea sintácticamente correcto.
+
+<Code 
+code="
+for letra in 'python':
+&nbsp;&nbsp;&nbsp;&nbsp;if letra == 'h':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass  # No hace nada
+&nbsp;&nbsp;&nbsp;&nbsp;print(letra)
+"
+lang="py"
+title="pass.py"
+mark="highlights" />
+
+## `continue`
+
+La sentencia `continue` salta a la siguiente iteración del bucle, omitiendo el resto del código en la iteración actual.
+
+<Code 
+code="
+for numero in range(5):
+&nbsp;&nbsp;&nbsp;&nbsp;if numero == 2:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue  # Salta el número 2
+&nbsp;&nbsp;&nbsp;&nbsp;print(numero)
+"
+lang="py"
+title="continue.py"
+mark="highlights" />
+
+## `break`
+
+La sentencia `break` termina el bucle inmediatamente, sin importar si la condición se ha cumplido o no.
+
+<Code 
+code="
+for numero in range(5):
+&nbsp;&nbsp;&nbsp;&nbsp;if numero == 3:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break  # Sale del bucle cuando numero es 3
+&nbsp;&nbsp;&nbsp;&nbsp;print(numero)
+"
+lang="py"
+title="break.py"
+mark="highlights" />
+
+<Aside type="note">
+Estas sentencias son útiles para controlar el flujo de ejecución en bucles y condicionales, permitiendo escribir código más flexible y legible.
+</Aside>

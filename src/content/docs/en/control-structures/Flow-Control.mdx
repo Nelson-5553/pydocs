@@ -1,0 +1,60 @@
+---
+title: Flow Control
+description: Guide to Flow Control in Python
+sidebar:
+  order: 3
+---
+
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+
+Flow control in Python allows you to modify the behavior of loops and conditionals using special statements like `pass`, `continue`, and `break`. These statements help manage how and when certain parts of your code are executed.
+
+## `pass`
+
+The `pass` statement acts as a placeholder. It does nothing but ensures the code is syntactically correct.
+
+<Code 
+code="
+for letter in 'python':
+&nbsp;&nbsp;&nbsp;&nbsp;if letter == 'h':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass  # Does nothing
+&nbsp;&nbsp;&nbsp;&nbsp;print(letter)
+"
+lang="py"
+title="pass.py"
+mark="highlights" />
+
+## `continue`
+
+The `continue` statement skips the rest of the code inside the loop for the current iteration and moves to the next iteration.
+
+<Code 
+code="
+for number in range(5):
+&nbsp;&nbsp;&nbsp;&nbsp;if number == 2:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue  # Skips number 2
+&nbsp;&nbsp;&nbsp;&nbsp;print(number)
+"
+lang="py"
+title="continue.py"
+mark="highlights" />
+
+## `break`
+
+The `break` statement immediately ends the loop, regardless of the loop condition.
+
+<Code 
+code="
+for number in range(5):
+&nbsp;&nbsp;&nbsp;&nbsp;if number == 3:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break  # Exits the loop when number is 3
+&nbsp;&nbsp;&nbsp;&nbsp;print(number)
+"
+lang="py"
+title="break.py"
+mark="highlights" />
+
+<Aside type="note">
+These statements are useful for controlling the execution flow in loops and conditionals, making your code more flexible and readable.
+</Aside>
