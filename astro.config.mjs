@@ -22,6 +22,10 @@ export default defineConfig({
         starlight({
             customCss: ['./src/styles/starlight.css'],
             title: 'PyDocs',
+            announcement: {
+                content: 'Updating to Astro 5? [Learn how to upgrade](https://docs.astro.build/en/guides/upgrade-to-astro-5/)',
+                dismissible: true
+            },
             logo: {
                 src: '@assets/pydocs.png',
                 alt: 'Logo de la documentación'
