@@ -8,9 +8,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 
     vite: {
-        server: {
-            host: true
-        },
         resolve: {
             alias: {
                 '@docs': '/content/docs',
