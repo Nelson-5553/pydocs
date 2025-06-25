@@ -1,370 +1,370 @@
-# 🤝 Guía de Contribución - PyDocs
+# 🤝 Contributing Guide - PyDocs
 
-¡Gracias por tu interés en contribuir a PyDocs! Esta documentación moderna de Python se construye con la colaboración de la comunidad. Tu aporte es valioso y bienvenido.
+Thank you for your interest in contributing to PyDocs! This modern Python documentation is built with community collaboration. Your contribution is valuable and welcome.
 
-## 📋 Tabla de Contenidos
+## 📋 Table of Contents
 
-- [Código de Conducta](#código-de-conducta)
-- [¿Cómo puedo contribuir?](#cómo-puedo-contribuir)
-- [Configuración del entorno de desarrollo](#configuración-del-entorno-de-desarrollo)
-- [Estructura del proyecto](#estructura-del-proyecto)
-- [Guías de estilo](#guías-de-estilo)
-- [Proceso de contribución](#proceso-de-contribución)
-- [Reportar errores](#reportar-errores)
-- [Sugerir mejoras](#sugerir-mejoras)
-- [Traducción](#traducción)
-- [Reconocimientos](#reconocimientos)
+- [Code of Conduct](#code-of-conduct)
+- [How can I contribute?](#how-can-i-contribute)
+- [Development environment setup](#development-environment-setup)
+- [Project structure](#project-structure)
+- [Style guides](#style-guides)
+- [Contribution process](#contribution-process)
+- [Reporting bugs](#reporting-bugs)
+- [Suggesting improvements](#suggesting-improvements)
+- [Translation](#translation)
+- [Recognition](#recognition)
 
-## 📜 Código de Conducta
+## 📜 Code of Conduct
 
-Este proyecto se adhiere a un código de conducta que esperamos que todos los participantes respeten. Al participar, te comprometes a mantener un ambiente acogedor y respetuoso para todos.
+This project adheres to a code of conduct that we expect all participants to respect. By participating, you commit to maintaining a welcoming and respectful environment for everyone.
 
-### Nuestros valores:
-- **Respeto**: Trata a todos con cortesía y consideración
-- **Inclusión**: Bienvenidos desarrolladores de todos los niveles
-- **Colaboración**: Trabajamos juntos hacia objetivos comunes
-- **Aprendizaje**: Fomentamos el crecimiento y la educación
+### Our values:
+- **Respect**: Treat everyone with courtesy and consideration
+- **Inclusion**: Welcome developers of all levels
+- **Collaboration**: Work together towards common goals
+- **Learning**: Foster growth and education
 
-## 🚀 ¿Cómo puedo contribuir?
+## 🚀 How can I contribute?
 
-Hay muchas formas de contribuir a PyDocs:
+There are many ways to contribute to PyDocs:
 
-### 📝 Documentación
-- Mejorar explicaciones existentes
-- Agregar nuevos ejemplos de código
-- Corregir errores tipográficos o gramaticales
-- Traducir contenido al inglés o español
-- Crear nuevas secciones o temas
+### 📝 Documentation
+- Improve existing explanations
+- Add new code examples
+- Fix typos or grammatical errors
+- Translate content to English or Spanish
+- Create new sections or topics
 
-### 🐛 Reportes de errores
-- Errores en el código de ejemplo
-- Enlaces rotos
-- Problemas de renderizado
-- Inconsistencias en la documentación
+### 🐛 Bug reports
+- Errors in example code
+- Broken links
+- Rendering issues
+- Documentation inconsistencies
 
-### ✨ Nuevas características
-- Nuevos componentes interactivos
-- Mejoras en el diseño
-- Funcionalidades adicionales
-- Optimizaciones de rendimiento
+### ✨ New features
+- New interactive components
+- Design improvements
+- Additional functionality
+- Performance optimizations
 
-### 🌍 Traducción
-- Traducir contenido existente
-- Revisar traducciones
-- Mantener consistencia entre idiomas
+### 🌍 Translation
+- Translate existing content
+- Review translations
+- Maintain consistency between languages
 
-## 🛠️ Configuración del entorno de desarrollo
+## 🛠️ Development environment setup
 
-### Prerrequisitos
-- Node.js (versión 18 o superior)
-- npm o yarn
+### Prerequisites
+- Node.js (version 18 or higher)
+- npm or yarn
 - Git
 
-### Pasos de instalación
+### Installation steps
 
-1. **Fork del repositorio**
+1. **Fork the repository**
    ```bash
-   # Haz fork del repo en GitHub, luego clona tu fork
-   git clone https://github.com/TU_USUARIO/pydocs.git
+   # Fork the repo on GitHub, then clone your fork
+   git clone https://github.com/YOUR_USERNAME/pydocs.git
    cd pydocs
    ```
 
-2. **Instalar dependencias**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Ejecutar en modo desarrollo**
+3. **Run in development mode**
    ```bash
    npm run dev
    ```
 
-4. **Abrir en el navegador**
+4. **Open in browser**
    ```
    http://localhost:4321
    ```
 
-### Comandos útiles
+### Useful commands
 
-| Comando | Descripción |
+| Command | Description |
 |---------|-------------|
-| `npm run dev` | Inicia el servidor de desarrollo |
-| `npm run build` | Construye el sitio para producción |
-| `npm run preview` | Previsualiza la build de producción |
-| `npm run astro check` | Verifica errores de TypeScript |
+| `npm run dev` | Start development server |
+| `npm run build` | Build site for production |
+| `npm run preview` | Preview production build |
+| `npm run astro check` | Check TypeScript errors |
 
-## 📁 Estructura del proyecto
+## 📁 Project structure
 
 ```
 pydocs/
 ├── src/
 │   ├── content/
 │   │   └── docs/
-│   │       ├── es/           # Contenido en español
-│   │       └── en/           # Contenido en inglés
-│   ├── components/           # Componentes reutilizables
-│   ├── assets/              # Imágenes y recursos
-│   └── styles/              # Estilos globales
-├── public/                  # Archivos estáticos
-├── astro.config.mjs         # Configuración de Astro
+│   │       ├── es/           # Spanish content
+│   │       └── en/           # English content
+│   ├── components/           # Reusable components
+│   ├── assets/              # Images and resources
+│   └── styles/              # Global styles
+├── public/                  # Static files
+├── astro.config.mjs         # Astro configuration
 └── package.json
 ```
 
-### Organización del contenido
+### Content organization
 
-- **`/es/`**: Documentación en español (idioma principal)
-- **`/en/`**: Documentación en inglés
-- **Categorías principales**:
-  - `introduction/` - Introducción a Python
-  - `syntax-basic/` - Sintaxis básica
-  - `data-structure/` - Estructuras de datos
-  - `control-structures/` - Estructuras de control
-  - `functions/` - Funciones
-  - `native-functions/` - Funciones nativas
-  - `file-management/` - Manejo de archivos
-  - `error-handling/` - Manejo de errores
-  - `POO/` - Programación Orientada a Objetos
-  - `modules-packages/` - Módulos y paquetes
-  - `venv-packages/` - Entornos virtuales
+- **`/es/`**: Spanish documentation (primary language)
+- **`/en/`**: English documentation
+- **Main categories**:
+  - `introduction/` - Introduction to Python
+  - `syntax-basic/` - Basic syntax
+  - `data-structure/` - Data structures
+  - `control-structures/` - Control structures
+  - `functions/` - Functions
+  - `native-functions/` - Native functions
+  - `file-management/` - File management
+  - `error-handling/` - Error handling
+  - `POO/` - Object-Oriented Programming
+  - `modules-packages/` - Modules and packages
+  - `venv-packages/` - Virtual environments
 
-## 🎨 Guías de estilo
+## 🎨 Style guides
 
-### Documentación
+### Documentation
 
-#### Formato de archivos
-- Usa archivos `.mdx` para contenido con componentes
-- Usa archivos `.md` para contenido simple
-- Incluye siempre el frontmatter requerido:
+#### File format
+- Use `.mdx` files for content with components
+- Use `.md` files for simple content
+- Always include required frontmatter:
 
 ```yaml
 ---
-title: Título de la página
-description: Descripción breve
+title: Page title
+description: Brief description
 sidebar:
   order: 1
 ---
 ```
 
-#### Estilo de escritura
-- **Tono**: Amigable, educativo y accesible
-- **Audiencia**: Desarrolladores de todos los niveles
-- **Longitud**: Secciones concisas pero completas
-- **Ejemplos**: Siempre incluye ejemplos prácticos
+#### Writing style
+- **Tone**: Friendly, educational, and accessible
+- **Audience**: Developers of all levels
+- **Length**: Concise but complete sections
+- **Examples**: Always include practical examples
 
-#### Código de ejemplo
+#### Example code
 ```python
-# ✅ Bueno: Código claro con comentarios
-def saludar(nombre):
-    """Función que saluda a una persona."""
-    print(f"Hola, {nombre}!")
+# ✅ Good: Clear code with comments
+def greet(name):
+    """Function that greets a person."""
+    print(f"Hello, {name}!")
 
-# Llamar a la función
-saludar("PyDocs")
+# Call the function
+greet("PyDocs")
 ```
 
 ```python
-# ❌ Evitar: Código sin contexto
+# ❌ Avoid: Code without context
 def f(x):
     print(x)
 ```
 
-#### Componentes disponibles
-- `<Code>` - Bloques de código con resaltado
-- `<Aside>` - Notas, tips y advertencias
-- `<PyTable>` - Tablas personalizadas
-- `<Card>` y `<CardGrid>` - Tarjetas informativas
+#### Available components
+- `<Code>` - Code blocks with highlighting
+- `<Aside>` - Notes, tips, and warnings
+- `<PyTable>` - Custom tables
+- `<Card>` and `<CardGrid>` - Information cards
 
-### Estilo de código
+### Code style
 
-#### Nombres de archivos
-- Usa kebab-case: `my-new-feature.mdx`
-- Nombres descriptivos en inglés
-- Evita espacios y caracteres especiales
+#### File names
+- Use kebab-case: `my-new-feature.mdx`
+- Descriptive names in English
+- Avoid spaces and special characters
 
-#### Componentes
-- PascalCase para nombres de componentes
-- Props descriptivas y tipadas
-- Documentación JSDoc cuando sea necesario
+#### Components
+- PascalCase for component names
+- Descriptive and typed props
+- JSDoc documentation when necessary
 
-## 🔄 Proceso de contribución
+## 🔄 Contribution process
 
-### 1. Preparación
-1. Haz fork del repositorio
-2. Crea una rama para tu contribución:
+### 1. Preparation
+1. Fork the repository
+2. Create a branch for your contribution:
    ```bash
-   git checkout -b feature/nueva-seccion-asyncio
-   # o
-   git checkout -b fix/corregir-ejemplo-listas
-   # o
-   git checkout -b docs/mejorar-introduccion
+   git checkout -b feature/new-asyncio-section
+   # or
+   git checkout -b fix/fix-lists-example
+   # or
+   git checkout -b docs/improve-introduction
    ```
 
-### 2. Desarrollo
-1. Realiza tus cambios siguiendo las guías de estilo
-2. Prueba localmente con `npm run dev`
-3. Verifica que no hay errores con `npm run build`
+### 2. Development
+1. Make your changes following the style guides
+2. Test locally with `npm run dev`
+3. Verify no errors with `npm run build`
 
 ### 3. Commit
-Usa mensajes de commit descriptivos:
+Use descriptive commit messages:
 ```bash
-# ✅ Buenos ejemplos
-git commit -m "docs: agregar sección sobre async/await"
-git commit -m "fix: corregir ejemplo de listas en español"
-git commit -m "feat: agregar componente PyTable mejorado"
+# ✅ Good examples
+git commit -m "docs: add async/await section"
+git commit -m "fix: correct lists example in Spanish"
+git commit -m "feat: add improved PyTable component"
 
-# ❌ Evitar
-git commit -m "cambios"
+# ❌ Avoid
+git commit -m "changes"
 git commit -m "fix"
 ```
 
 ### 4. Pull Request
-1. Push a tu fork:
+1. Push to your fork:
    ```bash
-   git push origin feature/nueva-seccion-asyncio
+   git push origin feature/new-asyncio-section
    ```
 
-2. Crea un Pull Request con:
-   - **Título descriptivo**
-   - **Descripción detallada** de los cambios
-   - **Screenshots** si hay cambios visuales
-   - **Referencias** a issues relacionados
+2. Create a Pull Request with:
+   - **Descriptive title**
+   - **Detailed description** of changes
+   - **Screenshots** if there are visual changes
+   - **References** to related issues
 
-#### Template de PR
+#### PR Template
 ```markdown
-## 📝 Descripción
-Breve descripción de los cambios realizados.
+## 📝 Description
+Brief description of the changes made.
 
-## 🔄 Tipo de cambio
-- [ ] Corrección de errores
-- [ ] Nueva característica
-- [ ] Mejora de documentación
-- [ ] Traducción
+## 🔄 Type of change
+- [ ] Bug fix
+- [ ] New feature
+- [ ] Documentation improvement
+- [ ] Translation
 - [ ] Refactoring
 
-## 🧪 Pruebas realizadas
-- [ ] Probado localmente
-- [ ] Build exitoso
-- [ ] Links funcionando
+## 🧪 Tests performed
+- [ ] Tested locally
+- [ ] Successful build
+- [ ] Links working
 
-## 📷 Screenshots (si aplica)
-[Agregar capturas de pantalla]
+## 📷 Screenshots (if applicable)
+[Add screenshots]
 
 ## 📋 Checklist
-- [ ] He seguido las guías de estilo
-- [ ] He probado mis cambios localmente
-- [ ] He actualizado la documentación si es necesario
+- [ ] I have followed the style guides
+- [ ] I have tested my changes locally
+- [ ] I have updated documentation if necessary
 ```
 
-## 🐛 Reportar errores
+## 🐛 Reporting bugs
 
-### Antes de reportar
-1. Busca en issues existentes
-2. Verifica que el error persiste en la última versión
-3. Reproduce el error en diferentes navegadores si es posible
+### Before reporting
+1. Search existing issues
+2. Verify the error persists in the latest version
+3. Reproduce the error in different browsers if possible
 
-### Template de reporte
+### Report template
 ```markdown
-## 🐛 Descripción del error
-Descripción clara y concisa del problema.
+## 🐛 Bug description
+Clear and concise description of the problem.
 
-## 🔄 Pasos para reproducir
-1. Ve a '...'
-2. Haz clic en '...'
-3. Observa el error
+## 🔄 Steps to reproduce
+1. Go to '...'
+2. Click on '...'
+3. Observe the error
 
-## ✅ Comportamiento esperado
-Qué debería suceder.
+## ✅ Expected behavior
+What should happen.
 
 ## 📷 Screenshots
-Si es aplicable, agrega screenshots.
+If applicable, add screenshots.
 
-## 🌐 Entorno
-- OS: [ej. Windows 10]
-- Navegador: [ej. Chrome 91]
-- Versión: [ej. 1.2.3]
+## 🌐 Environment
+- OS: [e.g. Windows 10]
+- Browser: [e.g. Chrome 91]
+- Version: [e.g. 1.2.3]
 ```
 
-## 💡 Sugerir mejoras
+## 💡 Suggesting improvements
 
-### Template de sugerencia
+### Suggestion template
 ```markdown
-## 🚀 Descripción de la mejora
-Descripción clara de la mejora propuesta.
+## 🚀 Improvement description
+Clear description of the proposed improvement.
 
-## 🎯 Problema que resuelve
-¿Qué problema actual resuelve esta mejora?
+## 🎯 Problem it solves
+What current problem does this improvement solve?
 
-## 💭 Solución propuesta
-Descripción detallada de cómo implementarías la mejora.
+## 💭 Proposed solution
+Detailed description of how you would implement the improvement.
 
-## 🔄 Alternativas consideradas
-Otras soluciones que consideraste.
+## 🔄 Alternatives considered
+Other solutions you considered.
 
-## 📋 Información adicional
-Cualquier contexto adicional o screenshots.
+## 📋 Additional information
+Any additional context or screenshots.
 ```
 
-## 🌍 Traducción
+## 🌍 Translation
 
-### Idiomas soportados
-- **Español** (es) - Idioma principal
-- **Inglés** (en) - Traducción secundaria
+### Supported languages
+- **Spanish** (es) - Primary language
+- **English** (en) - Secondary translation
 
-### Proceso de traducción
-1. Identifica contenido que necesita traducción
-2. Crea la estructura de carpetas correspondiente
-3. Traduce manteniendo:
-   - Estructura del documento
-   - Ejemplos de código (comentarios traducidos)
-   - Metadatos del frontmatter
-   - Enlaces internos actualizados
+### Translation process
+1. Identify content that needs translation
+2. Create corresponding folder structure
+3. Translate while maintaining:
+   - Document structure
+   - Code examples (translated comments)
+   - Frontmatter metadata
+   - Updated internal links
 
-### Convenciones
-- Mantén consistencia en términos técnicos
-- Adapta ejemplos al contexto cultural cuando sea apropiado
-- Conserva el tono educativo y amigable
+### Conventions
+- Maintain consistency in technical terms
+- Adapt examples to cultural context when appropriate
+- Preserve educational and friendly tone
 
-## 🏆 Reconocimientos
+## 🏆 Recognition
 
-### Tipos de contribución
-- 📝 **Documentación**: Escribir o mejorar docs
-- 🐛 **Errores**: Reportar o corregir bugs
-- 💡 **Ideas**: Sugerir mejoras
-- 🌍 **Traducción**: Traducir contenido
-- 🎨 **Diseño**: Mejorar UI/UX
-- 💻 **Código**: Desarrollar funcionalidades
+### Types of contribution
+- 📝 **Documentation**: Writing or improving docs
+- 🐛 **Bugs**: Reporting or fixing bugs
+- 💡 **Ideas**: Suggesting improvements
+- 🌍 **Translation**: Translating content
+- 🎨 **Design**: Improving UI/UX
+- 💻 **Code**: Developing functionality
 
-### Cómo apareces como colaborador
-- Tu perfil aparece automáticamente en la página principal
-- Se reconocen diferentes tipos de contribución
-- Los colaboradores regulares pueden obtener permisos adicionales
+### How you appear as a contributor
+- Your profile automatically appears on the main page
+- Different types of contributions are recognized
+- Regular contributors may get additional permissions
 
-## 📞 Contacto y ayuda
+## 📞 Contact and help
 
-### ¿Necesitas ayuda?
-- **Issues**: Para reportes y sugerencias
-- **Discussions**: Para preguntas generales
-- **Email**: [Agregar email de contacto]
+### Need help?
+- **Issues**: For reports and suggestions
+- **Discussions**: For general questions
+- **Email**: [Add contact email]
 
-### Recursos útiles
-- [Documentación de Astro](https://docs.astro.build/)
-- [Documentación de Starlight](https://starlight.astro.build/)
-- [Guía de Markdown](https://www.markdownguide.org/)
+### Useful resources
+- [Astro Documentation](https://docs.astro.build/)
+- [Starlight Documentation](https://starlight.astro.build/)
+- [Markdown Guide](https://www.markdownguide.org/)
 
 ---
 
-## 🙏 ¡Gracias por contribuir!
+## 🙏 Thank you for contributing!
 
-Cada contribución, sin importar su tamaño, hace que PyDocs sea mejor para toda la comunidad de desarrolladores Python. ¡Esperamos trabajar contigo!
+Every contribution, no matter its size, makes PyDocs better for the entire Python developer community. We look forward to working with you!
 
-**¿Primera vez contribuyendo a un proyecto open source?** ¡No te preocupes! Todos empezamos en algún lugar. No dudes en hacer preguntas y pedir ayuda.
+**First time contributing to an open source project?** Don't worry! We all started somewhere. Don't hesitate to ask questions and request help.
 
 ---
 
 <div align="center">
 
-**[⬆️ Volver al inicio](#-guía-de-contribución---pydocs)**
+**[⬆️ Back to top](#-contributing-guide---pydocs)**
 
-Hecho con ❤️ por la comunidad PyDocs
+Made with ❤️ by the PyDocs community
 
 </div>
