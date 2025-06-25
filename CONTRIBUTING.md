@@ -344,7 +344,7 @@ Any additional context or screenshots.
 ### Need help?
 - **Issues**: For reports and suggestions
 - **Discussions**: For general questions
-- **Email**: [Add contact email]
+- **Email**: andresnelson2004@hotmail.com
 
 ### Useful resources
 - [Astro Documentation](https://docs.astro.build/)
