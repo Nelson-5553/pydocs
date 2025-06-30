@@ -9,7 +9,6 @@ const contributors = await response.json();
 <CardGrid>
   {
     contributors
-      .filter((contributor: Colaborator) => contributor.login !== 'astrobot-houston')
       .map((contributors: Colaborator) => (
         <Card title={contributors.login}>
           <div class="flex items-center gap-6 flex-col sm:flex-row">
