@@ -16,7 +16,7 @@ const contributors = await response.json();
         (contributor: Colaborator) => contributor.login !== "astrobot-houston",
       )
       .map((contributors: Colaborator) => (
-        <div class="bg-white dark:bg-neutral-950 rounded-xl shadow-md p-6 flex items-center gap-6 md:flex-col md:items-start md:gap-4">
+        <div class="bg-white dark:bg-neutral-950 rounded-xl shadow-md p-6 flex items-center gap-6 md:flex-col md:items-start md:gap-4 my-auto">
           <div class="flex flex-row items-start gap-6">
             <img
               src={contributors.avatar_url}
