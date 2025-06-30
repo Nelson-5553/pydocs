@@ -1,3 +1,9 @@
+@layer base, starlight, theme, components, utilities;
+
+@import '@astrojs/starlight-tailwind';
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
 /* ---------------------------------------------------------
    PyDocs - starlight.css
    Organización y buenas prácticas para estilos globales
@@ -76,38 +82,11 @@ html.astro-bgw2111 body {
   background: initial !important;
 }
 
-/* =========================
-   3. Componentes y utilidades
-========================= */
-
-/* Tips y avisos */
-.tip {
-  background-color: rgba(48, 105, 152, 0.1);
-  border-left: 4px solid #306998;
-  padding: 0.75rem 1rem;
-  margin: 1rem 0;
-  border-radius: 0 4px 4px 0;
-}
-
-/* Modo oscuro para tips */
-:root[data-theme="dark"] .tip {
-  background-color: rgba(255, 212, 59, 0.1);
-  border-left: 4px solid #FFD43B;
-}
-
-/* =========================
-   4. Navbar y branding
-========================= */
 
 /* Ocultar solo el texto "PyDocs" junto al logo en el header */
 .site-title span {
   display: none !important;
 }
-
-/* Ejemplo: Ocultar el título de la página en la navbar si tiene clase específica */
-/* nav .astro-m46x6ez3 {
-  display: none !important;
-} */
 
 /* =========================
    5. Otros estilos globales
