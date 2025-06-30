@@ -1,13 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-
 import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
 
     vite: {
+        
+        plugins: [tailwindcss()],
+
         resolve: {
             alias: {
                 '@docs': '/content/docs',
@@ -15,12 +18,14 @@ export default defineConfig({
                 '@assets': '/src/assets',
                 '@components': '/src/components',
             }
-        }
+        },
+
+        
     },
-	site: 'https://www.pydocs.site',
+    site: 'https://www.pydocs.site',
     integrations: [
         starlight({
-            customCss: ['./src/styles/starlight.css'],
+            customCss: ['./src/styles/global.css'],
             title: 'PyDocs',
             logo: {
                 src: '@assets/pydocs.png',
