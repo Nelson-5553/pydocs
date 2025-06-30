@@ -6,110 +6,57 @@ const response = await fetch('https://api.github.com/repos/Nelson-5553/pydocs/co
 const contributors = await response.json();
 ---
 
-<style>
-  .colab-flex {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    
-  }
-  .colab-img {
-    border-radius: 50%;
-    border: 2px solid #306998;
-    width: 130px;
-    height: 130px;
-  }
-  .colab-info {
-    display: flex;
-    flex-wrap: wrap;         /* Permite que los badges bajen a otra línea */
-    gap: 0.5rem 0.7rem;      /* Espaciado entre badges */
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 0.5em;
-    max-width: 220px;        /* Limita el ancho para que hagan wrap antes */
-  }
-  .colab-link {
-    color: #306998;
-    transition: color 0.3s;
-  }
-  .colab-role {
-    font-size: 0.98em;
-    margin-bottom: 0.3em;
-  }
-  .colab-link {
-    text-decoration: underline;
-    font-size: 0.95em;
-  }
-  .colab-badge {
-    display: inline-block;
-    background: #306998;
-    color: #fff;
-    border-radius: 12px;
-    padding: 0.2em 0.8em;
-    font-size: 0.85em;
-    margin-bottom: 0.5em;
-    font-weight: 600;
-  }
-  :root[data-theme="dark"] .colab-img {
-    border-color: #FFD43B;
-  }
-  :root[data-theme="dark"] .colab-role,
-  :root[data-theme="dark"] .colab-link {
-    color: #FFD43B;
-  }
-  :root[data-theme="dark"] .colab-badge {
-    background: #FFD43B;
-    color: #22223b;
-  }
-
-  @media (max-width: 600px) {
-    .colab-flex {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-    .colab-info {
-      max-width: 100%;
-      justify-content: flex-start;
-    }
-    .colab-img {
-      width: 90px;
-      height: 90px;
-    }
-  }
-</style>
-
 <CardGrid>
   {
     contributors
       .filter((contributor: Colaborator) => contributor.login !== 'astrobot-houston')
       .map((contributors: Colaborator) => (
         <Card title={contributors.login}>
-          <div class="colab-flex">
-            <img src={contributors.avatar_url} alt={contributors.login} class="colab-img" />
+          <div class="flex items-center gap-6 flex-col sm:flex-row">
+            <img
+              src={contributors.avatar_url}
+              alt={contributors.login}
+              class="w-[90px] h-[90px] sm:w-[130px] sm:h-[130px] rounded-full border-2 border-[#306998] dark:border-[#FFD43B]"
+            />
             <div>
-              <div class="colab-role">
+              <div class="text-[0.98em] mb-1 dark:text-[#FFD43B]">
                 Contributions:
               </div>
-              <div class="colab-info">
+              <div class="flex flex-wrap gap-y-2 gap-x-3 mb-2 max-w-[220px] sm:max-w-full">
                 {contributors.login === "Nelson-5553" && (
                   <>
-                    <span class="colab-badge">Developer</span>
-                    <span class="colab-badge">Documentation</span>
+                    <span class="inline-block bg-[#306998] text-white dark:bg-[#FFD43B] dark:text-[#22223b] rounded-full px-3 py-[0.2em] text-sm font-semibold">
+                      Developer
+                    </span>
+                    <span class="inline-block bg-[#306998] text-white dark:bg-[#FFD43B] dark:text-[#22223b] rounded-full px-3 py-[0.2em] text-sm font-semibold">
+                      Documentation
+                    </span>
                   </>
                 )}
                 {contributors.login === "serg1l" && (
                   <>
-                    <span class="colab-badge">Developer</span>
-                    <span class="colab-badge">Translator</span>
+                    <span class="inline-block bg-[#306998] text-white dark:bg-[#FFD43B] dark:text-[#22223b] rounded-full px-3 py-[0.2em] text-sm font-semibold">
+                      Developer
+                    </span>
+                    <span class="inline-block bg-[#306998] text-white dark:bg-[#FFD43B] dark:text-[#22223b] rounded-full px-3 py-[0.2em] text-sm font-semibold">
+                      Translator
+                    </span>
                   </>
                 )}
                 {contributors.login !== "Nelson-5553" && contributors.login !== "serg1l" && (
-                  <span class="colab-badge">Developer</span>
+                  <span class="inline-block bg-[#306998] text-white dark:bg-[#FFD43B] dark:text-[#22223b] rounded-full px-3 py-[0.2em] text-sm font-semibold">
+                    Developer
+                  </span>
                 )}
               </div>
-              <div style="margin-top: 0.5em;">
-                <a href={contributors.html_url} target="_blank" class="colab-link">GitHub</a>
+              <div class="mt-2">
+                <a
+                  href={contributors.html_url}
+                  target="_blank"
+                  class="text-[#306998] dark:text-[#FFD43B] underline text-sm transition-colors duration-300 hover:text-opacity-80"
+                >
+                  GitHub
+                </a>
               </div>
             </div>
           </div>
