@@ -4,23 +4,27 @@ import starlight from '@astrojs/starlight';
 
 import sitemap from '@astrojs/sitemap';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // https://astro.build/config
 export default defineConfig({
 
     vite: {
-        resolve: {
-            alias: {
-                '@docs': '/content/docs',
-                '@es': '/content/docs/es',
-                '@assets': '/src/assets',
-                '@components': '/src/components',
-            }
-        }
+      resolve: {
+          alias: {
+              '@docs': '/content/docs',
+              '@es': '/content/docs/es',
+              '@assets': '/src/assets',
+              '@components': '/src/components',
+          }
+      },
+
+      plugins: [tailwindcss()],
     },
-	site: 'https://www.pydocs.site',
+    site: 'https://www.pydocs.site',
     integrations: [
         starlight({
-            customCss: ['./src/styles/starlight.css'],
+            customCss: ['./src/styles/global.css'],
             title: 'PyDocs',
             logo: {
                 src: '@assets/pydocs.png',
