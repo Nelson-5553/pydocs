@@ -1,7 +1,100 @@
 ---
 title: Custom Exceptions
-description: Guide for Custom Exceptions
+description: How to create and handle custom exceptions in Python.
 sidebar:
   order: 3
 ---
-This document will guide you through creating custom exceptions in Python.
+import { Code } from "@astrojs/starlight/components"
+
+## What are custom exceptions?
+
+In Python, besides built-in exceptions, you can create your own exceptions to represent errors specific to your application. This makes your code more readable, maintainable, and easier to debug.
+
+## When should you use a custom exception?
+
+- When you need to distinguish errors from your business logic.
+- To improve error messages and your API documentation.
+- When you want other developers to catch specific errors from your module or library.
+
+## How to create a custom exception
+
+To define a custom exception, create a new class that inherits from `Exception` or any standard exception subclass.
+
+<Code 
+lang="py"
+title="custom_exception.py"
+code={`
+class MyError(Exception):
+    """Custom exception for specific errors."""
+    pass
+
+def divide(a, b):
+    if b == 0:
+        raise MyError("Cannot divide by zero using MyError.")
+    return a / b
+
+try:
+    divide(10, 0)
+except MyError as e:
+    print(f"A custom error occurred: {e}")
+`}
+/>
+
+## Best practices
+
+- Use descriptive names for your exceptions (e.g., `FileNotFoundCustomError`).
+- Document each custom exception with a docstring.
+- If your exception needs extra information, override the `__init__` method.
+
+<Code 
+lang="py"
+title="custom_init.py"
+code={`
+class FileNotFoundCustomError(Exception):
+    def __init__(self, filename, message="File not found"):
+        self.filename = filename
+        self.message = f"{message}: {filename}"
+        super().__init__(self.message)
+
+try:
+    raise FileNotFoundCustomError("data.csv")
+except FileNotFoundCustomError as e:
+    print(e)
+`}
+/>
+
+## Example: Exception hierarchy
+
+You can create a hierarchy of custom exceptions to better organize your application's errors.
+
+<Code 
+lang="py"
+title="hierarchy.py"
+code={`
+class ApplicationError(Exception):
+    pass
+
+class ConnectionError(ApplicationError):
+    pass
+
+class ValidationError(ApplicationError):
+    pass
+
+try:
+    raise ValidationError("Invalid data")
+except ApplicationError as e:
+    print(f"Application error: {e}")
+`}
+/>
+
+## Summary
+
+- Custom exceptions improve clarity and error control.
+- Always inherit from `Exception` or a subclass.
+- Document and name your exceptions clearly.
+- You can create hierarchies to organize your project's errors.
+
+---
+
+Want to contribute more examples or improve this guide?  
+Check out the [contributing guide](../../../CONTRIBUTING.md) and help the PyDocs community!
