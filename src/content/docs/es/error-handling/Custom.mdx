@@ -1,10 +1,101 @@
 ---
 title: Excepciones personalizadas
-description: Guía para Excepciones
+description: Cómo crear y manejar excepciones personalizadas en Python.
 sidebar:
   order: 3
 ---
+import { Code } from "@astrojs/starlight/components"
 
-import Aviso from '@components/Aviso.astro';
 
-<Aviso />
+## ¿Qué son las excepciones personalizadas?
+
+En Python, además de las excepciones integradas, puedes crear tus propias excepciones para representar errores específicos de tu aplicación. Esto ayuda a que tu código sea más legible, mantenible y fácil de depurar.
+
+## ¿Cuándo usar una excepción personalizada?
+
+- Cuando necesitas distinguir errores propios de tu lógica de negocio.
+- Para mejorar los mensajes de error y la documentación de tu API.
+- Cuando quieres que otros desarrolladores puedan capturar errores específicos de tu módulo o librería.
+
+## Cómo crear una excepción personalizada
+
+Para definir una excepción personalizada, crea una nueva clase que herede de `Exception` o de alguna subclase de excepción estándar.
+
+<Code 
+lang="py"
+title="custom_exception.py"
+code={`
+class MiError(Exception):
+    \"\"\"Excepción personalizada para errores específicos.\"\"\"
+    pass
+
+def dividir(a, b):
+    if b == 0:
+        raise MiError("No se puede dividir entre cero usando MiError.")
+    return a / b
+
+try:
+    dividir(10, 0)
+except MiError as e:
+    print(f"Ocurrió un error personalizado: {e}")
+`}
+/>
+
+## Buenas prácticas
+
+- Usa nombres descriptivos para tus excepciones (ejemplo: `ArchivoNoEncontradoError`).
+- Documenta cada excepción personalizada con un docstring.
+- Si tu excepción necesita información adicional, puedes sobrescribir el método `__init__`.
+
+<Code 
+lang="py"
+title="custom_init.py"
+code={`
+class ArchivoNoEncontradoError(Exception):
+    def __init__(self, archivo, mensaje="Archivo no encontrado"):
+        self.archivo = archivo
+        self.mensaje = f"{mensaje}: {archivo}"
+        super().__init__(self.mensaje)
+
+try:
+    raise ArchivoNoEncontradoError("datos.csv")
+except ArchivoNoEncontradoError as e:
+    print(e)
+`}
+/>
+
+## Ejemplo de jerarquía de excepciones
+
+Puedes crear una jerarquía de excepciones personalizadas para organizar mejor los errores de tu aplicación.
+
+<Code 
+lang="py"
+title="hierarchy.py"
+code={`
+class ErrorAplicacion(Exception):
+    pass
+
+class ErrorConexion(ErrorAplicacion):
+    pass
+
+class ErrorValidacion(ErrorAplicacion):
+    pass
+
+try:
+    raise ErrorValidacion("Datos inválidos")
+except ErrorAplicacion as e:
+    print(f"Error de la aplicación: {e}")
+`}
+/>
+
+## Resumen
+
+- Las excepciones personalizadas mejoran la claridad y el control de errores.
+- Hereda siempre de `Exception` o una subclase.
+- Documenta y nombra tus excepciones de forma clara.
+- Puedes crear jerarquías para organizar los errores de tu proyecto.
+
+---
+
+¿Quieres aportar más ejemplos o mejorar esta guía?  
+Consulta la [guía de contribución](../../../CONTRIBUTING.md) y ayuda a la comunidad PyDocs.
