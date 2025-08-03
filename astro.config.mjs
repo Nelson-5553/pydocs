@@ -9,6 +9,7 @@ export default defineConfig({
 
     vite: {
         
+        // @ts-ignore
         plugins: [tailwindcss()],
 
         resolve: {
@@ -99,6 +100,11 @@ export default defineConfig({
                     label: 'Entornos Virtuales y Gestión de Paquetes',
                     translations: { en: "Virtual Environments and Package Management" },
                     autogenerate: { directory: 'venv-packages' },
+                },
+                {
+                    label: 'Consejos Finales',
+                    translations: { en: "Final Tips" },
+                    autogenerate: { directory: 'final-tips' },
                 },
             ],
         }),
