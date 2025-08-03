@@ -2,8 +2,24 @@
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-PyDocs is a modern, open-source documentation site for learning Python from scratch to advanced topics.  
-It is built with [Astro](https://astro.build/) and [Starlight](https://starlight.astro.build/), and organized by key themes for easy navigation and contribution.
+PyDocs is a modern, open-source documentation site for learning Python from scratch to advanced topics.
+
+## 📖 Covered Topics
+
+- Introduction to Python and installation
+- Basic syntax and variables
+- Data types (numbers, strings, lists, tuples, dictionaries, sets)
+- Operators
+- Control structures (conditionals and loops)
+- Functions and arguments
+- Modules and packages
+- Input and output
+- Error and exception handling
+- Object-oriented programming
+- File handling
+- Standard and external libraries (such as NumPy, Pandas, Matplotlib)
+- Best practices and code style
+- Exercises and practical projects
 
 ![PyDocs](https://nelson-5553.vercel.app/img/Projectos/pydocs.png)
 ---
