@@ -1,0 +1,473 @@
+---
+title: Python Frameworks
+description: Guide to Python Frameworks
+sidebar:
+  order: 4
+---
+
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+import { Card, CardGrid } from '@astrojs/starlight/components'
+
+Python frameworks are pre-built tools and libraries that provide structure and reusable components for developing applications more efficiently. They handle common tasks like routing, database management, and user authentication, allowing developers to focus on application-specific logic rather than reinventing the wheel.
+
+---
+
+## Why Use Frameworks?
+
+Frameworks offer significant advantages for Python development:
+
+- **Faster development:** Pre-built components and patterns accelerate project creation
+- **Best practices:** Frameworks enforce proven architectural patterns and security measures
+- **Community support:** Well-established frameworks have extensive documentation and active communities
+- **Maintainability:** Structured codebase makes long-term maintenance easier
+
+---
+
+## Web Development Frameworks
+
+<CardGrid>
+  <Card title="Django" icon="seti:django">
+    Full-featured web framework with built-in admin panel, ORM, and security features. Perfect for complex web applications.
+  </Card>
+  
+  <Card title="Flask" icon="seti:flask">
+    Lightweight and flexible micro-framework. Ideal for small to medium applications and APIs.
+  </Card>
+  
+  <Card title="FastAPI" icon="rocket">
+    Modern, fast framework for building APIs with automatic documentation and type hints.
+  </Card>
+  
+  <Card title="Reflex" icon="seti:config">
+    Modern framework for creating full-stack web applications using only Python, without JavaScript.
+  </Card>
+  
+  <Card title="Tornado" icon="seti:config">
+    Asynchronous networking library and web framework for handling thousands of simultaneous connections.
+  </Card>
+</CardGrid>
+
+### Django
+
+Django is a high-level web framework that follows the "batteries included" philosophy, providing everything needed for web development out of the box.
+
+<Code
+code="
+# Install Django
+pip install django
+
+# Create a new project
+django-admin startproject myproject
+cd myproject
+
+# Run development server
+python manage.py runserver
+"
+lang="bash"
+title="Getting started with Django"
+frame="auto"
+/>
+
+**Key features:**
+- Built-in admin interface
+- Object-Relational Mapping (ORM)
+- Authentication system
+- URL routing
+- Template engine
+
+**Use cases:** E-commerce sites, content management systems, social networks
+
+### Flask
+
+Flask is a micro-framework that gives developers flexibility to choose their components and structure.
+
+<Code
+code="
+# Install Flask
+pip install flask
+
+# Simple Flask application
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+"
+lang="python"
+title="Simple Flask application"
+frame="auto"
+/>
+
+**Key features:**
+- Minimal core with extensions
+- Flexible architecture
+- Easy to learn and use
+- Great for prototyping
+
+**Use cases:** APIs, small web applications, microservices
+
+### FastAPI
+
+FastAPI is designed for building modern APIs with automatic validation and documentation.
+
+<Code
+code="
+# Install FastAPI
+pip install fastapi uvicorn
+
+# FastAPI application
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get('/')
+async def read_root():
+    return {'Hello': 'World'}
+
+@app.get('/items/{item_id}')
+async def read_item(item_id: int, q: str = None):
+    return {'item_id': item_id, 'q': q}
+
+# Run with: uvicorn main:app --reload
+"
+lang="python"
+title="FastAPI example"
+frame="auto"
+/>
+
+**Key features:**
+- Automatic API documentation
+- Type hints support
+- High performance
+- Async/await support
+
+**Use cases:** REST APIs, microservices, real-time applications
+
+### Reflex
+
+Reflex is an innovative framework that allows you to create full-stack web applications using only Python, eliminating the need to write JavaScript, HTML, or CSS.
+
+<Code
+code="
+# Install Reflex
+pip install reflex
+
+# Simple Reflex application
+import reflex as rx
+
+class State(rx.State):
+    counter: int = 0
+    
+    def increment(self):
+        self.counter += 1
+    
+    def decrement(self):
+        self.counter -= 1
+
+def index() -> rx.Component:
+    return rx.center(
+        rx.vstack(
+            rx.heading('Counter with Reflex', size='lg'),
+            rx.text(f'Value: {State.counter}', size='md'),
+            rx.hstack(
+                rx.button('Increment', on_click=State.increment),
+                rx.button('Decrement', on_click=State.decrement),
+            ),
+            spacing='4',
+        ),
+        height='100vh',
+    )
+
+app = rx.App()
+app.add_page(index)
+app.compile()
+
+# Run with: reflex run
+"
+lang="python"
+title="Simple Reflex application"
+frame="auto"
+/>
+
+**Key features:**
+- Python-only: No need for JavaScript, HTML, or CSS
+- Reactive components: React-like reactive state management
+- Automatic compilation: Automatically generates the frontend
+- Type hints: Full support for static typing
+- Hot reload: Automatic reloading during development
+
+**Use cases:** Interactive dashboards, full-stack web applications, rapid prototyping, data applications
+
+<Aside type="note" title="Emerging framework">
+Reflex is a very recent framework (2023) that is rapidly gaining popularity. While still under active development, it already offers impressive capabilities for Python developers who want to create modern web applications without leaving the Python ecosystem.
+</Aside>
+
+---
+
+## Data Science and Machine Learning
+
+<CardGrid>
+  <Card title="Pandas" icon="seti:notebook">
+    Data manipulation and analysis library with powerful data structures.
+  </Card>
+  
+  <Card title="NumPy" icon="seti:notebook">
+    Foundation for numerical computing with support for large multi-dimensional arrays.
+  </Card>
+  
+  <Card title="Scikit-learn" icon="seti:notebook">
+    Machine learning library with algorithms for classification, regression, and clustering.
+  </Card>
+  
+  <Card title="TensorFlow" icon="seti:notebook">
+    Deep learning framework for building and training neural networks.
+  </Card>
+</CardGrid>
+
+### Pandas
+
+Essential for data manipulation and analysis tasks.
+
+<Code
+code="
+import pandas as pd
+
+# Create a DataFrame
+data = {'Name': ['Alice', 'Bob', 'Charlie'],
+        'Age': [25, 30, 35],
+        'City': ['New York', 'London', 'Tokyo']}
+
+df = pd.DataFrame(data)
+print(df)
+
+# Filter data
+young_people = df[df['Age'] < 30]
+print(young_people)
+"
+lang="python"
+title="Pandas basic usage"
+frame="auto"
+/>
+
+### Scikit-learn
+
+Provides simple and efficient tools for machine learning.
+
+<Code
+code="
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+# Load dataset
+iris = datasets.load_iris()
+X_train, X_test, y_train, y_test = train_test_split(
+    iris.data, iris.target, test_size=0.2
+)
+
+# Train model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# Make predictions
+accuracy = model.score(X_test, y_test)
+print(f'Accuracy: {accuracy:.2f}')
+"
+lang="python"
+title="Machine learning with Scikit-learn"
+frame="auto"
+/>
+
+---
+
+## GUI Development
+
+<CardGrid>
+  <Card title="Tkinter" icon="seti:python">
+    Built-in GUI library included with Python. Simple but limited.
+  </Card>
+  
+  <Card title="PyQt/PySide" icon="seti:config">
+    Professional GUI framework for cross-platform desktop applications.
+  </Card>
+  
+  <Card title="Kivy" icon="seti:config">
+    Framework for developing multi-platform applications with natural user interfaces.
+  </Card>
+</CardGrid>
+
+### Tkinter
+
+Python's standard GUI library for creating simple desktop applications.
+
+<Code
+code="
+import tkinter as tk
+from tkinter import messagebox
+
+def show_message():
+    messagebox.showinfo('Hello', 'Hello, PyDocs!')
+
+# Create main window
+root = tk.Tk()
+root.title('My Application')
+
+# Add button
+button = tk.Button(root, text='Click me!', command=show_message)
+button.pack(pady=20)
+
+# Run application
+root.mainloop()
+"
+lang="python"
+title="Simple Tkinter application"
+frame="auto"
+/>
+
+---
+
+## Testing Frameworks
+
+<CardGrid>
+  <Card title="pytest" icon="seti:config">
+    Most popular testing framework with simple syntax and powerful features.
+  </Card>
+  
+  <Card title="unittest" icon="seti:python">
+    Built-in testing framework inspired by Java's JUnit.
+  </Card>
+</CardGrid>
+
+### pytest
+
+Modern testing framework that makes it easy to write simple and scalable tests.
+
+<Code
+code="
+# Install pytest
+pip install pytest
+
+# test_example.py
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(2, 3) == 5
+    assert add(-1, 1) == 0
+    assert add(0, 0) == 0
+
+# Run tests with: pytest test_example.py
+"
+lang="python"
+title="Testing with pytest"
+frame="auto"
+/>
+
+---
+
+## Choosing the Right Framework
+
+<Aside type="tip" title="Selection criteria">
+Consider your project requirements, team experience, community support, and long-term maintenance when choosing a framework.
+</Aside>
+
+### For beginners
+
+1. **Web development:** Start with Flask for its simplicity, or try Reflex if you want to avoid JavaScript
+2. **Data analysis:** Begin with Pandas and NumPy
+3. **GUI applications:** Try Tkinter for basic desktop apps
+
+### For experienced developers
+
+1. **Complex web applications:** Django for full-featured development
+2. **High-performance APIs:** FastAPI for modern API development
+3. **Interactive web applications:** Reflex for full-stack development with Python only
+4. **Machine learning:** Scikit-learn for traditional ML, TensorFlow for deep learning
+
+### Project-specific considerations
+
+- **Team size:** Larger teams benefit from Django's structure
+- **JavaScript experience:** If you want to avoid JavaScript, consider Reflex
+- **Performance requirements:** FastAPI and Tornado for high-performance needs
+- **Deployment target:** Consider framework deployment requirements
+- **Learning curve:** Balance feature richness with development time
+
+---
+
+## Best Practices
+
+### Virtual environments
+
+Always use virtual environments to manage framework dependencies:
+
+<Code
+code="
+# Create virtual environment
+python -m venv myproject_env
+
+# Activate (Windows)
+myproject_env\Scripts\activate
+
+# Activate (macOS/Linux)
+source myproject_env/bin/activate
+
+# Install frameworks
+pip install django flask fastapi
+"
+lang="bash"
+title="Managing framework dependencies"
+frame="auto"
+/>
+
+### Requirements management
+
+Keep track of your framework versions:
+
+<Code
+code="
+# Generate requirements file
+pip freeze > requirements.txt
+
+# Install from requirements
+pip install -r requirements.txt
+"
+lang="bash"
+title="Managing requirements"
+frame="auto"
+/>
+
+---
+
+## Staying Updated
+
+Python frameworks evolve rapidly. Stay current by:
+
+- Following official documentation and release notes
+- Participating in community forums and conferences
+- Experimenting with new frameworks in side projects
+- Reading framework-specific blogs and tutorials
+
+<Aside type="note" title="Framework evolution">
+The Python ecosystem is constantly evolving. What's popular today might be superseded tomorrow, so focus on understanding fundamental concepts that transfer between frameworks.
+</Aside>
+
+---
+
+## Summary
+
+Python frameworks provide powerful tools for various development needs:
+
+- **Web development:** Django, Flask, FastAPI, Reflex
+- **Data science:** Pandas, NumPy, Scikit-learn
+- **GUI applications:** Tkinter, PyQt, Kivy
+- **Testing:** pytest, unittest
+
+Choose frameworks based on your project requirements, team expertise, and long-term goals. Start with simpler frameworks and gradually move to more complex ones as your skills develop.
+
+**Remember:** Frameworks are tools to help you build better applications faster. Understanding Python fundamentals is more important than memorizing framework-specific syntax.

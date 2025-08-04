@@ -1,0 +1,473 @@
+---
+title: Frameworks de Python
+description: Guía para Frameworks de Python
+sidebar:
+  order: 4
+---
+
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+import { Card, CardGrid } from '@astrojs/starlight/components'
+
+Los frameworks de Python son herramientas y librerías preconstruidas que proporcionan estructura y componentes reutilizables para desarrollar aplicaciones de manera más eficiente. Se encargan de tareas comunes como enrutamiento, gestión de bases de datos y autenticación de usuarios, permitiendo a los desarrolladores enfocarse en la lógica específica de la aplicación en lugar de reinventar la rueda.
+
+---
+
+## ¿Por qué usar frameworks?
+
+Los frameworks ofrecen ventajas significativas para el desarrollo en Python:
+
+- **Desarrollo más rápido:** Componentes preconstruidos y patrones aceleran la creación de proyectos
+- **Mejores prácticas:** Los frameworks imponen patrones arquitectónicos probados y medidas de seguridad
+- **Soporte de la comunidad:** Los frameworks establecidos tienen documentación extensa y comunidades activas
+- **Mantenibilidad:** Una base de código estructurada facilita el mantenimiento a largo plazo
+
+---
+
+## Frameworks de desarrollo web
+
+<CardGrid>
+  <Card title="Django" icon="seti:django">
+    Framework web completo con panel de administración integrado, ORM y características de seguridad. Perfecto para aplicaciones web complejas.
+  </Card>
+  
+  <Card title="Flask" icon="seti:flask">
+    Micro-framework ligero y flexible. Ideal para aplicaciones pequeñas a medianas y APIs.
+  </Card>
+  
+  <Card title="FastAPI" icon="rocket">
+    Framework moderno y rápido para construir APIs con documentación automática y type hints.
+  </Card>
+  
+  <Card title="Reflex" icon="seti:config">
+    Framework moderno para crear aplicaciones web completas usando solo Python, sin necesidad de JavaScript.
+  </Card>
+  
+  <Card title="Tornado" icon="seti:config">
+    Librería de red asincrónica y framework web para manejar miles de conexiones simultáneas.
+  </Card>
+</CardGrid>
+
+### Django
+
+Django es un framework web de alto nivel que sigue la filosofía "baterías incluidas", proporcionando todo lo necesario para el desarrollo web desde el principio.
+
+<Code
+code="
+# Instalar Django
+pip install django
+
+# Crear un nuevo proyecto
+django-admin startproject miproyecto
+cd miproyecto
+
+# Ejecutar servidor de desarrollo
+python manage.py runserver
+"
+lang="bash"
+title="Comenzando con Django"
+frame="auto"
+/>
+
+**Características clave:**
+- Interfaz de administración integrada
+- Mapeo Objeto-Relacional (ORM)
+- Sistema de autenticación
+- Enrutamiento de URLs
+- Motor de plantillas
+
+**Casos de uso:** Sitios de comercio electrónico, sistemas de gestión de contenido, redes sociales
+
+### Flask
+
+Flask es un micro-framework que da a los desarrolladores flexibilidad para elegir sus componentes y estructura.
+
+<Code
+code="
+# Instalar Flask
+pip install flask
+
+# Aplicación Flask simple
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hola_mundo():
+    return '¡Hola, Mundo!'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+"
+lang="python"
+title="Aplicación Flask simple"
+frame="auto"
+/>
+
+**Características clave:**
+- Núcleo mínimo con extensiones
+- Arquitectura flexible
+- Fácil de aprender y usar
+- Excelente para prototipos
+
+**Casos de uso:** APIs, aplicaciones web pequeñas, microservicios
+
+### FastAPI
+
+FastAPI está diseñado para construir APIs modernas con validación y documentación automáticas.
+
+<Code
+code="
+# Instalar FastAPI
+pip install fastapi uvicorn
+
+# Aplicación FastAPI
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get('/')
+async def leer_raiz():
+    return {'Hola': 'Mundo'}
+
+@app.get('/items/{item_id}')
+async def leer_item(item_id: int, q: str = None):
+    return {'item_id': item_id, 'q': q}
+
+# Ejecutar con: uvicorn main:app --reload
+"
+lang="python"
+title="Ejemplo de FastAPI"
+frame="auto"
+/>
+
+**Características clave:**
+- Documentación automática de API
+- Soporte para type hints
+- Alto rendimiento
+- Soporte para async/await
+
+**Casos de uso:** APIs REST, microservicios, aplicaciones en tiempo real
+
+### Reflex
+
+Reflex es un framework innovador que permite crear aplicaciones web completas usando únicamente Python, eliminando la necesidad de escribir JavaScript, HTML o CSS.
+
+<Code
+code="
+# Instalar Reflex
+pip install reflex
+
+# Aplicación Reflex simple
+import reflex as rx
+
+class Estado(rx.State):
+    contador: int = 0
+    
+    def incrementar(self):
+        self.contador += 1
+    
+    def decrementar(self):
+        self.contador -= 1
+
+def index() -> rx.Component:
+    return rx.center(
+        rx.vstack(
+            rx.heading('Contador con Reflex', size='lg'),
+            rx.text(f'Valor: {Estado.contador}', size='md'),
+            rx.hstack(
+                rx.button('Incrementar', on_click=Estado.incrementar),
+                rx.button('Decrementar', on_click=Estado.decrementar),
+            ),
+            spacing='4',
+        ),
+        height='100vh',
+    )
+
+app = rx.App()
+app.add_page(index)
+app.compile()
+
+# Ejecutar con: reflex run
+"
+lang="python"
+title="Aplicación Reflex simple"
+frame="auto"
+/>
+
+**Características clave:**
+- Solo Python: Sin necesidad de JavaScript, HTML o CSS
+- Componentes reactivos: Estado reactivo similar a React
+- Compilación automática: Genera automáticamente el frontend
+- Type hints: Soporte completo para tipado estático
+- Hot reload: Recarga automática durante el desarrollo
+
+**Casos de uso:** Dashboards interactivos, aplicaciones web completas, prototipos rápidos, aplicaciones de datos
+
+<Aside type="note" title="Framework emergente">
+Reflex es un framework muy reciente (2023) que está ganando popularidad rápidamente. Aunque aún está en desarrollo activo, ya ofrece capacidades impresionantes para desarrolladores Python que quieren crear aplicaciones web modernas sin salir del ecosistema Python.
+</Aside>
+
+---
+
+## Ciencia de datos y aprendizaje automático
+
+<CardGrid>
+  <Card title="Pandas" icon="seti:notebook">
+    Librería de manipulación y análisis de datos con estructuras de datos poderosas.
+  </Card>
+  
+  <Card title="NumPy" icon="seti:notebook">
+    Base para computación numérica con soporte para arrays multidimensionales grandes.
+  </Card>
+  
+  <Card title="Scikit-learn" icon="seti:notebook">
+    Librería de aprendizaje automático con algoritmos para clasificación, regresión y clustering.
+  </Card>
+  
+  <Card title="TensorFlow" icon="seti:notebook">
+    Framework de aprendizaje profundo para construir y entrenar redes neuronales.
+  </Card>
+</CardGrid>
+
+### Pandas
+
+Esencial para tareas de manipulación y análisis de datos.
+
+<Code
+code="
+import pandas as pd
+
+# Crear un DataFrame
+datos = {'Nombre': ['Alice', 'Bob', 'Charlie'],
+         'Edad': [25, 30, 35],
+         'Ciudad': ['Nueva York', 'Londres', 'Tokio']}
+
+df = pd.DataFrame(datos)
+print(df)
+
+# Filtrar datos
+personas_jovenes = df[df['Edad'] < 30]
+print(personas_jovenes)
+"
+lang="python"
+title="Uso básico de Pandas"
+frame="auto"
+/>
+
+### Scikit-learn
+
+Proporciona herramientas simples y eficientes para aprendizaje automático.
+
+<Code
+code="
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+
+# Cargar dataset
+iris = datasets.load_iris()
+X_train, X_test, y_train, y_test = train_test_split(
+    iris.data, iris.target, test_size=0.2
+)
+
+# Entrenar modelo
+modelo = LogisticRegression()
+modelo.fit(X_train, y_train)
+
+# Hacer predicciones
+precision = modelo.score(X_test, y_test)
+print(f'Precisión: {precision:.2f}')
+"
+lang="python"
+title="Aprendizaje automático con Scikit-learn"
+frame="auto"
+/>
+
+---
+
+## Desarrollo de interfaces gráficas
+
+<CardGrid>
+  <Card title="Tkinter" icon="seti:python">
+    Librería GUI integrada incluida con Python. Simple pero limitada.
+  </Card>
+  
+  <Card title="PyQt/PySide" icon="seti:config">
+    Framework GUI profesional para aplicaciones de escritorio multiplataforma.
+  </Card>
+  
+  <Card title="Kivy" icon="seti:config">
+    Framework para desarrollar aplicaciones multiplataforma con interfaces de usuario naturales.
+  </Card>
+</CardGrid>
+
+### Tkinter
+
+La librería GUI estándar de Python para crear aplicaciones de escritorio simples.
+
+<Code
+code="
+import tkinter as tk
+from tkinter import messagebox
+
+def mostrar_mensaje():
+    messagebox.showinfo('Hola', '¡Hola, PyDocs!')
+
+# Crear ventana principal
+root = tk.Tk()
+root.title('Mi Aplicación')
+
+# Agregar botón
+boton = tk.Button(root, text='¡Haz clic!', command=mostrar_mensaje)
+boton.pack(pady=20)
+
+# Ejecutar aplicación
+root.mainloop()
+"
+lang="python"
+title="Aplicación Tkinter simple"
+frame="auto"
+/>
+
+---
+
+## Frameworks de testing
+
+<CardGrid>
+  <Card title="pytest" icon="seti:config">
+    Framework de testing más popular con sintaxis simple y características poderosas.
+  </Card>
+  
+  <Card title="unittest" icon="seti:python">
+    Framework de testing integrado inspirado en JUnit de Java.
+  </Card>
+</CardGrid>
+
+### pytest
+
+Framework de testing moderno que facilita escribir pruebas simples y escalables.
+
+<Code
+code="
+# Instalar pytest
+pip install pytest
+
+# test_ejemplo.py
+def sumar(a, b):
+    return a + b
+
+def test_sumar():
+    assert sumar(2, 3) == 5
+    assert sumar(-1, 1) == 0
+    assert sumar(0, 0) == 0
+
+# Ejecutar pruebas con: pytest test_ejemplo.py
+"
+lang="python"
+title="Testing con pytest"
+frame="auto"
+/>
+
+---
+
+## Eligiendo el framework correcto
+
+<Aside type="tip" title="Criterios de selección">
+Considera los requisitos de tu proyecto, experiencia del equipo, soporte de la comunidad y mantenimiento a largo plazo al elegir un framework.
+</Aside>
+
+### Para principiantes
+
+1. **Desarrollo web:** Comienza con Flask por su simplicidad, o prueba Reflex si quieres evitar JavaScript
+2. **Análisis de datos:** Empieza con Pandas y NumPy
+3. **Aplicaciones GUI:** Prueba Tkinter para aplicaciones de escritorio básicas
+
+### Para desarrolladores experimentados
+
+1. **Aplicaciones web complejas:** Django para desarrollo completo
+2. **APIs de alto rendimiento:** FastAPI para desarrollo moderno de APIs
+3. **Aplicaciones web interactivas:** Reflex para desarrollo full-stack con solo Python
+4. **Aprendizaje automático:** Scikit-learn para ML tradicional, TensorFlow para aprendizaje profundo
+
+### Consideraciones específicas del proyecto
+
+- **Tamaño del equipo:** Equipos grandes se benefician de la estructura de Django
+- **Experiencia con JavaScript:** Si quieres evitar JavaScript, considera Reflex
+- **Requisitos de rendimiento:** FastAPI y Tornado para necesidades de alto rendimiento
+- **Objetivo de despliegue:** Considera los requisitos de despliegue del framework
+- **Curva de aprendizaje:** Equilibra la riqueza de características con el tiempo de desarrollo
+
+---
+
+## Mejores prácticas
+
+### Entornos virtuales
+
+Siempre usa entornos virtuales para gestionar las dependencias de frameworks:
+
+<Code
+code="
+# Crear entorno virtual
+python -m venv miproyecto_env
+
+# Activar (Windows)
+miproyecto_env\Scripts\activate
+
+# Activar (macOS/Linux)
+source miproyecto_env/bin/activate
+
+# Instalar frameworks
+pip install django flask fastapi
+"
+lang="bash"
+title="Gestionando dependencias de frameworks"
+frame="auto"
+/>
+
+### Gestión de requisitos
+
+Mantén un registro de las versiones de tus frameworks:
+
+<Code
+code="
+# Generar archivo de requisitos
+pip freeze > requirements.txt
+
+# Instalar desde requisitos
+pip install -r requirements.txt
+"
+lang="bash"
+title="Gestionando requisitos"
+frame="auto"
+/>
+
+---
+
+## Mantente actualizado
+
+Los frameworks de Python evolucionan rápidamente. Mantente al día:
+
+- Siguiendo la documentación oficial y notas de versión
+- Participando en foros de la comunidad y conferencias
+- Experimentando con nuevos frameworks en proyectos secundarios
+- Leyendo blogs y tutoriales específicos de frameworks
+
+<Aside type="note" title="Evolución de frameworks">
+El ecosistema de Python está en constante evolución. Lo que es popular hoy podría ser superado mañana, así que enfócate en entender conceptos fundamentales que se transfieren entre frameworks.
+</Aside>
+
+---
+
+## Resumen
+
+Los frameworks de Python proporcionan herramientas poderosas para diversas necesidades de desarrollo:
+
+- **Desarrollo web:** Django, Flask, FastAPI, Reflex
+- **Ciencia de datos:** Pandas, NumPy, Scikit-learn
+- **Aplicaciones GUI:** Tkinter, PyQt, Kivy
+- **Testing:** pytest, unittest
+
+Elige frameworks basándote en los requisitos de tu proyecto, experiencia del equipo y objetivos a largo plazo. Comienza con frameworks más simples y gradualmente avanza a otros más complejos conforme desarrolles tus habilidades.
+
+**Recuerda:** Los frameworks son herramientas para ayudarte a construir mejores aplicaciones más rápido. Entender los fundamentos de Python es más importante que memorizar sintaxis específica de frameworks.

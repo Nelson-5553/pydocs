@@ -4,6 +4,158 @@ description: Guía para Documentación oficial
 sidebar:
   order: 1
 ---
-import Aviso from '@components/Aviso.astro';
 
-<Aviso />
+import { Code } from "@astrojs/starlight/components"
+import { Aside } from "@astrojs/starlight/components"
+import { Card, CardGrid } from '@astrojs/starlight/components'
+
+La documentación oficial de Python es tu recurso más completo y confiable para profundizar en el lenguaje. Aunque PyDocs te ofrece una introducción práctica y estructurada, la documentación oficial contiene todos los detalles técnicos, especificaciones y referencias avanzadas que necesitarás como desarrollador.
+
+---
+
+## ¿Por qué consultar la documentación oficial?
+
+La documentación oficial de Python ofrece ventajas únicas que complementan perfectamente tu aprendizaje:
+
+- **Información actualizada:** Siempre refleja la versión más reciente del lenguaje
+- **Detalles técnicos completos:** Especificaciones exactas de cada función y módulo
+- **Ejemplos oficiales:** Casos de uso respaldados por el equipo de desarrollo de Python
+- **Referencia autoritativa:** La fuente definitiva cuando necesitas resolver dudas específicas
+
+---
+
+## Secciones principales
+
+<CardGrid>
+  <Card title="Tutorial oficial" icon="open-book">
+    Una introducción paso a paso al lenguaje, ideal para complementar tu aprendizaje inicial.
+  </Card>
+  
+  <Card title="Referencia del lenguaje" icon="document">
+    Especificaciones técnicas detalladas de la sintaxis y semántica de Python.
+  </Card>
+  
+  <Card title="Biblioteca estándar" icon="seti:config">
+    Documentación completa de todos los módulos incluidos con Python.
+  </Card>
+  
+  <Card title="Guías de instalación" icon="seti:gear">
+    Instrucciones oficiales para instalar Python en diferentes sistemas operativos.
+  </Card>
+</CardGrid>
+
+---
+
+## Cómo navegar eficientemente
+
+### Búsqueda por módulos
+
+Cuando trabajas con módulos específicos, dirígete directamente a la sección correspondiente:
+
+<Code
+code="
+# Si estás trabajando con fechas
+import datetime
+
+# Busca: 'datetime' en la documentación oficial
+# Encontrarás métodos como strftime(), strptime(), etc.
+"
+lang="py"
+title="Ejemplo de búsqueda específica"
+frame="auto"
+/>
+
+### Uso del índice y glosario
+
+- **Índice:** Lista alfabética de todas las funciones y clases
+- **Glosario:** Definiciones de términos técnicos específicos de Python
+- **PEP (Python Enhancement Proposals):** Documentos que explican nuevas características
+
+---
+
+## Recursos principales
+
+### Sitio web oficial
+
+La documentación completa está disponible en:
+- **Español:** https://docs.python.org/es/
+- **Inglés:** https://docs.python.org/
+
+### Función help() integrada
+
+Python incluye ayuda integrada accesible desde cualquier intérprete:
+
+<Code
+code="
+# Obtener ayuda sobre cualquier función
+help(print)
+help(len)
+help(str.upper)
+
+# Ayuda sobre módulos
+import json
+help(json)
+"
+lang="py"
+title="Usando help() en Python"
+frame="auto"
+/>
+
+### PEPs importantes
+
+Algunos PEP que todo desarrollador Python debería conocer:
+
+- **PEP 8:** Guía de estilo para código Python
+- **PEP 20:** El Zen de Python (filosofía del lenguaje)
+- **PEP 484:** Anotaciones de tipo (Type Hints)
+
+---
+
+## Consejos para aprovechar al máximo la documentación
+
+<Aside type="tip" title="Estrategia de lectura">
+No intentes leer toda la documentación de una vez. Úsala como referencia cuando te encuentres con conceptos específicos o necesites detalles técnicos precisos.
+</Aside>
+
+### Para principiantes
+
+1. **Comienza con el tutorial oficial** después de completar PyDocs
+2. **Usa la búsqueda** cuando necesites información sobre funciones específicas
+3. **Lee los ejemplos** incluidos en cada sección
+
+### Para desarrolladores intermedios
+
+1. **Explora la biblioteca estándar** para descubrir módulos útiles
+2. **Consulta los PEP** para entender el diseño y evolución del lenguaje
+3. **Revisa las notas de versión** para mantenerte actualizado
+
+### Para desarrolladores avanzados
+
+1. **Estudia la referencia del lenguaje** para casos de uso complejos
+2. **Participa en las discusiones** de nuevos PEP
+3. **Consulta el código fuente** cuando necesites entender implementaciones específicas
+
+---
+
+## Combinando PyDocs con la documentación oficial
+
+PyDocs y la documentación oficial se complementan perfectamente:
+
+- **PyDocs:** Aprendizaje estructurado con ejemplos prácticos
+- **Documentación oficial:** Referencia técnica detallada y especificaciones completas
+
+<Aside type="note" title="Recomendación">
+Usa PyDocs para aprender conceptos nuevos y la documentación oficial para profundizar en detalles técnicos y resolver dudas específicas durante el desarrollo.
+</Aside>
+
+---
+
+## Mantente actualizado
+
+Python evoluciona constantemente. La documentación oficial es tu mejor aliado para:
+
+- Conocer nuevas características en cada versión
+- Entender cambios en el comportamiento de funciones existentes
+- Descubrir mejores prácticas recomendadas por el equipo oficial
+
+**Recuerda:** La documentación oficial es extensa, pero es tu compañera permanente en el desarrollo con Python. No dudes en consultarla siempre que necesites certeza técnica o quieras explorar las capacidades completas del lenguaje.
