@@ -8,8 +8,12 @@ let totalContributors = 0;
 let totalCommits = 0;
 
 try {
-  const response = await fetch('https://api.github.com/repos/Nelson-5553/pydocs/contributors');
-
+  const response = await fetch('https://api.github.com/repos/Nelson-5553/pydocs/contributors', {
+    headers: {
+      'Authorization': `token ${import.meta.env.GITHUB_TOKEN}`,
+      'Accept': 'application/vnd.github+json'
+    }
+  });
   if (!response.ok) {
     throw new Error("Error al obtener datos de GitHub");
   }
@@ -25,7 +29,7 @@ try {
 
 {totalContributors === 0 && totalCommits === 0 ? (
    <div class="mt-10 max-w-full mx-auto">
-    <div class="bg-white dark:bg-neutral-950 rounded-2xl shadow-md p-8">
+    <div class=" bg-white/5 backdrop-blur-md border border-white/50 shadow-yellow-300 rounded-lg py-3">
       <div class="flex justify-center items-stretch gap-8 flex-wrap ">
     <span class="text-2xl font-bold leading-none text-[#306998] dark:text-[#FFD43B]">No stats available at the moment.</span>
   </div>
@@ -33,10 +37,10 @@ try {
   </div>
 ) : (
   <div class="mt-10 max-w-full mx-auto">
-    <div class="bg-white dark:bg-neutral-950 rounded-2xl shadow-md p-8">
+    <div class="bg-gray-100/70 dark:bg-white/5  backdrop-blur-md border border-white/50 shadow-yellow-300 rounded-lg p-6">
       <div class="flex justify-center items-stretch gap-8 flex-wrap">
    
-        <div class="flex flex-col justify-center items-center text-center h-[100px] bg-white dark:bg-transparent rounded-xl flex-1 min-w-[120px] max-w-[160px] mt-4">
+        <div class="flex flex-col justify-center items-center text-center h-[100px] dark:bg-transparent rounded-xl flex-1 min-w-[120px] max-w-[160px] mt-4">
         
           <svg xmlns="http://www.w3.org/2000/svg" class="text-[#306998] dark:text-[#FFD43B]" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
           <div class="text-2xl font-bold leading-none text-[#306998] dark:text-[#FFD43B]">{totalContributors}+</div>
@@ -44,7 +48,7 @@ try {
         </div>
 
    
-        <div class="flex flex-col justify-center items-center text-center h-[100px] bg-white dark:bg-transparent rounded-xl flex-1 min-w-[120px] max-w-[160px]">
+        <div class="flex flex-col justify-center items-center text-center h-[100px] dark:bg-transparent rounded-xl flex-1 min-w-[120px] max-w-[160px]">
         
             <svg xmlns="http://www.w3.org/2000/svg" class="text-[#306998] dark:text-[#FFD43B]" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-commit-horizontal-icon lucide-git-commit-horizontal"><circle cx="12" cy="12" r="3"/><line x1="3" x2="9" y1="12" y2="12"/><line x1="15" x2="21" y1="12" y2="12"/></svg>
           <div class="text-2xl font-bold leading-none text-[#306998] dark:text-[#FFD43B]">{totalCommits}+</div>
@@ -52,17 +56,16 @@ try {
         </div>
 
      
-        <div class="flex flex-col justify-center items-center text-center h-[100px] bg-white dark:bg-transparent rounded-xl flex-1 min-w-[140px] max-w-[180px]">
+        <div class="flex flex-col justify-center items-center text-center h-[100px] dark:bg-transparent rounded-xl flex-1 min-w-[140px] max-w-[180px]">
       
-          <svg xmlns="http://www.w3.org/2000/svg" class="text-[#306998] dark:text-[#FFD43B]" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml-icon lucide-code-xml"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
           <div class="font-semibold text-base text-[#306998] dark:text-[#FFD43B]">Open Source</div>
           <div class="min-h-[1.5em] flex items-center justify-center">
             <a
               href="https://github.com/Nelson-5553/pydocs"
               target="_blank"
-              class="text-[#306998] dark:text-[#FFD43B] underline text-[0.97em] font-medium mt-1 transition-colors duration-300"
+              class="group/btn relative inline-flex items-center justify-center gap-3 px-12 py-3 w-full md:w-auto bg-gradient-to-r from-[#306998]/10 to-[#4B8BBE]/10 dark:from-[#FFD43B]/10 dark:to-[#FFC107]/10 border-2 border-[#306998]/30 dark:border-[#FFD43B]/30 text-[#306998] dark:text-[#FFD43B] rounded-lg font-bold text-sm hover:border-[#306998] dark:hover:border-[#FFD43B] hover:bg-gradient-to-r hover:from-[#306998] hover:to-[#4B8BBE] dark:hover:from-[#FFD43B] dark:hover:to-[#FFC107] hover:text-white dark:hover:text-black hover:shadow-lg hover:shadow-[#306998]/25 dark:hover:shadow-[#FFD43B]/25 hover:scale-105 transition-all duration-300 overflow-hidden no-underline"
             >
-              ¡Colabora en GitHub!
+              ¡Colabora!
             </a>
           </div>
         </div>
