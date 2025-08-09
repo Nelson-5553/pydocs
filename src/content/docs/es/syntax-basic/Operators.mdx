@@ -13,7 +13,8 @@ Un operador es un símbolo o palabra clave que le dice a Python que realice una 
 
 ## Tipos de opéradores
 
-En python al igual que en otros lenguajes existen una variedad de tipos de operadores los cuales les enseñaremos a continuacion
+En Python, al igual que en otros lenguajes, existen una variedad de tipos de operadores, los cuales les enseñaremos a continuación.	
+
 
 ### Operadores Aritméticos
 
@@ -112,14 +113,14 @@ Los operadores de asignación son símbolos que se utilizan en programación par
 
 <Code 
 code="      
-      print(x = 5)   # Asigna el valor 5 a x
-      print(x += 3)   # x = x + 3
-      print(x -= 2)   # x = x - 2
-      print(x *= 4)   # x = x * 4
-      print(x /= 2)   # x = x / 2
-      print(x %= 3)  # x = x % 3
-      print(x //= 2)   # x = x // 2
-      print(x **= 3)   # x = x ** 3
+      x = 5   # Asigna el valor 5 a x
+      x += 3  # x = x + 3
+      x -= 2   # x = x - 2
+      x *= 4   # x = x * 4
+      x /= 2   # x = x / 2
+      x %= 3  # x = x % 3
+      x //= 2   # x = x // 2
+      x **= 3   # x = x ** 3
       " 
        
 lang="py" 
@@ -128,7 +129,7 @@ mark="highlights" />
 
 ### Operadores Lógicos 
 
-Sirven para combinar múltiples condiciones y obtener un resultado booleano. Son usualemente usados en estructuras de control como los condicionales
+Sirven para combinar múltiples condiciones y obtener un resultado booleano. Son usualmente usados en estructuras de control como los condicionales.
 
 <PyTable 
   headers={["Operador", "Descripción", "Ejemplo", "Resultado"]}
@@ -139,3 +140,30 @@ Sirven para combinar múltiples condiciones y obtener un resultado booleano. Son
     // más filas...
   ]}
 />
+
+### Operadores de identidad
+Los operadores de identidad comparan referencias de objetos en memoria, no valores. En ciertos casos (como enteros pequeños o strings literales) puede coincidir que dos variables tengan la misma referencia.
+
+<PyTable 
+  headers={["Operador", "Descripción", "Ejemplo", "Resultado"]}
+  rows={[
+    ["is", "Verdadero si las referencias de objetos son iguales", "a is b", "False"],
+    ["is not", "Verdadero si las referencias de objetos son diferentes", "a is not b", "True"],   
+    // más filas...
+  ]}
+/>
+
+<Code 
+code="      
+      a = 5000
+      b = 5000
+      
+      print(a is b) #En memoria son 2 objetos distintos, resultado: False
+      print(a is not b) #En memoria son 2 objetos distintos, resultado: True
+      print(a == b) #Esto compara su valor, no su espacio en memoria, resultado: True
+
+      " 
+       
+lang="py" 
+title="Operators.py" 
+mark="highlights" />
