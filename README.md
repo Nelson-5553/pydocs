@@ -70,6 +70,16 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## ⚙️ .env Configuration for Contributions
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+To use the contributions component, you need to set up a `.env` file with your GitHub read-only token.
+
+1. Copy `.env.example` and rename it to `.env` in the root of the project.
+2. Get a [GitHub Personal Access Token](https://github.com/settings/tokens) with read-only permissions.
+3. Add your token to the `GITHUB_TOKEN` variable in the `.env` file:
+
+   ```
+   GITHUB_TOKEN=your_token_here
+   ```
+
+This allows the contributions component to securely access public
