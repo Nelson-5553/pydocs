@@ -15,9 +15,21 @@ A diferencia de otros lenguajes de programación, Python asigna automáticamente
 
 Sin embargo, si se desea, es posible especificar manualmente el tipo utilizando anotaciones de tipo, lo cual puede mejorar la legibilidad del código y facilitar su depuración, especialmente en proyectos grandes.
 
-## Tipos de variables 
+### Nombre de la variable
+En Python, el nombre de una variable es la etiqueta que usamos para referirnos a un valor almacenado en memoria.
 
-En Python existen diferentes tipos de variables (tipos de datos), similares a los que se encuentran en otros lenguajes de programación. Algunos de los más comunes son:
+Los nombres de variables deben seguir ciertas reglas y convenciones para ser válidos y legibles:
+
+- El nombre de una variable debe comenzar con una letra o un guion bajo (`_`).
+- El nombre puede contener letras, números y guiones bajos.
+- El nombre es sensible a mayúsculas y minúsculas, por lo que `miVariable` y `mivariable` son considerados como dos nombres diferentes.
+- Evita usar nombres de variables que sean palabras reservadas de Python, Puedes verlas aqui: [Palabras reservadas en Python](https://docs.python.org/3/reference/lexical_analysis.html#keywords)
+.
+
+## Tipos de datos
+
+En Python existen diferentes tipos de datos que se pueden asignar a las variables, similares a los que se encuentran en otros lenguajes de programación. Algunos de los más comunes son:
+
 
 ### Enteros
 
@@ -55,11 +67,11 @@ mark="highlights" />
 Se utilizan para guardar texto. Una cadena puede contener letras, números y símbolos. Se encierra entre comillas simples `'` o dobles `"`
 
 <Code 
-code="cadena = 'Hola Mundo' # Esta variable contiene un cadena
+code="cadena = 'Hola Mundo' # Esta variable contiene una cadena
 
-      cadena1 = '123' # Esta variable contiene un cadena
+      cadena1 = '123' # Esta variable contiene una cadena
 
-      cadena2 = '$%&&' # Esta variable contiene un cadena" 
+      cadena2 = '$%&&' # Esta variable contiene una cadena" 
 lang="py" 
 title="Str.py" 
 mark="highlights" />
@@ -119,11 +131,11 @@ mark="highlights" />
 Una colección no ordenada de elementos únicos (sin duplicados). Se usan para operaciones matemáticas como uniones, intersecciones o para eliminar valores repetidos de una lista.
 
 <Code 
-code="# contiene un conjunto
+code="# contiene un conjunto de cadenas
       set = {'python', 'java', 'c++'}
        
-      # contiene un conjunto
-      set1 = {'ciudad': 'Bogotá', 'pais': 'Colombia'}"
+      # contiene un conjunto de numeros
+      set1 = {1, 2, 3, 4, 5}"
 lang="py" 
 title="Set.py" 
 mark="highlights" />
