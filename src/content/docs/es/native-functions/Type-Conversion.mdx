@@ -1,5 +1,5 @@
 ---
-title: Conversion de Tipos
+title: Conversión de Tipos
 description: Guía para Conversion de Tipos
 sidebar:
   order: 2
@@ -23,7 +23,7 @@ Los tipos son:
 
 ### `int()`
 
-Convierte un valor numérico o una cadena que representa un número entero al tipo de dato int. Si el valor es un número decimal, lo redondea hacia abajo (elimina los decimales). Si no es numérico, lanza un error.
+Convierte un valor numérico o una cadena que representa un número entero al tipo de dato int. Si el valor es un número decimal, elimina los decimales. Si no es numérico, lanza un error.
 
 <Code 
 code="
@@ -42,17 +42,20 @@ title="Int.py"
 mark="highlights"
 frame='terminal' />
 
+<Aside type="note">
+ No es posible convertir directamente una cadena que representa un número decimal (float) a un entero usando int(). int("3.14") lanza ValueError.
+</Aside>
 
 ### `float()`
 
-Convierte un número entero o una cadena que representa un número en un número decimal (float), útil cuando se necesita trabajar con valores fraccionarios.
+Convierte un número entero o una cadena que representa un número en un número decimal (float), Si no es numérico, lanza un error. Útil cuando se necesita trabajar con valores fraccionarios.
 <Code 
 code="
 print(float('3.14'))
 print(float(10))
 "
 lang="py" 
-title="Int.py" 
+title="Float.py" 
 mark="highlights"
 frame='auto' />
 Salida: 
@@ -155,7 +158,7 @@ frame='terminal' />
 
 ### `set()`
 
-Convierte un objeto iterable en una tupla. Similar a list(), pero el resultado es inmutable (no se puede modificar).
+set() convierte un objeto iterable en un conjunto, eliminando duplicados y sin mantener un orden específico (es mutable). 
 
 <Code 
 code="
@@ -176,13 +179,22 @@ title="Set.py"
 mark="highlights"
 frame='terminal' />
 
+<Aside type="note">
+Para que set() funcione, los elementos del iterable deben ser hashables, lo que significa que deben tener un valor hash único.
+Ejemplos de objetos no hasheables:
+- Listas
+- Conjuntos
+- Diccionarios
+</Aside>
+
 ### `dict()`
 
-Convierte un objeto iterable en una tupla. Similar a list(), pero el resultado es inmutable (no se puede modificar).
+Convierte un objeto iterable en un diccionario.
 
 <Code 
 code="
-print(dict([('a', 1), ('b', 2)]))
+print(dict([('a',1), ('b',2)]))  
+print(dict(a=1, b=2))            
 "
 lang="py" 
 title="Dict.py" 
@@ -191,13 +203,17 @@ frame='auto' />
 Salida: 
 <Code 
 code="
-{'a': 1, 
-&nbsp;'b': 2}
+{'a': 1, 'b': 2}
+{'a': 1, 'b': 2}
 "
 title="Dict.py" 
 mark="highlights"
 frame='terminal' />
 
 <Aside type='note'>
-  Convierte a diccionario requiere una estructura compatible, como una lista de tuplas 
+  dict() solo funcionará en los siguientes casos:
+  - Objetos iterables que contengan pares clave-valor.
+  - Objetos iterables que contengan tuplas, listas o conjuntos de dos elementos.
+  - Objetos iterables que contengan diccionarios.
+  - Las claves deben ser unicas y hashables.
 </Aside>
