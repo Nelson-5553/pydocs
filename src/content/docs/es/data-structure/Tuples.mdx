@@ -8,25 +8,30 @@ sidebar:
 import { Code } from "@astrojs/starlight/components"
 import { Aside } from "@astrojs/starlight/components"
 
-En Python, una tupla es una colección ordenada e inmutable de elementos. Las tuplas se representan entre paréntesis y separados por comas. Son útiles para almacenar datos que no deben cambiar después de su creación. 
+En Python, una tupla es una colección ordenada e inmutable de elementos. Las tuplas se escriben entre paréntesis y sus elementos se separan por comas. Son útiles para almacenar datos que no deben cambiar después de su creación. 
 
 Las tuplas son:
 
-- **inmutabilidad**: Una vez creada una tupla, no se pueden agregar, eliminar o modificar elementos. 
+- **Inmutables**: Una vez creada una tupla, no se pueden agregar, eliminar o modificar elementos. 
 
 - **Ordenadas**: Los elementos en una tupla tienen un orden específico, y se puede acceder a ellos mediante su índice. 
 
-- **Heterogénea**: Las tuplas pueden contener elementos de diferentes tipos de datos (enteros, cadenas, booleanos, etc.). 
+- **Heterogéneas**: Las tuplas pueden contener elementos de diferentes tipos de datos (enteros, cadenas, booleanos, etc.). 
 
 ## Crear una tupla
 
-Hagamos una tupla de frutas
+Hagamos una tupla de frutas.
 
 <Code 
 code="
-# Lista de frutas
+# Tupla de frutas
 frutas = ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
 print(frutas)
+
+# Para crear una tupla de un solo elemento, hay que agregar una coma al final
+# Tupla de un solo elemento
+tupla = (1,)
+print(tupla)
 "
 lang="py" 
 title="tupla.py" 
@@ -38,18 +43,20 @@ Salida:
 <Code 
 code="
 ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
+(1,)
+
 "
 title="terminal" 
 mark="highlights"
 frame='terminal' />
 
-## Indexacion
+## Indexación
 
-Para acceder un elemento en particular de la tupla se lleva acabo una indexacion de la siguiente forma:
+Para acceder a un elemento en particular de la tupla se lleva a cabo una indexación de la siguiente forma:
 
 <Code 
 code="
-# Lista de frutas
+# Tupla de frutas
 frutas = ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
 print(frutas[1])
 "
@@ -68,9 +75,9 @@ title="terminal"
 mark="highlights"
 frame='terminal' />
 
-## Segmentacion
+## Segmentación
 
-En Python, slicing (o segmentación) en una tupla es una técnica para obtener una sub-tupla extrayendo un rango de elementos, sin modificar la tupla original.
+En Python, segmentación (o slicing) en una tupla es una técnica para obtener una sub-tupla extrayendo un rango de elementos, sin modificar la tupla original.
 
 ```python
 tupla[inicio:fin:paso]
@@ -84,13 +91,15 @@ tupla[inicio:fin:paso]
 
 <Code 
 code="
-# Lista de frutas
+# Tupla de frutas
 frutas = ('manzana', 'banana', 'naranja', 'pera', 'uva', 'mango')
 
 print(frutas[1:4])     # ('banana', 'naranja', 'pera')
 print(frutas[:3])      # ('manzana', 'banana', 'naranja')
+print(frutas[2:])      # ('naranja', 'pera', 'uva', 'mango')
 print(frutas[::2])     # ('manzana', 'naranja', 'uva')
 print(frutas[::-1])    # ('mango', 'uva', 'pera', 'naranja', 'banana', 'manzana')
+
 "
 lang="py" 
 title="tupla.py" 
@@ -110,5 +119,23 @@ title="terminal"
 mark="highlights"
 frame='terminal' />
 
+## ¿Cuándo usar tuplas?
+
+Las tuplas son útiles cuando quieres representar datos que no deben cambiar. Ventajas principales:
+
+- **Inmutabilidad**: previenen modificaciones accidentales (por ejemplo, configuración o coordenadas).
+- **Eficiencia**: suelen ser un poco más rápidas y usar menos memoria que listas.
+- **Hashables**: pueden usarse como claves en diccionarios si todos sus elementos son inmutables.
+
+<Code 
+code="
+# Tupla como clave de dict
+d = {('x','y'): 42}
+print(d[('x','y')])
+"
+lang="py" 
+title="ejemplo.py" 
+mark="highlights"
+frame='auto' />
 
 
