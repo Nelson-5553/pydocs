@@ -5,7 +5,8 @@ sidebar:
   order: 1
 ---
 
-import { Code } from "@astrojs/starlight/components"
+import { Code, Aside } from "@astrojs/starlight/components"
+
 
 En Python, los condicionales son instrucciones que permiten ejecutar bloques de código de forma selectiva, dependiendo de si se cumplen ciertas condiciones. Estos bloques de código se pueden ejecutar si la condición es verdadera, o se pueden omitir si la condición es falsa. 
 
@@ -18,10 +19,6 @@ Esta instrucción evalúa una condición. Si la condición es verdadera, se ejec
 
 Esta instrucción se ejecuta si la condición de la instrucción if es falsa. 
 
-#### `elif (else if):`
-
-Permite evaluar múltiples condiciones en secuencia. Si la condición de if es falsa, se evalúa la condición de elif. Si la condición de elif es verdadera, se ejecuta el bloque de código correspondiente. 
-
 <Code 
 code="edad = 25
 if edad >= 18:
@@ -29,15 +26,41 @@ if edad >= 18:
 else:
 &nbsp;&nbsp;&nbsp;&nbsp;print('Eres menor de edad')
 
-# Si la edad es menor que 18, se imprimirá 'Eres menor de edad'." 
+# Si la edad es mayor o igual a 18, se imprimirá 'Eres mayor de edad'.
+# Si la edad es menor a 18, se imprimirá 'Eres menor de edad'." 
        
 lang="py" 
 title="Conditions.py" 
 mark="highlights" />
 
-## Manejo de Operadores logicos
+<Aside type='note'>
+  Se evalúan como False: 0, 0.0, "", [], {}, set(), range(0), None.
+</Aside>
 
-Como vimos en la sección de [Operadores](/es/syntaxbasic/operators/) los Operadores logicos sirven para combinar múltiples condiciones y obtener un resultado booleano, Ya sea `True` o `False`.
+#### `elif (else if):`
+
+Permite evaluar múltiples condiciones en secuencia. Si la condición de if es falsa, se evalúa la condición de elif. Si la condición de elif es verdadera, se ejecuta el bloque de código correspondiente. 
+
+<Code 
+code="edad = 25
+if edad > 18:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Eres mayor de 18 años')
+elif edad == 18:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Tienes 18 años')
+else:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Eres menor de 18 años')
+
+# Si la edad es mayor a 18, se imprimirá 'Eres mayor de 18 años'.
+# Si la edad es igual a 18, se imprimirá 'Tienes 18 años'.
+# Si la edad es menor a 18, se imprimirá 'Eres menor de 18 años'." 
+       
+lang="py" 
+title="Conditions.py" 
+mark="highlights" />
+
+## Manejo de Operadores lógicos
+
+Como vimos en la sección de [Operadores](/es/syntaxbasic/operators/) los Operadores lógicos sirven para combinar múltiples condiciones y obtener un resultado booleano, ya sea `True` o `False`.
 
 #### `and`
 
@@ -78,7 +101,8 @@ mark="highlights" />
 #### `not`
 
 <Code 
-code="tiene_multas = False
+code="
+tiene_multas = False
 
 if not tiene_multas:
 &nbsp;&nbsp;&nbsp;&nbsp;print('Puedes renovar tu licencia')
@@ -91,6 +115,41 @@ else:
 lang="py" 
 title="Conditions.py" 
 mark="highlights" />
+
+### Operaciones lógicas encadenadas
+En Python se pueden encadenar operaciones lógicas, pero hay que tener en cuenta la precedencia de los mismos.
+La precedencia define el orden de evaluación. 
+
+En Python: primero `not`, luego `and`, y al final `or`. Por lo tanto se recomienda el uso de paréntesis para agrupar las operaciones.
+
+<Code 
+code="
+
+tiene_identificacion = True
+es_estudiante = True
+tiene_multas = True
+edad = 20
+
+# Sin paréntesis
+if not tiene_multas and edad >= 18 and tiene_identificacion or es_estudiante:
+    print('Puedes ingresar')
+else:
+    print('No puedes ingresar')
+# Esto devuelve 'Puedes ingresar'
+
+
+# Con paréntesis 
+if not tiene_multas and (edad >= 18 and (tiene_identificacion or es_estudiante)):
+    print('Puedes ingresar')
+else:
+    print('No puedes ingresar')
+# Esto devuelve 'No puedes ingresar'"
+
+       
+lang="py" 
+title="Conditions.py" 
+mark="highlights" />
+
 
 ## Condiciones anidadas
 
@@ -106,9 +165,9 @@ if es_miembro:
 &nbsp;&nbsp;&nbsp;&nbsp;else:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('Tienes acceso pero es menor de 15')
 else:
-&nbsp;&nbsp;&nbsp;&nbsp;print('No eres mienbro')
+&nbsp;&nbsp;&nbsp;&nbsp;print('No eres miembro')
     
-# En este caso: no es miembro por lo tanto no tiene acceso, a pesar de que cumpla la condicion de tener 15 años.
+# En este caso: no es miembro por lo tanto no tiene acceso, a pesar de que cumpla la condición de tener 15 años.
 "
 lang="py" 
 title="Conditions.py" 
