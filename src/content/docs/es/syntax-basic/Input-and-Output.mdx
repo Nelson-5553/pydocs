@@ -1,6 +1,6 @@
 ---
-title: Entradas y Salida
-description: Guía para Entradas y Salida
+title: Entrada y Salida
+description: Guía para Entrada y Salida
 sidebar:
   order: 1
 ---
@@ -17,40 +17,52 @@ Cuando escribes un programa, no todo debe quedar dentro del código. A veces nec
 
 Con estas dos funciones puedes empezar a construir programas interactivos.
 
-## Print()
+## print()
 
 La función `print()` en Python se usa para mostrar información en la consola. Permite imprimir texto, números, variables, y más, utilizando una sintaxis sencilla.
 
 <Code 
-code="print('Bienvenido a PyDocs') # Respuesta en consola  print('Bienvenido a PyDocs')" 
+code="print('Bienvenido a PyDocs')" 
        
 lang="py" 
 title="print.py" 
 mark="highlights" />
 
-<Aside type="tip" title="Reto">
-
-¿Por que no intentas Imprimir Hola Mundo!?
-
-```python
-  print("Hola Mundo!")
-```
-</Aside>
-
-## Input()
-
-La función `input()` en Python solicita al usuario que introduzca un valor. Luego, lee lo que el usuario introduce y lo devuelve siempre como una cadena 
+Salida:
 
 <Code 
-code="nombre = input('¿Cuál es tu nombre? ')
+code="
+'Bienvenido a PyDocs'
+"
+title="terminal" 
+mark="highlights"
+frame='terminal' />
+
+<Aside type="tip" title="Reto">
+
+Ejecutalo tu mismo en Google Colab.
+<a href="https://colab.research.google.com/github/AxelSchenfeld/pydocs/blob/docs/notebooksyarreglosimputouput/src/content/es_notebooks/syntax-basic/Input-and-Output_print.ipynb" target="_blank">
+  Ejecutar en Google Colab 🚀
+</a>
+<br />
+¿Por qué no intentas imprimir Hola Mundo en google colab!?
+
+</Aside>
+
+## input()
+
+La función `input()` en Python solicita al usuario que introduzca un valor. Luego, lee lo que el usuario introduce y lo devuelve siempre como una cadena. 
+
+<Code 
+code="nombre = input('¿Cuál es tu nombre?')
           print('Hola, ' + nombre + '!')" 
        
 lang="py" 
-title="print.py" 
+title="input.py" 
 mark="highlights" />
 
 <Aside type="tip" title="Reto">
 
-¿Intenta ejecutar esto en tu Equipo a ver que te muestra?
+¿Intenta ejecutarlo en tu equipo para ver qué muestra?
 
 </Aside>
