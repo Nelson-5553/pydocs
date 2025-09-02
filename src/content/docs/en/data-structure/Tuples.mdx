@@ -20,13 +20,17 @@ Tuples are:
 
 ## Creating a tuple
 
-Let's make a tuple of fruits
+Let's make a tuple of fruits.
 
 <Code
 code="
 # List of fruits
 fruits = ('apple', 'banana', 'orange', 'pear', 'grape', 'mango')
 print(fruits)
+
+# To create a tuple with a single element, add a comma at the end
+single_tuple = (1,)
+print(single_tuple)
 "
 lang="py"
 title="tuple.py"
@@ -38,6 +42,7 @@ Output:
 <Code
 code="
 ('apple', 'banana', 'orange', 'pear', 'grape', 'mango')
+(1,)
 "
 title="terminal"
 mark="highlights"
@@ -70,16 +75,13 @@ frame='terminal' />
 
 ## Slicing
 
-In Python, slicing (or segmentation) in a tuple is a technique to obtain a sub-tuple by extracting a range of elements, without modifying the original tuple.
+In Python, slicing in a tuple is a technique to obtain a sub-tuple by extracting a range of elements, without modifying the original tuple.
 
 ```python
 tuple[start:end:step]
-
 ```
 - **start**: index from where to begin (included).
-
 - **end**: index where to finish (not included).
-
 - **step**: (optional) interval between elements.
 
 <Code
@@ -89,6 +91,7 @@ fruits = ('apple', 'banana', 'orange', 'pear', 'grape', 'mango')
 
 print(fruits[1:4])     # ('banana', 'orange', 'pear')
 print(fruits[:3])      # ('apple', 'banana', 'orange')
+print(fruits[2:])      # ('orange', 'pear', 'grape', 'mango')
 print(fruits[::2])     # ('apple', 'orange', 'grape')
 print(fruits[::-1])    # ('mango', 'grape', 'pear', 'orange', 'banana', 'apple')
 "
@@ -103,9 +106,29 @@ Output:
 code="
 ('banana', 'orange', 'pear')
 ('apple', 'banana', 'orange')
+('orange', 'pear', 'grape', 'mango')
 ('apple', 'orange', 'grape')
 ('mango', 'grape', 'pear', 'orange', 'banana', 'apple')
 "
 title="terminal"
 mark="highlights"
 frame='terminal' />
+
+## When to use tuples?
+
+Tuples are useful when you want to represent data that should not change. Main advantages:
+
+- **Immutability**: prevents accidental modifications (for example, configuration or coordinates).
+- **Efficiency**: usually a bit faster and use less memory than lists.
+- **Hashable**: can be used as keys in dictionaries if all their elements are immutable.
+
+<Code
+code="
+# Tuple as a dictionary key
+d = {('x','y'): 42}
+print(d[('x','y')])
+"
+lang="py"
+title="example.py"
+mark="highlights"
+frame='auto' />
