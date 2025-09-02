@@ -8,7 +8,7 @@ sidebar:
 import { Code } from "@astrojs/starlight/components"
 import { Aside } from "@astrojs/starlight/components"
 
-In Python, data types are used to classify a specific type of data, determine the values ​​you can assign to the type, and the operations you can perform on it. When performing programming tasks, sometimes you will need to apply value conversions between types to manipulate the values ​​differently. For example, we may need to concatenate numeric values ​​with strings or represent decimal places in numbers that started as integer values.
+In Python, data types are used to classify a specific type of data, determine the values you can assign to the type, and the operations you can perform on it. When performing programming tasks, sometimes you will need to apply value conversions between types to manipulate the values differently. For example, we may need to concatenate numeric values with strings or represent decimal places in numbers that started as integer values.
 
 The types are:
 
@@ -23,7 +23,7 @@ The types are:
 
 ### `int()`
 
-Converts a numeric value ​​or a string that represents an integer to the int data type. If the value ​​is a decimal number, it rounds it down (removes the decimal places). If it is not numeric, it throws an error.
+Converts a numeric value or a string that represents an integer to the int data type. If the value is a decimal number, it rounds it down (removes the decimal places). If it is not numeric, it throws an error.
 
 <Code
 code={`
@@ -42,17 +42,20 @@ title="Int.py"
 mark="highlights"
 frame='terminal' />
 
+<Aside type="note">
+  You cannot directly convert a string representing a decimal number (float) to an integer using int(). For example, int("3.14") raises ValueError.
+</Aside>
 
 ### `float()`
 
-Converts an integer or a string that represents a number to a decimal number (float), useful when you need to work with fractional values.
+Converts an integer or a string that represents a number to a decimal number (float). If it is not numeric, it throws an error. Useful when you need to work with fractional values.
 <Code
 code={`
 print(float('3.14'))
 print(float(10))
 `}
 lang="py"
-title="Int.py"
+title="Float.py"
 mark="highlights"
 frame='auto' />
 Output:
@@ -88,7 +91,7 @@ mark="highlights"
 frame='terminal' />
 
 ### `bool()`
-Converts a value ​​to True or False depending on whether it is "empty" or not. Values ​​such as 0, "" (empty string), [] (empty list), None and False are considered False. Everything else is True.
+Converts a value to True or False depending on whether it is "empty" or not. Values such as 0, "" (empty string), [] (empty list), None and False are considered False. Everything else is True.
 <Code
 code={`
 print(bool(1))
@@ -114,7 +117,7 @@ frame='terminal' />
 Converts iterable objects (such as strings, tuples, sets) into a list.
 <Code
 code={`
-print(list('hello') )
+print(list('hello'))
 print(list((1, 2, 3)))
 `}
 lang="py"
@@ -130,6 +133,7 @@ code={`
 title="List.py"
 mark="highlights"
 frame='terminal' />
+
 ### `tuple()`
 
 Converts an iterable object into a tuple. Similar to list(), but the result is immutable (cannot be modified).
@@ -155,12 +159,12 @@ frame='terminal' />
 
 ### `set()`
 
-Converts an iterable object into a tuple. Similar to list(), but the result is immutable (cannot be modified).
+set() converts an iterable object into a set, removing duplicates and without maintaining a specific order (it is mutable).
 
 <Code
 code={`
 print(set([1, 2, 2, 3]))
-print(set('hello') )
+print(set('hello'))
 `}
 lang="py"
 title="Set.py"
@@ -176,13 +180,22 @@ title="Set.py"
 mark="highlights"
 frame='terminal' />
 
+<Aside type="note">
+  For set() to work, the elements of the iterable must be hashable, which means they must have a unique hash value.
+  Examples of non-hashable objects:
+  - Lists
+  - Sets
+  - Dictionaries
+</Aside>
+
 ### `dict()`
 
-Converts an iterable object into a tuple. Similar to list(), but the result is immutable (cannot be modified).
+Converts an iterable object into a dictionary.
 
 <Code
 code={`
 print(dict([('a', 1), ('b', 2)]))
+print(dict(a=1, b=2))
 `}
 lang="py"
 title="Dict.py"
@@ -191,13 +204,17 @@ frame='auto' />
 Output:
 <Code
 code={`
-{'a': 1, 
- 'b': 2}
+{'a': 1, 'b': 2}
+{'a': 1, 'b': 2}
 `}
 title="Dict.py"
 mark="highlights"
 frame='terminal' />
 
 <Aside type='note'>
-  Converts to dictionary requires a compatible structure, such as a list of tuples 
+  dict() only works in the following cases:
+  - Iterable objects containing key-value pairs.
+  - Iterable objects containing tuples, lists, or sets of two elements.
+  - Iterable objects containing dictionaries.
+  - Keys must be unique and hashable.
 </Aside>

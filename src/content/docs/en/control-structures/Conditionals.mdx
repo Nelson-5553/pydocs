@@ -5,31 +5,53 @@ sidebar:
   order: 1
 ---
 
-import { Code } from "@astrojs/starlight/components"
+import { Code, Aside } from "@astrojs/starlight/components"
 
-In Python, conditionals are instructions that let you execute code blocks in a selective form, depending if certain conditions are passed. These code blocks can be executed if the condition is true, or omitted if the condition is false.
+In Python, conditionals are instructions that let you execute code blocks selectively, depending on whether certain conditions are met. These code blocks can be executed if the condition is true, or omitted if the condition is false.
 
-## How they work?
+## How do they work?
 
 #### `if:`
-this instruction evaluates a condition. If that condition is true, the code block that follows the if statement is executed. 
+This statement evaluates a condition. If the condition is true, the code block that follows the if statement is executed.
 
 #### `else:`
 
-This instruction is executed if the condition of an if statement is false. 
-
-#### `elif (else if):`
-
-It lets you evaluate multiple conditions in sequence. If the if statement is false, it evaluates the second condition of elif. If the condition of elif is true, the corresponding code block executes.
+This statement is executed if the condition of the if statement is false.
 
 <Code 
 code="age = 25
 if age >= 18:
-&nbsp;&nbsp;&nbsp;&nbsp;print('You are an adult')
+    print('You are an adult')
 else:
-&nbsp;&nbsp;&nbsp;&nbsp;print('You are a minor')
+    print('You are a minor')
 
-# If the age is less than 18, it will print 'You are a minor'." 
+# If age is greater than or equal to 18, it will print 'You are an adult'.
+# If age is less than 18, it will print 'You are a minor'." 
+       
+lang="py" 
+title="Conditions.py" 
+mark="highlights" />
+
+<Aside type='note'>
+  The following are evaluated as False: 0, 0.0, "", [], {}, set(), range(0), None.
+</Aside>
+
+#### `elif (else if):`
+
+Allows you to evaluate multiple conditions in sequence. If the if condition is false, the elif condition is evaluated. If the elif condition is true, the corresponding code block is executed.
+
+<Code 
+code="age = 25
+if age > 18:
+    print('You are over 18')
+elif age == 18:
+    print('You are 18 years old')
+else:
+    print('You are under 18')
+
+# If age is greater than 18, it will print 'You are over 18'.
+# If age is equal to 18, it will print 'You are 18 years old'.
+# If age is less than 18, it will print 'You are under 18'." 
        
 lang="py" 
 title="Conditions.py" 
@@ -46,9 +68,9 @@ code="age = 25
 has_identification = True
 
 if age >= 18 and has_identification:
-&nbsp;&nbsp;&nbsp;&nbsp;print('You can enter')
+    print('You can enter')
 else:
-&nbsp;&nbsp;&nbsp;&nbsp;print('You cannot enter')
+    print('You cannot enter')
 
 # Both conditions must be met. If age is greater than or equal to 18 **and** has identification, 
 # it prints 'You can enter'." 
@@ -64,9 +86,9 @@ code="is_student = False
 is_teacher = True
 
 if is_student or is_teacher:
-&nbsp;&nbsp;&nbsp;&nbsp;print('You have access to campus')
+    print('You have access to campus')
 else:
- &nbsp;&nbsp;&nbsp;&nbsp;print('Access denied')
+    print('Access denied')
 
 # It's enough for one of the conditions to be true for it to print 'You have access to campus'."
 
@@ -81,12 +103,45 @@ mark="highlights" />
 code="has_fines = False
 
 if not has_fines:
-&nbsp;&nbsp;&nbsp;&nbsp;print('You can renew your license')
+    print('You can renew your license')
 else:
-&nbsp;&nbsp;&nbsp;&nbsp;print('You must pay the fines first')
+    print('You must pay the fines first')
 
 # 'not' inverts the value. If there are no fines, it prints 'You can renew your license'."
 
+       
+lang="py" 
+title="Conditions.py" 
+mark="highlights" />
+
+### Chained Logical Operations
+
+In Python, you can chain logical operations, but you must consider their precedence.
+Precedence defines the order of evaluation.
+
+In Python: first `not`, then `and`, and finally `or`. Therefore, it is recommended to use parentheses to group operations.
+
+<Code 
+code="
+has_identification = True
+is_student = True
+has_fines = True
+age = 20
+
+# Without parentheses
+if not has_fines and age >= 18 and has_identification or is_student:
+    print('You can enter')
+else:
+    print('You cannot enter')
+# This prints 'You can enter'
+
+
+# With parentheses 
+if not has_fines and (age >= 18 and (has_identification or is_student)):
+    print('You can enter')
+else:
+    print('You cannot enter')
+# This prints 'You cannot enter'"
        
 lang="py" 
 title="Conditions.py" 
@@ -101,12 +156,12 @@ code="is_member = False
 age = 15
 
 if is_member:
-&nbsp;&nbsp;&nbsp;&nbsp;if age >= 15:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('You have access since you are a member and over 15')
-&nbsp;&nbsp;&nbsp;&nbsp;else:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('You have access but are under 15')
+    if age >= 15:
+        print('You have access since you are a member and over 15')
+    else:
+        print('You have access but are under 15')
 else:
-&nbsp;&nbsp;&nbsp;&nbsp;print('You are not a member')
+    print('You are not a member')
     
 # In this case: not a member therefore no access, despite meeting the condition of being 15 years old.
 "
